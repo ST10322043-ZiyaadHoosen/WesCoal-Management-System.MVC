@@ -1,0 +1,71 @@
+@{
+    ViewData["Title"] = "Customer Dashboard";
+    ViewData["RoleName"] = "Customer User";
+    ViewData["RoleSubtitle"] = "Customer Portal";
+    ViewData["Initials"] = "CU";
+    Layout = "_PortalLayout";
+}
+
+<section class="portal-screen active" data-screen="dashboard">
+    <div class="page-heading">
+        <div>
+            <p class="eyebrow">WELCOME BACK</p>
+            <h1>Customer Dashboard</h1>
+            <p>Your contracts, orders, collections and invoices.</p>
+        </div>
+        <span class="badge green">Account active</span>
+    </div>
+    <div class="stat-grid">
+        <article>
+            <small>Active contracts</small>
+            <strong>2</strong>
+            <span>6,600 t remaining</span>
+        </article>
+        <article>
+            <small>Open orders</small>
+            <strong>2</strong>
+            <span>PO-1042 in progress</span>
+        </article>
+        <article>
+            <small>Delivered this month</small>
+            <strong>340 t</strong>
+            <span>160 t remaining</span>
+        </article>
+        <article>
+            <small>Outstanding invoices</small>
+            <strong>R625,000</strong>
+            <span>Due 30 Aug 2026</span>
+        </article>
+    </div>
+    <div class="content-grid">
+        <article class="panel">
+            <div class="panel-title">
+                <h2>Current order</h2>
+                <button data-nav="order-detail">View details</button>
+            </div>
+            <p class="eyebrow">PO-1042 · THERMAL COAL</p>
+            <h3>500 t ordered</h3>
+            <div class="progress large">
+                <i style="width:68%">
+                </i>
+            </div>
+            <div class="split-label">
+                <span>340 t delivered</span>
+                <b>68%</b>
+                <span>160 t remaining</span>
+            </div>
+        </article>
+        <article class="panel">
+            <div class="panel-title">
+                <h2>Collection readiness</h2>
+                <button data-nav="fleet">Manage fleet</button>
+            </div>
+            <div class="check-list">
+                <span class="ok">✓ Weekly fleet submitted</span>
+                <span class="ok">✓ 4 trucks approved</span>
+                <span class="warn">! 1 medical certificate expires soon</span>
+            </div>
+        </article>
+    </div>
+</section>
+

@@ -1,0 +1,72 @@
+@{
+    ViewData["Title"] = "Purchase Orders";
+    ViewData["RoleName"] = "Sales Manager";
+    ViewData["RoleSubtitle"] = "Sales Portal";
+    ViewData["Initials"] = "SM";
+    Layout = "_PortalLayout";
+}
+
+<section class="portal-screen active" data-screen="orders">
+    <div class="page-heading">
+        <div>
+            <p class="eyebrow">ORDER MANAGEMENT</p>
+            <h1>Purchase Orders</h1>
+            <p>Monitor approval and delivery progress.</p>
+        </div>
+        <button class="btn-gold" data-nav="order-create">+ New purchase order</button>
+    </div>
+    <article class="panel">
+        <div class="toolbar">
+            <input type="search" placeholder="Search order, customer or SAP number…">
+            <select>
+                <option>All statuses</option>
+                <option>Awaiting SAP</option>
+                <option>In progress</option>
+            </select>
+        </div>
+        <div class="table-wrap">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Order</th>
+                        <th>Customer</th>
+                        <th>SAP number</th>
+                        <th>Ordered</th>
+                        <th>Delivered</th>
+                        <th>Remaining</th>
+                        <th>Status</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr data-nav="order-detail">
+                        <td>
+                            <b>PO-1042</b>
+                        </td>
+                        <td>Eskom Arnot</td>
+                        <td>45001234</td>
+                        <td>500 t</td>
+                        <td>340 t</td>
+                        <td>160 t</td>
+                        <td>
+                            <span class="badge blue">In progress</span>
+                        </td>
+                    </tr>
+                    <tr data-nav="order-detail">
+                        <td>
+                            <b>PO-1048</b>
+                        </td>
+                        <td>Msobo Coal</td>
+                        <td>Pending</td>
+                        <td>300 t</td>
+                        <td>0 t</td>
+                        <td>300 t</td>
+                        <td>
+                            <span class="badge amber">Awaiting SAP</span>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </article>
+</section>
+

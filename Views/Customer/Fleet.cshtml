@@ -1,0 +1,65 @@
+@{
+    ViewData["Title"] = "Weekly Fleet";
+    ViewData["RoleName"] = "Customer User";
+    ViewData["RoleSubtitle"] = "Customer Portal";
+    ViewData["Initials"] = "CU";
+    Layout = "_PortalLayout";
+}
+
+<section class="portal-screen active" data-screen="fleet">
+    <div class="page-heading">
+        <div>
+            <p class="eyebrow">WEEK COMMENCING 10 AUG 2026</p>
+            <h1>Weekly Fleet</h1>
+            <p>Trucks and drivers authorised to collect.</p>
+        </div>
+        <button class="btn-gold" data-nav="fleet-edit">+ Add vehicle</button>
+    </div>
+    <div class="alert-box soft">
+        <strong>Compliance reminder</strong>
+        <span>Driver licences and medical certificates must be valid before site entry.</span>
+    </div>
+    <article class="panel">
+        <div class="table-wrap">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Truck</th>
+                        <th>Trailer</th>
+                        <th>Driver</th>
+                        <th>Licence</th>
+                        <th>Medical</th>
+                        <th>Status</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr data-nav="fleet-edit">
+                        <td>
+                            <b>MP 45 TR GP</b>
+                        </td>
+                        <td>MP 67 TL GP</td>
+                        <td>Joseph Dlamini</td>
+                        <td>Valid</td>
+                        <td>30 Nov 2026</td>
+                        <td>
+                            <span class="badge green">Approved</span>
+                        </td>
+                    </tr>
+                    <tr data-nav="fleet-edit">
+                        <td>
+                            <b>MP 12 AB GP</b>
+                        </td>
+                        <td>MP 34 CD GP</td>
+                        <td>Simon Khumalo</td>
+                        <td>Valid</td>
+                        <td>22 Aug 2026</td>
+                        <td>
+                            <span class="badge amber">Expiring soon</span>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </article>
+</section>
+

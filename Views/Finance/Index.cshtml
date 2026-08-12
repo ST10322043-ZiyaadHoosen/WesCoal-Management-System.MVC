@@ -1,0 +1,78 @@
+@{
+    ViewData["Title"] = "Finance Dashboard";
+    ViewData["RoleName"] = "Finance Officer";
+    ViewData["RoleSubtitle"] = "Finance Portal";
+    ViewData["Initials"] = "FO";
+    Layout = "_PortalLayout";
+}
+
+<section class="portal-screen active" data-screen="dashboard">
+    <div class="page-heading">
+        <div>
+            <p class="eyebrow">FINANCIAL OPERATIONS</p>
+            <h1>Finance Dashboard</h1>
+            <p>SAP activation, invoicing and payment tracking.</p>
+        </div>
+    </div>
+    <div class="stat-grid">
+        <article>
+            <small>Awaiting SAP</small>
+            <strong>2</strong>
+            <span>Finance action required</span>
+        </article>
+        <article>
+            <small>Active orders</small>
+            <strong>6</strong>
+            <span>Available for collection</span>
+        </article>
+        <article>
+            <small>Unpaid invoices</small>
+            <strong>3</strong>
+            <span>R1.2m outstanding</span>
+        </article>
+        <article>
+            <small>Received this month</small>
+            <strong>R2.4m</strong>
+            <span>8 invoices</span>
+        </article>
+    </div>
+    <div class="content-grid">
+        <article class="panel">
+            <div class="panel-title">
+                <h2>Orders awaiting SAP</h2>
+                <button data-nav="queue">View all</button>
+            </div>
+            <div class="mini-table">
+                <button data-nav="order-detail">
+                    <b>PO-1048</b>
+                    <span>Msobo Coal · 300 t</span>
+                    <em class="badge amber">Awaiting SAP</em>
+                </button>
+                <button data-nav="order-detail">
+                    <b>PO-1051</b>
+                    <span>Seriti Resources · 250 t</span>
+                    <em class="badge amber">Awaiting SAP</em>
+                </button>
+            </div>
+        </article>
+        <article class="panel">
+            <div class="panel-title">
+                <h2>Recent invoices</h2>
+                <button data-nav="invoices">View all</button>
+            </div>
+            <div class="mini-table">
+                <button data-nav="invoice-detail">
+                    <b>INV-2026-084</b>
+                    <span>Eskom Arnot · R625,000</span>
+                    <em class="badge amber">Unpaid</em>
+                </button>
+                <button data-nav="invoice-detail">
+                    <b>INV-2026-071</b>
+                    <span>Eskom Arnot · R625,000</span>
+                    <em class="badge green">Paid</em>
+                </button>
+            </div>
+        </article>
+    </div>
+</section>
+

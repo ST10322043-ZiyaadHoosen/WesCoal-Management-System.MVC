@@ -1,0 +1,56 @@
+@{
+    ViewData["Title"] = "Truck &amp; Driver Check";
+    ViewData["RoleName"] = "Weighbridge Operator";
+    ViewData["RoleSubtitle"] = "Logistics & Weighbridge";
+    ViewData["Initials"] = "WO";
+    Layout = "_PortalLayout";
+}
+
+<section class="portal-screen active" data-screen="gate-check">
+    <button class="back-link" data-nav="truck-select">← Select truck</button>
+    <div class="page-heading">
+        <div>
+            <p class="eyebrow">GATE VERIFICATION</p>
+            <h1>Truck &amp; Driver Check</h1>
+            <p>MP 45 TR GP · Joseph Dlamini</p>
+        </div>
+    </div>
+    <form class="panel form-card" data-demo-form data-next="weigh-in" data-success="Gate check passed">
+        <div class="check-list">
+            <label class="check-row">
+                <input required type="checkbox"> Truck appears on the approved weekly fleet list
+            </label>
+            <label class="check-row">
+                <input required type="checkbox"> Driver identity and licence verified
+            </label>
+            <label class="check-row">
+                <input required type="checkbox"> Medical certificate is valid
+            </label>
+            <label class="check-row">
+                <input required type="checkbox"> Truck condition is safe for loading
+            </label>
+        </div>
+        <div class="form-grid top-gap">
+            <label>
+                Truck condition
+                <select>
+                    <option>Good</option>
+                    <option>Minor concern noted</option>
+                    <option>Unsafe</option>
+                </select>
+            </label>
+            <label>
+                Waybill number<input required value="WB-2026-2409">
+            </label>
+            <label class="full">
+                Inspection notes<textarea rows="3" placeholder="Optional notes">
+            </textarea>
+        </label>
+    </div>
+    <div class="form-actions">
+        <button type="button" class="btn-outline" data-nav="available-orders">Cancel</button>
+        <button class="btn-gold">Continue to weigh-in</button>
+    </div>
+</form>
+</section>
+

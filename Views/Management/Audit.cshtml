@@ -1,0 +1,56 @@
+@{
+    ViewData["Title"] = "Audit Log";
+    ViewData["RoleName"] = "Senior Manager";
+    ViewData["RoleSubtitle"] = "Senior Management";
+    ViewData["Initials"] = "SM";
+    Layout = "_PortalLayout";
+}
+
+<section class="portal-screen active" data-screen="audit">
+    <div class="page-heading">
+        <div>
+            <p class="eyebrow">IMMUTABLE HISTORY</p>
+            <h1>Audit Log</h1>
+            <p>Who performed each important system action.</p>
+        </div>
+    </div>
+    <article class="panel">
+        <div class="table-wrap">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Time</th>
+                        <th>User</th>
+                        <th>Role</th>
+                        <th>Action</th>
+                        <th>Affected record</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>12 Aug 11:35</td>
+                        <td>Weighbridge Operator</td>
+                        <td>Logistics</td>
+                        <td>Completed weigh-out</td>
+                        <td>WB-2409 / PO-1042</td>
+                    </tr>
+                    <tr>
+                        <td>12 Aug 10:15</td>
+                        <td>Finance Officer</td>
+                        <td>Finance</td>
+                        <td>Marked invoice paid</td>
+                        <td>INV-2026-071</td>
+                    </tr>
+                    <tr>
+                        <td>11 Aug 15:42</td>
+                        <td>Sales Manager</td>
+                        <td>Sales</td>
+                        <td>Created purchase order</td>
+                        <td>PO-1048</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </article>
+</section>
+

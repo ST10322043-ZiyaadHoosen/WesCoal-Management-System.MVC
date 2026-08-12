@@ -1,0 +1,48 @@
+@{
+    ViewData["Title"] = "Sign In";
+}
+
+<div class="login-page">
+    <section class="login-intro">
+        <div class="login-brand">
+            <span class="brand-mark">W</span>
+            <div><strong>Wescoal</strong><small>Weighbridge &amp; Invoicing System</small></div>
+        </div>
+
+        <div class="login-intro-content">
+            <h1>Coal Operations<br />Management</h1>
+            <p>Integrated platform for weighbridge operations, contract management, SAP-activated invoicing and fleet compliance.</p>
+            <div class="login-stat-grid">
+                <article><strong>2</strong><span>Active Contracts</span></article>
+                <article><strong>2</strong><span>Orders In Progress</span></article>
+                <article><strong>1</strong><span>Awaiting SAP</span></article>
+                <article><strong>2</strong><span>Unpaid Invoices</span></article>
+            </div>
+            <div class="access-policy"><strong>Access Policy</strong><p>Accounts are invite-only. Contact the system administrator to request access.</p></div>
+        </div>
+
+        <small class="prototype-note">© 2026 Wescoal (Pty) Ltd</small>
+    </section>
+
+    <section class="login-form-panel">
+        <form class="role-login-form" data-login-form>
+            <h2>Sign in</h2>
+            <p>Select your portal and enter the demonstration credentials.</p>
+
+            <fieldset class="role-selector">
+                <legend>Select Portal</legend>
+                <label class="role-option selected"><input type="radio" name="role" value="/Sales" checked /><span class="role-tag">Sales</span><span><strong>Sales Manager</strong><small>Customers, contracts and purchase orders</small></span></label>
+                <label class="role-option"><input type="radio" name="role" value="/Finance" /><span class="role-tag">Finance</span><span><strong>Finance Officer</strong><small>SAP activation, invoicing and payments</small></span></label>
+                <label class="role-option"><input type="radio" name="role" value="/Logistics" /><span class="role-tag">Weighbridge</span><span><strong>Weighbridge Operator</strong><small>Gate checks, weighing and fleet verification</small></span></label>
+                <label class="role-option"><input type="radio" name="role" value="/Management" /><span class="role-tag">Management</span><span><strong>Senior Manager</strong><small>Full read-only oversight and reports</small></span></label>
+                <label class="role-option"><input type="radio" name="role" value="/SiteManager" /><span class="role-tag">Site</span><span><strong>Site Manager</strong><small>Operations, site activity and compliance</small></span></label>
+                <label class="role-option"><input type="radio" name="role" value="/Customer" /><span class="role-tag">Customer</span><span><strong>Customer Portal</strong><small>Contracts, orders, invoices and fleet</small></span></label>
+            </fieldset>
+
+            <label class="login-field">Username<input type="text" value="sales.manager" required /></label>
+            <label class="login-field">Password<input type="password" value="prototype" required /></label>
+            <button class="btn-gold login-button" type="submit">Sign In</button>
+            <small class="form-note">Invite-only system · All demonstration data is simulated</small>
+        </form>
+    </section>
+</div>

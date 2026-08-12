@@ -1,0 +1,72 @@
+@{
+    ViewData["Title"] = "Contracts";
+    ViewData["RoleName"] = "Sales Manager";
+    ViewData["RoleSubtitle"] = "Sales Portal";
+    ViewData["Initials"] = "SM";
+    Layout = "_PortalLayout";
+}
+
+<section class="portal-screen active" data-screen="contracts">
+    <div class="page-heading">
+        <div>
+            <p class="eyebrow">AGREEMENTS</p>
+            <h1>Contracts</h1>
+            <p>Track contracted, delivered and remaining tonnage.</p>
+        </div>
+        <button class="btn-gold" data-nav="contract-create">+ New contract</button>
+    </div>
+    <article class="panel">
+        <div class="toolbar">
+            <input type="search" placeholder="Search customer or contract ID…">
+            <select>
+                <option>All statuses</option>
+                <option>Active</option>
+                <option>Completed</option>
+            </select>
+        </div>
+        <div class="table-wrap">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Contract</th>
+                        <th>Customer</th>
+                        <th>Type</th>
+                        <th>Total</th>
+                        <th>Remaining</th>
+                        <th>Price/t</th>
+                        <th>Status</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr data-nav="contract-detail">
+                        <td>
+                            <b>CSA-2026-001</b>
+                        </td>
+                        <td>Eskom Arnot</td>
+                        <td>Coal supply</td>
+                        <td>5,000 t</td>
+                        <td>1,600 t</td>
+                        <td>R1,250</td>
+                        <td>
+                            <span class="badge green">Active</span>
+                        </td>
+                    </tr>
+                    <tr data-nav="contract-detail">
+                        <td>
+                            <b>ADH-2026-014</b>
+                        </td>
+                        <td>Msobo Coal</td>
+                        <td>Ad-hoc</td>
+                        <td>2,000 t</td>
+                        <td>1,160 t</td>
+                        <td>R1,310</td>
+                        <td>
+                            <span class="badge green">Active</span>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </article>
+</section>
+

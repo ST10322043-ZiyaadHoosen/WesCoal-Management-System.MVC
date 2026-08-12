@@ -1,0 +1,63 @@
+@{
+    ViewData["Title"] = "User Management";
+    ViewData["RoleName"] = "Senior Manager";
+    ViewData["RoleSubtitle"] = "Senior Management";
+    ViewData["Initials"] = "SM";
+    Layout = "_PortalLayout";
+}
+
+<section class="portal-screen active" data-screen="users">
+    <div class="page-heading">
+        <div>
+            <p class="eyebrow">ACCESS CONTROL</p>
+            <h1>User Management</h1>
+            <p>Invite, review and deactivate system users.</p>
+        </div>
+        <button class="btn-gold" data-toast="User invitation sent">Invite user</button>
+    </div>
+    <article class="panel">
+        <div class="table-wrap">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Email</th>
+                        <th>Role</th>
+                        <th>Last active</th>
+                        <th>Status</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Sales Manager</td>
+                        <td>ziyaad@wescoal.co.za</td>
+                        <td>Sales</td>
+                        <td>Today 10:42</td>
+                        <td>
+                            <span class="badge green">Active</span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Finance Officer</td>
+                        <td>kaveer@wescoal.co.za</td>
+                        <td>Finance</td>
+                        <td>Today 10:15</td>
+                        <td>
+                            <span class="badge green">Active</span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Weighbridge Operator</td>
+                        <td>imraan@wescoal.co.za</td>
+                        <td>Logistics</td>
+                        <td>Today 11:35</td>
+                        <td>
+                            <span class="badge green">Active</span>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </article>
+</section>
+

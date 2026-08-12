@@ -1,0 +1,61 @@
+@{
+    ViewData["Title"] = "Invoices";
+    ViewData["RoleName"] = "Finance Officer";
+    ViewData["RoleSubtitle"] = "Finance Portal";
+    ViewData["Initials"] = "FO";
+    Layout = "_PortalLayout";
+}
+
+<section class="portal-screen active" data-screen="invoices">
+    <div class="page-heading">
+        <div>
+            <p class="eyebrow">BILLING</p>
+            <h1>Invoices</h1>
+            <p>Issued on the 7th and due the following month.</p>
+        </div>
+        <button class="btn-gold" data-toast="Invoice batch generated">Generate invoices</button>
+    </div>
+    <article class="panel">
+        <div class="table-wrap">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Invoice</th>
+                        <th>Customer</th>
+                        <th>Order</th>
+                        <th>Amount</th>
+                        <th>Due</th>
+                        <th>Status</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr data-nav="invoice-detail">
+                        <td>
+                            <b>INV-2026-084</b>
+                        </td>
+                        <td>Eskom Arnot</td>
+                        <td>PO-1042</td>
+                        <td>R625,000</td>
+                        <td>30 Aug 2026</td>
+                        <td>
+                            <span class="badge amber">Unpaid</span>
+                        </td>
+                    </tr>
+                    <tr data-nav="invoice-detail">
+                        <td>
+                            <b>INV-2026-071</b>
+                        </td>
+                        <td>Eskom Arnot</td>
+                        <td>PO-1039</td>
+                        <td>R625,000</td>
+                        <td>07 Aug 2026</td>
+                        <td>
+                            <span class="badge green">Paid</span>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </article>
+</section>
+

@@ -1,0 +1,53 @@
+@{
+    ViewData["Title"] = "Transaction Summary";
+    ViewData["RoleName"] = "Weighbridge Operator";
+    ViewData["RoleSubtitle"] = "Logistics & Weighbridge";
+    ViewData["Initials"] = "WO";
+    Layout = "_PortalLayout";
+}
+
+<section class="portal-screen active" data-screen="summary">
+    <div class="page-heading">
+        <div>
+            <p class="eyebrow">COLLECTION COMPLETE</p>
+            <h1>Transaction Summary</h1>
+            <p>Review the completed collection.</p>
+        </div>
+        <span class="badge green">Recorded</span>
+    </div>
+    <div class="stat-grid">
+        <article>
+            <small>Weigh-in</small>
+            <strong>18,420 kg</strong>
+        </article>
+        <article>
+            <small>Weigh-out</small>
+            <strong>52,620 kg</strong>
+        </article>
+        <article>
+            <small>Net tonnage</small>
+            <strong>34.2 t</strong>
+        </article>
+        <article>
+            <small>Order remaining</small>
+            <strong>125.8 t</strong>
+        </article>
+    </div>
+    <article class="panel">
+        <dl>
+            <dt>Transaction</dt>
+            <dd>WB-2026-2409</dd>
+            <dt>Order</dt>
+            <dd>PO-1042</dd>
+            <dt>Truck</dt>
+            <dd>MP 45 TR GP</dd>
+            <dt>Driver</dt>
+            <dd>Joseph Dlamini</dd>
+        </dl>
+        <div class="form-actions">
+            <button class="btn-outline" data-toast="Weighbridge slip generated">Print weighbridge slip</button>
+            <button class="btn-gold" data-nav="available-orders">Finish</button>
+        </div>
+    </article>
+</section>
+

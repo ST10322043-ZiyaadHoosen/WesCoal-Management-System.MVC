@@ -1,0 +1,50 @@
+@{
+    ViewData["Title"] = "Eskom Arnot";
+    ViewData["RoleName"] = "Weighbridge Operator";
+    ViewData["RoleSubtitle"] = "Logistics & Weighbridge";
+    ViewData["Initials"] = "WO";
+    Layout = "_PortalLayout";
+}
+
+<section class="portal-screen active" data-screen="order-detail">
+    <button class="back-link" data-nav="available-orders">← Available orders</button>
+    <div class="page-heading">
+        <div>
+            <p class="eyebrow">PURCHASE ORDER PO-1042</p>
+            <h1>Eskom Arnot</h1>
+            <p>SAP 45001234 · Thermal coal</p>
+        </div>
+        <span class="badge blue">In progress</span>
+    </div>
+    <div class="stat-grid">
+        <article>
+            <small>Ordered</small>
+            <strong>500 t</strong>
+        </article>
+        <article>
+            <small>Delivered</small>
+            <strong>340 t</strong>
+        </article>
+        <article>
+            <small>Remaining</small>
+            <strong>160 t</strong>
+        </article>
+        <article>
+            <small>Loads completed</small>
+            <strong>10</strong>
+        </article>
+    </div>
+    <article class="panel">
+        <h2>Order limit</h2>
+        <div class="progress large">
+            <i style="width:68%">
+            </i>
+        </div>
+        <div class="alert-box soft">
+            <strong>Collection permitted</strong>
+            <span>The order has enough remaining tonnage for another truck load.</span>
+        </div>
+        <button class="btn-gold" data-nav="collection-type">Begin collection</button>
+    </article>
+</section>
+

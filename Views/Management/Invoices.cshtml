@@ -1,0 +1,56 @@
+@{
+    ViewData["Title"] = "All Invoices";
+    ViewData["RoleName"] = "Senior Manager";
+    ViewData["RoleSubtitle"] = "Senior Management";
+    ViewData["Initials"] = "SM";
+    Layout = "_PortalLayout";
+}
+
+<section class="portal-screen active" data-screen="invoices">
+    <div class="page-heading">
+        <div>
+            <p class="eyebrow">FINANCIAL OVERSIGHT</p>
+            <h1>All Invoices</h1>
+            <p>Read-only payment and billing visibility.</p>
+        </div>
+    </div>
+    <article class="panel">
+        <div class="table-wrap">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Invoice</th>
+                        <th>Customer</th>
+                        <th>Order</th>
+                        <th>Amount</th>
+                        <th>Due</th>
+                        <th>Status</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>INV-2026-084</td>
+                        <td>Eskom Arnot</td>
+                        <td>PO-1042</td>
+                        <td>R625,000</td>
+                        <td>30 Aug</td>
+                        <td>
+                            <span class="badge amber">Unpaid</span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>INV-2026-071</td>
+                        <td>Eskom Arnot</td>
+                        <td>PO-1039</td>
+                        <td>R625,000</td>
+                        <td>07 Aug</td>
+                        <td>
+                            <span class="badge green">Paid</span>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </article>
+</section>
+

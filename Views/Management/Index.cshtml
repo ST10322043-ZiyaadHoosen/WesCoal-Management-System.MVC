@@ -1,0 +1,77 @@
+@{
+    ViewData["Title"] = "Senior Management";
+    ViewData["RoleName"] = "Senior Manager";
+    ViewData["RoleSubtitle"] = "Senior Management";
+    ViewData["Initials"] = "SM";
+    Layout = "_PortalLayout";
+}
+
+<section class="portal-screen active" data-screen="dashboard">
+    <div class="page-heading">
+        <div>
+            <p class="eyebrow">EXECUTIVE OVERVIEW</p>
+            <h1>Senior Management</h1>
+            <p>Full operational and financial visibility.</p>
+        </div>
+        <span class="badge blue">Read only</span>
+    </div>
+    <div class="stat-grid">
+        <article>
+            <small>Active contracts</small>
+            <strong>4</strong>
+            <span>R8.4m value</span>
+        </article>
+        <article>
+            <small>Active orders</small>
+            <strong>6</strong>
+            <span>1,900 t ordered</span>
+        </article>
+        <article>
+            <small>Delivered this month</small>
+            <strong>1,840 t</strong>
+            <span>73% of target</span>
+        </article>
+        <article>
+            <small>Unpaid invoices</small>
+            <strong>R1.2m</strong>
+            <span>3 invoices</span>
+        </article>
+    </div>
+    <div class="content-grid">
+        <article class="panel">
+            <h2>Operational performance</h2>
+            <div class="metric-bars">
+                <label>
+                    Monthly tonnage <span>73%</span>
+                    <div class="progress">
+                        <i style="width:73%">
+                        </i>
+                    </div>
+                </label>
+                <label>
+                    Fleet compliance <span>92%</span>
+                    <div class="progress">
+                        <i style="width:92%">
+                        </i>
+                    </div>
+                </label>
+                <label>
+                    Invoices paid on time <span>81%</span>
+                    <div class="progress">
+                        <i style="width:81%">
+                        </i>
+                    </div>
+                </label>
+            </div>
+        </article>
+        <article class="panel">
+            <h2>Items requiring attention</h2>
+            <div class="check-list">
+                <span class="warn">2 orders awaiting SAP activation</span>
+                <span class="warn">1 customer account on hold</span>
+                <span class="warn">1 medical certificate expires soon</span>
+            </div>
+        </article>
+    </div>
+</section>
+

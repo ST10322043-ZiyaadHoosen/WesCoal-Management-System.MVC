@@ -1,0 +1,61 @@
+@{
+    ViewData["Title"] = "R625,000.00";
+    ViewData["RoleName"] = "Customer User";
+    ViewData["RoleSubtitle"] = "Customer Portal";
+    ViewData["Initials"] = "CU";
+    Layout = "_PortalLayout";
+}
+
+<section class="portal-screen active" data-screen="invoice-detail">
+    <button class="back-link" data-nav="invoices">← Invoices</button>
+    <div class="page-heading">
+        <div>
+            <p class="eyebrow">INVOICE INV-2026-084</p>
+            <h1>R625,000.00</h1>
+            <p>Purchase order PO-1042</p>
+        </div>
+        <span class="badge amber">Unpaid</span>
+    </div>
+    <article class="panel invoice-card">
+        <div class="invoice-head">
+            <div>
+                <strong>WESCOAL MINING</strong>
+                <span>Weighbridge &amp; Invoicing System</span>
+            </div>
+            <div>
+                <small>Invoice date</small>
+                <b>12 Aug 2026</b>
+                <small>Due date</small>
+                <b>30 Aug 2026</b>
+            </div>
+        </div>
+        <div class="table-wrap">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Description</th>
+                        <th>Quantity</th>
+                        <th>Rate</th>
+                        <th>Total</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Thermal coal</td>
+                        <td>500 t</td>
+                        <td>R1,250/t</td>
+                        <td>
+                            <b>R625,000</b>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="invoice-total">
+            <span>Total due</span>
+            <strong>R625,000.00</strong>
+        </div>
+        <button class="btn-outline" data-toast="Invoice download simulated">Download invoice</button>
+    </article>
+</section>
+

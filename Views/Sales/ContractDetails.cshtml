@@ -1,0 +1,84 @@
+@{
+    ViewData["Title"] = "Eskom Arnot";
+    ViewData["RoleName"] = "Sales Manager";
+    ViewData["RoleSubtitle"] = "Sales Portal";
+    ViewData["Initials"] = "SM";
+    Layout = "_PortalLayout";
+}
+
+<section class="portal-screen active" data-screen="contract-detail">
+    <button class="back-link" data-nav="contracts">← Contracts</button>
+    <div class="page-heading">
+        <div>
+            <p class="eyebrow">CONTRACT CSA-2026-001</p>
+            <h1>Eskom Arnot</h1>
+            <p>Coal Supply Agreement · Thermal coal</p>
+        </div>
+        <span class="badge green">Active</span>
+    </div>
+    <div class="stat-grid">
+        <article>
+            <small>Total tonnage</small>
+            <strong>5,000 t</strong>
+        </article>
+        <article>
+            <small>Delivered</small>
+            <strong>3,400 t</strong>
+        </article>
+        <article>
+            <small>Remaining</small>
+            <strong>1,600 t</strong>
+        </article>
+        <article>
+            <small>Current price</small>
+            <strong>R1,250/t</strong>
+        </article>
+    </div>
+    <article class="panel">
+        <h2>Contract progress</h2>
+        <div class="progress large">
+            <i style="width:68%">
+            </i>
+        </div>
+        <div class="split-label">
+            <span>Start: 01 Jan 2026</span>
+            <b>68% delivered</b>
+            <span>End: 31 Dec 2026</span>
+        </div>
+        <hr>
+        <h2>Monthly allocation</h2>
+        <div class="table-wrap">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Month</th>
+                        <th>Contracted</th>
+                        <th>Actual</th>
+                        <th>Variance</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>June 2026</td>
+                        <td>500 t</td>
+                        <td>480 t</td>
+                        <td>-20 t</td>
+                    </tr>
+                    <tr>
+                        <td>July 2026</td>
+                        <td>500 t</td>
+                        <td>520 t</td>
+                        <td>+20 t</td>
+                    </tr>
+                    <tr>
+                        <td>August 2026</td>
+                        <td>500 t</td>
+                        <td>340 t</td>
+                        <td>-160 t</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </article>
+</section>
+

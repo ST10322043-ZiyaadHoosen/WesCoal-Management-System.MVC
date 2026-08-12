@@ -1,0 +1,36 @@
+@{
+    ViewData["Title"] = "R625,000.00";
+    ViewData["RoleName"] = "Finance Officer";
+    ViewData["RoleSubtitle"] = "Finance Portal";
+    ViewData["Initials"] = "FO";
+    Layout = "_PortalLayout";
+}
+
+<section class="portal-screen active" data-screen="invoice-detail">
+    <button class="back-link" data-nav="invoices">← Invoices</button>
+    <div class="page-heading">
+        <div>
+            <p class="eyebrow">INVOICE INV-2026-084</p>
+            <h1>R625,000.00</h1>
+            <p>Eskom Arnot · PO-1042</p>
+        </div>
+        <span class="badge amber">Unpaid</span>
+    </div>
+    <article class="panel">
+        <dl>
+            <dt>Invoice date</dt>
+            <dd>12 Aug 2026</dd>
+            <dt>Due date</dt>
+            <dd>30 Aug 2026</dd>
+            <dt>Delivered tonnage</dt>
+            <dd>500 t</dd>
+            <dt>Price per ton</dt>
+            <dd>R1,250.00</dd>
+        </dl>
+        <div class="form-actions">
+            <button class="btn-outline" data-toast="Invoice download simulated">Download invoice</button>
+            <button class="btn-gold" data-toast="Invoice marked as paid; customer hold cleared">Mark as paid</button>
+        </div>
+    </article>
+</section>
+

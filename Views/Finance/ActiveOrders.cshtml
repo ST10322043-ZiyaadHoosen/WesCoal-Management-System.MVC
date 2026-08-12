@@ -1,0 +1,63 @@
+@{
+    ViewData["Title"] = "Active Orders";
+    ViewData["RoleName"] = "Finance Officer";
+    ViewData["RoleSubtitle"] = "Finance Portal";
+    ViewData["Initials"] = "FO";
+    Layout = "_PortalLayout";
+}
+
+<section class="portal-screen active" data-screen="active-orders">
+    <div class="page-heading">
+        <div>
+            <p class="eyebrow">APPROVED ORDERS</p>
+            <h1>Active Orders</h1>
+            <p>SAP-activated orders available for collection.</p>
+        </div>
+    </div>
+    <article class="panel">
+        <div class="table-wrap">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Order</th>
+                        <th>Customer</th>
+                        <th>SAP</th>
+                        <th>Ordered</th>
+                        <th>Delivered</th>
+                        <th>Remaining</th>
+                        <th>Status</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr data-nav="order-detail">
+                        <td>
+                            <b>PO-1042</b>
+                        </td>
+                        <td>Eskom Arnot</td>
+                        <td>45001234</td>
+                        <td>500 t</td>
+                        <td>340 t</td>
+                        <td>160 t</td>
+                        <td>
+                            <span class="badge blue">In progress</span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <b>PO-1045</b>
+                        </td>
+                        <td>Seriti Resources</td>
+                        <td>45001229</td>
+                        <td>400 t</td>
+                        <td>0 t</td>
+                        <td>400 t</td>
+                        <td>
+                            <span class="badge green">Active</span>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </article>
+</section>
+

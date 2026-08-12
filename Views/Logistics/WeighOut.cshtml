@@ -1,0 +1,45 @@
+@{
+    ViewData["Title"] = "Weigh Out";
+    ViewData["RoleName"] = "Weighbridge Operator";
+    ViewData["RoleSubtitle"] = "Logistics & Weighbridge";
+    ViewData["Initials"] = "WO";
+    Layout = "_PortalLayout";
+}
+
+<section class="portal-screen active" data-screen="weigh-out">
+    <button class="back-link" data-nav="weigh-in">← Weigh-in</button>
+    <div class="page-heading">
+        <div>
+            <p class="eyebrow">WEIGHBRIDGE STEP 2 OF 2</p>
+            <h1>Weigh Out</h1>
+            <p>Record the loaded weight and calculate net tonnage.</p>
+        </div>
+    </div>
+    <form class="panel form-card" data-demo-form data-next="summary" data-success="Weigh-out recorded">
+        <div class="form-grid">
+            <label>
+                Weigh-in weight<input readonly value="18,420 kg">
+            </label>
+            <label>
+                Weigh-out weight (kg) *<input required type="number" value="52620">
+            </label>
+            <label>
+                Calculated net weight<input readonly value="34,200 kg / 34.2 t">
+            </label>
+            <label>
+                Date and time<input type="datetime-local" value="2026-08-12T11:35">
+            </label>
+            <label class="full">
+                Upload weigh-out slip<input type="file">
+            </label>
+        </div>
+        <div class="alert-box soft">
+            <strong>Order check</strong>
+            <span>34.2 t is below the remaining order balance of 160 t.</span>
+        </div>
+        <div class="form-actions">
+            <button class="btn-gold">Complete weighing</button>
+        </div>
+    </form>
+</section>
+

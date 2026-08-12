@@ -1,0 +1,60 @@
+@{
+    ViewData["Title"] = "My Contracts";
+    ViewData["RoleName"] = "Customer User";
+    ViewData["RoleSubtitle"] = "Customer Portal";
+    ViewData["Initials"] = "CU";
+    Layout = "_PortalLayout";
+}
+
+<section class="portal-screen active" data-screen="contracts">
+    <div class="page-heading">
+        <div>
+            <p class="eyebrow">MY ACCOUNT</p>
+            <h1>My Contracts</h1>
+            <p>View your active supply agreements.</p>
+        </div>
+    </div>
+    <article class="panel">
+        <div class="table-wrap">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Contract</th>
+                        <th>Type</th>
+                        <th>Product</th>
+                        <th>Total</th>
+                        <th>Remaining</th>
+                        <th>Status</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr data-nav="contract-detail">
+                        <td>
+                            <b>CSA-2026-001</b>
+                        </td>
+                        <td>Coal Supply Agreement</td>
+                        <td>Thermal coal</td>
+                        <td>5,000 t</td>
+                        <td>1,600 t</td>
+                        <td>
+                            <span class="badge green">Active</span>
+                        </td>
+                    </tr>
+                    <tr data-nav="contract-detail">
+                        <td>
+                            <b>SPOT-2026-005</b>
+                        </td>
+                        <td>Spot sale</td>
+                        <td>Nuts</td>
+                        <td>800 t</td>
+                        <td>800 t</td>
+                        <td>
+                            <span class="badge green">Active</span>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </article>
+</section>
+

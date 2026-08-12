@@ -1,0 +1,82 @@
+@{
+    ViewData["Title"] = "Available Orders";
+    ViewData["RoleName"] = "Weighbridge Operator";
+    ViewData["RoleSubtitle"] = "Logistics & Weighbridge";
+    ViewData["Initials"] = "WO";
+    Layout = "_PortalLayout";
+}
+
+<section class="portal-screen active" data-screen="available-orders">
+    <div class="page-heading">
+        <div>
+            <p class="eyebrow">SAP-ACTIVATED</p>
+            <h1>Available Orders</h1>
+            <p>Orders approved and ready for collection.</p>
+        </div>
+    </div>
+    <article class="panel">
+        <div class="table-wrap">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Order</th>
+                        <th>Customer</th>
+                        <th>SAP</th>
+                        <th>Product</th>
+                        <th>Remaining</th>
+                        <th>Fleet</th>
+                        <th>Status</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr data-nav="order-detail">
+                        <td>
+                            <b>PO-1042</b>
+                        </td>
+                        <td>Eskom Arnot</td>
+                        <td>45001234</td>
+                        <td>Thermal coal</td>
+                        <td>160 t</td>
+                        <td>
+                            <span class="badge green">Approved</span>
+                        </td>
+                        <td>
+                            <span class="badge blue">In progress</span>
+                        </td>
+                    </tr>
+                    <tr data-nav="order-detail">
+                        <td>
+                            <b>PO-1045</b>
+                        </td>
+                        <td>Seriti Resources</td>
+                        <td>45001229</td>
+                        <td>Nuts</td>
+                        <td>400 t</td>
+                        <td>
+                            <span class="badge green">Approved</span>
+                        </td>
+                        <td>
+                            <span class="badge green">Active</span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <b>PO-1046</b>
+                        </td>
+                        <td>Msobo Coal</td>
+                        <td>45001230</td>
+                        <td>Duff</td>
+                        <td>200 t</td>
+                        <td>
+                            <span class="badge amber">On hold</span>
+                        </td>
+                        <td>
+                            <span class="badge amber">Blocked</span>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </article>
+</section>
+

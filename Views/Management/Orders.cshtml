@@ -1,0 +1,59 @@
+@{
+    ViewData["Title"] = "All Purchase Orders";
+    ViewData["RoleName"] = "Senior Manager";
+    ViewData["RoleSubtitle"] = "Senior Management";
+    ViewData["Initials"] = "SM";
+    Layout = "_PortalLayout";
+}
+
+<section class="portal-screen active" data-screen="orders">
+    <div class="page-heading">
+        <div>
+            <p class="eyebrow">READ-ONLY</p>
+            <h1>All Purchase Orders</h1>
+            <p>Track every order through its lifecycle.</p>
+        </div>
+    </div>
+    <article class="panel">
+        <div class="table-wrap">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Order</th>
+                        <th>Customer</th>
+                        <th>Created by</th>
+                        <th>SAP</th>
+                        <th>Ordered</th>
+                        <th>Delivered</th>
+                        <th>Status</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>PO-1042</td>
+                        <td>Eskom Arnot</td>
+                        <td>Sales Manager</td>
+                        <td>45001234</td>
+                        <td>500 t</td>
+                        <td>340 t</td>
+                        <td>
+                            <span class="badge blue">In progress</span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>PO-1048</td>
+                        <td>Msobo Coal</td>
+                        <td>Sales Manager</td>
+                        <td>Pending</td>
+                        <td>300 t</td>
+                        <td>0 t</td>
+                        <td>
+                            <span class="badge amber">Awaiting SAP</span>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </article>
+</section>
+

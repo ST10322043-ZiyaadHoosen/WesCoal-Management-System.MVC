@@ -1,0 +1,59 @@
+@{
+    ViewData["Title"] = "Order Tracking";
+    ViewData["RoleName"] = "Site Manager";
+    ViewData["RoleSubtitle"] = "Operations Oversight";
+    ViewData["Initials"] = "SM";
+    Layout = "_PortalLayout";
+}
+
+<section class="portal-screen active" data-screen="tracking">
+    <div class="page-heading">
+        <div>
+            <p class="eyebrow">ORDER LIFECYCLE</p>
+            <h1>Order Tracking</h1>
+            <p>Created by, SAP status and responsible operator.</p>
+        </div>
+    </div>
+    <article class="panel">
+        <div class="table-wrap">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Order</th>
+                        <th>Customer</th>
+                        <th>Created by</th>
+                        <th>SAP</th>
+                        <th>Operator</th>
+                        <th>Progress</th>
+                        <th>Status</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr data-nav="tracking-detail">
+                        <td>PO-1042</td>
+                        <td>Eskom Arnot</td>
+                        <td>Sales Manager</td>
+                        <td>45001234</td>
+                        <td>Weighbridge Operator</td>
+                        <td>340 / 500 t</td>
+                        <td>
+                            <span class="badge blue">In progress</span>
+                        </td>
+                    </tr>
+                    <tr data-nav="tracking-detail">
+                        <td>PO-1048</td>
+                        <td>Msobo Coal</td>
+                        <td>Sales Manager</td>
+                        <td>Pending</td>
+                        <td>Not assigned</td>
+                        <td>0 / 300 t</td>
+                        <td>
+                            <span class="badge amber">Awaiting SAP</span>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </article>
+</section>
+

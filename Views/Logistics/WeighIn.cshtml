@@ -1,0 +1,41 @@
+@{
+    ViewData["Title"] = "Weigh In";
+    ViewData["RoleName"] = "Weighbridge Operator";
+    ViewData["RoleSubtitle"] = "Logistics & Weighbridge";
+    ViewData["Initials"] = "WO";
+    Layout = "_PortalLayout";
+}
+
+<section class="portal-screen active" data-screen="weigh-in">
+    <button class="back-link" data-nav="gate-check">← Gate check</button>
+    <div class="page-heading">
+        <div>
+            <p class="eyebrow">WEIGHBRIDGE STEP 1 OF 2</p>
+            <h1>Weigh In</h1>
+            <p>Record the empty truck weight.</p>
+        </div>
+    </div>
+    <form class="panel form-card" data-demo-form data-next="weigh-out" data-success="Weigh-in recorded">
+        <div class="form-grid">
+            <label>
+                Truck<input readonly value="MP 45 TR GP">
+            </label>
+            <label>
+                Waybill<input readonly value="WB-2026-2409">
+            </label>
+            <label>
+                Weigh-in weight (kg) *<input required type="number" value="18420">
+            </label>
+            <label>
+                Date and time<input type="datetime-local" value="2026-08-12T10:42">
+            </label>
+            <label class="full">
+                Upload weigh-in slip<input type="file">
+            </label>
+        </div>
+        <div class="form-actions">
+            <button class="btn-gold">Record weigh-in</button>
+        </div>
+    </form>
+</section>
+

@@ -1,0 +1,76 @@
+@{
+    ViewData["Title"] = "Weighbridge Activity";
+    ViewData["RoleName"] = "Site Manager";
+    ViewData["RoleSubtitle"] = "Operations Oversight";
+    ViewData["Initials"] = "SM";
+    Layout = "_PortalLayout";
+}
+
+<section class="portal-screen active" data-screen="weighbridge">
+    <div class="page-heading">
+        <div>
+            <p class="eyebrow">OPERATIONAL LOG</p>
+            <h1>Weighbridge Activity</h1>
+            <p>Full collection log for site oversight.</p>
+        </div>
+    </div>
+    <div class="stat-grid">
+        <article>
+            <small>Today's loads</small>
+            <strong>12</strong>
+        </article>
+        <article>
+            <small>Net tonnage</small>
+            <strong>340 t</strong>
+        </article>
+        <article>
+            <small>Trucks on site</small>
+            <strong>2</strong>
+        </article>
+        <article>
+            <small>Average turnaround</small>
+            <strong>48 min</strong>
+        </article>
+    </div>
+    <article class="panel">
+        <div class="table-wrap">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Transaction</th>
+                        <th>Order</th>
+                        <th>Truck</th>
+                        <th>Driver</th>
+                        <th>In</th>
+                        <th>Out</th>
+                        <th>Net</th>
+                        <th>Operator</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>WB-2408</td>
+                        <td>PO-1042</td>
+                        <td>MP 45 TR GP</td>
+                        <td>Joseph Dlamini</td>
+                        <td>18,420 kg</td>
+                        <td>52,620 kg</td>
+                        <td>34.2 t</td>
+                        <td>Weighbridge Operator</td>
+                    </tr>
+                    <tr>
+                        <td>WB-2407</td>
+                        <td>PO-1042</td>
+                        <td>MP 12 AB GP</td>
+                        <td>Simon Khumalo</td>
+                        <td>18,160 kg</td>
+                        <td>51,960 kg</td>
+                        <td>33.8 t</td>
+                        <td>Weighbridge Operator</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </article>
+</section>
+

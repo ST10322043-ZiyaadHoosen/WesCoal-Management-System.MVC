@@ -1,0 +1,55 @@
+@{
+    ViewData["Title"] = "Eskom Arnot";
+    ViewData["RoleName"] = "Sales Manager";
+    ViewData["RoleSubtitle"] = "Sales Portal";
+    ViewData["Initials"] = "SM";
+    Layout = "_PortalLayout";
+}
+
+<section class="portal-screen active" data-screen="order-detail">
+    <button class="back-link" data-nav="orders">← Purchase orders</button>
+    <div class="page-heading">
+        <div>
+            <p class="eyebrow">PURCHASE ORDER PO-1042</p>
+            <h1>Eskom Arnot</h1>
+            <p>SAP 45001234 · Thermal coal</p>
+        </div>
+        <span class="badge blue">In progress</span>
+    </div>
+    <div class="stat-grid">
+        <article>
+            <small>Ordered</small>
+            <strong>500 t</strong>
+        </article>
+        <article>
+            <small>Delivered</small>
+            <strong>340 t</strong>
+        </article>
+        <article>
+            <small>Remaining</small>
+            <strong>160 t</strong>
+        </article>
+        <article>
+            <small>Progress</small>
+            <strong>68%</strong>
+        </article>
+    </div>
+    <article class="panel">
+        <h2>Delivery progress</h2>
+        <div class="progress large">
+            <i style="width:68%">
+            </i>
+        </div>
+        <p class="muted">The weighbridge updates this balance after each completed truck transaction.</p>
+        <hr>
+        <h2>Status timeline</h2>
+        <div class="timeline">
+            <span class="done">Logged</span>
+            <span class="done">SAP entered</span>
+            <span class="done">Approved</span>
+            <span class="current">In progress</span>
+            <span>Fulfilled</span>
+        </div>
+    </article>
+</section>
+

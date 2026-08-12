@@ -1,0 +1,55 @@
+@{
+    ViewData["Title"] = "Weighbridge Log";
+    ViewData["RoleName"] = "Weighbridge Operator";
+    ViewData["RoleSubtitle"] = "Logistics & Weighbridge";
+    ViewData["Initials"] = "WO";
+    Layout = "_PortalLayout";
+}
+
+<section class="portal-screen active" data-screen="log">
+    <div class="page-heading">
+        <div>
+            <p class="eyebrow">AUDITABLE RECORD</p>
+            <h1>Weighbridge Log</h1>
+            <p>Historical record of completed collections.</p>
+        </div>
+    </div>
+    <article class="panel">
+        <div class="table-wrap">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Transaction</th>
+                        <th>Time</th>
+                        <th>Order</th>
+                        <th>Truck</th>
+                        <th>Driver</th>
+                        <th>Net</th>
+                        <th>Operator</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>WB-2408</td>
+                        <td>10:25</td>
+                        <td>PO-1042</td>
+                        <td>MP 45 TR GP</td>
+                        <td>Joseph Dlamini</td>
+                        <td>34.2 t</td>
+                        <td>Weighbridge Operator</td>
+                    </tr>
+                    <tr>
+                        <td>WB-2407</td>
+                        <td>09:40</td>
+                        <td>PO-1042</td>
+                        <td>MP 12 AB GP</td>
+                        <td>Simon Khumalo</td>
+                        <td>33.8 t</td>
+                        <td>Weighbridge Operator</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </article>
+</section>
+

@@ -1,0 +1,62 @@
+@{
+    ViewData["Title"] = "All Contracts";
+    ViewData["RoleName"] = "Senior Manager";
+    ViewData["RoleSubtitle"] = "Senior Management";
+    ViewData["Initials"] = "SM";
+    Layout = "_PortalLayout";
+}
+
+<section class="portal-screen active" data-screen="contracts">
+    <div class="page-heading">
+        <div>
+            <p class="eyebrow">READ-ONLY</p>
+            <h1>All Contracts</h1>
+            <p>Company-wide contract visibility.</p>
+        </div>
+    </div>
+    <article class="panel">
+        <div class="table-wrap">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Contract</th>
+                        <th>Customer</th>
+                        <th>Type</th>
+                        <th>Total</th>
+                        <th>Delivered</th>
+                        <th>Remaining</th>
+                        <th>Value</th>
+                        <th>Status</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>CSA-2026-001</td>
+                        <td>Eskom Arnot</td>
+                        <td>Coal supply</td>
+                        <td>5,000 t</td>
+                        <td>3,400 t</td>
+                        <td>1,600 t</td>
+                        <td>R6.25m</td>
+                        <td>
+                            <span class="badge green">Active</span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>ADH-2026-014</td>
+                        <td>Msobo Coal</td>
+                        <td>Ad-hoc</td>
+                        <td>2,000 t</td>
+                        <td>840 t</td>
+                        <td>1,160 t</td>
+                        <td>R2.62m</td>
+                        <td>
+                            <span class="badge green">Active</span>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </article>
+</section>
+

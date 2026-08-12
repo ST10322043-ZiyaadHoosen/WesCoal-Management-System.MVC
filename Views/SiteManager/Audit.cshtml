@@ -1,0 +1,60 @@
+@{
+    ViewData["Title"] = "Site Audit";
+    ViewData["RoleName"] = "Site Manager";
+    ViewData["RoleSubtitle"] = "Operations Oversight";
+    ViewData["Initials"] = "SM";
+    Layout = "_PortalLayout";
+}
+
+<section class="portal-screen active" data-screen="audit">
+    <div class="page-heading">
+        <div>
+            <p class="eyebrow">SITE CONDITIONS</p>
+            <h1>Site Audit</h1>
+            <p>Operational checks and unresolved compliance items.</p>
+        </div>
+        <button class="btn-gold" data-toast="New site check recorded">Record site check</button>
+    </div>
+    <div class="check-list">
+        <span class="ok">✓ Weighbridge calibration checked · 12 Aug 08:00</span>
+        <span class="ok">✓ Loading area inspection passed · 12 Aug 08:15</span>
+        <span class="warn">! Driver medical certificate expires within 14 days</span>
+        <span class="warn">! One vehicle awaiting document verification</span>
+    </div>
+    <article class="panel top-gap">
+        <div class="table-wrap">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Date</th>
+                        <th>Check</th>
+                        <th>Completed by</th>
+                        <th>Result</th>
+                        <th>Notes</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>12 Aug</td>
+                        <td>Weighbridge calibration</td>
+                        <td>Site Manager</td>
+                        <td>
+                            <span class="badge green">Passed</span>
+                        </td>
+                        <td>No variance detected</td>
+                    </tr>
+                    <tr>
+                        <td>12 Aug</td>
+                        <td>Loading area inspection</td>
+                        <td>Site Manager</td>
+                        <td>
+                            <span class="badge green">Passed</span>
+                        </td>
+                        <td>Area clear and safe</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </article>
+</section>
+

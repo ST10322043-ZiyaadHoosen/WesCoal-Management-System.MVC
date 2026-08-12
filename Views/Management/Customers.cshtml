@@ -1,0 +1,62 @@
+@{
+    ViewData["Title"] = "All Customers";
+    ViewData["RoleName"] = "Senior Manager";
+    ViewData["RoleSubtitle"] = "Senior Management";
+    ViewData["Initials"] = "SM";
+    Layout = "_PortalLayout";
+}
+
+<section class="portal-screen active" data-screen="customers">
+    <div class="page-heading">
+        <div>
+            <p class="eyebrow">READ-ONLY</p>
+            <h1>All Customers</h1>
+            <p>Customer accounts, contacts and current account standing.</p>
+        </div>
+        <span class="badge blue">Read only</span>
+    </div>
+
+    <article class="panel">
+        <div class="table-wrap">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Customer</th>
+                        <th>Site</th>
+                        <th>Contact Person</th>
+                        <th>Email</th>
+                        <th>Active Contracts</th>
+                        <th>Account Status</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Eskom Arnot</strong></td>
+                        <td>Arnot Power Station</td>
+                        <td>Thabo Mokoena</td>
+                        <td>procurement@eskom.co.za</td>
+                        <td>2</td>
+                        <td><span class="badge green">Active</span></td>
+                    </tr>
+                    <tr>
+                        <td><strong>Msobo Coal</strong></td>
+                        <td>Ermelo</td>
+                        <td>Naledi Maseko</td>
+                        <td>orders@msobocoal.co.za</td>
+                        <td>1</td>
+                        <td><span class="badge amber">On hold</span></td>
+                    </tr>
+                    <tr>
+                        <td><strong>Seriti Resources</strong></td>
+                        <td>Kriel</td>
+                        <td>Lerato Nkosi</td>
+                        <td>logistics@seriti.co.za</td>
+                        <td>1</td>
+                        <td><span class="badge green">Active</span></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </article>
+</section>
+

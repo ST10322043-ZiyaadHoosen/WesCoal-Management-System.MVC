@@ -1,0 +1,29 @@
+@{
+    ViewData["Title"] = "Select Collection Type";
+    ViewData["RoleName"] = "Weighbridge Operator";
+    ViewData["RoleSubtitle"] = "Logistics & Weighbridge";
+    ViewData["Initials"] = "WO";
+    Layout = "_PortalLayout";
+}
+
+<section class="portal-screen active" data-screen="collection-type">
+    <button class="back-link" data-nav="order-detail">← Order details</button>
+    <div class="page-heading">
+        <div>
+            <p class="eyebrow">PO-1042</p>
+            <h1>Select Collection Type</h1>
+            <p>Choose how this vehicle visit will proceed.</p>
+        </div>
+    </div>
+    <div class="choice-grid">
+        <button class="choice-card" data-nav="truck-select">
+            <strong>Standard coal collection</strong>
+            <span>Empty weigh-in, load coal and loaded weigh-out.</span>
+        </button>
+        <button class="choice-card" data-nav="truck-select">
+            <strong>Coal washing service</strong>
+            <span>Record a service-only weighing transaction.</span>
+        </button>
+    </div>
+</section>
+

@@ -1,0 +1,82 @@
+@{
+    ViewData["Title"] = "Customers";
+    ViewData["RoleName"] = "Sales Manager";
+    ViewData["RoleSubtitle"] = "Sales Portal";
+    ViewData["Initials"] = "SM";
+    Layout = "_PortalLayout";
+}
+
+<section class="portal-screen active" data-screen="customers">
+    <div class="page-heading">
+        <div>
+            <p class="eyebrow">SALES</p>
+            <h1>Customers</h1>
+            <p>View and maintain customer accounts.</p>
+        </div>
+        <button class="btn-gold" data-nav="customer-create">+ Add customer</button>
+    </div>
+    <article class="panel">
+        <div class="toolbar">
+            <input type="search" placeholder="Search customers or sites…">
+            <select>
+                <option>All statuses</option>
+                <option>Active</option>
+                <option>On hold</option>
+            </select>
+        </div>
+        <div class="table-wrap">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Customer</th>
+                        <th>Site</th>
+                        <th>Contact</th>
+                        <th>Contracts</th>
+                        <th>Status</th>
+                        <th>
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr data-nav="customer-detail">
+                        <td>
+                            <b>Eskom Arnot</b>
+                        </td>
+                        <td>Arnot Power Station</td>
+                        <td>Thabo Mokoena</td>
+                        <td>2</td>
+                        <td>
+                            <span class="badge green">Active</span>
+                        </td>
+                        <td>›</td>
+                    </tr>
+                    <tr data-nav="customer-detail">
+                        <td>
+                            <b>Msobo Coal</b>
+                        </td>
+                        <td>Ermelo</td>
+                        <td>Naledi Maseko</td>
+                        <td>1</td>
+                        <td>
+                            <span class="badge amber">On hold</span>
+                        </td>
+                        <td>›</td>
+                    </tr>
+                    <tr data-nav="customer-detail">
+                        <td>
+                            <b>Seriti Resources</b>
+                        </td>
+                        <td>Kriel</td>
+                        <td>Lerato Nkosi</td>
+                        <td>1</td>
+                        <td>
+                            <span class="badge green">Active</span>
+                        </td>
+                        <td>›</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </article>
+</section>
+

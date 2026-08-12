@@ -1,0 +1,63 @@
+@{
+    ViewData["Title"] = "Orders Queue";
+    ViewData["RoleName"] = "Finance Officer";
+    ViewData["RoleSubtitle"] = "Finance Portal";
+    ViewData["Initials"] = "FO";
+    Layout = "_PortalLayout";
+}
+
+<section class="portal-screen active" data-screen="queue">
+    <div class="page-heading">
+        <div>
+            <p class="eyebrow">FINANCE ACTION</p>
+            <h1>Orders Queue</h1>
+            <p>Orders waiting for SAP entry and approval.</p>
+        </div>
+    </div>
+    <article class="panel">
+        <div class="table-wrap">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Order</th>
+                        <th>Customer</th>
+                        <th>Contract</th>
+                        <th>Tonnage</th>
+                        <th>Value</th>
+                        <th>Created</th>
+                        <th>Status</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr data-nav="order-detail">
+                        <td>
+                            <b>PO-1048</b>
+                        </td>
+                        <td>Msobo Coal</td>
+                        <td>ADH-2026-014</td>
+                        <td>300 t</td>
+                        <td>R393,000</td>
+                        <td>11 Aug 2026</td>
+                        <td>
+                            <span class="badge amber">Awaiting SAP</span>
+                        </td>
+                    </tr>
+                    <tr data-nav="order-detail">
+                        <td>
+                            <b>PO-1051</b>
+                        </td>
+                        <td>Seriti Resources</td>
+                        <td>SPOT-2026-009</td>
+                        <td>250 t</td>
+                        <td>R350,000</td>
+                        <td>12 Aug 2026</td>
+                        <td>
+                            <span class="badge amber">Awaiting SAP</span>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </article>
+</section>
+

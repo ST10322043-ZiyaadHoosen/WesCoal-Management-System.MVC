@@ -1,0 +1,70 @@
+@{
+    ViewData["Title"] = "Fleet &amp; Compliance";
+    ViewData["RoleName"] = "Site Manager";
+    ViewData["RoleSubtitle"] = "Operations Oversight";
+    ViewData["Initials"] = "SM";
+    Layout = "_PortalLayout";
+}
+
+<section class="portal-screen active" data-screen="fleet">
+    <div class="page-heading">
+        <div>
+            <p class="eyebrow">OPERATIONAL COMPLIANCE</p>
+            <h1>Fleet &amp; Compliance</h1>
+            <p>Registered vehicles and driver documents.</p>
+        </div>
+    </div>
+    <div class="alert-box">
+        <strong>1 vehicle pending verification</strong>
+        <span>MP 88 ZX GP must be approved before gate access.</span>
+    </div>
+    <article class="panel">
+        <div class="table-wrap">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Customer</th>
+                        <th>Truck</th>
+                        <th>Driver</th>
+                        <th>Licence</th>
+                        <th>Medical</th>
+                        <th>Status</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Eskom Arnot</td>
+                        <td>MP 45 TR GP</td>
+                        <td>Joseph Dlamini</td>
+                        <td>Valid</td>
+                        <td>30 Nov</td>
+                        <td>
+                            <span class="badge green">Approved</span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Eskom Arnot</td>
+                        <td>MP 12 AB GP</td>
+                        <td>Simon Khumalo</td>
+                        <td>Valid</td>
+                        <td>22 Aug</td>
+                        <td>
+                            <span class="badge amber">Expiring soon</span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Seriti Resources</td>
+                        <td>MP 88 ZX GP</td>
+                        <td>Peter Molefe</td>
+                        <td>Pending</td>
+                        <td>Pending</td>
+                        <td>
+                            <span class="badge amber">Unverified</span>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </article>
+</section>
+

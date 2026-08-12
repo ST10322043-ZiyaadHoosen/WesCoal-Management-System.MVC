@@ -1,0 +1,56 @@
+@{
+    ViewData["Title"] = "Customer Fleet";
+    ViewData["RoleName"] = "Weighbridge Operator";
+    ViewData["RoleSubtitle"] = "Logistics & Weighbridge";
+    ViewData["Initials"] = "WO";
+    Layout = "_PortalLayout";
+}
+
+<section class="portal-screen active" data-screen="fleet">
+    <div class="page-heading">
+        <div>
+            <p class="eyebrow">COMPLIANCE</p>
+            <h1>Customer Fleet</h1>
+            <p>Registered trucks and drivers.</p>
+        </div>
+    </div>
+    <article class="panel">
+        <div class="table-wrap">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Customer</th>
+                        <th>Truck</th>
+                        <th>Driver</th>
+                        <th>Licence</th>
+                        <th>Medical</th>
+                        <th>Status</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Eskom Arnot</td>
+                        <td>MP 45 TR GP</td>
+                        <td>Joseph Dlamini</td>
+                        <td>Valid</td>
+                        <td>30 Nov 2026</td>
+                        <td>
+                            <span class="badge green">Approved</span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Eskom Arnot</td>
+                        <td>MP 12 AB GP</td>
+                        <td>Simon Khumalo</td>
+                        <td>Valid</td>
+                        <td>22 Aug 2026</td>
+                        <td>
+                            <span class="badge amber">Expiring soon</span>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </article>
+</section>
+

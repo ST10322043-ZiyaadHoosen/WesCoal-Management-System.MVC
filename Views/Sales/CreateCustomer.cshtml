@@ -1,0 +1,50 @@
+@{
+    ViewData["Title"] = "Add Customer";
+    ViewData["RoleName"] = "Sales Manager";
+    ViewData["RoleSubtitle"] = "Sales Portal";
+    ViewData["Initials"] = "SM";
+    Layout = "_PortalLayout";
+}
+
+<section class="portal-screen active" data-screen="customer-create">
+    <button class="back-link" data-nav="customers">← Customers</button>
+    <div class="page-heading">
+        <div>
+            <p class="eyebrow">NEW RECORD</p>
+            <h1>Add Customer</h1>
+            <p>Create a customer portal account.</p>
+        </div>
+    </div>
+    <form class="panel form-card" data-demo-form data-success="Customer added and invitation sent">
+        <h2>Company details</h2>
+        <div class="form-grid">
+            <label>
+                Company name *<input required placeholder="e.g. Eskom Arnot">
+            </label>
+            <label>
+                Site / location *<input required placeholder="e.g. Arnot Power Station">
+            </label>
+            <label>
+                VAT number<input placeholder="4230187456">
+            </label>
+            <label>
+                Contact person *<input required placeholder="Full name">
+            </label>
+            <label>
+                Email address *<input required type="email" placeholder="name@company.co.za">
+            </label>
+            <label>
+                Phone number<input placeholder="+27 xx xxx xxxx">
+            </label>
+            <label class="full">
+                Physical address<textarea rows="3">
+            </textarea>
+        </label>
+    </div>
+    <div class="form-actions">
+        <button type="button" class="btn-outline" data-nav="customers">Cancel</button>
+        <button class="btn-gold">Add customer</button>
+    </div>
+</form>
+</section>
+

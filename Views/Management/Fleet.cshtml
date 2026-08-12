@@ -1,0 +1,74 @@
+@{
+    ViewData["Title"] = "Fleet Compliance";
+    ViewData["RoleName"] = "Senior Manager";
+    ViewData["RoleSubtitle"] = "Senior Management";
+    ViewData["Initials"] = "SM";
+    Layout = "_PortalLayout";
+}
+
+<section class="portal-screen active" data-screen="fleet">
+    <div class="page-heading">
+        <div>
+            <p class="eyebrow">RISK &amp; COMPLIANCE</p>
+            <h1>Fleet Compliance</h1>
+            <p>Company-wide truck and driver compliance.</p>
+        </div>
+    </div>
+    <div class="stat-grid">
+        <article>
+            <small>Registered trucks</small>
+            <strong>18</strong>
+        </article>
+        <article>
+            <small>Compliant</small>
+            <strong>16</strong>
+        </article>
+        <article>
+            <small>Expiring soon</small>
+            <strong>1</strong>
+        </article>
+        <article>
+            <small>Pending review</small>
+            <strong>1</strong>
+        </article>
+    </div>
+    <article class="panel">
+        <div class="table-wrap">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Customer</th>
+                        <th>Truck</th>
+                        <th>Driver</th>
+                        <th>Licence</th>
+                        <th>Medical</th>
+                        <th>Status</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Eskom Arnot</td>
+                        <td>MP 45 TR GP</td>
+                        <td>Joseph Dlamini</td>
+                        <td>Valid</td>
+                        <td>30 Nov</td>
+                        <td>
+                            <span class="badge green">Compliant</span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Eskom Arnot</td>
+                        <td>MP 12 AB GP</td>
+                        <td>Simon Khumalo</td>
+                        <td>Valid</td>
+                        <td>22 Aug</td>
+                        <td>
+                            <span class="badge amber">Expiring</span>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </article>
+</section>
+

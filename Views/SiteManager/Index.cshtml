@@ -1,0 +1,82 @@
+@{
+    ViewData["Title"] = "Site Dashboard";
+    ViewData["RoleName"] = "Site Manager";
+    ViewData["RoleSubtitle"] = "Operations Oversight";
+    ViewData["Initials"] = "SM";
+    Layout = "_PortalLayout";
+}
+
+<section class="portal-screen active" data-screen="dashboard">
+    <div class="page-heading">
+        <div>
+            <p class="eyebrow">SITE OPERATIONS</p>
+            <h1>Site Dashboard</h1>
+            <p>Operational overview without financial information.</p>
+        </div>
+        <span class="badge blue">Operational view</span>
+    </div>
+    <div class="alert-box">
+        <strong>2 orders awaiting SAP</strong>
+        <span>These orders cannot proceed to collection until Finance activates them.</span>
+    </div>
+    <div class="stat-grid">
+        <article>
+            <small>Active orders</small>
+            <strong>6</strong>
+            <span>Ready for collection</span>
+        </article>
+        <article>
+            <small>Today's loads</small>
+            <strong>12</strong>
+            <span>340 t collected</span>
+        </article>
+        <article>
+            <small>Trucks on site</small>
+            <strong>2</strong>
+        </article>
+        <article>
+            <small>Compliance items</small>
+            <strong>2</strong>
+            <span>Require attention</span>
+        </article>
+    </div>
+    <div class="content-grid">
+        <article class="panel">
+            <div class="panel-title">
+                <h2>Order progress</h2>
+                <button data-nav="tracking">View all</button>
+            </div>
+            <div class="contract-row">
+                <div>
+                    <strong>PO-1042 · Eskom Arnot</strong>
+                    <small>340 t of 500 t delivered</small>
+                </div>
+                <span class="badge blue">In progress</span>
+                <div class="progress">
+                    <i style="width:68%">
+                    </i>
+                </div>
+            </div>
+            <div class="contract-row">
+                <div>
+                    <strong>PO-1045 · Seriti Resources</strong>
+                    <small>Ready for first collection</small>
+                </div>
+                <span class="badge green">Active</span>
+                <div class="progress">
+                    <i style="width:0%">
+                    </i>
+                </div>
+            </div>
+        </article>
+        <article class="panel">
+            <h2>Site attention</h2>
+            <div class="check-list">
+                <span class="warn">Driver medical certificate expires 22 Aug</span>
+                <span class="warn">Truck MP 88 ZX GP pending verification</span>
+                <span class="ok">All weighbridge equipment checks passed</span>
+            </div>
+        </article>
+    </div>
+</section>
+

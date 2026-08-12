@@ -1,0 +1,52 @@
+@{
+    ViewData["Title"] = "Thermal Coal Collection";
+    ViewData["RoleName"] = "Customer User";
+    ViewData["RoleSubtitle"] = "Customer Portal";
+    ViewData["Initials"] = "CU";
+    Layout = "_PortalLayout";
+}
+
+<section class="portal-screen active" data-screen="order-detail">
+    <button class="back-link" data-nav="orders">← My orders</button>
+    <div class="page-heading">
+        <div>
+            <p class="eyebrow">PURCHASE ORDER PO-1042</p>
+            <h1>Thermal Coal Collection</h1>
+            <p>SAP order 45001234</p>
+        </div>
+        <span class="badge blue">In progress</span>
+    </div>
+    <div class="stat-grid">
+        <article>
+            <small>Ordered</small>
+            <strong>500 t</strong>
+        </article>
+        <article>
+            <small>Delivered</small>
+            <strong>340 t</strong>
+        </article>
+        <article>
+            <small>Remaining</small>
+            <strong>160 t</strong>
+        </article>
+        <article>
+            <small>Truck visits</small>
+            <strong>10</strong>
+        </article>
+    </div>
+    <article class="panel">
+        <h2>Delivery progress</h2>
+        <div class="progress large">
+            <i style="width:68%">
+            </i>
+        </div>
+        <div class="timeline">
+            <span class="done">Logged</span>
+            <span class="done">SAP entered</span>
+            <span class="done">Approved</span>
+            <span class="current">In progress</span>
+            <span>Fulfilled</span>
+        </div>
+    </article>
+</section>
+

@@ -1,0 +1,100 @@
+@{
+    ViewData["Title"] = "Sales Dashboard";
+    ViewData["RoleName"] = "Sales Manager";
+    ViewData["RoleSubtitle"] = "Sales Portal";
+    ViewData["Initials"] = "SM";
+    Layout = "_PortalLayout";
+}
+
+<section class="portal-screen active" data-screen="dashboard">
+    <div class="page-heading">
+        <div>
+            <p class="eyebrow">SALES OVERVIEW</p>
+            <h1>Sales Dashboard</h1>
+            <p>Contracts, orders and customer activity.</p>
+        </div>
+        <button class="btn-gold" data-nav="order-create">+ New purchase order</button>
+    </div>
+    <div class="alert-box">
+        <strong>Account notice</strong>
+        <span>1 customer is on hold because of outstanding invoices.</span>
+    </div>
+    <div class="stat-grid">
+        <article>
+            <small>Active contracts</small>
+            <strong>4</strong>
+            <span>Across 3 customers</span>
+        </article>
+        <article>
+            <small>Open orders</small>
+            <strong>6</strong>
+            <span>2 awaiting SAP</span>
+        </article>
+        <article>
+            <small>Delivered this month</small>
+            <strong>1,840 t</strong>
+            <span>73% of allocation</span>
+        </article>
+        <article>
+            <small>Contract value</small>
+            <strong>R8.4m</strong>
+            <span>Active agreements</span>
+        </article>
+    </div>
+    <div class="content-grid">
+        <article class="panel">
+            <div class="panel-title">
+                <h2>Active contracts</h2>
+                <button data-nav="contracts">View all</button>
+            </div>
+            <div class="contract-row">
+                <div>
+                    <strong>Eskom Arnot</strong>
+                    <small>CSA-2026-001 · Thermal coal</small>
+                </div>
+                <span class="badge green">Active</span>
+                <div class="progress">
+                    <i style="width:68%">
+                    </i>
+                </div>
+                <small>3,400 t of 5,000 t delivered</small>
+            </div>
+            <div class="contract-row">
+                <div>
+                    <strong>Msobo Coal</strong>
+                    <small>ADH-2026-014 · Duff</small>
+                </div>
+                <span class="badge green">Active</span>
+                <div class="progress">
+                    <i style="width:42%">
+                    </i>
+                </div>
+                <small>840 t of 2,000 t delivered</small>
+            </div>
+        </article>
+        <article class="panel">
+            <div class="panel-title">
+                <h2>Recent orders</h2>
+                <button data-nav="orders">View all</button>
+            </div>
+            <div class="mini-table">
+                <button data-nav="order-detail">
+                    <b>PO-1042</b>
+                    <span>Eskom Arnot</span>
+                    <em class="badge blue">In progress</em>
+                </button>
+                <button data-nav="order-detail">
+                    <b>PO-1048</b>
+                    <span>Msobo Coal</span>
+                    <em class="badge amber">Awaiting SAP</em>
+                </button>
+                <button data-nav="order-detail">
+                    <b>PO-1039</b>
+                    <span>Eskom Arnot</span>
+                    <em class="badge green">Fulfilled</em>
+                </button>
+            </div>
+        </article>
+    </div>
+</section>
+
