@@ -1,1 +1,229 @@
-.login-page{min-height:100vh;background:#171b1f;color:white;display:grid;grid-template-columns:2fr 3fr}.login-intro{background:#174936;padding:3rem;display:flex;flex-direction:column;justify-content:space-between}.login-brand{display:flex;align-items:center;gap:.75rem}.login-brand>div{display:grid}.login-brand strong{font-size:1.15rem}.login-brand small{color:#ffffff99}.login-intro-content{max-width:520px;margin:auto 0}.login-intro h1{font-size:clamp(2.6rem,5vw,4.5rem);line-height:1.02;letter-spacing:-.04em;margin:0 0 1.4rem}.login-intro-content>p{color:#ffffffb5;font-size:1.05rem;line-height:1.6}.login-stat-grid{display:grid;grid-template-columns:1fr 1fr;gap:.8rem;margin-top:2rem}.login-stat-grid article,.access-policy{background:#ffffff12;border-radius:11px;padding:1rem}.login-stat-grid article{display:grid}.login-stat-grid strong{font-size:1.55rem}.login-stat-grid span,.access-policy p{color:#ffffff9c;font-size:.78rem}.access-policy{margin-top:1rem}.access-policy p{margin:.45rem 0 0}.prototype-note{color:#ffffff4d}.login-form-panel{display:flex;align-items:center;justify-content:center;padding:2rem;overflow:auto}.role-login-form{width:min(100%,480px)}.role-login-form h2{font-size:2rem;margin:0}.role-login-form>p{color:#9fa8ae;margin:.4rem 0 1.5rem}.role-selector{border:0;padding:0;margin:0 0 1.2rem;display:grid;gap:.5rem}.role-selector legend{font-size:.7rem;color:#9fa8ae;text-transform:uppercase;letter-spacing:.08em;font-weight:800;margin-bottom:.55rem}.role-option{border:2px solid #ffffff14;background:#ffffff08;border-radius:10px;padding:.7rem;display:flex;align-items:center;gap:.8rem;cursor:pointer}.role-option:hover,.role-option.selected{border-color:var(--gold);background:#e9b94912}.role-option input{position:absolute;opacity:0;pointer-events:none}.role-option>span:last-child{display:grid}.role-option strong{font-size:.85rem}.role-option small{color:#8f999f;font-size:.72rem}.role-tag{background:#e9b94922;color:var(--gold);font-size:.65rem;font-weight:800;padding:.25rem .45rem;border-radius:4px;min-width:70px;text-align:center}.login-field{display:grid;gap:.35rem;color:#aab2b7;font-size:.75rem;font-weight:700;margin-top:.8rem}.login-field input{background:#ffffff0c;border-color:#ffffff20;color:white}.login-button{width:100%;margin-top:1rem;padding:.85rem}.form-note{display:block;text-align:center;color:#68727a;margin-top:1rem}@media(max-width:900px){.login-page{grid-template-columns:1fr}.login-intro{display:none}.login-form-panel{min-height:100vh}}@media(max-width:520px){.login-form-panel{padding:1rem}.role-option small{white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:220px}}
+.login-page {
+    min-height: 100vh;
+    background: #171b1f;
+    color: white;
+    display: grid;
+    grid-template-columns: 2fr 3fr
+}
+
+.login-intro {
+    background: #174936;
+    padding: 3rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between
+}
+
+.login-brand {
+    display: flex;
+    align-items: center;
+    gap: .75rem
+}
+
+    .login-brand > div {
+        display: grid
+    }
+
+    .login-brand strong {
+        font-size: 1.15rem
+    }
+
+    .login-brand small {
+        color: #ffffff99
+    }
+
+.login-intro-content {
+    max-width: 520px;
+    margin: auto 0
+}
+
+.login-intro h1 {
+    font-size: clamp(2.6rem,5vw,4.5rem);
+    line-height: 1.02;
+    letter-spacing: -.04em;
+    margin: 0 0 1.4rem
+}
+
+.login-intro-content > p {
+    color: #ffffffb5;
+    font-size: 1.05rem;
+    line-height: 1.6
+}
+
+.login-stat-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: .8rem;
+    margin-top: 2rem
+}
+
+    .login-stat-grid article, .access-policy {
+        background: #ffffff12;
+        border-radius: 11px;
+        padding: 1rem
+    }
+
+    .login-stat-grid article {
+        display: grid
+    }
+
+    .login-stat-grid strong {
+        font-size: 1.55rem
+    }
+
+    .login-stat-grid span, .access-policy p {
+        color: #ffffff9c;
+        font-size: .78rem
+    }
+
+.access-policy {
+    margin-top: 1rem
+}
+
+    .access-policy p {
+        margin: .45rem 0 0
+    }
+
+.prototype-note {
+    color: #ffffff4d
+}
+
+.login-form-panel {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+    overflow: auto
+}
+
+.role-login-form {
+    width: min(100%,480px)
+}
+
+    .role-login-form h2 {
+        font-size: 2rem;
+        margin: 0
+    }
+
+    .role-login-form > p {
+        color: #9fa8ae;
+        margin: .4rem 0 1.5rem
+    }
+
+.role-selector {
+    border: 0;
+    padding: 0;
+    margin: 0 0 1.2rem;
+    display: grid;
+    gap: .5rem
+}
+
+    .role-selector legend {
+        font-size: .7rem;
+        color: #9fa8ae;
+        text-transform: uppercase;
+        letter-spacing: .08em;
+        font-weight: 800;
+        margin-bottom: .55rem
+    }
+
+.role-option {
+    border: 2px solid #ffffff14;
+    background: #ffffff08;
+    border-radius: 10px;
+    padding: .7rem;
+    display: flex;
+    align-items: center;
+    gap: .8rem;
+    cursor: pointer
+}
+
+    .role-option:hover, .role-option.selected {
+        border-color: var(--gold);
+        background: #e9b94912
+    }
+
+    .role-option input {
+        position: absolute;
+        opacity: 0;
+        pointer-events: none
+    }
+
+    .role-option > span:last-child {
+        display: grid
+    }
+
+    .role-option strong {
+        font-size: .85rem
+    }
+
+    .role-option small {
+        color: #8f999f;
+        font-size: .72rem
+    }
+
+.role-tag {
+    background: #e9b94922;
+    color: var(--gold);
+    font-size: .65rem;
+    font-weight: 800;
+    padding: .25rem .45rem;
+    border-radius: 4px;
+    min-width: 70px;
+    text-align: center
+}
+
+.login-field {
+    display: grid;
+    gap: .35rem;
+    color: #aab2b7;
+    font-size: .75rem;
+    font-weight: 700;
+    margin-top: .8rem
+}
+
+    .login-field input {
+        background: #ffffff0c;
+        border-color: #ffffff20;
+        color: white
+    }
+
+.login-button {
+    width: 100%;
+    margin-top: 1rem;
+    padding: .85rem
+}
+
+.form-note {
+    display: block;
+    text-align: center;
+    color: #68727a;
+    margin-top: 1rem
+}
+
+@media(max-width:900px) {
+    .login-page {
+        grid-template-columns: 1fr
+    }
+
+    .login-intro {
+        display: none
+    }
+
+    .login-form-panel {
+        min-height: 100vh
+    }
+}
+
+@media(max-width:520px) {
+    .login-form-panel {
+        padding: 1rem
+    }
+
+    .role-option small {
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        max-width: 220px
+    }
+}
