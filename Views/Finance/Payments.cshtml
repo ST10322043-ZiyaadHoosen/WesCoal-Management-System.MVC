@@ -11,31 +11,50 @@
         <div>
             <p class="eyebrow">ACCOUNTS</p>
             <h1>Payments</h1>
-            <p>Paid, unpaid and on-hold customer accounts.</p>
+            <p>Monthly invoices from actual weighbridge deliveries.</p>
         </div>
     </div>
+
     <div class="alert-box">
         <strong>On hold</strong>
         <span>Msobo Coal cannot place new orders until INV-2026-043 is paid.</span>
     </div>
+
     <article class="panel">
+        <div class="toolbar">
+            <input type="search" placeholder="Search customer or invoice…">
+            <select>
+                <option>All payment statuses</option>
+                <option>Paid</option>
+                <option>Unpaid</option>
+                <option>Overdue</option>
+            </select>
+        </div>
+
         <div class="table-wrap">
             <table>
                 <thead>
                     <tr>
                         <th>Customer</th>
                         <th>Invoice</th>
+                        <th>Month</th>
+                        <th>Actual tonnage</th>
+                        <th>Price/t</th>
                         <th>Amount</th>
                         <th>Due date</th>
-                        <th>Payment</th>
-                        <th>Account</th>
+                        <th>Payment status</th>
+                        <th>Account status</th>
+                        <th></th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr data-nav="invoice-detail">
                         <td>Msobo Coal</td>
                         <td>INV-2026-043</td>
-                        <td>R393,000</td>
+                        <td>June 2026</td>
+                        <td>200 t</td>
+                        <td>R1,310</td>
+                        <td>R262,000</td>
                         <td>07 Aug 2026</td>
                         <td>
                             <span class="badge amber">Overdue</span>
@@ -43,11 +62,17 @@
                         <td>
                             <span class="badge amber">On hold</span>
                         </td>
+                        <td>
+                            <button class="btn-outline" data-toast="Invoice marked paid">Mark paid</button>
+                        </td>
                     </tr>
-                    <tr>
+                    <tr data-nav="invoice-detail">
                         <td>Eskom Arnot</td>
                         <td>INV-2026-071</td>
-                        <td>R625,000</td>
+                        <td>June 2026</td>
+                        <td>480 t</td>
+                        <td>R1,250</td>
+                        <td>R600,000</td>
                         <td>07 Aug 2026</td>
                         <td>
                             <span class="badge green">Paid</span>
@@ -55,10 +80,34 @@
                         <td>
                             <span class="badge green">Active</span>
                         </td>
+                        <td></td>
+                    </tr>
+                    <tr data-nav="invoice-detail">
+                        <td>Eskom Arnot</td>
+                        <td>INV-2026-084</td>
+                        <td>July 2026</td>
+                        <td>340 t</td>
+                        <td>R1,250</td>
+                        <td>R425,000</td>
+                        <td>07 Sep 2026</td>
+                        <td>
+                            <span class="badge amber">Unpaid</span>
+                        </td>
+                        <td>
+                            <span class="badge green">Active</span>
+                        </td>
+                        <td>
+                            <button class="btn-outline" data-toast="Invoice marked paid">Mark paid</button>
+                        </td>
                     </tr>
                 </tbody>
             </table>
         </div>
+
+        <p class="field-note">
+            Invoices are generated monthly from the actual tonnage recorded at the weighbridge.
+            The customer is billed for exactly what they collected, not the order or contract target.
+            Monthly allocation variances are carried forward and affect only the next month’s pace target.
+        </p>
     </article>
 </section>
-

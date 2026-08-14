@@ -8,13 +8,15 @@
 
 <section class="portal-screen active" data-screen="contract-create">
     <button class="back-link" data-nav="contracts">← Contracts</button>
+
     <div class="page-heading">
         <div>
             <p class="eyebrow">NEW AGREEMENT</p>
             <h1>Create Contract</h1>
-            <p>Record an approved customer supply agreement.</p>
+            <p>Record a customer supply or washing agreement.</p>
         </div>
     </div>
+
     <form class="panel form-card" data-demo-form data-success="Contract saved successfully">
         <div class="form-grid">
             <label>
@@ -22,8 +24,18 @@
                 <select required>
                     <option>Eskom Arnot</option>
                     <option>Msobo Coal</option>
+                    <option>Seriti Resources</option>
                 </select>
             </label>
+
+            <label>
+                Service type *
+                <select id="serviceType">
+                    <option value="sale">Coal Sale</option>
+                    <option value="wash">Coal Washing</option>
+                </select>
+            </label>
+
             <label>
                 Contract type *
                 <select>
@@ -32,31 +44,60 @@
                     <option>Spot sale</option>
                 </select>
             </label>
+
             <label>
-                Contract reference *<input required value="CSA-2026-001">
+                Contract reference *
+                <input required value="CSA-2026-001">
             </label>
-            <label>
+
+            <label id="coalProductField">
                 Coal product
                 <select>
                     <option>Thermal coal</option>
                     <option>Nuts</option>
                     <option>Peas</option>
                     <option>Duff</option>
+                    <option>Sweepings</option>
                 </select>
             </label>
+
             <label>
-                Total tonnage *<input required type="number" value="5000">
+                Total tonnage *
+                <input required type="number" value="5000">
             </label>
+
             <label>
-                Price per ton *<input required value="1250.00">
+                <span id="priceLabel">Price per ton *</span>
+                <input required value="1250.00">
+                <small id="priceNote" class="field-note">Charged per ton of coal sold.</small>
             </label>
+
             <label>
-                Start date<input type="date" value="2026-01-01">
+                Start date
+                <input type="date" value="2026-01-01">
             </label>
+
             <label>
-                End date<input type="date" value="2026-12-31">
+                End date
+                <input type="date" value="2026-12-31">
+            </label>
+
+            <label class="full">
+                Signed contract document *
+                <input type="file" accept=".pdf,.doc,.docx">
+                <small class="field-note">
+                    Attach the signed agreement. The key terms above are captured from it
+                    so the system can track tonnage, prices and expiry.
+                </small>
             </label>
         </div>
+
+        <div class="field-note full">
+            <strong>Monthly allocation</strong><br>
+            Monthly pace targets are calculated automatically from total tonnage ÷ contract term.
+            They never block collection — they only measure expected vs actual pace.
+        </div>
+
         <div class="form-actions">
             <button type="button" class="btn-outline" data-nav="contracts">Cancel</button>
             <button class="btn-gold">Save contract</button>
@@ -64,3 +105,28 @@
     </form>
 </section>
 
+@section Scripts {
+    <script>
+        (function () {
+            const service = document.getElementById('serviceType');
+            const coalField = document.getElementById('coalProductField');
+            const priceLabel = document.getElementById('priceLabel');
+            const priceNote = document.getElementById('priceNote');
+
+            function updateForm() {
+                if (service.value === 'wash') {
+                    coalField.style.display = 'none';
+                    priceLabel.textContent = 'Price per ton washed *';
+                    priceNote.textContent = 'Charged per ton of coal washed (3rd-party coal brought in).';
+                } else {
+                    coalField.style.display = '';
+                    priceLabel.textContent = 'Price per ton *';
+                    priceNote.textContent = 'Charged per ton of coal sold.';
+                }
+            }
+
+            service.addEventListener('change', updateForm);
+            updateForm();
+        })();
+    </script>
+}

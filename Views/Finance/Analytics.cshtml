@@ -1,0 +1,230 @@
+﻿@{
+    ViewData["Title"] = "Analytics";
+    ViewData["RoleName"] = "Finance Officer";
+    ViewData["RoleSubtitle"] = "Finance Portal";
+    ViewData["Initials"] = "FO";
+    Layout = "_PortalLayout";
+}
+
+<section class="portal-screen active" data-screen="analytics">
+    <div class="page-heading">
+        <div>
+            <p class="eyebrow">FINANCE ANALYTICS</p>
+            <h1>Analytics</h1>
+            <p>Revenue, invoices, deliveries and outstanding debt at a glance.</p>
+        </div>
+    </div>
+
+    <div class="stat-grid">
+        <article>
+            <small>Total invoiced (YTD)</small>
+            <strong>R1.29m</strong>
+            <span>Across 2 customers</span>
+        </article>
+        <article>
+            <small>Collected (YTD)</small>
+            <strong>R600,000</strong>
+            <span>1 paid invoice</span>
+        </article>
+        <article>
+            <small>Outstanding</small>
+            <strong>R687,000</strong>
+            <span>2 unpaid invoices</span>
+        </article>
+        <article>
+            <small>Overdue</small>
+            <strong>R262,000</strong>
+            <span>Msobo Coal on hold</span>
+        </article>
+    </div>
+
+    <article class="panel">
+        <div class="toolbar">
+            <select id="monthFilter">
+                <option value="all">All months</option>
+                <option value="june">June 2026</option>
+                <option value="july" selected>July 2026</option>
+                <option value="aug">August 2026</option>
+            </select>
+
+            <select id="customerFilter">
+                <option value="all">All customers</option>
+                <option value="eskom">Eskom Arnot</option>
+                <option value="msobo">Msobo Coal</option>
+                <option value="seriti">Seriti Resources</option>
+            </select>
+
+            <select id="statusFilter">
+                <option value="all">All invoice statuses</option>
+                <option value="paid">Paid</option>
+                <option value="unpaid">Unpaid</option>
+                <option value="overdue">Overdue</option>
+            </select>
+
+            <button class="btn-outline" id="applyFilters">Apply filters</button>
+        </div>
+        <p class="field-note">
+            Use filters to focus on a specific month, customer, or invoice status.
+            Charts below update based on the selected filters.
+        </p>
+    </article>
+
+    <div class="content-grid">
+        <article class="panel">
+            <div class="panel-title">
+                <h2>Revenue by customer</h2>
+                <small class="field-note">Total invoiced value per customer (YTD)</small>
+            </div>
+            <canvas id="revenueByCustomer" height="220"></canvas>
+        </article>
+
+        <article class="panel">
+            <div class="panel-title">
+                <h2>Invoice status</h2>
+                <small class="field-note">Paid vs unpaid vs overdue</small>
+            </div>
+            <canvas id="invoiceStatus" height="220"></canvas>
+        </article>
+    </div>
+
+    <div class="content-grid">
+        <article class="panel">
+            <div class="panel-title">
+                <h2>Monthly revenue vs collections</h2>
+                <small class="field-note">Actual tonnage delivered vs contract target</small>
+            </div>
+            <canvas id="monthlyDeliveries" height="220"></canvas>
+        </article>
+
+        <article class="panel">
+            <div class="panel-title">
+                <h2>Outstanding invoices ageing</h2>
+                <small class="field-note">By due date bucket</small>
+            </div>
+            <canvas id="aging" height="220"></canvas>
+        </article>
+    </div>
+</section>
+
+@section Scripts {
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.3/dist/chart.umd.min.js"></script>
+    <script>
+        (function () {
+            // Revenue by customer (R thousands)
+            new Chart(document.getElementById('revenueByCustomer'), {
+                type: 'bar',
+                data: {
+                    labels: ['Eskom Arnot', 'Msobo Coal', 'Seriti Resources'],
+                    datasets: [{
+                        label: 'Invoiced (R)',
+                        data: [1025, 262, 0],
+                        backgroundColor: ['#c8102e', '#1f3a5f', '#18794e'],
+                        borderRadius: 10
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    plugins: { legend: { display: false } },
+                    scales: {
+                        y: {
+                            beginAtZero: true,
+                            ticks: {
+                                callback: function (value) {
+                                    return 'R' + value + 'k';
+                                }
+                            }
+                        }
+                    }
+                }
+            });
+
+            // Invoice status donut
+            new Chart(document.getElementById('invoiceStatus'), {
+                type: 'doughnut',
+                data: {
+                    labels: ['Paid', 'Unpaid', 'Overdue'],
+                    datasets: [{
+                        data: [1, 1, 1],
+                        backgroundColor: ['#18794e', '#e9b949', '#c8102e'],
+                        borderWidth: 0
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    plugins: { legend: { position: 'bottom' } }
+                }
+            });
+
+            // Monthly deliveries vs target
+            new Chart(document.getElementById('monthlyDeliveries'), {
+                type: 'bar',
+                data: {
+                    labels: ['May', 'June', 'July', 'Aug'],
+                    datasets: [
+                        {
+                            label: 'Delivered (t)',
+                            data: [420, 480, 340, 340],
+                            backgroundColor: '#1769aa',
+                            borderRadius: 6
+                        },
+                        {
+                            label: 'Contracted target (t)',
+                            data: [417, 417, 417, 417],
+                            type: 'line',
+                            borderColor: '#c8102e',
+                            borderDash: [5, 5],
+                            fill: false,
+                            pointBackgroundColor: '#c8102e'
+                        }
+                    ]
+                },
+                options: {
+                    responsive: true,
+                    plugins: { legend: { position: 'bottom' } },
+                    scales: { y: { beginAtZero: true, title: { display: true, text: 'Tonnes' } } }
+                }
+            });
+
+            // Outstanding invoice ageing
+            new Chart(document.getElementById('aging'), {
+                type: 'bar',
+                data: {
+                    labels: ['Current', '1-30 days', '31-60 days', '90+ days'],
+                    datasets: [{
+                        label: 'Outstanding amount (R)',
+                        data: [425000, 262000, 0, 0],
+                        backgroundColor: ['#18794e', '#e9b949', '#c8102e', '#7a1f2b'],
+                        borderRadius: 8
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    plugins: { legend: { display: false } },
+                    scales: {
+                        y: {
+                            beginAtZero: true,
+                            ticks: {
+                                callback: function (value) {
+                                    return 'R' + (value / 1000).toFixed(0) + 'k';
+                                }
+                            }
+                        }
+                    }
+                }
+            });
+
+            document.getElementById('applyFilters').addEventListener('click', function () {
+                const month = document.getElementById('monthFilter').value;
+                const customer = document.getElementById('customerFilter').value;
+                const status = document.getElementById('statusFilter').value;
+
+                const toast = document.querySelector('[data-toast-box]');
+                if (toast) {
+                    toast.textContent = `Filters applied: ${month}, ${customer}, ${status}`;
+                    toast.classList.add('show');
+                    setTimeout(() => toast.classList.remove('show'), 2500);
+                }
+            });
+        })();
+    </script>
+}

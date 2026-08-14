@@ -14,6 +14,13 @@
             <p>SAP activation, invoicing and payment tracking.</p>
         </div>
     </div>
+
+    <div class="alert-box">
+        <strong>Credit hold</strong>
+        <span>Msobo Coal is on hold because of an overdue invoice.</span>
+        <button class="btn-outline" data-nav="payments">Review payments</button>
+    </div>
+
     <div class="stat-grid">
         <article>
             <small>Awaiting SAP</small>
@@ -21,21 +28,22 @@
             <span>Finance action required</span>
         </article>
         <article>
-            <small>Active orders</small>
-            <strong>6</strong>
-            <span>Available for collection</span>
+            <small>Orders in progress</small>
+            <strong>4</strong>
+            <span>Collecting on site</span>
         </article>
         <article>
-            <small>Unpaid invoices</small>
-            <strong>3</strong>
-            <span>R1.2m outstanding</span>
+            <small>Outstanding</small>
+            <strong>R687,000</strong>
+            <span>2 unpaid invoices</span>
         </article>
         <article>
-            <small>Received this month</small>
-            <strong>R2.4m</strong>
-            <span>8 invoices</span>
+            <small>Credit hold</small>
+            <strong>1</strong>
+            <span>Msobo Coal</span>
         </article>
     </div>
+
     <div class="content-grid">
         <article class="panel">
             <div class="panel-title">
@@ -55,6 +63,7 @@
                 </button>
             </div>
         </article>
+
         <article class="panel">
             <div class="panel-title">
                 <h2>Recent invoices</h2>
@@ -63,16 +72,20 @@
             <div class="mini-table">
                 <button data-nav="invoice-detail">
                     <b>INV-2026-084</b>
-                    <span>Eskom Arnot · R625,000</span>
+                    <span>Eskom Arnot · R425,000</span>
                     <em class="badge amber">Unpaid</em>
                 </button>
                 <button data-nav="invoice-detail">
                     <b>INV-2026-071</b>
-                    <span>Eskom Arnot · R625,000</span>
+                    <span>Eskom Arnot · R600,000</span>
                     <em class="badge green">Paid</em>
+                </button>
+                <button data-nav="invoice-detail">
+                    <b>INV-2026-043</b>
+                    <span>Msobo Coal · R262,000</span>
+                    <em class="badge amber">Overdue</em>
                 </button>
             </div>
         </article>
     </div>
 </section>
-

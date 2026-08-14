@@ -15,15 +15,17 @@
         </div>
         <button class="btn-gold" data-nav="customer-create">+ Add customer</button>
     </div>
+
     <article class="panel">
         <div class="toolbar">
             <input type="search" placeholder="Search customers or sites…">
             <select>
-                <option>All statuses</option>
+                <option>All account statuses</option>
                 <option>Active</option>
                 <option>On hold</option>
             </select>
         </div>
+
         <div class="table-wrap">
             <table>
                 <thead>
@@ -32,9 +34,8 @@
                         <th>Site</th>
                         <th>Contact</th>
                         <th>Contracts</th>
-                        <th>Status</th>
-                        <th>
-                        </th>
+                        <th>Account status</th>
+                        <th></th>
                     </tr>
                 </thead>
                 <tbody>
@@ -43,7 +44,10 @@
                             <b>Eskom Arnot</b>
                         </td>
                         <td>Arnot Power Station</td>
-                        <td>Thabo Mokoena</td>
+                        <td>
+                            Thabo Mokoena
+                            <small class="field-note">thabo.mokoena@eskom.co.za</small>
+                        </td>
                         <td>2</td>
                         <td>
                             <span class="badge green">Active</span>
@@ -55,10 +59,13 @@
                             <b>Msobo Coal</b>
                         </td>
                         <td>Ermelo</td>
-                        <td>Naledi Maseko</td>
+                        <td>
+                            Naledi Maseko
+                            <small class="field-note">naledi.maseko@msobo.co.za</small>
+                        </td>
                         <td>1</td>
                         <td>
-                            <span class="badge amber">On hold</span>
+                            <span class="badge amber" title="Placed on hold by Finance due to unpaid invoices.">On hold</span>
                         </td>
                         <td>›</td>
                     </tr>
@@ -67,7 +74,10 @@
                             <b>Seriti Resources</b>
                         </td>
                         <td>Kriel</td>
-                        <td>Lerato Nkosi</td>
+                        <td>
+                            Lerato Nkosi
+                            <small class="field-note">lerato.nkosi@seriti.co.za</small>
+                        </td>
                         <td>1</td>
                         <td>
                             <span class="badge green">Active</span>
@@ -79,4 +89,3 @@
         </div>
     </article>
 </section>
-

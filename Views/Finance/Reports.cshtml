@@ -1,0 +1,243 @@
+﻿@{
+    ViewData["Title"] = "Reports";
+    ViewData["RoleName"] = "Finance Officer";
+    ViewData["RoleSubtitle"] = "Finance Portal";
+    ViewData["Initials"] = "FO";
+    Layout = "_PortalLayout";
+}
+
+<section class="portal-screen active" data-screen="reports">
+    <div class="page-heading">
+        <div>
+            <p class="eyebrow">FINANCE REPORTS</p>
+            <h1>Reports</h1>
+            <p>Formal finance reports, filtered and ready for download.</p>
+        </div>
+    </div>
+
+    <article class="panel">
+        <div class="panel-title">
+            <h2>Report filters</h2>
+            <small class="field-note">Filter the report output before downloading or exporting.</small>
+        </div>
+
+        <div class="toolbar">
+            <select id="reportYear">
+                <option value="2026" selected>2026</option>
+                <option value="2025">2025</option>
+            </select>
+
+            <select id="reportMonth">
+                <option value="all">All months</option>
+                <option value="june">June 2026</option>
+                <option value="july" selected>July 2026</option>
+                <option value="aug">August 2026</option>
+            </select>
+
+            <select id="reportCustomer">
+                <option value="all">All customers</option>
+                <option value="eskom">Eskom Arnot</option>
+                <option value="msobo">Msobo Coal</option>
+                <option value="seriti">Seriti Resources</option>
+            </select>
+
+            <select id="reportStatus">
+                <option value="all">All statuses</option>
+                <option value="paid">Paid</option>
+                <option value="unpaid">Unpaid</option>
+                <option value="overdue">Overdue</option>
+            </select>
+
+            <button class="btn-gold" id="applyReportFilters">Apply filters</button>
+        </div>
+    </article>
+
+    <div class="content-grid">
+        <article class="panel report-card">
+            <div class="panel-title">
+                <h2>Monthly Revenue Summary</h2>
+                <span class="badge green">Available</span>
+            </div>
+            <p class="muted">
+                Revenue invoiced and collected per customer for the selected month,
+                including contract and order references.
+            </p>
+            <dl class="detail-grid">
+                <div>
+                    <dt>Filters applied</dt>
+                    <dd class="filter-applied">July 2026 · All customers</dd>
+                </div>
+                <div>
+                    <dt>Format</dt>
+                    <dd>PDF / Excel</dd>
+                </div>
+            </dl>
+            <div class="form-actions">
+                <button class="btn-outline" data-toast="Monthly revenue summary downloaded">Download PDF</button>
+                <button class="btn-outline" data-toast="Monthly revenue summary exported">Export Excel</button>
+            </div>
+        </article>
+
+        <article class="panel report-card">
+            <div class="panel-title">
+                <h2>Outstanding Invoices</h2>
+                <span class="badge amber">Action needed</span>
+            </div>
+            <p class="muted">
+                Unpaid and overdue invoices for the selected customer and period.
+            </p>
+            <dl class="detail-grid">
+                <div>
+                    <dt>Filters applied</dt>
+                    <dd class="filter-applied">July 2026 · All customers</dd>
+                </div>
+                <div>
+                    <dt>Format</dt>
+                    <dd>PDF / Excel</dd>
+                </div>
+            </dl>
+            <div class="form-actions">
+                <button class="btn-outline" data-toast="Outstanding invoices report downloaded">Download PDF</button>
+                <button class="btn-outline" data-toast="Outstanding invoices report exported">Export Excel</button>
+            </div>
+        </article>
+
+        <article class="panel report-card">
+            <div class="panel-title">
+                <h2>Customer Statement</h2>
+                <span class="badge green">Available</span>
+            </div>
+            <p class="muted">
+                Full statement for one customer showing invoices, payments, and balance.
+            </p>
+            <dl class="detail-grid">
+                <div>
+                    <dt>Filters applied</dt>
+                    <dd class="filter-applied">July 2026 · All customers</dd>
+                </div>
+                <div>
+                    <dt>Format</dt>
+                    <dd>PDF / Excel</dd>
+                </div>
+            </dl>
+            <div class="form-actions">
+                <button class="btn-outline" data-toast="Customer statement downloaded">Download PDF</button>
+                <button class="btn-outline" data-toast="Customer statement exported">Export Excel</button>
+            </div>
+        </article>
+
+        <article class="panel report-card">
+            <div class="panel-title">
+                <h2>Delivery Reconciliation</h2>
+                <span class="badge green">Available</span>
+            </div>
+            <p class="muted">
+                Weighbridge deliveries matched to invoiced tonnage for audit proof.
+            </p>
+            <dl class="detail-grid">
+                <div>
+                    <dt>Filters applied</dt>
+                    <dd class="filter-applied">July 2026 · All customers</dd>
+                </div>
+                <div>
+                    <dt>Format</dt>
+                    <dd>PDF / Excel</dd>
+                </div>
+            </dl>
+            <div class="form-actions">
+                <button class="btn-outline" data-toast="Delivery reconciliation downloaded">Download PDF</button>
+                <button class="btn-outline" data-toast="Delivery reconciliation exported">Export Excel</button>
+            </div>
+        </article>
+    </div>
+
+    <article class="panel">
+        <div class="panel-title">
+            <h2>Report preview</h2>
+            <small class="field-note" id="previewLabel">Monthly revenue summary — July 2026 · All customers</small>
+        </div>
+
+        <div class="table-wrap">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Customer</th>
+                        <th>Contract</th>
+                        <th>Month</th>
+                        <th>Delivered</th>
+                        <th>Price/t</th>
+                        <th>Invoiced</th>
+                        <th>Collected</th>
+                        <th>Outstanding</th>
+                    </tr>
+                </thead>
+                <tbody id="reportPreviewBody">
+                    <tr>
+                        <td>Eskom Arnot</td>
+                        <td>CSA-2026-001</td>
+                        <td>July 2026</td>
+                        <td>340 t</td>
+                        <td>R1,250</td>
+                        <td>R425,000</td>
+                        <td>R0</td>
+                        <td>R425,000</td>
+                    </tr>
+                    <tr>
+                        <td>Msobo Coal</td>
+                        <td>ADH-2026-014</td>
+                        <td>July 2026</td>
+                        <td>200 t</td>
+                        <td>R1,310</td>
+                        <td>R262,000</td>
+                        <td>R0</td>
+                        <td>R262,000</td>
+                    </tr>
+                    <tr>
+                        <td>Seriti Resources</td>
+                        <td>SPOT-2026-009</td>
+                        <td>July 2026</td>
+                        <td>0 t</td>
+                        <td>R1,400</td>
+                        <td>R0</td>
+                        <td>R0</td>
+                        <td>R0</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <p class="field-note">
+            Preview updates based on the selected year, month, customer, and status.
+            Downloaded PDF/Excel exports include the same filtered data plus audit references.
+        </p>
+    </article>
+</section>
+
+@section Scripts {
+    <script>
+        (function () {
+            document.getElementById('applyReportFilters').addEventListener('click', function () {
+                const year = document.getElementById('reportYear').value;
+                const month = document.getElementById('reportMonth').options[document.getElementById('reportMonth').selectedIndex].text;
+                const customer = document.getElementById('reportCustomer').options[document.getElementById('reportCustomer').selectedIndex].text;
+                const status = document.getElementById('reportStatus').options[document.getElementById('reportStatus').selectedIndex].text;
+
+                const label = document.getElementById('previewLabel');
+                if (label) {
+                    label.textContent = `Report preview — ${month} · ${customer} · ${status}`;
+                }
+
+                document.querySelectorAll('.filter-applied').forEach(el => {
+                    el.textContent = `${month} · ${customer} · ${status}`;
+                });
+
+                const toast = document.querySelector('[data-toast-box]');
+                if (toast) {
+                    toast.textContent = `Filters applied: ${year}, ${month}, ${customer}, ${status}`;
+                    toast.classList.add('show');
+                    setTimeout(() => toast.classList.remove('show'), 2500);
+                }
+            });
+        })();
+    </script>
+}

@@ -32,11 +32,20 @@
                 else if (controller == "Finance")
                 {
                     <a class="side-link @(action == "Index" ? "active" : "")" asp-controller="Finance" asp-action="Index">Dashboard</a>
-                    <a class="side-link @(action is "OrdersQueue" or "OrderDetails" ? "active" : "")" asp-controller="Finance" asp-action="OrdersQueue">Orders Queue</a>
-                    <a class="side-link @(action == "ActiveOrders" ? "active" : "")" asp-controller="Finance" asp-action="ActiveOrders">Active Orders</a>
-                    <a class="side-link @(action == "Reconciliation" ? "active" : "")" asp-controller="Finance" asp-action="Reconciliation">Reconciliation</a>
+
+                    <a class="side-link @(action == "OrdersQueue" ? "active" : "")" asp-controller="Finance" asp-action="OrdersQueue">Orders Queue</a>
+
+                    <a class="side-link @(action is "Orders" or "OrderDetails" ? "active" : "")" asp-controller="Finance" asp-action="Orders">Orders</a>
+
+                    <a class="side-link @(action is "Contracts" or "ContractDetails" ? "active" : "")" asp-controller="Finance" asp-action="Contracts">Contracts</a>
+
                     <a class="side-link @(action is "Invoices" or "InvoiceDetails" ? "active" : "")" asp-controller="Finance" asp-action="Invoices">Invoices</a>
+
                     <a class="side-link @(action == "Payments" ? "active" : "")" asp-controller="Finance" asp-action="Payments">Payments</a>
+
+                    <a class="side-link @(action == "Analytics" ? "active" : "")" asp-controller="Finance" asp-action="Analytics">Analytics</a>
+
+                    <a class="side-link @(action == "Reports" ? "active" : "")" asp-controller="Finance" asp-action="Reports">Reports</a>
                 }
                 else if (controller == "Logistics")
                 {
@@ -75,10 +84,21 @@
                     <a class="side-link @(action == "Audit" ? "active" : "")" asp-controller="SiteManager" asp-action="Audit">Site Audit</a>
                 }
             </nav>
-            <div class="side-user"><strong>@roleName</strong><small>@roleSubtitle</small><a asp-controller="Home" asp-action="Index">Sign out</a></div>
+            <div class="side-user">
+                <strong>@roleName</strong>
+                <small>@roleSubtitle</small>
+                <a asp-controller="Home" asp-action="Index">Sign out</a>
+            </div>
         </aside>
         <div class="portal-main">
-            <header class="portal-topbar"><button class="mobile-menu" data-menu>☰</button><div><strong>@ViewData["Title"]</strong><small>Wescoal Management System</small></div><span class="avatar">@initials</span></header>
+            <header class="portal-topbar">
+                <button class="mobile-menu" data-menu>☰</button>
+                <div>
+                    <strong>@ViewData["Title"]</strong>
+                    <small>Wescoal Management System</small>
+                </div>
+                <span class="avatar">@initials</span>
+            </header>
             <main class="portal-content">@RenderBody()</main>
         </div>
     </div>

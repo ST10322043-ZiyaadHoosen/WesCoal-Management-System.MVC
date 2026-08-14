@@ -8,6 +8,7 @@
 
 <section class="portal-screen active" data-screen="order-detail">
     <button class="back-link" data-nav="queue">← Orders queue</button>
+
     <div class="page-heading">
         <div>
             <p class="eyebrow">PURCHASE ORDER PO-1048</p>
@@ -16,36 +17,89 @@
         </div>
         <span class="badge amber">Awaiting SAP</span>
     </div>
-    <div class="detail-grid">
-        <article class="panel">
-            <h2>Order summary</h2>
-            <dl>
-                <dt>Price per ton</dt>
-                <dd>R1,310.00</dd>
-                <dt>Order value</dt>
-                <dd>R393,000.00</dd>
+
+    <div class="stat-grid">
+        <article>
+            <small>Ordered</small>
+            <strong>300 t</strong>
+        </article>
+        <article>
+            <small>Delivered</small>
+            <strong>0 t</strong>
+        </article>
+        <article>
+            <small>Price/t</small>
+            <strong>R1,310</strong>
+        </article>
+        <article>
+            <small>Order value</small>
+            <strong>R393,000</strong>
+        </article>
+    </div>
+
+    <article class="panel">
+        <h2>Status timeline</h2>
+        <div class="timeline">
+            <span class="done">Logged</span>
+            <span class="current">Awaiting SAP</span>
+            <span>SAP attached</span>
+            <span>In progress</span>
+            <span>Fulfilled</span>
+        </div>
+
+        <hr>
+
+        <h2>Order summary</h2>
+        <dl class="detail-grid">
+            <div>
+                <dt>Customer</dt>
+                <dd>Msobo Coal</dd>
+            </div>
+            <div>
+                <dt>Contract</dt>
+                <dd>ADH-2026-014</dd>
+            </div>
+            <div>
+                <dt>Product</dt>
+                <dd>Duff</dd>
+            </div>
+            <div>
                 <dt>Created by</dt>
                 <dd>Sales Manager</dd>
+            </div>
+            <div>
                 <dt>Expected date</dt>
                 <dd>15 Aug 2026</dd>
-            </dl>
-        </article>
-        <form class="panel form-card" data-demo-form data-success="SAP number saved and order activated">
-            <h2>SAP activation</h2>
-            <div class="form-grid">
-                <label>
-                    SAP order number *<input required placeholder="e.g. 45001235">
-                </label>
-                <label>
-                    Finance reference<input placeholder="Optional reference">
-                </label>
             </div>
-            <div class="info-box">Activating this order makes it available to the weighbridge operator.</div>
-            <div class="form-actions">
-                <button type="button" class="btn-outline" data-toast="Order rejected and returned to Sales">Reject</button>
-                <button class="btn-gold">Approve and activate</button>
+            <div>
+                <dt>Price per ton</dt>
+                <dd>R1,310.00</dd>
             </div>
-        </form>
-    </div>
-</section>
+        </dl>
+    </article>
 
+    <form class="panel form-card" data-demo-form data-success="SAP number saved and order activated">
+        <h2>SAP activation</h2>
+
+        <div class="info-box">
+            This order has already been approved before it was logged.
+            Attaching the SAP number activates it for Logistics and the weighbridge.
+        </div>
+
+        <div class="form-grid">
+            <label>
+                SAP order number *
+                <input required placeholder="e.g. 45001235">
+            </label>
+            <label>
+                Finance reference
+                <input placeholder="Optional reference">
+            </label>
+        </div>
+
+        <div class="form-actions">
+            <button type="button" class="btn-outline" data-nav="queue">Cancel</button>
+            <button class="btn-gold">Save and activate</button>
+        </div>
+    </form>
+</section>

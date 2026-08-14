@@ -1,4 +1,4 @@
-@{
+﻿@{
     ViewData["Title"] = "Purchase Orders";
     ViewData["RoleName"] = "Finance Officer";
     ViewData["RoleSubtitle"] = "Finance Portal";
@@ -43,7 +43,7 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr onclick="location.href='@Url.Action("OrderDetails", "Finance")'" style="cursor:pointer;">
+                    <tr data-nav="order-detail">
                         <td>
                             <b>PO-1042</b>
                         </td>
@@ -58,7 +58,7 @@
                             <span class="badge blue">In progress</span>
                         </td>
                     </tr>
-                    <tr onclick="location.href='@Url.Action("OrderDetails", "Finance")'" style="cursor:pointer;">
+                    <tr data-nav="order-detail">
                         <td>
                             <b>PO-1045</b>
                         </td>
@@ -73,7 +73,7 @@
                             <span class="badge green">Ready</span>
                         </td>
                     </tr>
-                    <tr onclick="location.href='@Url.Action("OrderDetails", "Finance")'" style="cursor:pointer;">
+                    <tr data-nav="order-detail">
                         <td>
                             <b>PO-1048</b>
                         </td>
@@ -88,7 +88,7 @@
                             <span class="badge amber">Awaiting SAP</span>
                         </td>
                     </tr>
-                    <tr onclick="location.href='@Url.Action("OrderDetails", "Finance")'" style="cursor:pointer;">
+                    <tr data-nav="order-detail">
                         <td>
                             <b>PO-1051</b>
                         </td>
@@ -103,29 +103,13 @@
                             <span class="badge amber">Awaiting SAP</span>
                         </td>
                     </tr>
-                    <tr onclick="location.href='@Url.Action("OrderDetails", "Finance")'" style="cursor:pointer;">
-                        <td>
-                            <b>PO-1039</b>
-                        </td>
-                        <td>Eskom Arnot</td>
-                        <td>CSA-2026-001</td>
-                        <td>45001230</td>
-                        <td>480 t</td>
-                        <td>480 t</td>
-                        <td>0 t</td>
-                        <td>R600,000</td>
-                        <td>
-                            <span class="badge green">Fulfilled</span>
-                        </td>
-                    </tr>
                 </tbody>
             </table>
         </div>
 
         <p class="field-note">
             Purchase orders are the authorised collections against customer contracts.
-            Finance attaches the SAP number to activate collection. Invoices are billed
-            from actual delivered tonnage, not the original order value.
+            Finance attaches the SAP number to activate collection.
         </p>
     </article>
 </section>

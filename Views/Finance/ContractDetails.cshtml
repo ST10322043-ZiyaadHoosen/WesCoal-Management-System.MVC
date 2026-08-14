@@ -1,0 +1,202 @@
+﻿@{
+    ViewData["Title"] = "CSA-2026-001";
+    ViewData["RoleName"] = "Finance Officer";
+    ViewData["RoleSubtitle"] = "Finance Portal";
+    ViewData["Initials"] = "FO";
+    Layout = "_PortalLayout";
+}
+
+<section class="portal-screen active" data-screen="contract-detail">
+    <button class="back-link" data-nav="contracts">← Contracts</button>
+
+    <div class="page-heading">
+        <div>
+            <p class="eyebrow">CONTRACT CSA-2026-001</p>
+            <h1>Eskom Arnot</h1>
+            <p>Coal Supply Agreement · Thermal coal</p>
+        </div>
+        <span class="badge green">Active</span>
+    </div>
+
+    <div class="stat-grid">
+        <article>
+            <small>Total tonnage</small>
+            <strong>5,000 t</strong>
+        </article>
+        <article>
+            <small>Delivered</small>
+            <strong>3,400 t</strong>
+        </article>
+        <article>
+            <small>Remaining</small>
+            <strong>1,600 t</strong>
+        </article>
+        <article>
+            <small>Current price (2026)</small>
+            <strong>R1,250/t</strong>
+        </article>
+    </div>
+
+    <article class="panel">
+        <h2>Contract progress</h2>
+        <div class="progress large">
+            <i style="width:68%"></i>
+        </div>
+        <div class="split-label">
+            <span>Start: 01 Jan 2026</span>
+            <b>68% delivered</b>
+            <span>End: 31 Dec 2026</span>
+        </div>
+
+        <hr>
+
+        <h2>Contract summary</h2>
+        <dl class="detail-grid">
+            <div>
+                <dt>Contract type</dt>
+                <dd>Coal Supply Agreement</dd>
+            </div>
+            <div>
+                <dt>Customer</dt>
+                <dd>Eskom Arnot</dd>
+            </div>
+            <div>
+                <dt>Product</dt>
+                <dd>Thermal coal</dd>
+            </div>
+            <div>
+                <dt>Start date</dt>
+                <dd>01 Jan 2026</dd>
+            </div>
+            <div>
+                <dt>End date</dt>
+                <dd>31 Dec 2026</dd>
+            </div>
+            <div>
+                <dt>Status</dt>
+                <dd><span class="badge green">Active</span></dd>
+            </div>
+        </dl>
+
+        <hr>
+
+        <h2>Price per year</h2>
+        <div class="table-wrap">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Year</th>
+                        <th>Price per ton</th>
+                        <th>Tonnes delivered</th>
+                        <th>Value invoiced</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>2026</td>
+                        <td>R1,250/t</td>
+                        <td>3,400 t</td>
+                        <td>R4,250,000</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <p class="field-note">
+            A Coal Supply Agreement re-sets its price each year of the term.
+        </p>
+
+        <hr>
+
+        <div class="panel-title">
+            <h2>Monthly allocation</h2>
+            <small class="field-note">Expected vs actual pace. Never blocks collection — it only tracks pace.</small>
+        </div>
+        <div class="table-wrap">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Month</th>
+                        <th>Contracted</th>
+                        <th>Actual</th>
+                        <th>Variance</th>
+                        <th>Cumulative</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>June 2026</td>
+                        <td>417 t</td>
+                        <td>480 t</td>
+                        <td class="pos">+63 t</td>
+                        <td class="pos">+63 t</td>
+                    </tr>
+                    <tr>
+                        <td>July 2026</td>
+                        <td>417 t</td>
+                        <td>340 t</td>
+                        <td class="neg">-77 t</td>
+                        <td class="neg">-14 t</td>
+                    </tr>
+                    <tr>
+                        <td>August 2026</td>
+                        <td>417 t</td>
+                        <td>340 t</td>
+                        <td class="neg">-77 t</td>
+                        <td class="neg">-91 t</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <p class="field-note">
+            Monthly targets are derived from total tonnage ÷ contract term.
+            The customer can collect ahead or behind pace; the cumulative figure
+            shows the year-to-date position against the contract total.
+        </p>
+
+        <hr>
+
+        <div class="panel-title">
+            <h2>Invoices against this contract</h2>
+            <small class="field-note">Recent invoices raised from actual weighbridge deliveries.</small>
+        </div>
+        <div class="table-wrap">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Invoice</th>
+                        <th>Month</th>
+                        <th>Actual tonnage</th>
+                        <th>Amount</th>
+                        <th>Status</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr onclick="location.href='@Url.Action("InvoiceDetails", "Finance")'" style="cursor:pointer;">
+                        <td>INV-2026-071</td>
+                        <td>June 2026</td>
+                        <td>480 t</td>
+                        <td>R600,000</td>
+                        <td><span class="badge green">Paid</span></td>
+                    </tr>
+                    <tr onclick="location.href='@Url.Action("InvoiceDetails", "Finance")'" style="cursor:pointer;">
+                        <td>INV-2026-084</td>
+                        <td>July 2026</td>
+                        <td>340 t</td>
+                        <td>R425,000</td>
+                        <td><span class="badge amber">Unpaid</span></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <p class="field-note">
+            Invoices are generated monthly from actual tonnage recorded at the weighbridge.
+            Only delivered tons are billed — never ordered or remaining amounts.
+            August delivery data is not yet invoiced because the month is still open.
+        </p>
+
+        <div class="form-actions">
+            <button class="btn-outline" data-nav="invoices">View all invoices</button>
+            <button class="btn-outline" data-toast="Contract document download simulated">View contract document</button>
+        </div>
+    </article>
+</section>

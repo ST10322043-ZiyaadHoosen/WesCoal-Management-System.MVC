@@ -14,25 +14,36 @@
             <p>Compare ordered and delivered tonnage.</p>
         </div>
     </div>
+
     <div class="stat-grid">
         <article>
             <small>Ordered</small>
-            <strong>1,900 t</strong>
+            <strong>1,000 t</strong>
         </article>
         <article>
             <small>Delivered</small>
-            <strong>1,340 t</strong>
+            <strong>840 t</strong>
         </article>
         <article>
             <small>Outstanding</small>
-            <strong>560 t</strong>
+            <strong>160 t</strong>
         </article>
         <article>
-            <small>Variance</small>
-            <strong>0.0%</strong>
+            <small>Delivered</small>
+            <strong>84%</strong>
         </article>
     </div>
+
     <article class="panel">
+        <div class="toolbar">
+            <input type="search" placeholder="Search order or customer…">
+            <select>
+                <option>All orders</option>
+                <option>In progress</option>
+                <option>Fulfilled</option>
+            </select>
+        </div>
+
         <div class="table-wrap">
             <table>
                 <thead>
@@ -41,30 +52,34 @@
                         <th>Customer</th>
                         <th>Ordered</th>
                         <th>Delivered</th>
-                        <th>Variance</th>
+                        <th>Remaining</th>
                         <th>Progress</th>
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
+                    <tr data-nav="order-detail">
                         <td>PO-1042</td>
                         <td>Eskom Arnot</td>
                         <td>500 t</td>
                         <td>340 t</td>
-                        <td>160 t remaining</td>
+                        <td>160 t</td>
                         <td>68%</td>
                     </tr>
-                    <tr>
+                    <tr data-nav="order-detail">
                         <td>PO-1039</td>
                         <td>Eskom Arnot</td>
                         <td>500 t</td>
                         <td>500 t</td>
-                        <td>Matched</td>
+                        <td>0 t</td>
                         <td>100%</td>
                     </tr>
                 </tbody>
             </table>
         </div>
+
+        <p class="field-note">
+            Reconciliation compares order tonnage against actual weighbridge deliveries.
+            Invoicing is always based on delivered tonnage, never on ordered or remaining amounts.
+        </p>
     </article>
 </section>
-

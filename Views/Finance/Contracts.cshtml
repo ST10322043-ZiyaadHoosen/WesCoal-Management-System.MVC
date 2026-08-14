@@ -1,0 +1,148 @@
+﻿@{
+    ViewData["Title"] = "Contracts";
+    ViewData["RoleName"] = "Finance Officer";
+    ViewData["RoleSubtitle"] = "Finance Portal";
+    ViewData["Initials"] = "FO";
+    Layout = "_PortalLayout";
+}
+
+<section class="portal-screen active" data-screen="contracts">
+    <div class="page-heading">
+        <div>
+            <p class="eyebrow">AGREEMENTS</p>
+            <h1>Contracts</h1>
+            <p>Contract balances, pricing and expiry for invoicing.</p>
+        </div>
+    </div>
+
+    <div class="stat-grid">
+        <article>
+            <small>Active contracts</small>
+            <strong>4</strong>
+            <span>Across 3 customers</span>
+        </article>
+        <article>
+            <small>Total contracted tonnage</small>
+            <strong>8,450 t</strong>
+            <span>All agreements shown</span>
+        </article>
+        <article>
+            <small>Remaining tonnage</small>
+            <strong>3,410 t</strong>
+            <span>Still to be collected</span>
+        </article>
+        <article>
+            <small>Contract value</small>
+            <strong>R10.9m</strong>
+            <span>All agreements shown</span>
+        </article>
+    </div>
+
+    <article class="panel">
+        <div class="toolbar">
+            <input type="search" placeholder="Search contract or customer…">
+            <select>
+                <option>All statuses</option>
+                <option>Active</option>
+                <option>Completed</option>
+                <option>Expired</option>
+                <option>Cancelled</option>
+            </select>
+        </div>
+
+        <div class="table-wrap">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Contract</th>
+                        <th>Customer</th>
+                        <th>Type</th>
+                        <th>Total</th>
+                        <th>Delivered</th>
+                        <th>Remaining</th>
+                        <th>Price/t</th>
+                        <th>End Date</th>
+                        <th>Status</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr onclick="location.href='@Url.Action("ContractDetails", "Finance")'" style="cursor:pointer;">
+                        <td>
+                            <b>CSA-2026-001</b>
+                        </td>
+                        <td>Eskom Arnot</td>
+                        <td>Coal Supply Agreement</td>
+                        <td>5,000 t</td>
+                        <td>3,400 t</td>
+                        <td>1,600 t</td>
+                        <td>R1,250</td>
+                        <td>31 Dec 2026</td>
+                        <td>
+                            <span class="badge green">Active</span>
+                        </td>
+                    </tr>
+                    <tr onclick="location.href='@Url.Action("ContractDetails", "Finance")'" style="cursor:pointer;">
+                        <td>
+                            <b>ADH-2026-014</b>
+                        </td>
+                        <td>Msobo Coal</td>
+                        <td>Ad-hoc</td>
+                        <td>2,000 t</td>
+                        <td>840 t</td>
+                        <td>1,160 t</td>
+                        <td>R1,310</td>
+                        <td>30 Sep 2026</td>
+                        <td>
+                            <span class="badge green">Active</span>
+                        </td>
+                    </tr>
+                    <tr onclick="location.href='@Url.Action("ContractDetails", "Finance")'" style="cursor:pointer;">
+                        <td>
+                            <b>SPOT-2026-009</b>
+                        </td>
+                        <td>Seriti Resources</td>
+                        <td>Spot sale</td>
+                        <td>400 t</td>
+                        <td>0 t</td>
+                        <td>400 t</td>
+                        <td>R1,400</td>
+                        <td>31 Aug 2026</td>
+                        <td>
+                            <span class="badge green">Active</span>
+                        </td>
+                    </tr>
+                    <tr onclick="location.href='@Url.Action("ContractDetails", "Finance")'" style="cursor:pointer;">
+                        <td>
+                            <b>SPOT-2026-010</b>
+                        </td>
+                        <td>Seriti Resources</td>
+                        <td>Spot sale</td>
+                        <td>250 t</td>
+                        <td>0 t</td>
+                        <td>250 t</td>
+                        <td>R1,400</td>
+                        <td>31 Aug 2026</td>
+                        <td>
+                            <span class="badge green">Active</span>
+                        </td>
+                    </tr>
+                    <tr onclick="location.href='@Url.Action("ContractDetails", "Finance")'" style="cursor:pointer;">
+                        <td>
+                            <b>SPOT-2026-005</b>
+                        </td>
+                        <td>Eskom Arnot</td>
+                        <td>Spot sale</td>
+                        <td>800 t</td>
+                        <td>800 t</td>
+                        <td>0 t</td>
+                        <td>R1,400</td>
+                        <td>31 Jul 2026</td>
+                        <td>
+                            <span class="badge green">Completed</span>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </article>
+</section>
