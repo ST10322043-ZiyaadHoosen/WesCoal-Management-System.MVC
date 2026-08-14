@@ -1,5 +1,5 @@
 @{
-    ViewData["Title"] = "R625,000.00";
+    ViewData["Title"] = "R425,000.00";
     ViewData["RoleName"] = "Customer User";
     ViewData["RoleSubtitle"] = "Customer Portal";
     ViewData["Initials"] = "CU";
@@ -7,15 +7,17 @@
 }
 
 <section class="portal-screen active" data-screen="invoice-detail">
-    <button class="back-link" data-nav="invoices">← Invoices</button>
+    <a class="back-link" asp-controller="Customer" asp-action="Invoices">← Invoices</a>
+
     <div class="page-heading">
         <div>
             <p class="eyebrow">INVOICE INV-2026-084</p>
-            <h1>R625,000.00</h1>
-            <p>Purchase order PO-1042</p>
+            <h1>R425,000.00</h1>
+            <p>Eskom Arnot · Purchase order PO-1042</p>
         </div>
         <span class="badge amber">Unpaid</span>
     </div>
+
     <article class="panel invoice-card">
         <div class="invoice-head">
             <div>
@@ -24,11 +26,12 @@
             </div>
             <div>
                 <small>Invoice date</small>
-                <b>12 Aug 2026</b>
+                <b>01 Aug 2026</b>
                 <small>Due date</small>
-                <b>30 Aug 2026</b>
+                <b>07 Sep 2026</b>
             </div>
         </div>
+
         <div class="table-wrap">
             <table>
                 <thead>
@@ -41,21 +44,160 @@
                 </thead>
                 <tbody>
                     <tr>
-                        <td>Thermal coal</td>
-                        <td>500 t</td>
+                        <td>Thermal coal — July 2026 deliveries</td>
+                        <td>340 t</td>
                         <td>R1,250/t</td>
                         <td>
-                            <b>R625,000</b>
+                            <b>R425,000</b>
                         </td>
                     </tr>
                 </tbody>
             </table>
         </div>
+
+        <hr>
+
+        <div class="panel-title">
+            <h2>Weighbridge delivery breakdown</h2>
+            <small class="field-note">
+                Every truckload that makes up the 340 t billed on this invoice.
+            </small>
+        </div>
+
+        <div class="table-wrap">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Slip</th>
+                        <th>Date</th>
+                        <th>Truck</th>
+                        <th>Driver</th>
+                        <th>Transporter</th>
+                        <th>Net</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>SLP-0878</td>
+                        <td>02 Jul 2026</td>
+                        <td>GP 12 TY LF</td>
+                        <td>Solomon Dube</td>
+                        <td>Bulk Haul Logistics</td>
+                        <td>27.4 t</td>
+                    </tr>
+                    <tr>
+                        <td>SLP-0879</td>
+                        <td>02 Jul 2026</td>
+                        <td>NW 44 XZ LP</td>
+                        <td>Thabo Nkosi</td>
+                        <td>Transvaal Transport</td>
+                        <td>28.0 t</td>
+                    </tr>
+                    <tr>
+                        <td>SLP-0880</td>
+                        <td>03 Jul 2026</td>
+                        <td>GP 22 ZZ MP</td>
+                        <td>Johan Botha</td>
+                        <td>Bulk Haul Logistics</td>
+                        <td>28.2 t</td>
+                    </tr>
+                    <tr>
+                        <td>SLP-0881</td>
+                        <td>03 Jul 2026</td>
+                        <td>MP 31 AB CD</td>
+                        <td>Sipho Mahlangu</td>
+                        <td>Mpumalanga Carriers</td>
+                        <td>28.4 t</td>
+                    </tr>
+                    <tr>
+                        <td>SLP-0882</td>
+                        <td>04 Jul 2026</td>
+                        <td>FS 77 GH IJ</td>
+                        <td>Pieter Swanepoel</td>
+                        <td>Transvaal Transport</td>
+                        <td>28.6 t</td>
+                    </tr>
+                    <tr>
+                        <td>SLP-0883</td>
+                        <td>04 Jul 2026</td>
+                        <td>LP 18 JK LM</td>
+                        <td>Andile Khumalo</td>
+                        <td>Bulk Haul Logistics</td>
+                        <td>28.1 t</td>
+                    </tr>
+                    <tr>
+                        <td>SLP-0884</td>
+                        <td>05 Jul 2026</td>
+                        <td>MP 45 QR ST</td>
+                        <td>Bongani Zulu</td>
+                        <td>Mpumalanga Carriers</td>
+                        <td>28.5 t</td>
+                    </tr>
+                    <tr>
+                        <td>SLP-0885</td>
+                        <td>06 Jul 2026</td>
+                        <td>GP 12 TY LF</td>
+                        <td>Solomon Dube</td>
+                        <td>Bulk Haul Logistics</td>
+                        <td>28.7 t</td>
+                    </tr>
+                    <tr>
+                        <td>SLP-0886</td>
+                        <td>06 Jul 2026</td>
+                        <td>NW 55 VW XY</td>
+                        <td>Thabo Nkosi</td>
+                        <td>Transvaal Transport</td>
+                        <td>27.9 t</td>
+                    </tr>
+                    <tr>
+                        <td>SLP-0887</td>
+                        <td>07 Jul 2026</td>
+                        <td>MP 60 MN OP</td>
+                        <td>Sipho Mahlangu</td>
+                        <td>Mpumalanga Carriers</td>
+                        <td>28.3 t</td>
+                    </tr>
+                    <tr>
+                        <td>SLP-0890</td>
+                        <td>07 Jul 2026</td>
+                        <td>NW 44 XZ LP</td>
+                        <td>Thabo Nkosi</td>
+                        <td>Transvaal Transport</td>
+                        <td>29.3 t</td>
+                    </tr>
+                    <tr>
+                        <td>SLP-0891</td>
+                        <td>07 Jul 2026</td>
+                        <td>GP 12 TY LF</td>
+                        <td>Solomon Dube</td>
+                        <td>Bulk Haul Logistics</td>
+                        <td>28.6 t</td>
+                    </tr>
+                </tbody>
+                <tfoot>
+                    <tr>
+                        <td colspan="5">
+                            <strong>Total billed tonnage</strong>
+                        </td>
+                        <td>
+                            <strong>340.0 t</strong>
+                        </td>
+                    </tr>
+                </tfoot>
+            </table>
+        </div>
+
         <div class="invoice-total">
             <span>Total due</span>
-            <strong>R625,000.00</strong>
+            <strong>R425,000.00</strong>
         </div>
+
+        <p class="field-note">
+            This invoice is based on your actual July weighbridge deliveries.
+            Every tonne billed is traceable to a specific truck, driver, and transporter.
+            Pay before the due date to keep your account active.
+        </p>
+
         <button class="btn-outline" data-toast="Invoice download simulated">Download invoice</button>
     </article>
 </section>
-

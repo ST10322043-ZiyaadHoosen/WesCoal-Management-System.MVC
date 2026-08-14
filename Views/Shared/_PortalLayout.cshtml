@@ -59,8 +59,9 @@
                     <a class="side-link @(action == "Index" ? "active" : "")" asp-controller="Customer" asp-action="Index">Dashboard</a>
                     <a class="side-link @(action is "Contracts" or "ContractDetails" ? "active" : "")" asp-controller="Customer" asp-action="Contracts">My Contracts</a>
                     <a class="side-link @(action is "Orders" or "OrderDetails" ? "active" : "")" asp-controller="Customer" asp-action="Orders">My Orders</a>
-                    <a class="side-link @(action is "Fleet" or "FleetDetails" ? "active" : "")" asp-controller="Customer" asp-action="Fleet">Weekly Fleet</a>
+                    <a class="side-link @(action is "Fleet" or "FleetUpload" or "FleetAddTruck" or "FleetAddDriver" ? "active" : "")" asp-controller="Customer" asp-action="Fleet">Weekly Fleet</a>
                     <a class="side-link @(action is "Invoices" or "InvoiceDetails" ? "active" : "")" asp-controller="Customer" asp-action="Invoices">Invoices</a>
+                    <a class="side-link @(action == "Profile" ? "active" : "")" asp-controller="Customer" asp-action="Profile">Profile</a>
                 }
                 else if (controller == "Management")
                 {

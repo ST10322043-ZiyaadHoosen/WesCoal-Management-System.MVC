@@ -1,0 +1,206 @@
+﻿@{
+    ViewData["Title"] = "Upload Weekly Fleet";
+    ViewData["RoleName"] = "Customer User";
+    ViewData["RoleSubtitle"] = "Customer Portal";
+    ViewData["Initials"] = "CU";
+    Layout = "_PortalLayout";
+}
+
+<section class="portal-screen active" data-screen="fleet-upload">
+    <a class="back-link" asp-controller="Customer" asp-action="Fleet">← Weekly fleet</a>
+
+    <div class="page-heading">
+        <div>
+            <p class="eyebrow">WEEK COMMENCING 10 AUG 2026</p>
+            <h1>Upload Weekly Fleet</h1>
+            <p>Upload your fleet file. The system will read it and preview what will be added.</p>
+        </div>
+    </div>
+
+    <!-- STEP 1: Upload -->
+    <article class="panel">
+        <div class="panel-title">
+            <h2>1. Choose file</h2>
+            <small class="field-note">Excel or CSV</small>
+        </div>
+
+        <form id="fleetUploadForm" class="form-card">
+            <label class="full">
+                Fleet file *
+                <input type="file" id="fleetFile" accept=".xlsx,.xls,.csv" required>
+                <small class="field-note">
+                    Use the Wescoal template. Sheet 1: Trucks. Sheet 2: Drivers.
+                </small>
+            </label>
+
+            <div class="form-actions">
+                <button class="btn-gold" id="readFileBtn">Read file</button>
+            </div>
+        </form>
+    </article>
+
+    <!-- STEP 2: Preview (hidden until file read) -->
+    <article class="panel" id="previewPanel" style="display:none;">
+        <div class="panel-title">
+            <h2>2. Preview</h2>
+            <small class="field-note">System has read the file</small>
+        </div>
+
+        <div class="alert-box soft">
+            <strong>Import preview</strong>
+            <span id="previewSummary">4 trucks and 4 drivers found.</span>
+        </div>
+
+        <div class="content-grid">
+            <div class="panel">
+                <div class="panel-title">
+                    <h3>Trucks to import</h3>
+                </div>
+                <div class="table-wrap">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Registration</th>
+                                <th>Trailer</th>
+                                <th>Transporter</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>GP 12 TY LF</td>
+                                <td>GP 77 TL GP</td>
+                                <td>Bulk Haul Logistics</td>
+                            </tr>
+                            <tr>
+                                <td>NW 44 XZ LP</td>
+                                <td>NW 55 TL LP</td>
+                                <td>Transvaal Transport</td>
+                            </tr>
+                            <tr>
+                                <td>GP 22 ZZ MP</td>
+                                <td>GP 33 TL MP</td>
+                                <td>Bulk Haul Logistics</td>
+                            </tr>
+                            <tr>
+                                <td>MP 31 AB CD</td>
+                                <td>MP 44 TL MP</td>
+                                <td>Mpumalanga Carriers</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <div class="panel">
+                <div class="panel-title">
+                    <h3>Drivers to import</h3>
+                </div>
+                <div class="table-wrap">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Driver</th>
+                                <th>Transporter</th>
+                                <th>Medical</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Solomon Dube</td>
+                                <td>Bulk Haul Logistics</td>
+                                <td>30 Nov 2026</td>
+                            </tr>
+                            <tr>
+                                <td>Thabo Nkosi</td>
+                                <td>Transvaal Transport</td>
+                                <td>15 Sep 2026</td>
+                            </tr>
+                            <tr>
+                                <td>Johan Botha</td>
+                                <td>Bulk Haul Logistics</td>
+                                <td>22 Aug 2026</td>
+                            </tr>
+                            <tr>
+                                <td>Sipho Mahlangu</td>
+                                <td>Mpumalanga Carriers</td>
+                                <td>10 Oct 2026</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        <p class="field-note">
+            1 driver’s medical certificate is expiring soon and will be flagged for Logistics review.
+        </p>
+    </article>
+
+    <!-- STEP 3: Submit -->
+    <article class="panel" id="submitPanel" style="display:none;">
+        <div class="panel-title">
+            <h2>3. Submit for the week</h2>
+            <small class="field-note">Confirm and update your weekly fleet list</small>
+        </div>
+
+        <p class="muted">
+            Once submitted, the imported trucks and drivers will become this week’s authorised list.
+            Trucks and drivers remain separate — any authorised driver may use any authorised truck.
+        </p>
+
+        <div class="form-actions">
+            <a class="btn-outline" asp-controller="Customer" asp-action="Fleet">Cancel</a>
+            <button class="btn-gold" id="confirmBtn" disabled>Submit weekly fleet</button>
+        </div>
+    </article>
+</section>
+
+@section Scripts {
+    <script>
+        (function () {
+            const fileInput = document.getElementById('fleetFile');
+            const readFileBtn = document.getElementById('readFileBtn');
+            const previewPanel = document.getElementById('previewPanel');
+            const submitPanel = document.getElementById('submitPanel');
+            const confirmBtn = document.getElementById('confirmBtn');
+
+            readFileBtn.addEventListener('click', function (e) {
+                e.preventDefault();
+
+                if (!fileInput.value) {
+                    alert('Please choose a file first.');
+                    return;
+                }
+
+                // Simulate system reading the file
+                readFileBtn.textContent = 'Reading file…';
+                readFileBtn.disabled = true;
+
+                setTimeout(function () {
+                    readFileBtn.textContent = 'Read file';
+                    readFileBtn.disabled = false;
+
+                    previewPanel.style.display = 'block';
+                    submitPanel.style.display = 'block';
+                    confirmBtn.disabled = false;
+
+                    const toast = document.querySelector('[data-toast-box]');
+                    if (toast) {
+                        toast.textContent = 'File read successfully';
+                        toast.classList.add('show');
+                        setTimeout(() => toast.classList.remove('show'), 2000);
+                    }
+                }, 1200);
+            });
+
+            confirmBtn.addEventListener('click', function () {
+                const toast = document.querySelector('[data-toast-box]');
+                if (toast) {
+                    toast.textContent = 'Weekly fleet updated successfully';
+                    toast.classList.add('show');
+                    setTimeout(() => toast.classList.remove('show'), 2500);
+                }
+            });
+        })();
+    </script>
+}

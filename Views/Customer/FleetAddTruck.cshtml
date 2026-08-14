@@ -1,0 +1,55 @@
+﻿@{
+    ViewData["Title"] = "Add Truck";
+    ViewData["RoleName"] = "Customer User";
+    ViewData["RoleSubtitle"] = "Customer Portal";
+    ViewData["Initials"] = "CU";
+    Layout = "_PortalLayout";
+}
+
+<section class="portal-screen active" data-screen="fleet-add-truck">
+    <a class="back-link" asp-controller="Customer" asp-action="Fleet">← Weekly fleet</a>
+
+    <div class="page-heading">
+        <div>
+            <p class="eyebrow">FLEET DETAILS</p>
+            <h1>Add Truck</h1>
+            <p>Manually add one truck to this week’s authorised list.</p>
+        </div>
+    </div>
+
+    <form class="panel form-card" data-demo-form data-success="Truck added to this week’s fleet list">
+        <div class="form-grid">
+            <label>
+                Truck registration *
+                <input required placeholder="e.g. GP 12 TY LF">
+            </label>
+
+            <label>
+                Trailer registration
+                <input placeholder="e.g. GP 77 TL GP">
+            </label>
+
+            <label>
+                Transporter / Logistics company *
+                <select required>
+                    <option>Select transporter</option>
+                    <option>Bulk Haul Logistics</option>
+                    <option>Transvaal Transport</option>
+                    <option>Mpumalanga Carriers</option>
+                    <option>Other</option>
+                </select>
+                <small class="field-note">The transport company that owns or operates this truck.</small>
+            </label>
+        </div>
+
+        <div class="info-box">
+            This truck is added to the weekly fleet list. It is not linked to any driver.
+            Any authorised driver may use any authorised truck.
+        </div>
+
+        <div class="form-actions">
+            <a class="btn-outline" asp-controller="Customer" asp-action="Fleet">Cancel</a>
+            <button class="btn-gold">Submit truck</button>
+        </div>
+    </form>
+</section>

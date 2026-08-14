@@ -11,9 +11,10 @@
         <div>
             <p class="eyebrow">COLLECTIONS</p>
             <h1>My Purchase Orders</h1>
-            <p>Track approval and delivered tonnage.</p>
+            <p>Track delivered tonnage and remaining collections.</p>
         </div>
     </div>
+
     <article class="panel">
         <div class="table-wrap">
             <table>
@@ -21,7 +22,6 @@
                     <tr>
                         <th>Order</th>
                         <th>Contract</th>
-                        <th>SAP number</th>
                         <th>Ordered</th>
                         <th>Delivered</th>
                         <th>Remaining</th>
@@ -29,12 +29,11 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr data-nav="order-detail">
+                    <tr onclick="location.href='@Url.Action("OrderDetails", "Customer")'" style="cursor:pointer;">
                         <td>
                             <b>PO-1042</b>
                         </td>
                         <td>CSA-2026-001</td>
-                        <td>45001234</td>
                         <td>500 t</td>
                         <td>340 t</td>
                         <td>160 t</td>
@@ -42,14 +41,13 @@
                             <span class="badge blue">In progress</span>
                         </td>
                     </tr>
-                    <tr data-nav="order-detail">
+                    <tr onclick="location.href='@Url.Action("OrderDetails", "Customer")'" style="cursor:pointer;">
                         <td>
                             <b>PO-1039</b>
                         </td>
                         <td>CSA-2026-001</td>
-                        <td>45001189</td>
-                        <td>500 t</td>
-                        <td>500 t</td>
+                        <td>480 t</td>
+                        <td>480 t</td>
                         <td>0 t</td>
                         <td>
                             <span class="badge green">Fulfilled</span>
@@ -58,6 +56,10 @@
                 </tbody>
             </table>
         </div>
+
+        <p class="field-note">
+            Only your own orders are shown. Collections are updated automatically
+            from weighbridge transactions as trucks complete their loads.
+        </p>
     </article>
 </section>
-

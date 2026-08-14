@@ -1,5 +1,5 @@
 @{
-    ViewData["Title"] = "Thermal Coal Collection";
+    ViewData["Title"] = "Purchase Order PO-1042";
     ViewData["RoleName"] = "Customer User";
     ViewData["RoleSubtitle"] = "Customer Portal";
     ViewData["Initials"] = "CU";
@@ -7,15 +7,17 @@
 }
 
 <section class="portal-screen active" data-screen="order-detail">
-    <button class="back-link" data-nav="orders">← My orders</button>
+    <a class="back-link" asp-controller="Customer" asp-action="Orders">← My orders</a>
+
     <div class="page-heading">
         <div>
             <p class="eyebrow">PURCHASE ORDER PO-1042</p>
             <h1>Thermal Coal Collection</h1>
-            <p>SAP order 45001234</p>
+            <p>Product: Thermal coal · Order placed by Wescoal Sales</p>
         </div>
         <span class="badge blue">In progress</span>
     </div>
+
     <div class="stat-grid">
         <article>
             <small>Ordered</small>
@@ -31,22 +33,78 @@
         </article>
         <article>
             <small>Truck visits</small>
-            <strong>10</strong>
+            <strong>12</strong>
         </article>
     </div>
+
     <article class="panel">
         <h2>Delivery progress</h2>
         <div class="progress large">
-            <i style="width:68%">
-            </i>
+            <i style="width:68%"></i>
         </div>
+        <div class="split-label">
+            <span>340 t delivered</span>
+            <b>68%</b>
+            <span>160 t remaining</span>
+        </div>
+
+        <hr>
+
+        <h2>Order status</h2>
         <div class="timeline">
-            <span class="done">Logged</span>
-            <span class="done">SAP entered</span>
-            <span class="done">Approved</span>
+            <span class="done">Order placed</span>
+            <span class="done">Collections started</span>
             <span class="current">In progress</span>
             <span>Fulfilled</span>
         </div>
+
+        <hr>
+
+        <div class="panel-title">
+            <h2>Recent deliveries</h2>
+            <small class="field-note">Your completed truck collections for this order.</small>
+        </div>
+
+        <div class="table-wrap">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Slip</th>
+                        <th>Date</th>
+                        <th>Truck</th>
+                        <th>Driver</th>
+                        <th>Net</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>SLP-0891</td>
+                        <td>07 Aug 2026</td>
+                        <td>GP 12 TY LF</td>
+                        <td>Solomon Dube</td>
+                        <td>28.6 t</td>
+                    </tr>
+                    <tr>
+                        <td>SLP-0890</td>
+                        <td>07 Aug 2026</td>
+                        <td>NW 44 XZ LP</td>
+                        <td>Thabo Nkosi</td>
+                        <td>29.3 t</td>
+                    </tr>
+                    <tr>
+                        <td>SLP-0885</td>
+                        <td>06 Aug 2026</td>
+                        <td>GP 12 TY LF</td>
+                        <td>Solomon Dube</td>
+                        <td>28.7 t</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <p class="field-note">
+            This table shows your most recent collections. Your total delivered tonnage
+            to date is 340 t across all completed truck visits for this order.
+        </p>
     </article>
 </section>
-

@@ -1,0 +1,64 @@
+﻿@{
+    ViewData["Title"] = "My Profile";
+    ViewData["RoleName"] = "Customer User";
+    ViewData["RoleSubtitle"] = "Customer Portal";
+    ViewData["Initials"] = "CU";
+    Layout = "_PortalLayout";
+}
+
+<section class="portal-screen active" data-screen="profile">
+    <div class="page-heading">
+        <div>
+            <p class="eyebrow">ACCOUNT</p>
+            <h1>My Profile</h1>
+            <p>View and update your company contact information.</p>
+        </div>
+        <span class="badge green">Active</span>
+    </div>
+
+    <form class="panel form-card" data-demo-form data-success="Profile updated successfully">
+        <div class="form-grid">
+            <label>
+                Company name
+                <input value="Eskom Arnot" disabled>
+                <small class="field-note">Company name cannot be changed. Contact Wescoal Sales if this is incorrect.</small>
+            </label>
+
+            <label>
+                Site / location
+                <input value="Arnot Power Station, Mpumalanga">
+            </label>
+
+            <label>
+                Contact person *
+                <input required value="Thabo Mokoena">
+            </label>
+
+            <label>
+                Email address *
+                <input required type="email" value="thabo.mokoena@eskom.co.za">
+            </label>
+
+            <label>
+                Phone number *
+                <input required value="+27 13 297 1000">
+            </label>
+
+            <label>
+                VAT number
+                <input value="4230187456">
+                <small class="field-note">Used for invoice documents and statements.</small>
+            </label>
+        </div>
+
+        <div class="info-box">
+            This information is used for invoices and account contact.
+            To change your company name or account status, contact Wescoal Sales or Finance.
+        </div>
+
+        <div class="form-actions">
+            <a class="btn-outline" asp-controller="Customer" asp-action="Index">Cancel</a>
+            <button class="btn-gold">Save changes</button>
+        </div>
+    </form>
+</section>

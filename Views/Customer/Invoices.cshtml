@@ -14,6 +14,7 @@
             <p>View invoices and payment due dates.</p>
         </div>
     </div>
+
     <article class="panel">
         <div class="table-wrap">
             <table>
@@ -28,25 +29,25 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr data-nav="invoice-detail">
+                    <tr onclick="location.href='@Url.Action("InvoiceDetails", "Customer")'" style="cursor:pointer;">
                         <td>
                             <b>INV-2026-084</b>
                         </td>
                         <td>PO-1042</td>
-                        <td>12 Aug 2026</td>
-                        <td>R625,000</td>
-                        <td>30 Aug 2026</td>
+                        <td>01 Aug 2026</td>
+                        <td>R425,000</td>
+                        <td>07 Sep 2026</td>
                         <td>
                             <span class="badge amber">Unpaid</span>
                         </td>
                     </tr>
-                    <tr data-nav="invoice-detail">
+                    <tr onclick="location.href='@Url.Action("InvoiceDetails", "Customer")'" style="cursor:pointer;">
                         <td>
                             <b>INV-2026-071</b>
                         </td>
                         <td>PO-1039</td>
-                        <td>31 Jul 2026</td>
-                        <td>R625,000</td>
+                        <td>01 Jul 2026</td>
+                        <td>R600,000</td>
                         <td>07 Aug 2026</td>
                         <td>
                             <span class="badge green">Paid</span>
@@ -55,6 +56,10 @@
                 </tbody>
             </table>
         </div>
+
+        <p class="field-note">
+            Invoices are based on your actual weighbridge deliveries.
+            Payment is made outside the system — contact Wescoal Finance for queries.
+        </p>
     </article>
 </section>
-

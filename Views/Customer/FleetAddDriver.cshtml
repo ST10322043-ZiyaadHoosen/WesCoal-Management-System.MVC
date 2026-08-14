@@ -1,0 +1,77 @@
+﻿@{
+    ViewData["Title"] = "Add Driver";
+    ViewData["RoleName"] = "Customer User";
+    ViewData["RoleSubtitle"] = "Customer Portal";
+    ViewData["Initials"] = "CU";
+    Layout = "_PortalLayout";
+}
+
+<section class="portal-screen active" data-screen="fleet-add-driver">
+    <a class="back-link" asp-controller="Customer" asp-action="Fleet">← Weekly fleet</a>
+
+    <div class="page-heading">
+        <div>
+            <p class="eyebrow">FLEET DETAILS</p>
+            <h1>Add Driver</h1>
+            <p>Manually add one driver to this week’s authorised list.</p>
+        </div>
+    </div>
+
+    <form class="panel form-card" data-demo-form data-success="Driver added to this week’s fleet list">
+        <div class="form-grid">
+            <label>
+                Driver name *
+                <input required placeholder="Full name">
+            </label>
+
+            <label>
+                Transporter / Logistics company *
+                <select required>
+                    <option>Select transporter</option>
+                    <option>Bulk Haul Logistics</option>
+                    <option>Transvaal Transport</option>
+                    <option>Mpumalanga Carriers</option>
+                    <option>Other</option>
+                </select>
+                <small class="field-note">The transport company that employs this driver.</small>
+            </label>
+
+            <label>
+                ID number *
+                <input required placeholder="South African ID">
+            </label>
+
+            <label>
+                Licence number *
+                <input required>
+            </label>
+
+            <label>
+                Medical expiry *
+                <input required type="date">
+            </label>
+
+            <label>
+                Driver licence upload
+                <input type="file" accept=".pdf,.jpg,.jpeg,.png">
+                <small class="field-note">Attach a valid driver’s licence for the named driver.</small>
+            </label>
+
+            <label>
+                Medical certificate upload
+                <input type="file" accept=".pdf,.jpg,.jpeg,.png">
+                <small class="field-note">Attach the medical fitness certificate for the named driver.</small>
+            </label>
+        </div>
+
+        <div class="info-box">
+            This driver is added to the weekly fleet list. They are not assigned to a specific truck.
+            Gate staff verify the driver against this list at weigh-in.
+        </div>
+
+        <div class="form-actions">
+            <a class="btn-outline" asp-controller="Customer" asp-action="Fleet">Cancel</a>
+            <button class="btn-gold">Submit driver</button>
+        </div>
+    </form>
+</section>

@@ -14,6 +14,7 @@
             <p>View your active supply agreements.</p>
         </div>
     </div>
+
     <article class="panel">
         <div class="table-wrap">
             <table>
@@ -23,38 +24,47 @@
                         <th>Type</th>
                         <th>Product</th>
                         <th>Total</th>
+                        <th>Delivered</th>
                         <th>Remaining</th>
+                        <th>Price/t</th>
                         <th>Status</th>
                     </tr>
                 </thead>
                 <tbody>
-                    <tr data-nav="contract-detail">
+                    <tr onclick="location.href='@Url.Action("ContractDetails", "Customer")'" style="cursor:pointer;">
                         <td>
                             <b>CSA-2026-001</b>
                         </td>
                         <td>Coal Supply Agreement</td>
                         <td>Thermal coal</td>
                         <td>5,000 t</td>
+                        <td>3,400 t</td>
                         <td>1,600 t</td>
+                        <td>R1,250</td>
                         <td>
                             <span class="badge green">Active</span>
                         </td>
                     </tr>
-                    <tr data-nav="contract-detail">
+                    <tr onclick="location.href='@Url.Action("ContractDetails", "Customer")'" style="cursor:pointer;">
                         <td>
                             <b>SPOT-2026-005</b>
                         </td>
                         <td>Spot sale</td>
-                        <td>Nuts</td>
+                        <td>Thermal coal</td>
                         <td>800 t</td>
                         <td>800 t</td>
+                        <td>0 t</td>
+                        <td>R1,400</td>
                         <td>
-                            <span class="badge green">Active</span>
+                            <span class="badge green">Completed</span>
                         </td>
                     </tr>
                 </tbody>
             </table>
         </div>
+
+        <p class="field-note">
+            You can only see your own contracts and your own agreed price per ton.
+        </p>
     </article>
 </section>
-
