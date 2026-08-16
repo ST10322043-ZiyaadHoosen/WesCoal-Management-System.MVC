@@ -9,39 +9,60 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Wescoal · Weighbridge & Invoicing System</title>
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <style>
+            /* Improve left brand panel */
+            .login-intro {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                text-align: center;
+                padding: 3rem;
+                position: relative;
+            }
+
+            .login-brand {
+                flex-direction: column;
+                align-items: center;
+                gap: .5rem;
+            }
+
+                .login-brand .brand-mark {
+                    width: 72px;
+                    height: 72px;
+                    font-size: 2rem;
+                    border-radius: 20px;
+                }
+
+                .login-brand strong {
+                    font-size: 2.4rem;
+                    letter-spacing: -.03em;
+                }
+
+                .login-brand small {
+                    font-size: .95rem;
+                }
+
+            .prototype-note {
+                position: absolute;
+                bottom: 2rem;
+                left: 0;
+                right: 0;
+                text-align: center;
+                color: #ffffff4d;
+            }
+    </style>
 </head>
 <body>
     <div class="login-page">
 
-        <!-- LEFT: branded intro — features, no live business data -->
+        <!-- LEFT: company brand only -->
         <section class="login-intro">
             <div class="login-brand">
                 <span class="brand-mark">W</span>
-                <div><strong>Wescoal</strong><small>Weighbridge &amp; Invoicing System</small></div>
-            </div>
-
-            <div class="login-intro-content">
-                <h1>Coal Operations<br />Management</h1>
-                <p>One connected platform for weighbridge operations, contract management, SAP-activated invoicing and fleet compliance.</p>
-
-                <div class="login-features">
-                    <div class="login-feature">
-                        <span class="lf-ico">⚖</span>
-                        <div><strong>Weighbridge collections</strong><small>Every truckload weighed, logged and traceable</small></div>
-                    </div>
-                    <div class="login-feature">
-                        <span class="lf-ico">📄</span>
-                        <div><strong>Accurate monthly invoicing</strong><small>Billed on actual delivered tonnage, on the 7th</small></div>
-                    </div>
-                    <div class="login-feature">
-                        <span class="lf-ico">🚚</span>
-                        <div><strong>Fleet compliance</strong><small>Authorised trucks and drivers, documents on file</small></div>
-                    </div>
-                </div>
-
-                <div class="access-policy">
-                    <strong>ACCESS POLICY</strong>
-                    <p>Accounts are invite-only. Contact the system administrator to request access.</p>
+                <div>
+                    <strong>Wescoal</strong>
+                    <small>Weighbridge &amp; Invoicing System</small>
                 </div>
             </div>
 
@@ -116,7 +137,7 @@
                 document.querySelector('[data-login-form]').addEventListener('submit', function (e) {
                     e.preventDefault();
                     const sel = document.querySelector('.role-option.selected input');
-                    window.location.href = sel.value;   // → /Sales, /Finance, etc.
+                    window.location.href = sel.value;
                 });
             })();
     </script>
