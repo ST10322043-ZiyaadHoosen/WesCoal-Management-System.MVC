@@ -14,14 +14,15 @@
             <p>Full collection log for site oversight.</p>
         </div>
     </div>
+
     <div class="stat-grid">
         <article>
             <small>Today's loads</small>
-            <strong>12</strong>
+            <strong>2</strong>
         </article>
         <article>
             <small>Net tonnage</small>
-            <strong>340 t</strong>
+            <strong>57.9 t</strong>
         </article>
         <article>
             <small>Trucks on site</small>
@@ -29,10 +30,25 @@
         </article>
         <article>
             <small>Average turnaround</small>
-            <strong>48 min</strong>
+            <strong>42 min</strong>
         </article>
     </div>
+
     <article class="panel">
+        <div class="toolbar">
+            <input type="search" placeholder="Search transaction, truck or driver…">
+            <select>
+                <option>All dates</option>
+                <option>Today</option>
+                <option>This week</option>
+            </select>
+            <select>
+                <option>All operators</option>
+                <option>J. van der Merwe</option>
+                <option>P. Ndlovu</option>
+            </select>
+        </div>
+
         <div class="table-wrap">
             <table>
                 <thead>
@@ -48,29 +64,28 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
-                        <td>WB-2408</td>
+                    <tr onclick="location.href='@Url.Action("TransactionDetails", "SiteManager")'" style="cursor:pointer;">
+                        <td><b>WB-2408</b></td>
                         <td>PO-1042</td>
-                        <td>MP 45 TR GP</td>
-                        <td>Joseph Dlamini</td>
-                        <td>18,420 kg</td>
-                        <td>52,620 kg</td>
-                        <td>34.2 t</td>
-                        <td>Weighbridge Operator</td>
+                        <td>GP 12 TY LF</td>
+                        <td>Solomon Dube</td>
+                        <td>22.40 t</td>
+                        <td>51.00 t</td>
+                        <td>28.60 t</td>
+                        <td>J. van der Merwe</td>
                     </tr>
-                    <tr>
-                        <td>WB-2407</td>
+                    <tr onclick="location.href='@Url.Action("TransactionDetails", "SiteManager")'" style="cursor:pointer;">
+                        <td><b>WB-2407</b></td>
                         <td>PO-1042</td>
-                        <td>MP 12 AB GP</td>
-                        <td>Simon Khumalo</td>
-                        <td>18,160 kg</td>
-                        <td>51,960 kg</td>
-                        <td>33.8 t</td>
-                        <td>Weighbridge Operator</td>
+                        <td>NW 44 XZ LP</td>
+                        <td>Thabo Nkosi</td>
+                        <td>23.00 t</td>
+                        <td>52.30 t</td>
+                        <td>29.30 t</td>
+                        <td>P. Ndlovu</td>
                     </tr>
                 </tbody>
             </table>
         </div>
     </article>
 </section>
-

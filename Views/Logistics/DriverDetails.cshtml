@@ -1,0 +1,85 @@
+﻿@{
+    ViewData["Title"] = "Driver Details";
+    ViewData["RoleName"] = "Weighbridge Operator";
+    ViewData["RoleSubtitle"] = "Logistics & Weighbridge";
+    ViewData["Initials"] = "WO";
+    Layout = "_PortalLayout";
+}
+
+<section class="portal-screen active" data-screen="driver-details">
+    <a class="back-link" asp-controller="Logistics" asp-action="Fleet">← Customer fleet</a>
+
+    <div class="page-heading">
+        <div>
+            <p class="eyebrow">DRIVER RECORD</p>
+            <h1>Solomon Dube</h1>
+            <p>Eskom Arnot · Bulk Haul Logistics</p>
+        </div>
+        <span class="badge green">Verified</span>
+    </div>
+
+    <div class="stat-grid">
+        <article>
+            <small>Driver</small>
+            <strong>Solomon Dube</strong>
+        </article>
+        <article>
+            <small>ID number</small>
+            <strong>830215...087</strong>
+        </article>
+        <article>
+            <small>Licence</small>
+            <strong>On file</strong>
+        </article>
+        <article>
+            <small>Medical</small>
+            <strong>On file</strong>
+        </article>
+    </div>
+
+    <article class="panel">
+        <div class="panel-title">
+            <h2>Compliance documents</h2>
+            <small class="field-note">Uploaded by customer · held on the system</small>
+        </div>
+
+        <div class="content-grid">
+            <div class="panel">
+                <div class="panel-title">
+                    <h3>Driver's licence</h3>
+                    <span class="badge green">On file</span>
+                </div>
+                <p class="muted">📄 Solomon-Dube-licence.pdf</p>
+                <p class="field-note">Licence number matches the fleet record.</p>
+            </div>
+
+            <div class="panel">
+                <div class="panel-title">
+                    <h3>ID document</h3>
+                    <span class="badge green">On file</span>
+                </div>
+                <p class="muted">📄 Solomon-Dube-ID.pdf</p>
+                <p class="field-note">Identity document on file. ID number matches fleet record.</p>
+            </div>
+
+            <div class="panel">
+                <div class="panel-title">
+                    <h3>Medical certificate</h3>
+                    <span class="badge green">On file</span>
+                </div>
+                <p class="muted">📄 Solomon-Dube-medical.pdf</p>
+                <p class="field-note">Medical certificate on file.</p>
+            </div>
+        </div>
+
+        <div class="info-box">
+            This driver is on the customer's authorised list with all three documents held on the system.
+            The operator pairs this driver with any authorised truck at gate check.
+        </div>
+
+        <div class="form-actions">
+            <a class="btn-outline" asp-controller="Logistics" asp-action="Fleet">Back</a>
+            <button class="btn-gold" data-toast="Driver verification confirmed">Confirm verified</button>
+        </div>
+    </article>
+</section>

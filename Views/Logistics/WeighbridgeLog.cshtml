@@ -14,12 +14,23 @@
             <p>Historical record of completed collections.</p>
         </div>
     </div>
+
     <article class="panel">
+        <div class="toolbar">
+            <input type="search" placeholder="Search transaction, truck or driver…">
+            <select>
+                <option>All dates</option>
+                <option>Today</option>
+                <option>This week</option>
+            </select>
+        </div>
+
         <div class="table-wrap">
             <table>
                 <thead>
                     <tr>
                         <th>Transaction</th>
+                        <th>Date</th>
                         <th>Time</th>
                         <th>Order</th>
                         <th>Truck</th>
@@ -30,26 +41,32 @@
                 </thead>
                 <tbody>
                     <tr>
-                        <td>WB-2408</td>
-                        <td>10:25</td>
+                        <td><b>WB-2408</b></td>
+                        <td>12 Aug 2026</td>
+                        <td>06:54</td>
                         <td>PO-1042</td>
-                        <td>MP 45 TR GP</td>
-                        <td>Joseph Dlamini</td>
-                        <td>34.2 t</td>
+                        <td>GP 12 TY LF</td>
+                        <td>Solomon Dube</td>
+                        <td>28.60 t</td>
                         <td>Weighbridge Operator</td>
                     </tr>
                     <tr>
-                        <td>WB-2407</td>
-                        <td>09:40</td>
+                        <td><b>WB-2407</b></td>
+                        <td>12 Aug 2026</td>
+                        <td>06:29</td>
                         <td>PO-1042</td>
-                        <td>MP 12 AB GP</td>
-                        <td>Simon Khumalo</td>
-                        <td>33.8 t</td>
+                        <td>NW 44 XZ LP</td>
+                        <td>Thabo Nkosi</td>
+                        <td>29.30 t</td>
                         <td>Weighbridge Operator</td>
                     </tr>
                 </tbody>
             </table>
         </div>
+
+        <p class="field-note">
+            Every transaction is stored with both weigh-in and weigh-out slips for audit.
+            Net tonnage is calculated automatically and cannot be manually edited.
+        </p>
     </article>
 </section>
-

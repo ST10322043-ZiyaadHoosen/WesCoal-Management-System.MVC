@@ -1,5 +1,5 @@
 @{
-    ViewData["Title"] = "Fleet &amp; Compliance";
+    ViewData["Title"] = "Fleet & Compliance";
     ViewData["RoleName"] = "Site Manager";
     ViewData["RoleSubtitle"] = "Operations Oversight";
     ViewData["Initials"] = "SM";
@@ -9,62 +9,131 @@
 <section class="portal-screen active" data-screen="fleet">
     <div class="page-heading">
         <div>
-            <p class="eyebrow">OPERATIONAL COMPLIANCE</p>
-            <h1>Fleet &amp; Compliance</h1>
-            <p>Registered vehicles and driver documents.</p>
+            <p class="eyebrow">WEEKLY FLEET</p>
+            <h1>Fleet & Compliance</h1>
+            <p>Customer-submitted trucks and drivers for this week.</p>
         </div>
     </div>
-    <div class="alert-box">
-        <strong>1 vehicle pending verification</strong>
-        <span>MP 88 ZX GP must be approved before gate access.</span>
-    </div>
-    <article class="panel">
-        <div class="table-wrap">
-            <table>
-                <thead>
-                    <tr>
-                        <th>Customer</th>
-                        <th>Truck</th>
-                        <th>Driver</th>
-                        <th>Licence</th>
-                        <th>Medical</th>
-                        <th>Status</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>Eskom Arnot</td>
-                        <td>MP 45 TR GP</td>
-                        <td>Joseph Dlamini</td>
-                        <td>Valid</td>
-                        <td>30 Nov</td>
-                        <td>
-                            <span class="badge green">Approved</span>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>Eskom Arnot</td>
-                        <td>MP 12 AB GP</td>
-                        <td>Simon Khumalo</td>
-                        <td>Valid</td>
-                        <td>22 Aug</td>
-                        <td>
-                            <span class="badge amber">Expiring soon</span>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>Seriti Resources</td>
-                        <td>MP 88 ZX GP</td>
-                        <td>Peter Molefe</td>
-                        <td>Pending</td>
-                        <td>Pending</td>
-                        <td>
-                            <span class="badge amber">Unverified</span>
-                        </td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
-    </article>
-</section>
 
+    <article class="panel">
+        <div class="toolbar">
+            <input type="search" placeholder="Search customer, truck or driver…">
+            <select>
+                <option>All customers</option>
+                <option>Eskom Arnot</option>
+                <option>Seriti Resources</option>
+            </select>
+        </div>
+        <p class="field-note">
+            Trucks and drivers are submitted by the customer. Click a row to view details.
+        </p>
+    </article>
+
+    <div class="content-grid">
+        <article class="panel">
+            <div class="panel-title">
+                <h2>Trucks on this week’s list</h2>
+            </div>
+            <div class="table-wrap">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Customer</th>
+                            <th>Truck</th>
+                            <th>Trailer</th>
+                            <th>Transporter</th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Eskom Arnot</td>
+                            <td><b>GP 12 TY LF</b></td>
+                            <td>GP 77 TL GP</td>
+                            <td>Bulk Haul Logistics</td>
+                            <td><a class="btn-outline" style="padding:.3rem .7rem;" asp-controller="SiteManager" asp-action="TruckDetails">View</a></td>
+                        </tr>
+                        <tr>
+                            <td>Eskom Arnot</td>
+                            <td><b>NW 44 XZ LP</b></td>
+                            <td>NW 55 TL LP</td>
+                            <td>Transvaal Transport</td>
+                            <td><a class="btn-outline" style="padding:.3rem .7rem;" asp-controller="SiteManager" asp-action="TruckDetails">View</a></td>
+                        </tr>
+                        <tr>
+                            <td>Eskom Arnot</td>
+                            <td><b>GP 22 ZZ MP</b></td>
+                            <td>GP 33 TL MP</td>
+                            <td>Bulk Haul Logistics</td>
+                            <td><a class="btn-outline" style="padding:.3rem .7rem;" asp-controller="SiteManager" asp-action="TruckDetails">View</a></td>
+                        </tr>
+                        <tr>
+                            <td>Eskom Arnot</td>
+                            <td><b>MP 31 AB CD</b></td>
+                            <td>MP 44 TL MP</td>
+                            <td>Mpumalanga Carriers</td>
+                            <td><a class="btn-outline" style="padding:.3rem .7rem;" asp-controller="SiteManager" asp-action="TruckDetails">View</a></td>
+                        </tr>
+                        <tr>
+                            <td>Seriti Resources</td>
+                            <td><b>MP 88 ZX GP</b></td>
+                            <td>—</td>
+                            <td>Seriti Logistics</td>
+                            <td><a class="btn-outline" style="padding:.3rem .7rem;" asp-controller="SiteManager" asp-action="TruckDetails">View</a></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </article>
+
+        <article class="panel">
+            <div class="panel-title">
+                <h2>Drivers on this week’s list</h2>
+            </div>
+            <div class="table-wrap">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Customer</th>
+                            <th>Driver</th>
+                            <th>Transporter</th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Eskom Arnot</td>
+                            <td><b>Solomon Dube</b></td>
+                            <td>Bulk Haul Logistics</td>
+                            <td><a class="btn-outline" style="padding:.3rem .7rem;" asp-controller="SiteManager" asp-action="DriverDetails">View</a></td>
+                        </tr>
+                        <tr>
+                            <td>Eskom Arnot</td>
+                            <td><b>Thabo Nkosi</b></td>
+                            <td>Transvaal Transport</td>
+                            <td><a class="btn-outline" style="padding:.3rem .7rem;" asp-controller="SiteManager" asp-action="DriverDetails">View</a></td>
+                        </tr>
+                        <tr>
+                            <td>Eskom Arnot</td>
+                            <td><b>Johan Botha</b></td>
+                            <td>Bulk Haul Logistics</td>
+                            <td><a class="btn-outline" style="padding:.3rem .7rem;" asp-controller="SiteManager" asp-action="DriverDetails">View</a></td>
+                        </tr>
+                        <tr>
+                            <td>Eskom Arnot</td>
+                            <td><b>Sipho Mahlangu</b></td>
+                            <td>Mpumalanga Carriers</td>
+                            <td><a class="btn-outline" style="padding:.3rem .7rem;" asp-controller="SiteManager" asp-action="DriverDetails">View</a></td>
+                        </tr>
+                        <tr>
+                            <td>Seriti Resources</td>
+                            <td><b>Peter Molefe</b></td>
+                            <td>Seriti Logistics</td>
+                            <td><a class="btn-outline" style="padding:.3rem .7rem;" asp-controller="SiteManager" asp-action="DriverDetails">View</a></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </article>
+    </div>
+</section>

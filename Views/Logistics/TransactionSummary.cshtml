@@ -15,39 +15,60 @@
         </div>
         <span class="badge green">Recorded</span>
     </div>
+
     <div class="stat-grid">
         <article>
             <small>Weigh-in</small>
-            <strong>18,420 kg</strong>
+            <strong>22.40 t</strong>
         </article>
         <article>
             <small>Weigh-out</small>
-            <strong>52,620 kg</strong>
+            <strong>51.00 t</strong>
         </article>
         <article>
             <small>Net tonnage</small>
-            <strong>34.2 t</strong>
+            <strong>28.60 t</strong>
         </article>
         <article>
-            <small>Order remaining</small>
-            <strong>125.8 t</strong>
+            <small>Order remaining after load</small>
+            <strong>131.40 t</strong>
         </article>
     </div>
+
     <article class="panel">
         <dl>
             <dt>Transaction</dt>
             <dd>WB-2026-2409</dd>
+
             <dt>Order</dt>
             <dd>PO-1042</dd>
+
+            <dt>Customer</dt>
+            <dd>Eskom Arnot</dd>
+
             <dt>Truck</dt>
-            <dd>MP 45 TR GP</dd>
+            <dd>GP 12 TY LF</dd>
+
             <dt>Driver</dt>
-            <dd>Joseph Dlamini</dd>
+            <dd>Solomon Dube</dd>
+
+            <dt>Transporter</dt>
+            <dd>Bulk Haul Logistics</dd>
+
+            <dt>Product</dt>
+            <dd>Thermal coal</dd>
         </dl>
+
+        <div class="alert-box soft">
+            <strong>Order check passed</strong>
+            <span>
+                Net load 28.60 t deducted from order balance 160 t. Remaining balance is now 131.40 t.
+            </span>
+        </div>
+
         <div class="form-actions">
             <button class="btn-outline" data-toast="Weighbridge slip generated">Print weighbridge slip</button>
-            <button class="btn-gold" data-nav="available-orders">Finish</button>
+            <a class="btn-gold" asp-controller="Logistics" asp-action="AvailableOrders">Finish</a>
         </div>
     </article>
 </section>
-

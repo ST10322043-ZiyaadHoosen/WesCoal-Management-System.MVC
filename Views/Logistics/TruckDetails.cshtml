@@ -1,0 +1,79 @@
+﻿@{
+    ViewData["Title"] = "Truck Details";
+    ViewData["RoleName"] = "Weighbridge Operator";
+    ViewData["RoleSubtitle"] = "Logistics & Weighbridge";
+    ViewData["Initials"] = "WO";
+    Layout = "_PortalLayout";
+}
+
+<section class="portal-screen active" data-screen="truck-details">
+    <a class="back-link" asp-controller="Logistics" asp-action="Fleet">← Customer fleet</a>
+
+    <div class="page-heading">
+        <div>
+            <p class="eyebrow">TRUCK RECORD</p>
+            <h1>GP 12 TY LF</h1>
+            <p>Eskom Arnot · Bulk Haul Logistics</p>
+        </div>
+        <span class="badge green">Verified</span>
+    </div>
+
+    <div class="stat-grid">
+        <article>
+            <small>Registration</small>
+            <strong>GP 12 TY LF</strong>
+        </article>
+        <article>
+            <small>Trailer</small>
+            <strong>GP 77 TL GP</strong>
+        </article>
+        <article>
+            <small>Licence disc expiry</small>
+            <strong>28 Feb 2027</strong>
+        </article>
+        <article>
+            <small>Document status</small>
+            <strong class="highlight">Complete</strong>
+        </article>
+    </div>
+
+    <article class="panel">
+        <div class="panel-title">
+            <h2>Licence disc / roadworthy document</h2>
+            <small class="field-note">Uploaded by customer</small>
+        </div>
+
+        <div class="content-grid">
+            <div class="panel" style="background:var(--bg); border-style:dashed;">
+                <p class="muted" style="text-align:center; margin:2rem 0;">
+                    📄 Licence disc preview<br>
+                    <small>GP 12 TY LF — 28 Feb 2027</small>
+                </p>
+            </div>
+
+            <dl>
+                <dt>Document type</dt>
+                <dd>Vehicle licence disc</dd>
+
+                <dt>File name</dt>
+                <dd>GP12TYLF-licence-disc.pdf</dd>
+
+                <dt>Expiry date</dt>
+                <dd>28 Feb 2027</dd>
+
+                <dt>Status</dt>
+                <dd><span class="badge green">Complete</span></dd>
+            </dl>
+        </div>
+
+        <div class="info-box">
+            This truck is authorised for the current week. Licence disc is valid and roadworthy
+            document is on file. No pricing or financial information is visible to the operator.
+        </div>
+
+        <div class="form-actions">
+            <a class="btn-outline" asp-controller="Logistics" asp-action="Fleet">Back</a>
+            <button class="btn-gold" data-toast="Truck verification confirmed">Confirm verified</button>
+        </div>
+    </article>
+</section>

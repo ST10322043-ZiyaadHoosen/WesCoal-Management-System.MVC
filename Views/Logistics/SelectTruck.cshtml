@@ -7,62 +7,73 @@
 }
 
 <section class="portal-screen active" data-screen="truck-select">
-    <button class="back-link" data-nav="collection-type">← Collection type</button>
+    <a class="back-link" asp-controller="Logistics" asp-action="CollectionType">← Collection type</a>
+
     <div class="page-heading">
         <div>
             <p class="eyebrow">AUTHORISED FLEET</p>
             <h1>Select Truck</h1>
-            <p>Choose the truck that arrived, from Eskom Arnot's weekly fleet.</p>
+            <p>Choose the truck that arrived from Eskom Arnot’s weekly fleet.</p>
         </div>
     </div>
+
     <article class="panel">
         <p class="field-note">
-            Select the truck only. The driver is chosen next, at the gate check, from the customer's
-            authorised driver list — any authorised driver may operate any authorised truck.
+            Select the truck only. The driver is chosen next at gate check, from the customer’s
+            authorised driver list. Any authorised driver may operate any authorised truck.
         </p>
+
         <div class="table-wrap">
             <table>
                 <thead>
                     <tr>
-                        <th>Registration</th>
-                        <th>Trailer</th>
+                        <th>Truck</th>
+                        <th>Trailer 1</th>
+                        <th>Trailer 2</th>
+                        <th>Transporter</th>
                         <th>Status</th>
                         <th></th>
                     </tr>
                 </thead>
                 <tbody>
-                    <tr data-nav="gate-check">
-                        <td>
-                            <b>MP 45 TR GP</b>
-                        </td>
-                        <td>MP 67 TL GP</td>
-                        <td>
-                            <span class="badge green">Verified</span>
-                        </td>
+                    <tr onclick="location.href='@Url.Action("GateCheck", "Logistics")'" style="cursor:pointer;">
+                        <td><b>GP 12 TY LF</b></td>
+                        <td>GP 77 TL GP</td>
+                        <td>—</td>
+                        <td>Bulk Haul Logistics</td>
+                        <td><span class="badge green">Verified</span></td>
                         <td>›</td>
                     </tr>
-                    <tr data-nav="gate-check">
-                        <td>
-                            <b>MP 12 AB GP</b>
-                        </td>
-                        <td>MP 34 CD GP</td>
-                        <td>
-                            <span class="badge green">Verified</span>
-                        </td>
+                    <tr onclick="location.href='@Url.Action("GateCheck", "Logistics")'" style="cursor:pointer;">
+                        <td><b>NW 44 XZ LP</b></td>
+                        <td>NW 55 TL LP</td>
+                        <td>—</td>
+                        <td>Transvaal Transport</td>
+                        <td><span class="badge green">Verified</span></td>
                         <td>›</td>
                     </tr>
-                    <tr data-nav="gate-check">
-                        <td>
-                            <b>MP 88 KL GP</b>
-                        </td>
-                        <td>MP 89 KL GP</td>
-                        <td>
-                            <span class="badge green">Verified</span>
-                        </td>
+                    <tr onclick="location.href='@Url.Action("GateCheck", "Logistics")'" style="cursor:pointer;">
+                        <td><b>GP 22 ZZ MP</b></td>
+                        <td>GP 33 TL MP</td>
+                        <td>—</td>
+                        <td>Bulk Haul Logistics</td>
+                        <td><span class="badge green">Verified</span></td>
+                        <td>›</td>
+                    </tr>
+                    <tr onclick="location.href='@Url.Action("GateCheck", "Logistics")'" style="cursor:pointer;">
+                        <td><b>MP 31 AB CD</b></td>
+                        <td>MP 44 TL MP</td>
+                        <td>—</td>
+                        <td>Mpumalanga Carriers</td>
+                        <td><span class="badge green">Verified</span></td>
                         <td>›</td>
                     </tr>
                 </tbody>
             </table>
         </div>
+
+        <p class="field-note">
+            Only trucks verified for this week and belonging to the selected order’s customer are shown.
+        </p>
     </article>
 </section>

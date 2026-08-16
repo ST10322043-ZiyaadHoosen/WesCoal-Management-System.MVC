@@ -11,41 +11,46 @@
         <div>
             <p class="eyebrow">SITE OPERATIONS</p>
             <h1>Site Dashboard</h1>
-            <p>Operational overview without financial information.</p>
+            <p>Review weighbridge activity and order progress.</p>
         </div>
         <span class="badge blue">Operational view</span>
     </div>
+
     <div class="alert-box">
         <strong>2 orders awaiting SAP</strong>
-        <span>These orders cannot proceed to collection until Finance activates them.</span>
+        <span>These orders cannot proceed to collection until Finance attaches a SAP number.</span>
     </div>
+
     <div class="stat-grid">
         <article>
-            <small>Active orders</small>
-            <strong>6</strong>
-            <span>Ready for collection</span>
+            <small>Open orders</small>
+            <strong>4</strong>
+            <span>Across all customers</span>
         </article>
         <article>
             <small>Today's loads</small>
-            <strong>12</strong>
-            <span>340 t collected</span>
+            <strong>2</strong>
+            <span>57.9 t collected</span>
         </article>
         <article>
             <small>Trucks on site</small>
             <strong>2</strong>
+            <span>1 loading, 1 weighing</span>
         </article>
         <article>
-            <small>Compliance items</small>
+            <small>Weighbridge operators</small>
             <strong>2</strong>
-            <span>Require attention</span>
+            <span>On current shift</span>
         </article>
     </div>
+
     <div class="content-grid">
         <article class="panel">
             <div class="panel-title">
                 <h2>Order progress</h2>
-                <button data-nav="tracking">View all</button>
+                <a class="btn-outline" asp-controller="SiteManager" asp-action="Tracking">View all</a>
             </div>
+
             <div class="contract-row">
                 <div>
                     <strong>PO-1042 · Eskom Arnot</strong>
@@ -53,30 +58,52 @@
                 </div>
                 <span class="badge blue">In progress</span>
                 <div class="progress">
-                    <i style="width:68%">
-                    </i>
+                    <i style="width:68%"></i>
                 </div>
             </div>
+
             <div class="contract-row">
                 <div>
                     <strong>PO-1045 · Seriti Resources</strong>
                     <small>Ready for first collection</small>
                 </div>
-                <span class="badge green">Active</span>
+                <span class="badge green">Ready</span>
                 <div class="progress">
-                    <i style="width:0%">
-                    </i>
+                    <i style="width:0%"></i>
                 </div>
             </div>
         </article>
+
         <article class="panel">
-            <h2>Site attention</h2>
-            <div class="check-list">
-                <span class="warn">Driver medical certificate expires 22 Aug</span>
-                <span class="warn">Truck MP 88 ZX GP pending verification</span>
-                <span class="ok">All weighbridge equipment checks passed</span>
+            <div class="panel-title">
+                <h2>Weighbridge review</h2>
+                <a class="btn-outline" asp-controller="SiteManager" asp-action="Weighbridge">View all</a>
+            </div>
+
+            <div class="mini-table">
+                <a asp-controller="SiteManager" asp-action="TransactionDetails">
+                    <b>WB-2408</b>
+                    <span>GP 12 TY LF · Solomon Dube · 28.60 t</span>
+                    <em class="badge green">Complete</em>
+                </a>
+                <a asp-controller="SiteManager" asp-action="TransactionDetails">
+                    <b>WB-2407</b>
+                    <span>NW 44 XZ LP · Thabo Nkosi · 29.30 t</span>
+                    <em class="badge green">Complete</em>
+                </a>
             </div>
         </article>
     </div>
-</section>
 
+    <article class="panel">
+        <div class="panel-title">
+            <h2>Operator activity</h2>
+            <a class="btn-outline" asp-controller="SiteManager" asp-action="Audit">View audit</a>
+        </div>
+
+        <div class="check-list">
+            <span class="ok">✓ J. van der Merwe logged WB-2408 · 06:54</span>
+            <span class="ok">✓ P. Ndlovu logged WB-2407 · 06:29</span>
+        </div>
+    </article>
+</section>

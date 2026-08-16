@@ -15,27 +15,27 @@
         </div>
     </div>
 
-    <!-- Readiness overview -->
+    <!-- Overview -->
     <div class="stat-grid">
         <article>
             <small>Authorised trucks</small>
             <strong>4</strong>
-            <span>4 documents complete</span>
+            <span>Documents on file</span>
         </article>
         <article>
             <small>Authorised drivers</small>
             <strong>4</strong>
-            <span>3 complete · 1 pending</span>
+            <span>Documents on file</span>
         </article>
         <article>
-            <small>Cleared for collection</small>
+            <small>Transporters</small>
             <strong>3</strong>
-            <span>Drivers ready at the gate</span>
+            <span>Bulk Haul, Transvaal, Mpumalanga</span>
         </article>
         <article>
-            <small>Needs attention</small>
-            <strong class="highlight">1</strong>
-            <span>Driver documents pending</span>
+            <small>Fleet status</small>
+            <strong class="highlight">Verified</strong>
+            <span>Submitted this week</span>
         </article>
     </div>
 
@@ -43,13 +43,13 @@
     <article class="panel">
         <div class="panel-title">
             <h2>Submit this week's fleet</h2>
-            <small class="field-note">Upload the list, then attach each driver's documents</small>
+            <small class="field-note">Upload the list, then attach each record's documents</small>
         </div>
 
         <p class="muted">
-            Upload your weekly Excel or CSV file to import the truck and driver lists. After import,
-            attach each driver's licence, ID and medical documents against their record below —
-            documents are per driver, so they're attached to each record, not in the spreadsheet.
+            Upload your weekly Excel or CSV file to import the truck and driver lists. Attach each
+            driver's licence, ID and medical documents (and each truck's licence disc) against their
+            record so they are held on the system.
         </p>
 
         <div class="form-actions">
@@ -75,7 +75,6 @@
                         <th>Truck</th>
                         <th>Trailer</th>
                         <th>Transporter</th>
-                        <th>Licence disc</th>
                         <th>Documents</th>
                         <th>Status</th>
                         <th></th>
@@ -86,8 +85,7 @@
                         <td><b>GP 12 TY LF</b></td>
                         <td>GP 77 TL GP</td>
                         <td>Bulk Haul Logistics</td>
-                        <td>28 Feb 2027</td>
-                        <td><span class="badge green">Complete</span></td>
+                        <td><span class="badge green">On file</span></td>
                         <td><span class="badge green">Verified</span></td>
                         <td><a asp-controller="Customer" asp-action="FleetAddTruck">Manage</a></td>
                     </tr>
@@ -95,8 +93,7 @@
                         <td><b>NW 44 XZ LP</b></td>
                         <td>NW 55 TL LP</td>
                         <td>Transvaal Transport</td>
-                        <td>31 Jan 2027</td>
-                        <td><span class="badge green">Complete</span></td>
+                        <td><span class="badge green">On file</span></td>
                         <td><span class="badge green">Verified</span></td>
                         <td><a asp-controller="Customer" asp-action="FleetAddTruck">Manage</a></td>
                     </tr>
@@ -104,8 +101,7 @@
                         <td><b>GP 22 ZZ MP</b></td>
                         <td>GP 33 TL MP</td>
                         <td>Bulk Haul Logistics</td>
-                        <td>30 Apr 2027</td>
-                        <td><span class="badge green">Complete</span></td>
+                        <td><span class="badge green">On file</span></td>
                         <td><span class="badge green">Verified</span></td>
                         <td><a asp-controller="Customer" asp-action="FleetAddTruck">Manage</a></td>
                     </tr>
@@ -113,8 +109,7 @@
                         <td><b>MP 31 AB CD</b></td>
                         <td>MP 44 TL MP</td>
                         <td>Mpumalanga Carriers</td>
-                        <td>31 Mar 2027</td>
-                        <td><span class="badge green">Complete</span></td>
+                        <td><span class="badge green">On file</span></td>
                         <td><span class="badge green">Verified</span></td>
                         <td><a asp-controller="Customer" asp-action="FleetAddTruck">Manage</a></td>
                     </tr>
@@ -136,7 +131,7 @@
                         <th>Driver</th>
                         <th>Transporter</th>
                         <th>Licence</th>
-                        <th>Medical expiry</th>
+                        <th>Medical</th>
                         <th>Documents</th>
                         <th>Status</th>
                         <th></th>
@@ -146,46 +141,46 @@
                     <tr>
                         <td><b>Solomon Dube</b></td>
                         <td>Bulk Haul Logistics</td>
-                        <td>Valid</td>
-                        <td>30 Nov 2026</td>
-                        <td><span class="badge green">Complete</span></td>
-                        <td><span class="badge green">Cleared</span></td>
+                        <td>On file</td>
+                        <td>On file</td>
+                        <td><span class="badge green">On file</span></td>
+                        <td><span class="badge green">Verified</span></td>
                         <td><a asp-controller="Customer" asp-action="FleetAddDriver">Manage</a></td>
                     </tr>
                     <tr>
                         <td><b>Thabo Nkosi</b></td>
                         <td>Transvaal Transport</td>
-                        <td>Valid</td>
-                        <td>15 Sep 2026</td>
-                        <td><span class="badge green">Complete</span></td>
-                        <td><span class="badge green">Cleared</span></td>
+                        <td>On file</td>
+                        <td>On file</td>
+                        <td><span class="badge green">On file</span></td>
+                        <td><span class="badge green">Verified</span></td>
                         <td><a asp-controller="Customer" asp-action="FleetAddDriver">Manage</a></td>
                     </tr>
                     <tr>
                         <td><b>Johan Botha</b></td>
                         <td>Bulk Haul Logistics</td>
-                        <td>Valid</td>
-                        <td>22 Aug 2026</td>
-                        <td><span class="badge green">Complete</span></td>
-                        <td><span class="badge amber">Medical expiring</span></td>
+                        <td>On file</td>
+                        <td>On file</td>
+                        <td><span class="badge green">On file</span></td>
+                        <td><span class="badge green">Verified</span></td>
                         <td><a asp-controller="Customer" asp-action="FleetAddDriver">Manage</a></td>
                     </tr>
                     <tr>
                         <td><b>Sipho Mahlangu</b></td>
                         <td>Mpumalanga Carriers</td>
-                        <td>Valid</td>
-                        <td>10 Oct 2026</td>
-                        <td><span class="badge red">Pending</span></td>
-                        <td><span class="badge red">Not cleared</span></td>
-                        <td><a asp-controller="Customer" asp-action="FleetAddDriver">Attach docs</a></td>
+                        <td>On file</td>
+                        <td>On file</td>
+                        <td><span class="badge green">On file</span></td>
+                        <td><span class="badge green">Verified</span></td>
+                        <td><a asp-controller="Customer" asp-action="FleetAddDriver">Manage</a></td>
                     </tr>
                 </tbody>
             </table>
         </div>
         <p class="field-note">
-            A driver is only cleared for collection once all three documents (licence, ID, medical) are
-            attached and current. Sipho Mahlangu is on the list but not yet cleared — documents pending.
-            The weighbridge operator cannot pass a driver whose documents are incomplete or expired.
+            Each driver's licence, ID and medical documents are held on the system against their record.
+            Trucks and drivers are authorised independently — the operator pairs a truck with a driver at
+            the gate for each collection.
         </p>
     </article>
 </section>

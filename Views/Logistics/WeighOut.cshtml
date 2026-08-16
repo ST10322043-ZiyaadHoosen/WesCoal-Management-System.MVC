@@ -7,7 +7,8 @@
 }
 
 <section class="portal-screen active" data-screen="weigh-out">
-    <button class="back-link" data-nav="weigh-in">← Weigh-in</button>
+    <a class="back-link" asp-controller="Logistics" asp-action="WeighIn">← Weigh-in</a>
+
     <div class="page-heading">
         <div>
             <p class="eyebrow">WEIGHBRIDGE STEP 2 OF 2</p>
@@ -15,31 +16,72 @@
             <p>Record the loaded weight and calculate net tonnage.</p>
         </div>
     </div>
-    <form class="panel form-card" data-demo-form data-next="summary" data-success="Weigh-out recorded">
+
+    <form class="panel form-card" data-demo-form data-success="Weigh-out recorded — transaction complete">
         <div class="form-grid">
             <label>
-                Weigh-in weight<input readonly value="18,420 kg">
+                Truck
+                <input readonly value="GP 12 TY LF">
             </label>
+
             <label>
-                Weigh-out weight (kg) *<input required type="number" value="52620">
+                Driver
+                <input readonly value="Solomon Dube">
             </label>
+
             <label>
-                Calculated net weight<input readonly value="34,200 kg / 34.2 t">
+                Weigh-in weight
+                <input readonly value="22.40 t">
             </label>
+
             <label>
-                Date and time<input type="datetime-local" value="2026-08-12T11:35">
+                Weigh-out weight (t) *
+                <input required type="number" step="0.01" id="weighOutWeight" value="51.00">
             </label>
+
+            <label>
+                Calculated net weight
+                <input readonly id="netWeight" value="28.60 t">
+            </label>
+
+            <label>
+                Date and time
+                <input type="datetime-local" value="2026-08-12T06:54">
+            </label>
+
             <label class="full">
-                Upload weigh-out slip<input type="file">
+                Upload weigh-out slip *
+                <input type="file" accept=".pdf,.jpg,.jpeg,.png" required>
+                <small class="field-note">Attach the scanned or digital weighbridge slip for this loaded weight.</small>
             </label>
         </div>
+
         <div class="alert-box soft">
             <strong>Order check</strong>
-            <span>34.2 t is below the remaining order balance of 160 t.</span>
+            <span>Net load 28.60 t is below the remaining order balance of 160 t. Collection may proceed.</span>
         </div>
+
         <div class="form-actions">
-            <button class="btn-gold">Complete weighing</button>
+            <a class="btn-outline" asp-controller="Logistics" asp-action="WeighIn">Back</a>
+            <button class="btn-gold" type="submit">Complete weighing</button>
         </div>
     </form>
 </section>
 
+@section Scripts {
+    <script>
+        (function () {
+            const weighOutInput = document.getElementById('weighOutWeight');
+            const netInput = document.getElementById('netWeight');
+            const weighIn = 22.40;
+
+            if (weighOutInput && netInput) {
+                weighOutInput.addEventListener('input', function () {
+                    const weighOut = parseFloat(this.value) || 0;
+                    const net = weighOut - weighIn;
+                    netInput.value = net > 0 ? net.toFixed(2) + ' t' : '0.00 t';
+                });
+            }
+        })();
+    </script>
+}

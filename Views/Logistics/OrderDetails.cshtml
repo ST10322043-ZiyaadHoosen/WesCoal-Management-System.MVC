@@ -1,5 +1,5 @@
 @{
-    ViewData["Title"] = "Eskom Arnot";
+    ViewData["Title"] = "PO-1042";
     ViewData["RoleName"] = "Weighbridge Operator";
     ViewData["RoleSubtitle"] = "Logistics & Weighbridge";
     ViewData["Initials"] = "WO";
@@ -7,15 +7,17 @@
 }
 
 <section class="portal-screen active" data-screen="order-detail">
-    <button class="back-link" data-nav="available-orders">← Available orders</button>
+    <a class="back-link" asp-controller="Logistics" asp-action="AvailableOrders">← Available orders</a>
+
     <div class="page-heading">
         <div>
             <p class="eyebrow">PURCHASE ORDER PO-1042</p>
             <h1>Eskom Arnot</h1>
-            <p>SAP 45001234 · Thermal coal</p>
+            <p>Thermal coal · Order ready for collection</p>
         </div>
         <span class="badge blue">In progress</span>
     </div>
+
     <div class="stat-grid">
         <article>
             <small>Ordered</small>
@@ -30,21 +32,24 @@
             <strong>160 t</strong>
         </article>
         <article>
-            <small>Loads completed</small>
-            <strong>10</strong>
+            <small>Truck visits</small>
+            <strong>12</strong>
         </article>
     </div>
+
     <article class="panel">
         <h2>Order limit</h2>
         <div class="progress large">
-            <i style="width:68%">
-            </i>
+            <i style="width:68%"></i>
         </div>
+
         <div class="alert-box soft">
             <strong>Collection permitted</strong>
             <span>The order has enough remaining tonnage for another truck load.</span>
         </div>
-        <button class="btn-gold" data-nav="collection-type">Begin collection</button>
+
+        <div class="form-actions">
+            <a class="btn-gold" asp-controller="Logistics" asp-action="CollectionType">Begin collection</a>
+        </div>
     </article>
 </section>
-

@@ -14,6 +14,7 @@
             <p>Created by, SAP status and responsible operator.</p>
         </div>
     </div>
+
     <article class="panel">
         <div class="table-wrap">
             <table>
@@ -29,31 +30,49 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr data-nav="tracking-detail">
-                        <td>PO-1042</td>
+                    <tr onclick="location.href='@Url.Action("TrackingDetails", "SiteManager")'" style="cursor:pointer;">
+                        <td><b>PO-1042</b></td>
                         <td>Eskom Arnot</td>
                         <td>Sales Manager</td>
                         <td>45001234</td>
-                        <td>Weighbridge Operator</td>
+                        <td>J. van der Merwe</td>
                         <td>340 / 500 t</td>
-                        <td>
-                            <span class="badge blue">In progress</span>
-                        </td>
+                        <td><span class="badge blue">In progress</span></td>
                     </tr>
-                    <tr data-nav="tracking-detail">
-                        <td>PO-1048</td>
+                    <tr onclick="location.href='@Url.Action("TrackingDetails", "SiteManager")'" style="cursor:pointer;">
+                        <td><b>PO-1045</b></td>
+                        <td>Seriti Resources</td>
+                        <td>Sales Manager</td>
+                        <td>45001229</td>
+                        <td>—</td>
+                        <td>0 / 400 t</td>
+                        <td><span class="badge green">Ready</span></td>
+                    </tr>
+                    <tr>
+                        <td><b>PO-1048</b></td>
                         <td>Msobo Coal</td>
                         <td>Sales Manager</td>
-                        <td>Pending</td>
-                        <td>Not assigned</td>
+                        <td>—</td>
+                        <td>—</td>
                         <td>0 / 300 t</td>
-                        <td>
-                            <span class="badge amber">Awaiting SAP</span>
-                        </td>
+                        <td><span class="badge amber">Awaiting SAP</span></td>
+                    </tr>
+                    <tr>
+                        <td><b>PO-1051</b></td>
+                        <td>Seriti Resources</td>
+                        <td>Sales Manager</td>
+                        <td>—</td>
+                        <td>—</td>
+                        <td>0 / 250 t</td>
+                        <td><span class="badge amber">Awaiting SAP</span></td>
                     </tr>
                 </tbody>
             </table>
         </div>
+        <p class="field-note">
+            Every order shows its full accountability chain — who created it (Sales), who attached the
+            SAP number (Finance), and which operator is responsible for its collections (Logistics).
+            No financial values are shown to the Site Manager.
+        </p>
     </article>
 </section>
-

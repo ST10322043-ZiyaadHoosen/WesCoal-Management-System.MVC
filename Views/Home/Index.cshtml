@@ -1,48 +1,124 @@
 @{
     ViewData["Title"] = "Sign In";
+    Layout = null;
 }
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Wescoal · Weighbridge & Invoicing System</title>
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+</head>
+<body>
+    <div class="login-page">
 
-<div class="login-page">
-    <section class="login-intro">
-        <div class="login-brand">
-            <span class="brand-mark">W</span>
-            <div><strong>Wescoal</strong><small>Weighbridge &amp; Invoicing System</small></div>
-        </div>
-
-        <div class="login-intro-content">
-            <h1>Coal Operations<br />Management</h1>
-            <p>Integrated platform for weighbridge operations, contract management, SAP-activated invoicing and fleet compliance.</p>
-            <div class="login-stat-grid">
-                <article><strong>2</strong><span>Active Contracts</span></article>
-                <article><strong>2</strong><span>Orders In Progress</span></article>
-                <article><strong>1</strong><span>Awaiting SAP</span></article>
-                <article><strong>2</strong><span>Unpaid Invoices</span></article>
+        <!-- LEFT: branded intro — features, no live business data -->
+        <section class="login-intro">
+            <div class="login-brand">
+                <span class="brand-mark">W</span>
+                <div><strong>Wescoal</strong><small>Weighbridge &amp; Invoicing System</small></div>
             </div>
-            <div class="access-policy"><strong>Access Policy</strong><p>Accounts are invite-only. Contact the system administrator to request access.</p></div>
-        </div>
 
-        <small class="prototype-note">© 2026 Wescoal (Pty) Ltd</small>
-    </section>
+            <div class="login-intro-content">
+                <h1>Coal Operations<br />Management</h1>
+                <p>One connected platform for weighbridge operations, contract management, SAP-activated invoicing and fleet compliance.</p>
 
-    <section class="login-form-panel">
-        <form class="role-login-form" data-login-form>
-            <h2>Sign in</h2>
-            <p>Select your portal and enter the demonstration credentials.</p>
+                <div class="login-features">
+                    <div class="login-feature">
+                        <span class="lf-ico">⚖</span>
+                        <div><strong>Weighbridge collections</strong><small>Every truckload weighed, logged and traceable</small></div>
+                    </div>
+                    <div class="login-feature">
+                        <span class="lf-ico">📄</span>
+                        <div><strong>Accurate monthly invoicing</strong><small>Billed on actual delivered tonnage, on the 7th</small></div>
+                    </div>
+                    <div class="login-feature">
+                        <span class="lf-ico">🚚</span>
+                        <div><strong>Fleet compliance</strong><small>Authorised trucks and drivers, documents on file</small></div>
+                    </div>
+                </div>
 
-            <fieldset class="role-selector">
-                <legend>Select Portal</legend>
-                <label class="role-option selected"><input type="radio" name="role" value="/Sales" checked /><span class="role-tag">Sales</span><span><strong>Sales Manager</strong><small>Customers, contracts and purchase orders</small></span></label>
-                <label class="role-option"><input type="radio" name="role" value="/Finance" /><span class="role-tag">Finance</span><span><strong>Finance Officer</strong><small>SAP activation, invoicing and payments</small></span></label>
-                <label class="role-option"><input type="radio" name="role" value="/Logistics" /><span class="role-tag">Weighbridge</span><span><strong>Weighbridge Operator</strong><small>Gate checks, weighing and fleet verification</small></span></label>
-                <label class="role-option"><input type="radio" name="role" value="/Management" /><span class="role-tag">Management</span><span><strong>Senior Manager</strong><small>Full read-only oversight and reports</small></span></label>
-                <label class="role-option"><input type="radio" name="role" value="/SiteManager" /><span class="role-tag">Site</span><span><strong>Site Manager</strong><small>Operations, site activity and compliance</small></span></label>
-                <label class="role-option"><input type="radio" name="role" value="/Customer" /><span class="role-tag">Customer</span><span><strong>Customer Portal</strong><small>Contracts, orders, invoices and fleet</small></span></label>
-            </fieldset>
+                <div class="access-policy">
+                    <strong>ACCESS POLICY</strong>
+                    <p>Accounts are invite-only. Contact the system administrator to request access.</p>
+                </div>
+            </div>
 
-            <label class="login-field">Username<input type="text" value="sales.manager" required /></label>
-            <label class="login-field">Password<input type="password" value="prototype" required /></label>
-            <button class="btn-gold login-button" type="submit">Sign In</button>
-            <small class="form-note">Invite-only system · All demonstration data is simulated</small>
-        </form>
-    </section>
-</div>
+            <small class="prototype-note">© 2026 Wescoal (Pty) Ltd · Prototype — all data simulated</small>
+        </section>
+
+        <!-- RIGHT: portal selector + sign in -->
+        <section class="login-form-panel">
+            <form class="role-login-form" data-login-form>
+                <h2>Sign in</h2>
+                <p>Select a portal to explore the prototype.</p>
+
+                <fieldset class="role-selector">
+                    <legend>Select portal</legend>
+                    <div class="role-grid">
+                        <label class="role-option selected">
+                            <input type="radio" name="role" value="/Sales" data-user="sales.manager" checked />
+                            <span class="role-tag">Sales</span><strong>Sales Manager</strong>
+                        </label>
+                        <label class="role-option">
+                            <input type="radio" name="role" value="/Finance" data-user="finance.officer" />
+                            <span class="role-tag">Finance</span><strong>Finance Officer</strong>
+                        </label>
+                        <label class="role-option">
+                            <input type="radio" name="role" value="/Logistics" data-user="weighbridge.operator" />
+                            <span class="role-tag">Weighbridge</span><strong>Operator</strong>
+                        </label>
+                        <label class="role-option">
+                            <input type="radio" name="role" value="/Management" data-user="senior.manager" />
+                            <span class="role-tag">Management</span><strong>Senior Manager</strong>
+                        </label>
+                        <label class="role-option">
+                            <input type="radio" name="role" value="/SiteManager" data-user="site.manager" />
+                            <span class="role-tag">Site</span><strong>Site Manager</strong>
+                        </label>
+                        <label class="role-option">
+                            <input type="radio" name="role" value="/Customer" data-user="customer.user" />
+                            <span class="role-tag">Customer</span><strong>Customer</strong>
+                        </label>
+                    </div>
+                </fieldset>
+
+                <label class="login-field">
+                    Username
+                    <input type="text" id="loginUser" value="sales.manager" required />
+                </label>
+                <label class="login-field">
+                    Password
+                    <input type="password" value="prototype" required />
+                </label>
+
+                <button class="btn-gold login-button" type="submit">Sign in</button>
+                <small class="form-note">Invite-only system · All demonstration data is simulated</small>
+            </form>
+        </section>
+    </div>
+
+    <script>
+            (function () {
+                const opts = document.querySelectorAll('.role-option');
+                const user = document.getElementById('loginUser');
+
+                opts.forEach(function (o) {
+                    o.addEventListener('click', function () {
+                        opts.forEach(x => x.classList.remove('selected'));
+                        o.classList.add('selected');
+                        const input = o.querySelector('input');
+                        if (user && input.dataset.user) user.value = input.dataset.user;
+                    });
+                });
+
+                document.querySelector('[data-login-form]').addEventListener('submit', function (e) {
+                    e.preventDefault();
+                    const sel = document.querySelector('.role-option.selected input');
+                    window.location.href = sel.value;   // → /Sales, /Finance, etc.
+                });
+            })();
+    </script>
+</body>
+</html>

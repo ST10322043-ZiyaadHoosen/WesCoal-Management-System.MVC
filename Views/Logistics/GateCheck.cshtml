@@ -12,52 +12,48 @@
     <div class="page-heading">
         <div>
             <p class="eyebrow">GATE VERIFICATION</p>
-            <h1>Truck & Driver Check</h1>
-            <p>GP 12 TY LF · Eskom Arnot</p>
+            <h1>Truck &amp; Driver Check</h1>
+            <p>GP 12 TY LF · Bulk Haul Logistics · Eskom Arnot</p>
         </div>
+        <span class="badge green">Verified</span>
     </div>
 
-    <form class="panel form-card" data-demo-form data-success="Gate check passed">
-
+    <div class="panel form-card">
         <div class="form-grid">
             <label>
                 Truck (selected)
-                <input value="GP 12 TY LF" readonly>
+                <input value="GP 12 TY LF — Bulk Haul Logistics" readonly>
             </label>
+
             <label>
                 Driver at the gate *
-                <select required>
+                <select id="driverSelect" required>
                     <option value="">Select the driver who arrived…</option>
-                    <option>Solomon Dube</option>
-                    <option>Thabo Nkosi</option>
-                    <option>Petrus van Wyk (substitute)</option>
+                    <option>Solomon Dube — Bulk Haul Logistics</option>
+                    <option>Thabo Nkosi — Transvaal Transport</option>
+                    <option>Johan Botha — Bulk Haul Logistics</option>
+                    <option>Sipho Mahlangu — Mpumalanga Carriers</option>
                 </select>
             </label>
+
+            <label>
+                Waybill number *
+                <input required value="WB-2026-2409">
+            </label>
         </div>
+
         <p class="field-note">
-            The driver is selected from the customer's authorised driver list — any authorised
-            driver (including substitutes) may operate this truck. The truck and driver are paired
-            here for this collection.
+            The driver is selected from the customer's authorised driver list. Any authorised driver may
+            operate any authorised truck for the same customer. The truck and driver are paired here for
+            this collection only.
         </p>
 
         <hr>
 
-        <div class="check-list">
-            <label class="check-row">
-                <input required type="checkbox"> Truck appears on the verified weekly fleet list
-            </label>
-            <label class="check-row">
-                <input required type="checkbox"> Selected driver is on the authorised driver list
-            </label>
-            <label class="check-row">
-                <input required type="checkbox"> Driver identity and licence verified
-            </label>
-            <label class="check-row">
-                <input required type="checkbox"> Medical certificate is valid
-            </label>
-            <label class="check-row">
-                <input required type="checkbox"> Truck condition is safe for loading
-            </label>
+        <div class="info-box">
+            This truck and driver are on the customer's authorised fleet list, with their documents
+            (licence, ID, medical) held on the system. The operator confirms the arriving driver matches
+            the record and checks the truck's physical condition before proceeding.
         </div>
 
         <div class="form-grid top-gap">
@@ -78,7 +74,7 @@
 
         <div class="form-actions">
             <a class="btn-outline" asp-controller="Logistics" asp-action="AvailableOrders">Cancel</a>
-            <button class="btn-gold" type="submit">Continue to weigh-in</button>
+            <a class="btn-gold" asp-controller="Logistics" asp-action="WeighIn">Continue to weigh-in</a>
         </div>
-    </form>
+    </div>
 </section>

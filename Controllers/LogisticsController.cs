@@ -15,4 +15,6 @@ public class LogisticsController : Controller
     public IActionResult TransactionSummary() => View();
     public IActionResult Fleet() => View();
     public IActionResult WeighbridgeLog() => View();
+    public IActionResult TruckDetails() => View();
+    public IActionResult DriverDetails() => View();
 }

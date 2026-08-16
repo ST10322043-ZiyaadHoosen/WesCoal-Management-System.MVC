@@ -1,0 +1,72 @@
+﻿@{
+    ViewData["Title"] = "Driver Details";
+    ViewData["RoleName"] = "Site Manager";
+    ViewData["RoleSubtitle"] = "Operations Oversight";
+    ViewData["Initials"] = "SM";
+    Layout = "_PortalLayout";
+}
+
+<section class="portal-screen active" data-screen="driver-details">
+    <a class="back-link" asp-controller="SiteManager" asp-action="Fleet">← Fleet &amp; compliance</a>
+
+    <div class="page-heading">
+        <div>
+            <p class="eyebrow">DRIVER RECORD</p>
+            <h1>Solomon Dube</h1>
+            <p>Eskom Arnot · Bulk Haul Logistics</p>
+        </div>
+    </div>
+
+    <div class="stat-grid">
+        <article>
+            <small>Driver</small>
+            <strong>Solomon Dube</strong>
+        </article>
+        <article>
+            <small>ID number</small>
+            <strong>830215...087</strong>
+        </article>
+        <article>
+            <small>Licence expiry</small>
+            <strong>12 May 2028</strong>
+        </article>
+        <article>
+            <small>Medical expiry</small>
+            <strong>30 Nov 2026</strong>
+        </article>
+    </div>
+
+    <article class="panel">
+        <div class="panel-title">
+            <h2>Compliance documents</h2>
+            <small class="field-note">Submitted by customer</small>
+        </div>
+
+        <div class="content-grid">
+            <div class="panel">
+                <div class="panel-title">
+                    <h3>Driver's licence</h3>
+                </div>
+                <p class="muted">📄 Solomon-Dube-licence.pdf</p>
+            </div>
+
+            <div class="panel">
+                <div class="panel-title">
+                    <h3>ID document</h3>
+                </div>
+                <p class="muted">📄 Solomon-Dube-ID.pdf</p>
+            </div>
+
+            <div class="panel">
+                <div class="panel-title">
+                    <h3>Medical certificate</h3>
+                </div>
+                <p class="muted">📄 Solomon-Dube-medical.pdf</p>
+            </div>
+        </div>
+
+        <div class="info-box">
+            This driver is on the customer’s weekly fleet list. The Site Manager sees operational details only.
+        </div>
+    </article>
+</section>

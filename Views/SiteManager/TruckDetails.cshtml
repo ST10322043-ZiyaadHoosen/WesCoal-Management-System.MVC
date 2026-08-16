@@ -1,0 +1,69 @@
+﻿@{
+    ViewData["Title"] = "Truck Details";
+    ViewData["RoleName"] = "Site Manager";
+    ViewData["RoleSubtitle"] = "Operations Oversight";
+    ViewData["Initials"] = "SM";
+    Layout = "_PortalLayout";
+}
+
+<section class="portal-screen active" data-screen="truck-details">
+    <a class="back-link" asp-controller="SiteManager" asp-action="Fleet">← Fleet &amp; compliance</a>
+
+    <div class="page-heading">
+        <div>
+            <p class="eyebrow">TRUCK RECORD</p>
+            <h1>GP 12 TY LF</h1>
+            <p>Eskom Arnot · Bulk Haul Logistics</p>
+        </div>
+    </div>
+
+    <div class="stat-grid">
+        <article>
+            <small>Registration</small>
+            <strong>GP 12 TY LF</strong>
+        </article>
+        <article>
+            <small>Trailer</small>
+            <strong>GP 77 TL GP</strong>
+        </article>
+        <article>
+            <small>Licence disc expiry</small>
+            <strong>28 Feb 2027</strong>
+        </article>
+        <article>
+            <small>Transporter</small>
+            <strong>Bulk Haul Logistics</strong>
+        </article>
+    </div>
+
+    <article class="panel">
+        <div class="panel-title">
+            <h2>Licence disc / roadworthy document</h2>
+            <small class="field-note">Submitted by customer</small>
+        </div>
+
+        <div class="content-grid">
+            <div class="panel" style="background:var(--bg); border-style:dashed;">
+                <p class="muted" style="text-align:center; margin:2rem 0;">
+                    📄 Licence disc preview<br>
+                    <small>GP 12 TY LF — 28 Feb 2027</small>
+                </p>
+            </div>
+
+            <dl>
+                <dt>Document type</dt>
+                <dd>Vehicle licence disc</dd>
+
+                <dt>File name</dt>
+                <dd>GP12TYLF-licence-disc.pdf</dd>
+
+                <dt>Expiry date</dt>
+                <dd>28 Feb 2027</dd>
+            </dl>
+        </div>
+
+        <div class="info-box">
+            This truck is on the customer’s weekly fleet list. The Site Manager sees operational details only.
+        </div>
+    </article>
+</section>

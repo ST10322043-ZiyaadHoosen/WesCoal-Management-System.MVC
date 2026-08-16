@@ -13,7 +13,7 @@
         <div>
             <p class="eyebrow">WEEK COMMENCING 10 AUG 2026</p>
             <h1>Upload Weekly Fleet</h1>
-            <p>Step 1: import the list. Step 2: attach each driver's documents.</p>
+            <p>Upload the list, then attach each record's documents.</p>
         </div>
     </div>
 
@@ -30,9 +30,9 @@
                 <input type="file" id="fleetFile" accept=".xlsx,.xls,.csv" required>
                 <small class="field-note">
                     Use the Wescoal template. Sheet 1: Trucks. Sheet 2: Drivers. The spreadsheet carries
-                    the details only (registrations, ID, licence, medical expiry dates) — the actual
-                    licence, ID and medical documents are attached per driver in step 3, because a file
-                    can't live inside a spreadsheet cell.
+                    the details (registrations, ID, licence, medical). The licence, ID and medical
+                    documents are attached per record after import, since a file can't live in a
+                    spreadsheet cell.
                 </small>
             </label>
 
@@ -51,7 +51,7 @@
 
         <div class="alert-box soft">
             <strong>Import preview</strong>
-            <span id="previewSummary">4 trucks and 4 drivers found. Documents will be attached per record after import.</span>
+            <span id="previewSummary">4 trucks and 4 drivers found.</span>
         </div>
 
         <div class="content-grid">
@@ -62,16 +62,15 @@
                         <thead>
                             <tr>
                                 <th>Registration</th>
+                                <th>Trailer</th>
                                 <th>Transporter</th>
-                                <th>Licence disc</th>
-                                <th>Documents</th>
                             </tr>
                         </thead>
                         <tbody>
-                            <tr><td>GP 12 TY LF</td><td>Bulk Haul Logistics</td><td>28 Feb 2027</td><td><span class="badge amber">Pending</span></td></tr>
-                            <tr><td>NW 44 XZ LP</td><td>Transvaal Transport</td><td>31 Jan 2027</td><td><span class="badge amber">Pending</span></td></tr>
-                            <tr><td>GP 22 ZZ MP</td><td>Bulk Haul Logistics</td><td>30 Apr 2027</td><td><span class="badge amber">Pending</span></td></tr>
-                            <tr><td>MP 31 AB CD</td><td>Mpumalanga Carriers</td><td>31 Mar 2027</td><td><span class="badge amber">Pending</span></td></tr>
+                            <tr><td>GP 12 TY LF</td><td>GP 77 TL GP</td><td>Bulk Haul Logistics</td></tr>
+                            <tr><td>NW 44 XZ LP</td><td>NW 55 TL LP</td><td>Transvaal Transport</td></tr>
+                            <tr><td>GP 22 ZZ MP</td><td>GP 33 TL MP</td><td>Bulk Haul Logistics</td></tr>
+                            <tr><td>MP 31 AB CD</td><td>MP 44 TL MP</td><td>Mpumalanga Carriers</td></tr>
                         </tbody>
                     </table>
                 </div>
@@ -85,15 +84,14 @@
                             <tr>
                                 <th>Driver</th>
                                 <th>Transporter</th>
-                                <th>Medical expiry</th>
-                                <th>Documents</th>
+                                <th>Licence</th>
                             </tr>
                         </thead>
                         <tbody>
-                            <tr><td>Solomon Dube</td><td>Bulk Haul Logistics</td><td>30 Nov 2026</td><td><span class="badge amber">Pending</span></td></tr>
-                            <tr><td>Thabo Nkosi</td><td>Transvaal Transport</td><td>15 Sep 2026</td><td><span class="badge amber">Pending</span></td></tr>
-                            <tr><td>Johan Botha</td><td>Bulk Haul Logistics</td><td>22 Aug 2026</td><td><span class="badge amber">Pending</span></td></tr>
-                            <tr><td>Sipho Mahlangu</td><td>Mpumalanga Carriers</td><td>10 Oct 2026</td><td><span class="badge amber">Pending</span></td></tr>
+                            <tr><td>Solomon Dube</td><td>Bulk Haul Logistics</td><td>On file</td></tr>
+                            <tr><td>Thabo Nkosi</td><td>Transvaal Transport</td><td>On file</td></tr>
+                            <tr><td>Johan Botha</td><td>Bulk Haul Logistics</td><td>On file</td></tr>
+                            <tr><td>Sipho Mahlangu</td><td>Mpumalanga Carriers</td><td>On file</td></tr>
                         </tbody>
                     </table>
                 </div>
@@ -101,29 +99,26 @@
         </div>
 
         <p class="field-note">
-            The system reads the expiry dates from the sheet and flags status automatically. Every
-            imported record starts with documents <b>Pending</b> — you'll attach each driver's licence,
-            ID and medical (and each truck's licence disc) against its record in the next step.
+            After import, attach each driver's licence, ID and medical (and each truck's licence disc)
+            against its record so the documents are held on the system.
         </p>
     </article>
 
-    <!-- STEP 3: Submit + attach -->
+    <!-- STEP 3: Submit -->
     <article class="panel" id="submitPanel" style="display:none;">
         <div class="panel-title">
-            <h2>3. Import records &amp; attach documents</h2>
-            <small class="field-note">Creates the records, then take you to attach documents</small>
+            <h2>3. Submit for the week</h2>
+            <small class="field-note">Confirm and update your weekly fleet list</small>
         </div>
 
         <p class="muted">
-            Confirming imports the trucks and drivers as this week's authorised lists. Each record is
-            created with documents marked <b>Pending</b>. You'll then attach each driver's three
-            documents (licence, ID, medical) and each truck's licence disc against its record on the
-            fleet list. A driver is only cleared for collection once their documents are attached and current.
+            Once submitted, the imported trucks and drivers become this week's authorised lists.
+            Trucks and drivers remain separate — any authorised driver may use any authorised truck.
         </p>
 
         <div class="form-actions">
             <a class="btn-outline" asp-controller="Customer" asp-action="Fleet">Cancel</a>
-            <button class="btn-gold" id="confirmBtn" disabled>Import &amp; attach documents</button>
+            <button class="btn-gold" id="confirmBtn" disabled>Submit weekly fleet</button>
         </div>
     </article>
 </section>
@@ -153,9 +148,9 @@
 
                     const toast = document.querySelector('[data-toast-box]');
                     if (toast) {
-                        toast.textContent = 'File read — 4 trucks, 4 drivers ready to import';
+                        toast.textContent = 'File read successfully';
                         toast.classList.add('show');
-                        setTimeout(() => toast.classList.remove('show'), 2200);
+                        setTimeout(() => toast.classList.remove('show'), 2000);
                     }
                 }, 1200);
             });
@@ -163,7 +158,7 @@
             confirmBtn.addEventListener('click', function () {
                 const toast = document.querySelector('[data-toast-box]');
                 if (toast) {
-                    toast.textContent = 'Records imported — attach documents per driver';
+                    toast.textContent = 'Weekly fleet updated successfully';
                     toast.classList.add('show');
                     setTimeout(() => toast.classList.remove('show'), 2500);
                 }

@@ -1,4 +1,4 @@
-@{
+﻿@{
     ViewData["Title"] = "Transaction Details";
     ViewData["RoleName"] = "Site Manager";
     ViewData["RoleSubtitle"] = "Operations Oversight";
@@ -33,7 +33,7 @@
         </article>
         <article>
             <small>Recorded by</small>
-            <strong>Weighbridge Operator</strong>
+            <strong>J. van der Merwe</strong>
         </article>
     </div>
 
@@ -67,16 +67,45 @@
             <dt>Weigh-out time</dt>
             <dd>06:54</dd>
 
-            <dt>Weigh-in slip</dt>
+            <dt>Weigh-in slip reference</dt>
             <dd>SLP-0891</dd>
 
-            <dt>Weigh-out slip</dt>
+            <dt>Weigh-out slip reference</dt>
             <dd>SLP-0891-OUT</dd>
         </dl>
+    </article>
+
+    <article class="panel">
+        <div class="panel-title">
+            <h2>Uploaded weighbridge slips</h2>
+            <small class="field-note">Captured by the Weighbridge Operator</small>
+        </div>
+
+        <div class="content-grid">
+            <div class="panel" style="background:var(--bg); border-style:dashed;">
+                <p class="muted" style="text-align:center; margin:2rem 0;">
+                    📄 Weigh-in slip<br>
+                    <small>SLP-0891</small>
+                </p>
+                <div class="form-actions" style="border-top:0; margin-top:0; padding-top:0;">
+                    <a class="btn-outline" href="#" data-toast="Weigh-in slip downloaded">Download slip</a>
+                </div>
+            </div>
+
+            <div class="panel" style="background:var(--bg); border-style:dashed;">
+                <p class="muted" style="text-align:center; margin:2rem 0;">
+                    📄 Weigh-out slip<br>
+                    <small>SLP-0891-OUT</small>
+                </p>
+                <div class="form-actions" style="border-top:0; margin-top:0; padding-top:0;">
+                    <a class="btn-outline" href="#" data-toast="Weigh-out slip downloaded">Download slip</a>
+                </div>
+            </div>
+        </div>
 
         <div class="info-box">
-            This transaction is recorded by the weighbridge operator and is included in the operational audit log.
-            No financial or pricing information is shown to the Site Manager.
+            The Site Manager can view and download the weigh-in and weigh-out slips uploaded by the
+            Weighbridge Operator. No financial or pricing information is shown.
         </div>
     </article>
 </section>

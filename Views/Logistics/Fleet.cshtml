@@ -11,70 +11,86 @@
         <div>
             <p class="eyebrow">COMPLIANCE</p>
             <h1>Customer Fleet</h1>
-            <p>Authorised trucks and drivers for this week.</p>
+            <p>Weekly authorised trucks and drivers per customer.</p>
         </div>
     </div>
 
     <article class="panel">
         <div class="toolbar">
-            <input type="search" placeholder="Search registration or driver…">
+            <input type="search" placeholder="Search customer, truck or driver…">
             <select>
                 <option>All customers</option>
                 <option>Eskom Arnot</option>
                 <option>Seriti Resources</option>
             </select>
         </div>
-
         <p class="field-note">
-            Trucks and drivers are authorised independently — any authorised driver may operate any
-            authorised truck for the same customer. The operator pairs a truck with a driver at weigh-in.
+            Click a truck or driver to view their uploaded compliance documents before gate entry.
         </p>
     </article>
 
     <div class="content-grid">
-        <!-- AUTHORISED TRUCKS -->
+        <!-- Trucks -->
         <article class="panel">
             <div class="panel-title">
                 <h2>Authorised trucks</h2>
+                <small class="field-note">View licence disc / roadworthy</small>
             </div>
             <div class="table-wrap">
                 <table>
                     <thead>
                         <tr>
                             <th>Customer</th>
-                            <th>Registration</th>
-                            <th>Trailer</th>
+                            <th>Truck</th>
+                            <th>Transporter</th>
+                            <th>Documents</th>
                             <th>Status</th>
+                            <th></th>
                         </tr>
                     </thead>
                     <tbody>
                         <tr>
                             <td>Eskom Arnot</td>
-                            <td>MP 45 TR GP</td>
-                            <td>MP 46 TR GP</td>
+                            <td><b>GP 12 TY LF</b></td>
+                            <td>Bulk Haul Logistics</td>
+                            <td><span class="badge green">Complete</span></td>
                             <td><span class="badge green">Verified</span></td>
+                            <td><a class="btn-outline" style="padding:.4rem .8rem;" asp-controller="Logistics" asp-action="TruckDetails">View</a></td>
                         </tr>
                         <tr>
                             <td>Eskom Arnot</td>
-                            <td>MP 12 AB GP</td>
-                            <td>MP 13 AB GP</td>
+                            <td><b>NW 44 XZ LP</b></td>
+                            <td>Transvaal Transport</td>
+                            <td><span class="badge green">Complete</span></td>
                             <td><span class="badge green">Verified</span></td>
+                            <td><a class="btn-outline" style="padding:.4rem .8rem;" asp-controller="Logistics" asp-action="TruckDetails">View</a></td>
                         </tr>
                         <tr>
-                            <td>Seriti Resources</td>
-                            <td>MP 88 KL GP</td>
-                            <td>MP 89 KL GP</td>
+                            <td>Eskom Arnot</td>
+                            <td><b>GP 22 ZZ MP</b></td>
+                            <td>Bulk Haul Logistics</td>
+                            <td><span class="badge green">Complete</span></td>
                             <td><span class="badge green">Verified</span></td>
+                            <td><a class="btn-outline" style="padding:.4rem .8rem;" asp-controller="Logistics" asp-action="TruckDetails">View</a></td>
+                        </tr>
+                        <tr>
+                            <td>Eskom Arnot</td>
+                            <td><b>MP 31 AB CD</b></td>
+                            <td>Mpumalanga Carriers</td>
+                            <td><span class="badge green">Complete</span></td>
+                            <td><span class="badge green">Verified</span></td>
+                            <td><a class="btn-outline" style="padding:.4rem .8rem;" asp-controller="Logistics" asp-action="TruckDetails">View</a></td>
                         </tr>
                     </tbody>
                 </table>
             </div>
         </article>
 
-        <!-- AUTHORISED DRIVERS -->
+        <!-- Drivers -->
         <article class="panel">
             <div class="panel-title">
                 <h2>Authorised drivers</h2>
+                <small class="field-note">View licence, ID, medical</small>
             </div>
             <div class="table-wrap">
                 <table>
@@ -82,36 +98,53 @@
                         <tr>
                             <th>Customer</th>
                             <th>Driver</th>
-                            <th>Licence</th>
-                            <th>Medical</th>
+                            <th>Transporter</th>
+                            <th>Documents</th>
                             <th>Status</th>
+                            <th></th>
                         </tr>
                     </thead>
                     <tbody>
                         <tr>
                             <td>Eskom Arnot</td>
-                            <td>Joseph Dlamini</td>
-                            <td>Valid</td>
-                            <td>30 Nov 2026</td>
-                            <td><span class="badge green">Verified</span></td>
+                            <td><b>Solomon Dube</b></td>
+                            <td>Bulk Haul Logistics</td>
+                            <td><span class="badge green">Complete</span></td>
+                            <td><span class="badge green">Cleared</span></td>
+                            <td><a class="btn-outline" style="padding:.4rem .8rem;" asp-controller="Logistics" asp-action="DriverDetails">View</a></td>
                         </tr>
                         <tr>
                             <td>Eskom Arnot</td>
-                            <td>Simon Khumalo</td>
-                            <td>Valid</td>
-                            <td>22 Aug 2026</td>
-                            <td><span class="badge amber">Expiring soon</span></td>
+                            <td><b>Thabo Nkosi</b></td>
+                            <td>Transvaal Transport</td>
+                            <td><span class="badge green">Complete</span></td>
+                            <td><span class="badge green">Cleared</span></td>
+                            <td><a class="btn-outline" style="padding:.4rem .8rem;" asp-controller="Logistics" asp-action="DriverDetails">View</a></td>
                         </tr>
                         <tr>
                             <td>Eskom Arnot</td>
-                            <td>Petrus van Wyk <small class="muted">(substitute)</small></td>
-                            <td>Valid</td>
-                            <td>18 Oct 2026</td>
-                            <td><span class="badge green">Verified</span></td>
+                            <td><b>Johan Botha</b></td>
+                            <td>Bulk Haul Logistics</td>
+                            <td><span class="badge green">Complete</span></td>
+                            <td><span class="badge amber">Medical expiring soon</span></td>
+                            <td><a class="btn-outline" style="padding:.4rem .8rem;" asp-controller="Logistics" asp-action="DriverDetails">View</a></td>
+                        </tr>
+                        <tr>
+                            <td>Eskom Arnot</td>
+                            <td><b>Sipho Mahlangu</b></td>
+                            <td>Mpumalanga Carriers</td>
+                            <td><span class="badge red">Pending</span></td>
+                            <td><span class="badge red">Not cleared</span></td>
+                            <td><a class="btn-outline" style="padding:.4rem .8rem;" asp-controller="Logistics" asp-action="DriverDetails">View</a></td>
                         </tr>
                     </tbody>
                 </table>
             </div>
         </article>
     </div>
+
+    <p class="field-note">
+        A driver is only cleared once licence, ID, and medical documents are attached and current.
+        Trucks require a current licence disc. Click a record to view the actual uploaded documents.
+    </p>
 </section>
