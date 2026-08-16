@@ -17,14 +17,14 @@
 
     <div class="alert-box">
         <strong>Credit hold</strong>
-        <span>Msobo Coal is on hold because of an overdue invoice.</span>
+        <span>Msobo Coal is on hold because of an overdue invoice. Marking it paid lifts the hold and lets collection resume.</span>
         <button class="btn-outline" data-nav="payments">Review payments</button>
     </div>
 
     <div class="stat-grid">
         <article>
             <small>Awaiting SAP</small>
-            <strong>2</strong>
+            <strong class="highlight">2</strong>
             <span>Finance action required</span>
         </article>
         <article>
@@ -38,9 +38,9 @@
             <span>2 unpaid invoices</span>
         </article>
         <article>
-            <small>Credit hold</small>
-            <strong>1</strong>
-            <span>Msobo Coal</span>
+            <small>Collected this month</small>
+            <strong>R1.2m</strong>
+            <span>Paid invoices</span>
         </article>
     </div>
 
@@ -83,9 +83,34 @@
                 <button data-nav="invoice-detail">
                     <b>INV-2026-043</b>
                     <span>Msobo Coal · R262,000</span>
-                    <em class="badge amber">Overdue</em>
+                    <em class="badge red">Overdue</em>
                 </button>
             </div>
         </article>
     </div>
+
+    <!-- Needs attention -->
+    <article class="panel" style="margin-top:1.3rem;">
+        <div class="panel-title">
+            <h2>Needs attention</h2>
+            <small class="field-note">Actions only Finance can take.</small>
+        </div>
+        <div class="mini-table">
+            <div>
+                <b>PO-1048 · PO-1051</b>
+                <span>Awaiting SAP number — attach to activate for collection</span>
+                <em class="badge amber">2 to action</em>
+            </div>
+            <div>
+                <b>INV-2026-043</b>
+                <span>Msobo Coal overdue — mark as paid to lift the credit hold</span>
+                <em class="badge red">Overdue</em>
+            </div>
+            <div>
+                <b>7th of month</b>
+                <span>Monthly invoice run due — generate from delivered tonnage</span>
+                <em class="badge blue">Upcoming</em>
+            </div>
+        </div>
+    </article>
 </section>

@@ -11,31 +11,37 @@
         <div>
             <p class="eyebrow">CONTROL</p>
             <h1>Order Reconciliation</h1>
-            <p>Compare ordered and delivered tonnage.</p>
+            <p>Compare ordered and actual delivered tonnage before invoicing.</p>
         </div>
     </div>
 
+    <!-- Overview strip -->
     <div class="stat-grid">
         <article>
             <small>Ordered</small>
             <strong>1,000 t</strong>
+            <span>Across open orders</span>
         </article>
         <article>
             <small>Delivered</small>
             <strong>840 t</strong>
+            <span>Actual at weighbridge</span>
         </article>
         <article>
             <small>Outstanding</small>
             <strong>160 t</strong>
+            <span>Still to collect</span>
         </article>
         <article>
-            <small>Delivered</small>
-            <strong>84%</strong>
+            <small>% Delivered</small>
+            <strong class="highlight">84%</strong>
+            <span>Of ordered tonnage</span>
         </article>
     </div>
 
-    <article class="panel">
-        <div class="toolbar">
+    <!-- Filter bar -->
+    <article class="panel" style="padding:1rem 1.1rem;margin-bottom:1.3rem;">
+        <div class="toolbar" style="margin-bottom:0;">
             <input type="search" placeholder="Search order or customer…">
             <select>
                 <option>All orders</option>
@@ -43,43 +49,65 @@
                 <option>Fulfilled</option>
             </select>
         </div>
-
-        <div class="table-wrap">
-            <table>
-                <thead>
-                    <tr>
-                        <th>Order</th>
-                        <th>Customer</th>
-                        <th>Ordered</th>
-                        <th>Delivered</th>
-                        <th>Remaining</th>
-                        <th>Progress</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr data-nav="order-detail">
-                        <td>PO-1042</td>
-                        <td>Eskom Arnot</td>
-                        <td>500 t</td>
-                        <td>340 t</td>
-                        <td>160 t</td>
-                        <td>68%</td>
-                    </tr>
-                    <tr data-nav="order-detail">
-                        <td>PO-1039</td>
-                        <td>Eskom Arnot</td>
-                        <td>500 t</td>
-                        <td>500 t</td>
-                        <td>0 t</td>
-                        <td>100%</td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
-
-        <p class="field-note">
-            Reconciliation compares order tonnage against actual weighbridge deliveries.
-            Invoicing is always based on delivered tonnage, never on ordered or remaining amounts.
-        </p>
     </article>
+
+    <!-- Reconciliation cards -->
+    <div class="contract-list">
+
+        <a class="contract-card" data-nav="order-detail">
+            <div class="cc-head">
+                <div class="cc-id">
+                    <b>PO-1042</b>
+                    <span class="badge red">CSA-2026-001</span>
+                </div>
+                <span class="badge blue">In progress</span>
+            </div>
+            <div class="cc-customer">Eskom Arnot · Thermal coal</div>
+            <div class="cc-progress">
+                <div class="progress"><i style="width:68%"></i></div>
+                <div class="cc-figures">
+                    <span><b>340 t</b> delivered</span>
+                    <span><b>160 t</b> outstanding</span>
+                    <span>of <b>500 t</b> ordered</span>
+                </div>
+            </div>
+            <div class="cc-meta">
+                <div><small>Ordered</small><b>500 t</b></div>
+                <div><small>Delivered (actual)</small><b>340 t</b></div>
+                <div><small>Variance</small><b class="neg">−160 t</b></div>
+                <div><small>Invoiced on</small><b>340 t delivered</b></div>
+            </div>
+        </a>
+
+        <a class="contract-card" data-nav="order-detail">
+            <div class="cc-head">
+                <div class="cc-id">
+                    <b>PO-1039</b>
+                    <span class="badge red">CSA-2026-001</span>
+                </div>
+                <span class="badge green">Fulfilled</span>
+            </div>
+            <div class="cc-customer">Eskom Arnot · Thermal coal</div>
+            <div class="cc-progress">
+                <div class="progress"><i style="width:100%"></i></div>
+                <div class="cc-figures">
+                    <span><b>500 t</b> delivered</span>
+                    <span><b>0 t</b> outstanding</span>
+                    <span>of <b>500 t</b> ordered</span>
+                </div>
+            </div>
+            <div class="cc-meta">
+                <div><small>Ordered</small><b>500 t</b></div>
+                <div><small>Delivered (actual)</small><b>500 t</b></div>
+                <div><small>Variance</small><b class="pos">0 t</b></div>
+                <div><small>Invoiced on</small><b>500 t delivered</b></div>
+            </div>
+        </a>
+
+    </div>
+
+    <p class="field-note" style="margin-top:1.3rem;">
+        Reconciliation compares order tonnage against actual weighbridge deliveries. Invoicing is
+        always based on delivered tonnage, never on ordered or remaining amounts.
+    </p>
 </section>

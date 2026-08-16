@@ -16,8 +16,33 @@
         <button class="btn-gold" data-nav="customer-create">+ Add customer</button>
     </div>
 
-    <article class="panel">
-        <div class="toolbar">
+    <!-- Overview strip -->
+    <div class="stat-grid">
+        <article>
+            <small>Total customers</small>
+            <strong>3</strong>
+            <span>Registered accounts</span>
+        </article>
+        <article>
+            <small>Active</small>
+            <strong>2</strong>
+            <span>In good standing</span>
+        </article>
+        <article>
+            <small>On hold</small>
+            <strong class="highlight">1</strong>
+            <span>Outstanding payment</span>
+        </article>
+        <article>
+            <small>Active contracts</small>
+            <strong>4</strong>
+            <span>Across all customers</span>
+        </article>
+    </div>
+
+    <!-- Filter bar -->
+    <article class="panel" style="padding:1rem 1.1rem;margin-bottom:1.3rem;">
+        <div class="toolbar" style="margin-bottom:0;">
             <input type="search" placeholder="Search customers or sites…">
             <select>
                 <option>All account statuses</option>
@@ -25,67 +50,65 @@
                 <option>On hold</option>
             </select>
         </div>
-
-        <div class="table-wrap">
-            <table>
-                <thead>
-                    <tr>
-                        <th>Customer</th>
-                        <th>Site</th>
-                        <th>Contact</th>
-                        <th>Contracts</th>
-                        <th>Account status</th>
-                        <th></th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr data-nav="customer-detail">
-                        <td>
-                            <b>Eskom Arnot</b>
-                        </td>
-                        <td>Arnot Power Station</td>
-                        <td>
-                            Thabo Mokoena
-                            <small class="field-note">thabo.mokoena@eskom.co.za</small>
-                        </td>
-                        <td>2</td>
-                        <td>
-                            <span class="badge green">Active</span>
-                        </td>
-                        <td>›</td>
-                    </tr>
-                    <tr data-nav="customer-detail">
-                        <td>
-                            <b>Msobo Coal</b>
-                        </td>
-                        <td>Ermelo</td>
-                        <td>
-                            Naledi Maseko
-                            <small class="field-note">naledi.maseko@msobo.co.za</small>
-                        </td>
-                        <td>1</td>
-                        <td>
-                            <span class="badge amber" title="Placed on hold by Finance due to unpaid invoices.">On hold</span>
-                        </td>
-                        <td>›</td>
-                    </tr>
-                    <tr data-nav="customer-detail">
-                        <td>
-                            <b>Seriti Resources</b>
-                        </td>
-                        <td>Kriel</td>
-                        <td>
-                            Lerato Nkosi
-                            <small class="field-note">lerato.nkosi@seriti.co.za</small>
-                        </td>
-                        <td>1</td>
-                        <td>
-                            <span class="badge green">Active</span>
-                        </td>
-                        <td>›</td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
     </article>
+
+    <!-- Customer cards -->
+    <div class="contract-list">
+
+        <a class="contract-card" data-nav="customer-detail">
+            <div class="cc-head">
+                <div class="cc-id">
+                    <b>Eskom Arnot</b>
+                    <span class="badge red">2 contracts</span>
+                </div>
+                <span class="badge green">Active</span>
+            </div>
+            <div class="cc-customer">Arnot Power Station · Mpumalanga</div>
+            <div class="cc-meta">
+                <div><small>Contact</small><b>Thabo Mokoena</b></div>
+                <div><small>Email</small><b>thabo.mokoena@eskom.co.za</b></div>
+                <div><small>Phone</small><b>+27 13 297 1000</b></div>
+                <div><small>VAT</small><b>4230187456</b></div>
+            </div>
+        </a>
+
+        <a class="contract-card" data-nav="customer-detail">
+            <div class="cc-head">
+                <div class="cc-id">
+                    <b>Msobo Coal</b>
+                    <span class="badge red">1 contract</span>
+                </div>
+                <span class="badge amber" title="Placed on hold by Finance due to unpaid invoices.">On hold</span>
+            </div>
+            <div class="cc-customer">Ermelo · Mpumalanga</div>
+            <div class="cc-meta">
+                <div><small>Contact</small><b>Naledi Maseko</b></div>
+                <div><small>Email</small><b>naledi.maseko@msobo.co.za</b></div>
+                <div><small>Phone</small><b>+27 17 811 2200</b></div>
+                <div><small>VAT</small><b>4510229087</b></div>
+            </div>
+            <div class="cc-hold">
+                <span class="badge amber">Outstanding payment</span>
+                <small>Collection frozen until Finance records payment. Sales cannot log new orders for this customer.</small>
+            </div>
+        </a>
+
+        <a class="contract-card" data-nav="customer-detail">
+            <div class="cc-head">
+                <div class="cc-id">
+                    <b>Seriti Resources</b>
+                    <span class="badge red">1 contract</span>
+                </div>
+                <span class="badge green">Active</span>
+            </div>
+            <div class="cc-customer">Kriel · Mpumalanga</div>
+            <div class="cc-meta">
+                <div><small>Contact</small><b>Lerato Nkosi</b></div>
+                <div><small>Email</small><b>lerato.nkosi@seriti.co.za</b></div>
+                <div><small>Phone</small><b>+27 17 648 9000</b></div>
+                <div><small>VAT</small><b>4080345612</b></div>
+            </div>
+        </a>
+
+    </div>
 </section>

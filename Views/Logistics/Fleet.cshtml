@@ -11,46 +11,107 @@
         <div>
             <p class="eyebrow">COMPLIANCE</p>
             <h1>Customer Fleet</h1>
-            <p>Registered trucks and drivers.</p>
+            <p>Authorised trucks and drivers for this week.</p>
         </div>
     </div>
-    <article class="panel">
-        <div class="table-wrap">
-            <table>
-                <thead>
-                    <tr>
-                        <th>Customer</th>
-                        <th>Truck</th>
-                        <th>Driver</th>
-                        <th>Licence</th>
-                        <th>Medical</th>
-                        <th>Status</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>Eskom Arnot</td>
-                        <td>MP 45 TR GP</td>
-                        <td>Joseph Dlamini</td>
-                        <td>Valid</td>
-                        <td>30 Nov 2026</td>
-                        <td>
-                            <span class="badge green">Approved</span>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>Eskom Arnot</td>
-                        <td>MP 12 AB GP</td>
-                        <td>Simon Khumalo</td>
-                        <td>Valid</td>
-                        <td>22 Aug 2026</td>
-                        <td>
-                            <span class="badge amber">Expiring soon</span>
-                        </td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
-    </article>
-</section>
 
+    <article class="panel">
+        <div class="toolbar">
+            <input type="search" placeholder="Search registration or driver…">
+            <select>
+                <option>All customers</option>
+                <option>Eskom Arnot</option>
+                <option>Seriti Resources</option>
+            </select>
+        </div>
+
+        <p class="field-note">
+            Trucks and drivers are authorised independently — any authorised driver may operate any
+            authorised truck for the same customer. The operator pairs a truck with a driver at weigh-in.
+        </p>
+    </article>
+
+    <div class="content-grid">
+        <!-- AUTHORISED TRUCKS -->
+        <article class="panel">
+            <div class="panel-title">
+                <h2>Authorised trucks</h2>
+            </div>
+            <div class="table-wrap">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Customer</th>
+                            <th>Registration</th>
+                            <th>Trailer</th>
+                            <th>Status</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Eskom Arnot</td>
+                            <td>MP 45 TR GP</td>
+                            <td>MP 46 TR GP</td>
+                            <td><span class="badge green">Verified</span></td>
+                        </tr>
+                        <tr>
+                            <td>Eskom Arnot</td>
+                            <td>MP 12 AB GP</td>
+                            <td>MP 13 AB GP</td>
+                            <td><span class="badge green">Verified</span></td>
+                        </tr>
+                        <tr>
+                            <td>Seriti Resources</td>
+                            <td>MP 88 KL GP</td>
+                            <td>MP 89 KL GP</td>
+                            <td><span class="badge green">Verified</span></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </article>
+
+        <!-- AUTHORISED DRIVERS -->
+        <article class="panel">
+            <div class="panel-title">
+                <h2>Authorised drivers</h2>
+            </div>
+            <div class="table-wrap">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Customer</th>
+                            <th>Driver</th>
+                            <th>Licence</th>
+                            <th>Medical</th>
+                            <th>Status</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Eskom Arnot</td>
+                            <td>Joseph Dlamini</td>
+                            <td>Valid</td>
+                            <td>30 Nov 2026</td>
+                            <td><span class="badge green">Verified</span></td>
+                        </tr>
+                        <tr>
+                            <td>Eskom Arnot</td>
+                            <td>Simon Khumalo</td>
+                            <td>Valid</td>
+                            <td>22 Aug 2026</td>
+                            <td><span class="badge amber">Expiring soon</span></td>
+                        </tr>
+                        <tr>
+                            <td>Eskom Arnot</td>
+                            <td>Petrus van Wyk <small class="muted">(substitute)</small></td>
+                            <td>Valid</td>
+                            <td>18 Oct 2026</td>
+                            <td><span class="badge green">Verified</span></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </article>
+    </div>
+</section>

@@ -15,8 +15,33 @@
         </div>
     </div>
 
-    <article class="panel">
-        <div class="toolbar">
+    <!-- Overview strip -->
+    <div class="stat-grid">
+        <article>
+            <small>Awaiting SAP</small>
+            <strong class="highlight">2</strong>
+            <span>Need activation</span>
+        </article>
+        <article>
+            <small>In progress</small>
+            <strong>1</strong>
+            <span>Collecting on site</span>
+        </article>
+        <article>
+            <small>Ready</small>
+            <strong>1</strong>
+            <span>Activated, awaiting trucks</span>
+        </article>
+        <article>
+            <small>Total order value</small>
+            <strong>R1.93m</strong>
+            <span>Across open orders</span>
+        </article>
+    </div>
+
+    <!-- Filter bar -->
+    <article class="panel" style="padding:1rem 1.1rem;margin-bottom:1.3rem;">
+        <div class="toolbar" style="margin-bottom:0;">
             <input type="search" placeholder="Search order, customer or SAP number…">
             <select>
                 <option>All statuses</option>
@@ -26,90 +51,116 @@
                 <option>Fulfilled</option>
             </select>
         </div>
-
-        <div class="table-wrap">
-            <table>
-                <thead>
-                    <tr>
-                        <th>Order</th>
-                        <th>Customer</th>
-                        <th>Contract</th>
-                        <th>SAP number</th>
-                        <th>Ordered</th>
-                        <th>Delivered</th>
-                        <th>Remaining</th>
-                        <th>Value</th>
-                        <th>Status</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr data-nav="order-detail">
-                        <td>
-                            <b>PO-1042</b>
-                        </td>
-                        <td>Eskom Arnot</td>
-                        <td>CSA-2026-001</td>
-                        <td>45001234</td>
-                        <td>500 t</td>
-                        <td>340 t</td>
-                        <td>160 t</td>
-                        <td>R625,000</td>
-                        <td>
-                            <span class="badge blue">In progress</span>
-                        </td>
-                    </tr>
-                    <tr data-nav="order-detail">
-                        <td>
-                            <b>PO-1045</b>
-                        </td>
-                        <td>Seriti Resources</td>
-                        <td>SPOT-2026-009</td>
-                        <td>45001229</td>
-                        <td>400 t</td>
-                        <td>0 t</td>
-                        <td>400 t</td>
-                        <td>R560,000</td>
-                        <td>
-                            <span class="badge green">Ready</span>
-                        </td>
-                    </tr>
-                    <tr data-nav="order-detail">
-                        <td>
-                            <b>PO-1048</b>
-                        </td>
-                        <td>Msobo Coal</td>
-                        <td>ADH-2026-014</td>
-                        <td>—</td>
-                        <td>300 t</td>
-                        <td>0 t</td>
-                        <td>300 t</td>
-                        <td>R393,000</td>
-                        <td>
-                            <span class="badge amber">Awaiting SAP</span>
-                        </td>
-                    </tr>
-                    <tr data-nav="order-detail">
-                        <td>
-                            <b>PO-1051</b>
-                        </td>
-                        <td>Seriti Resources</td>
-                        <td>SPOT-2026-010</td>
-                        <td>—</td>
-                        <td>250 t</td>
-                        <td>0 t</td>
-                        <td>250 t</td>
-                        <td>R350,000</td>
-                        <td>
-                            <span class="badge amber">Awaiting SAP</span>
-                        </td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
-
-        <p class="field-note">
-            Purchase orders are the authorised collections against customer contracts.
-            Finance attaches the SAP number to activate collection.
-        </p>
     </article>
+
+    <!-- Order cards (awaiting-SAP first) -->
+    <div class="contract-list">
+
+        <a class="contract-card" data-nav="order-detail">
+            <div class="cc-head">
+                <div class="cc-id">
+                    <b>PO-1048</b>
+                    <span class="badge amber">Awaiting SAP</span>
+                </div>
+                <span class="badge amber">Action required</span>
+            </div>
+            <div class="cc-customer">Msobo Coal · Duff · ADH-2026-014</div>
+            <div class="cc-progress">
+                <div class="progress"><i style="width:0%"></i></div>
+                <div class="cc-figures">
+                    <span><b>0 t</b> delivered</span>
+                    <span><b>300 t</b> ordered</span>
+                    <span>value <b>R393,000</b></span>
+                </div>
+            </div>
+            <div class="cc-meta">
+                <div><small>SAP number</small><b class="muted">Not attached</b></div>
+                <div><small>Contract</small><b>ADH-2026-014</b></div>
+                <div><small>Customer</small><b class="neg">On hold</b></div>
+                <div><small>Action</small><b class="neg">Attach SAP</b></div>
+            </div>
+        </a>
+
+        <a class="contract-card" data-nav="order-detail">
+            <div class="cc-head">
+                <div class="cc-id">
+                    <b>PO-1051</b>
+                    <span class="badge amber">Awaiting SAP</span>
+                </div>
+                <span class="badge amber">Action required</span>
+            </div>
+            <div class="cc-customer">Seriti Resources · Nuts · SPOT-2026-010</div>
+            <div class="cc-progress">
+                <div class="progress"><i style="width:0%"></i></div>
+                <div class="cc-figures">
+                    <span><b>0 t</b> delivered</span>
+                    <span><b>250 t</b> ordered</span>
+                    <span>value <b>R350,000</b></span>
+                </div>
+            </div>
+            <div class="cc-meta">
+                <div><small>SAP number</small><b class="muted">Not attached</b></div>
+                <div><small>Contract</small><b>SPOT-2026-010</b></div>
+                <div><small>Customer</small><b class="pos">Good standing</b></div>
+                <div><small>Action</small><b class="neg">Attach SAP</b></div>
+            </div>
+        </a>
+
+        <a class="contract-card" data-nav="order-detail">
+            <div class="cc-head">
+                <div class="cc-id">
+                    <b>PO-1042</b>
+                    <span class="badge red">SAP 45001234</span>
+                </div>
+                <span class="badge blue">In progress</span>
+            </div>
+            <div class="cc-customer">Eskom Arnot · Thermal coal · CSA-2026-001</div>
+            <div class="cc-progress">
+                <div class="progress"><i style="width:68%"></i></div>
+                <div class="cc-figures">
+                    <span><b>340 t</b> delivered</span>
+                    <span><b>160 t</b> remaining</span>
+                    <span>value <b>R625,000</b></span>
+                </div>
+            </div>
+            <div class="cc-meta">
+                <div><small>SAP number</small><b>45001234</b></div>
+                <div><small>Contract</small><b>CSA-2026-001</b></div>
+                <div><small>Collections</small><b>10 loads</b></div>
+                <div><small>Status</small><b class="pos">On track</b></div>
+            </div>
+        </a>
+
+        <a class="contract-card" data-nav="order-detail">
+            <div class="cc-head">
+                <div class="cc-id">
+                    <b>PO-1045</b>
+                    <span class="badge red">SAP 45001229</span>
+                </div>
+                <span class="badge green">Ready</span>
+            </div>
+            <div class="cc-customer">Seriti Resources · Thermal coal · SPOT-2026-009</div>
+            <div class="cc-progress">
+                <div class="progress"><i style="width:0%"></i></div>
+                <div class="cc-figures">
+                    <span><b>0 t</b> delivered</span>
+                    <span><b>400 t</b> ordered</span>
+                    <span>value <b>R560,000</b></span>
+                </div>
+            </div>
+            <div class="cc-meta">
+                <div><small>SAP number</small><b>45001229</b></div>
+                <div><small>Contract</small><b>SPOT-2026-009</b></div>
+                <div><small>Collections</small><b>0 loads</b></div>
+                <div><small>Status</small><b>Activated</b></div>
+            </div>
+        </a>
+
+    </div>
+
+    <p class="field-note" style="margin-top:1.3rem;">
+        Purchase orders are the authorised collections against customer contracts. Finance attaches
+        the SAP number to activate collection. Invoices are billed from actual delivered tonnage,
+        not the original order value.
+    </p>
 </section>

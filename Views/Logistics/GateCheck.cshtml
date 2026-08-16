@@ -1,5 +1,5 @@
 @{
-    ViewData["Title"] = "Truck &amp; Driver Check";
+    ViewData["Title"] = "Truck & Driver Check";
     ViewData["RoleName"] = "Weighbridge Operator";
     ViewData["RoleSubtitle"] = "Logistics & Weighbridge";
     ViewData["Initials"] = "WO";
@@ -7,18 +7,47 @@
 }
 
 <section class="portal-screen active" data-screen="gate-check">
-    <button class="back-link" data-nav="truck-select">← Select truck</button>
+    <a class="back-link" asp-controller="Logistics" asp-action="SelectTruck">← Select truck</a>
+
     <div class="page-heading">
         <div>
             <p class="eyebrow">GATE VERIFICATION</p>
-            <h1>Truck &amp; Driver Check</h1>
-            <p>MP 45 TR GP · Joseph Dlamini</p>
+            <h1>Truck & Driver Check</h1>
+            <p>GP 12 TY LF · Eskom Arnot</p>
         </div>
     </div>
-    <form class="panel form-card" data-demo-form data-next="weigh-in" data-success="Gate check passed">
+
+    <form class="panel form-card" data-demo-form data-success="Gate check passed">
+
+        <div class="form-grid">
+            <label>
+                Truck (selected)
+                <input value="GP 12 TY LF" readonly>
+            </label>
+            <label>
+                Driver at the gate *
+                <select required>
+                    <option value="">Select the driver who arrived…</option>
+                    <option>Solomon Dube</option>
+                    <option>Thabo Nkosi</option>
+                    <option>Petrus van Wyk (substitute)</option>
+                </select>
+            </label>
+        </div>
+        <p class="field-note">
+            The driver is selected from the customer's authorised driver list — any authorised
+            driver (including substitutes) may operate this truck. The truck and driver are paired
+            here for this collection.
+        </p>
+
+        <hr>
+
         <div class="check-list">
             <label class="check-row">
-                <input required type="checkbox"> Truck appears on the approved weekly fleet list
+                <input required type="checkbox"> Truck appears on the verified weekly fleet list
+            </label>
+            <label class="check-row">
+                <input required type="checkbox"> Selected driver is on the authorised driver list
             </label>
             <label class="check-row">
                 <input required type="checkbox"> Driver identity and licence verified
@@ -30,6 +59,7 @@
                 <input required type="checkbox"> Truck condition is safe for loading
             </label>
         </div>
+
         <div class="form-grid top-gap">
             <label>
                 Truck condition
@@ -39,18 +69,16 @@
                     <option>Unsafe</option>
                 </select>
             </label>
-            <label>
-                Waybill number<input required value="WB-2026-2409">
-            </label>
-            <label class="full">
-                Inspection notes<textarea rows="3" placeholder="Optional notes">
-            </textarea>
-        </label>
-    </div>
-    <div class="form-actions">
-        <button type="button" class="btn-outline" data-nav="available-orders">Cancel</button>
-        <button class="btn-gold">Continue to weigh-in</button>
-    </div>
-</form>
-</section>
 
+            <label class="full">
+                Inspection notes
+                <textarea rows="3" placeholder="Optional notes"></textarea>
+            </label>
+        </div>
+
+        <div class="form-actions">
+            <a class="btn-outline" asp-controller="Logistics" asp-action="AvailableOrders">Cancel</a>
+            <button class="btn-gold" type="submit">Continue to weigh-in</button>
+        </div>
+    </form>
+</section>

@@ -15,49 +15,75 @@
         </div>
     </div>
 
-    <article class="panel">
-        <div class="table-wrap">
-            <table>
-                <thead>
-                    <tr>
-                        <th>Order</th>
-                        <th>Customer</th>
-                        <th>Contract</th>
-                        <th>Tonnage</th>
-                        <th>Value</th>
-                        <th>Created</th>
-                        <th>Status</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr data-nav="order-detail">
-                        <td>
-                            <b>PO-1048</b>
-                        </td>
-                        <td>Msobo Coal</td>
-                        <td>ADH-2026-014</td>
-                        <td>300 t</td>
-                        <td>R393,000</td>
-                        <td>11 Aug 2026</td>
-                        <td>
-                            <span class="badge amber">Awaiting SAP</span>
-                        </td>
-                    </tr>
-                    <tr data-nav="order-detail">
-                        <td>
-                            <b>PO-1051</b>
-                        </td>
-                        <td>Seriti Resources</td>
-                        <td>SPOT-2026-009</td>
-                        <td>250 t</td>
-                        <td>R350,000</td>
-                        <td>12 Aug 2026</td>
-                        <td>
-                            <span class="badge amber">Awaiting SAP</span>
-                        </td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
-    </article>
+    <!-- Overview strip -->
+    <div class="stat-grid">
+        <article>
+            <small>Awaiting SAP</small>
+            <strong class="highlight">2</strong>
+            <span>Need activation</span>
+        </article>
+        <article>
+            <small>Combined tonnage</small>
+            <strong>550 t</strong>
+            <span>To be released</span>
+        </article>
+        <article>
+            <small>Combined value</small>
+            <strong>R743,000</strong>
+            <span>Awaiting activation</span>
+        </article>
+        <article>
+            <small>On hold</small>
+            <strong>1</strong>
+            <span>Msobo Coal</span>
+        </article>
+    </div>
+
+    <p class="field-note" style="margin:-.3rem 0 1.3rem;">
+        Attaching the SAP number activates an order and releases it to the weighbridge. There is no
+        separate approval step — the SAP number exists because the deal was authorised externally.
+    </p>
+
+    <!-- Queue cards -->
+    <div class="contract-list">
+
+        <a class="contract-card" data-nav="order-detail">
+            <div class="cc-head">
+                <div class="cc-id">
+                    <b>PO-1048</b>
+                    <span class="badge amber">Awaiting SAP</span>
+                </div>
+                <span class="badge amber">Action required</span>
+            </div>
+            <div class="cc-customer">Msobo Coal · Duff · ADH-2026-014</div>
+            <div class="cc-meta">
+                <div><small>Tonnage</small><b>300 t</b></div>
+                <div><small>Value</small><b>R393,000</b></div>
+                <div><small>Logged</small><b>11 Aug 2026</b></div>
+                <div><small>Customer</small><b class="neg">On hold</b></div>
+            </div>
+            <div class="cc-hold">
+                <span class="badge red">On hold</span>
+                <small>Even after SAP activation, collection stays blocked until the overdue invoice is paid.</small>
+            </div>
+        </a>
+
+        <a class="contract-card" data-nav="order-detail">
+            <div class="cc-head">
+                <div class="cc-id">
+                    <b>PO-1051</b>
+                    <span class="badge amber">Awaiting SAP</span>
+                </div>
+                <span class="badge amber">Action required</span>
+            </div>
+            <div class="cc-customer">Seriti Resources · Nuts · SPOT-2026-010</div>
+            <div class="cc-meta">
+                <div><small>Tonnage</small><b>250 t</b></div>
+                <div><small>Value</small><b>R350,000</b></div>
+                <div><small>Logged</small><b>12 Aug 2026</b></div>
+                <div><small>Customer</small><b class="pos">Good standing</b></div>
+            </div>
+        </a>
+
+    </div>
 </section>

@@ -88,7 +88,7 @@
                         <th>Year</th>
                         <th>Price per ton</th>
                         <th>Tonnes delivered</th>
-                        <th>Value invoiced</th>
+                        <th>Delivered value</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -102,7 +102,9 @@
             </table>
         </div>
         <p class="field-note">
-            A Coal Supply Agreement re-sets its price each year of the term.
+            A Coal Supply Agreement re-sets its price each year of the term. Delivered value is the
+            running total at this year's rate; it is invoiced monthly as each month closes, so the
+            invoiced figure below trails the delivered total while the year is still in progress.
         </p>
 
         <hr>
@@ -115,88 +117,7 @@
             <table>
                 <thead>
                     <tr>
-                        <th>Month</th>
-                        <th>Contracted</th>
-                        <th>Actual</th>
-                        <th>Variance</th>
-                        <th>Cumulative</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>June 2026</td>
-                        <td>417 t</td>
-                        <td>480 t</td>
-                        <td class="pos">+63 t</td>
-                        <td class="pos">+63 t</td>
-                    </tr>
-                    <tr>
-                        <td>July 2026</td>
-                        <td>417 t</td>
-                        <td>340 t</td>
-                        <td class="neg">-77 t</td>
-                        <td class="neg">-14 t</td>
-                    </tr>
-                    <tr>
-                        <td>August 2026</td>
-                        <td>417 t</td>
-                        <td>340 t</td>
-                        <td class="neg">-77 t</td>
-                        <td class="neg">-91 t</td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
-        <p class="field-note">
-            Monthly targets are derived from total tonnage ÷ contract term.
-            The customer can collect ahead or behind pace; the cumulative figure
-            shows the year-to-date position against the contract total.
-        </p>
-
-        <hr>
-
-        <div class="panel-title">
-            <h2>Invoices against this contract</h2>
-            <small class="field-note">Recent invoices raised from actual weighbridge deliveries.</small>
-        </div>
-        <div class="table-wrap">
-            <table>
-                <thead>
-                    <tr>
-                        <th>Invoice</th>
-                        <th>Month</th>
-                        <th>Actual tonnage</th>
-                        <th>Amount</th>
-                        <th>Status</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr onclick="location.href='@Url.Action("InvoiceDetails", "Finance")'" style="cursor:pointer;">
-                        <td>INV-2026-071</td>
-                        <td>June 2026</td>
-                        <td>480 t</td>
-                        <td>R600,000</td>
-                        <td><span class="badge green">Paid</span></td>
-                    </tr>
-                    <tr onclick="location.href='@Url.Action("InvoiceDetails", "Finance")'" style="cursor:pointer;">
-                        <td>INV-2026-084</td>
-                        <td>July 2026</td>
-                        <td>340 t</td>
-                        <td>R425,000</td>
-                        <td><span class="badge amber">Unpaid</span></td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
-        <p class="field-note">
-            Invoices are generated monthly from actual tonnage recorded at the weighbridge.
-            Only delivered tons are billed — never ordered or remaining amounts.
-            August delivery data is not yet invoiced because the month is still open.
-        </p>
-
-        <div class="form-actions">
-            <button class="btn-outline" data-nav="invoices">View all invoices</button>
-            <button class="btn-outline" data-toast="Contract document download simulated">View contract document</button>
-        </div>
-    </article>
-</section>
+<th>Month</th>
+<th>Contracted</th>
+<th>Actual</th>
+<th>Variance</th>

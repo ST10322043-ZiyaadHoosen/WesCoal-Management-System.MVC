@@ -13,22 +13,22 @@
         <div>
             <p class="eyebrow">FLEET DETAILS</p>
             <h1>Add Truck</h1>
-            <p>Manually add one truck to this week’s authorised list.</p>
+            <p>Add one truck to this week's authorised truck list.</p>
         </div>
     </div>
 
-    <form class="panel form-card" data-demo-form data-success="Truck added to this week’s fleet list">
+    <form class="panel form-card" data-demo-form data-success="Truck added to this week's fleet list">
+
+        <h2 class="form-section">Truck details</h2>
         <div class="form-grid">
             <label>
                 Truck registration *
                 <input required placeholder="e.g. GP 12 TY LF">
             </label>
-
             <label>
                 Trailer registration
                 <input placeholder="e.g. GP 77 TL GP">
             </label>
-
             <label>
                 Transporter / Logistics company *
                 <select required>
@@ -40,10 +40,29 @@
                 </select>
                 <small class="field-note">The transport company that owns or operates this truck.</small>
             </label>
+            <label>
+                Licence disc expiry *
+                <input required type="date">
+                <small class="field-note">The system flags trucks whose licence disc is expiring or expired.</small>
+            </label>
+        </div>
+
+        <hr>
+
+        <h2 class="form-section">Supporting documents</h2>
+        <p class="field-note" style="margin-bottom:1rem;">
+            Attach the truck's licence disc as proof of a roadworthy, registered vehicle.
+        </p>
+        <div class="form-grid">
+            <label class="full">
+                Licence disc / roadworthy *
+                <input required type="file" accept=".pdf,.jpg,.jpeg,.png">
+                <small class="field-note">Proof of the licence disc expiry entered above.</small>
+            </label>
         </div>
 
         <div class="info-box">
-            This truck is added to the weekly fleet list. It is not linked to any driver.
+            This truck is added to the authorised truck list independently of any driver.
             Any authorised driver may use any authorised truck.
         </div>
 

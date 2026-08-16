@@ -1,5 +1,5 @@
 @{
-    ViewData["Title"] = "Select Collection Type";
+    ViewData["Title"] = "Collection Type";
     ViewData["RoleName"] = "Weighbridge Operator";
     ViewData["RoleSubtitle"] = "Logistics & Weighbridge";
     ViewData["Initials"] = "WO";
@@ -7,23 +7,25 @@
 }
 
 <section class="portal-screen active" data-screen="collection-type">
-    <button class="back-link" data-nav="order-detail">← Order details</button>
+    <a class="back-link" asp-controller="Logistics" asp-action="OrderDetails">← Order details</a>
+
     <div class="page-heading">
         <div>
-            <p class="eyebrow">PO-1042</p>
-            <h1>Select Collection Type</h1>
-            <p>Choose how this vehicle visit will proceed.</p>
+            <p class="eyebrow">PO-1042 · THERMAL COAL</p>
+            <h1>Collection Type</h1>
+            <p>Standard coal sale order.</p>
         </div>
     </div>
+
     <div class="choice-grid">
-        <button class="choice-card" data-nav="truck-select">
+        <a class="choice-card" asp-controller="Logistics" asp-action="SelectTruck">
             <strong>Standard coal collection</strong>
-            <span>Empty weigh-in, load coal and loaded weigh-out.</span>
-        </button>
-        <button class="choice-card" data-nav="truck-select">
+            <span>Empty weigh-in, load coal, loaded weigh-out.</span>
+        </a>
+
+        <div class="choice-card" style="opacity:.5; cursor:not-allowed;">
             <strong>Coal washing service</strong>
-            <span>Record a service-only weighing transaction.</span>
-        </button>
+            <span>Not available for this order. Washing services are recorded against a separate washing service order.</span>
+        </div>
     </div>
 </section>
-

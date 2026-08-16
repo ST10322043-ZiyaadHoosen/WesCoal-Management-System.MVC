@@ -13,12 +13,13 @@
             <h1>Weighbridge Dashboard</h1>
             <p>Gate operations, collections and daily weighing log.</p>
         </div>
-        <button class="btn-gold" data-nav="available-orders">Start collection</button>
+        <a class="btn-gold" asp-controller="Logistics" asp-action="AvailableOrders">Start collection</a>
     </div>
+
     <div class="stat-grid">
         <article>
             <small>Available orders</small>
-            <strong>4</strong>
+            <strong>2</strong>
             <span>Ready to collect</span>
         </article>
         <article>
@@ -37,43 +38,44 @@
             <span>Customer on hold</span>
         </article>
     </div>
+
     <div class="content-grid">
         <article class="panel">
             <div class="panel-title">
                 <h2>Available orders</h2>
-                <button data-nav="available-orders">View all</button>
+                <a class="btn-outline" asp-controller="Logistics" asp-action="AvailableOrders">View all</a>
             </div>
             <div class="mini-table">
-                <button data-nav="order-detail">
+                <a asp-controller="Logistics" asp-action="OrderDetails">
                     <b>PO-1042</b>
                     <span>Eskom Arnot · 160 t left</span>
                     <em class="badge blue">In progress</em>
-                </button>
-                <button data-nav="order-detail">
+                </a>
+                <a asp-controller="Logistics" asp-action="OrderDetails">
                     <b>PO-1045</b>
                     <span>Seriti Resources · 400 t</span>
-                    <em class="badge green">Active</em>
-                </button>
+                    <em class="badge green">Ready</em>
+                </a>
             </div>
         </article>
+
         <article class="panel">
             <div class="panel-title">
                 <h2>Today's activity</h2>
-                <button data-nav="log">View log</button>
+                <a class="btn-outline" asp-controller="Logistics" asp-action="WeighbridgeLog">View log</a>
             </div>
             <div class="mini-table">
-                <button>
+                <div>
                     <b>WB-2408</b>
-                    <span>MP 45 TR GP · 34.2 t</span>
+                    <span>GP 12 TY LF · 28.6 t</span>
                     <em class="badge green">Complete</em>
-                </button>
-                <button>
+                </div>
+                <div>
                     <b>WB-2407</b>
-                    <span>MP 12 AB GP · 33.8 t</span>
+                    <span>NW 44 XZ LP · 29.3 t</span>
                     <em class="badge green">Complete</em>
-                </button>
+                </div>
             </div>
         </article>
     </div>
 </section>
-

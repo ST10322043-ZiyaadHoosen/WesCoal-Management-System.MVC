@@ -15,6 +15,7 @@
         </div>
     </div>
 
+    <!-- Overview strip -->
     <div class="stat-grid">
         <article>
             <small>Active contracts</small>
@@ -22,24 +23,25 @@
             <span>Across 3 customers</span>
         </article>
         <article>
-            <small>Total contracted tonnage</small>
+            <small>Total contracted</small>
             <strong>8,450 t</strong>
-            <span>All agreements shown</span>
+            <span>All agreements</span>
         </article>
         <article>
             <small>Remaining tonnage</small>
             <strong>3,410 t</strong>
-            <span>Still to be collected</span>
+            <span>Still to collect</span>
         </article>
         <article>
             <small>Contract value</small>
-            <strong>R10.9m</strong>
-            <span>All agreements shown</span>
+            <strong class="highlight">R10.9m</strong>
+            <span>All agreements</span>
         </article>
     </div>
 
-    <article class="panel">
-        <div class="toolbar">
+    <!-- Filter bar -->
+    <article class="panel" style="padding:1rem 1.1rem;margin-bottom:1.3rem;">
+        <div class="toolbar" style="margin-bottom:0;">
             <input type="search" placeholder="Search contract or customer…">
             <select>
                 <option>All statuses</option>
@@ -48,101 +50,142 @@
                 <option>Expired</option>
                 <option>Cancelled</option>
             </select>
-        </div>
-
-        <div class="table-wrap">
-            <table>
-                <thead>
-                    <tr>
-                        <th>Contract</th>
-                        <th>Customer</th>
-                        <th>Type</th>
-                        <th>Total</th>
-                        <th>Delivered</th>
-                        <th>Remaining</th>
-                        <th>Price/t</th>
-                        <th>End Date</th>
-                        <th>Status</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr onclick="location.href='@Url.Action("ContractDetails", "Finance")'" style="cursor:pointer;">
-                        <td>
-                            <b>CSA-2026-001</b>
-                        </td>
-                        <td>Eskom Arnot</td>
-                        <td>Coal Supply Agreement</td>
-                        <td>5,000 t</td>
-                        <td>3,400 t</td>
-                        <td>1,600 t</td>
-                        <td>R1,250</td>
-                        <td>31 Dec 2026</td>
-                        <td>
-                            <span class="badge green">Active</span>
-                        </td>
-                    </tr>
-                    <tr onclick="location.href='@Url.Action("ContractDetails", "Finance")'" style="cursor:pointer;">
-                        <td>
-                            <b>ADH-2026-014</b>
-                        </td>
-                        <td>Msobo Coal</td>
-                        <td>Ad-hoc</td>
-                        <td>2,000 t</td>
-                        <td>840 t</td>
-                        <td>1,160 t</td>
-                        <td>R1,310</td>
-                        <td>30 Sep 2026</td>
-                        <td>
-                            <span class="badge green">Active</span>
-                        </td>
-                    </tr>
-                    <tr onclick="location.href='@Url.Action("ContractDetails", "Finance")'" style="cursor:pointer;">
-                        <td>
-                            <b>SPOT-2026-009</b>
-                        </td>
-                        <td>Seriti Resources</td>
-                        <td>Spot sale</td>
-                        <td>400 t</td>
-                        <td>0 t</td>
-                        <td>400 t</td>
-                        <td>R1,400</td>
-                        <td>31 Aug 2026</td>
-                        <td>
-                            <span class="badge green">Active</span>
-                        </td>
-                    </tr>
-                    <tr onclick="location.href='@Url.Action("ContractDetails", "Finance")'" style="cursor:pointer;">
-                        <td>
-                            <b>SPOT-2026-010</b>
-                        </td>
-                        <td>Seriti Resources</td>
-                        <td>Spot sale</td>
-                        <td>250 t</td>
-                        <td>0 t</td>
-                        <td>250 t</td>
-                        <td>R1,400</td>
-                        <td>31 Aug 2026</td>
-                        <td>
-                            <span class="badge green">Active</span>
-                        </td>
-                    </tr>
-                    <tr onclick="location.href='@Url.Action("ContractDetails", "Finance")'" style="cursor:pointer;">
-                        <td>
-                            <b>SPOT-2026-005</b>
-                        </td>
-                        <td>Eskom Arnot</td>
-                        <td>Spot sale</td>
-                        <td>800 t</td>
-                        <td>800 t</td>
-                        <td>0 t</td>
-                        <td>R1,400</td>
-                        <td>31 Jul 2026</td>
-                        <td>
-                            <span class="badge green">Completed</span>
-                        </td>
-                    </tr>
-                </tbody>
-            </table>
+            <select>
+                <option>All types</option>
+                <option>Coal Supply Agreement</option>
+                <option>Ad-hoc</option>
+                <option>Spot sale</option>
+            </select>
         </div>
     </article>
+
+    <!-- Contract cards -->
+    <div class="contract-list">
+
+        <a class="contract-card" onclick="location.href='@Url.Action("ContractDetails", "Finance")'">
+            <div class="cc-head">
+                <div class="cc-id">
+                    <b>CSA-2026-001</b>
+                    <span class="badge red">Coal Supply Agreement</span>
+                </div>
+                <span class="badge green">Active</span>
+            </div>
+            <div class="cc-customer">Eskom Arnot · Thermal coal</div>
+            <div class="cc-progress">
+                <div class="progress"><i style="width:68%"></i></div>
+                <div class="cc-figures">
+                    <span><b>3,400 t</b> delivered</span>
+                    <span><b>1,600 t</b> remaining</span>
+                    <span>of <b>5,000 t</b></span>
+                </div>
+            </div>
+            <div class="cc-meta">
+                <div><small>Price / t (2026)</small><b>R1,250</b></div>
+                <div><small>Type</small><b>CSA</b></div>
+                <div><small>Ends</small><b>31 Dec 2026</b></div>
+                <div><small>Status</small><b class="pos">Active</b></div>
+            </div>
+        </a>
+
+        <a class="contract-card" onclick="location.href='@Url.Action("ContractDetails", "Finance")'">
+            <div class="cc-head">
+                <div class="cc-id">
+                    <b>ADH-2026-014</b>
+                    <span class="badge red">Ad-hoc</span>
+                </div>
+                <span class="badge green">Active</span>
+            </div>
+            <div class="cc-customer">Msobo Coal · Duff</div>
+            <div class="cc-progress">
+                <div class="progress"><i style="width:42%"></i></div>
+                <div class="cc-figures">
+                    <span><b>840 t</b> delivered</span>
+                    <span><b>1,160 t</b> remaining</span>
+                    <span>of <b>2,000 t</b></span>
+                </div>
+            </div>
+            <div class="cc-meta">
+                <div><small>Price / t</small><b>R1,310</b></div>
+                <div><small>Type</small><b>Ad-hoc</b></div>
+                <div><small>Ends</small><b>30 Sep 2026</b></div>
+                <div><small>Account</small><b class="neg">On hold</b></div>
+            </div>
+        </a>
+
+        <a class="contract-card" onclick="location.href='@Url.Action("ContractDetails", "Finance")'">
+            <div class="cc-head">
+                <div class="cc-id">
+                    <b>SPOT-2026-009</b>
+                    <span class="badge red">Spot sale</span>
+                </div>
+                <span class="badge green">Active</span>
+            </div>
+            <div class="cc-customer">Seriti Resources · Thermal coal</div>
+            <div class="cc-progress">
+                <div class="progress"><i style="width:0%"></i></div>
+                <div class="cc-figures">
+                    <span><b>0 t</b> delivered</span>
+                    <span><b>400 t</b> remaining</span>
+                    <span>of <b>400 t</b></span>
+                </div>
+            </div>
+            <div class="cc-meta">
+                <div><small>Price / t</small><b>R1,400</b></div>
+                <div><small>Type</small><b>Spot</b></div>
+                <div><small>Ends</small><b>31 Aug 2026</b></div>
+                <div><small>Status</small><b class="pos">Active</b></div>
+            </div>
+        </a>
+
+        <a class="contract-card" onclick="location.href='@Url.Action("ContractDetails", "Finance")'">
+            <div class="cc-head">
+                <div class="cc-id">
+                    <b>SPOT-2026-010</b>
+                    <span class="badge red">Spot sale</span>
+                </div>
+                <span class="badge green">Active</span>
+            </div>
+            <div class="cc-customer">Seriti Resources · Nuts</div>
+            <div class="cc-progress">
+                <div class="progress"><i style="width:0%"></i></div>
+                <div class="cc-figures">
+                    <span><b>0 t</b> delivered</span>
+                    <span><b>250 t</b> remaining</span>
+                    <span>of <b>250 t</b></span>
+                </div>
+            </div>
+            <div class="cc-meta">
+                <div><small>Price / t</small><b>R1,400</b></div>
+                <div><small>Type</small><b>Spot</b></div>
+                <div><small>Ends</small><b>31 Aug 2026</b></div>
+                <div><small>Status</small><b class="pos">Active</b></div>
+            </div>
+        </a>
+
+        <a class="contract-card" onclick="location.href='@Url.Action("ContractDetails", "Finance")'">
+            <div class="cc-head">
+                <div class="cc-id">
+                    <b>SPOT-2026-005</b>
+                    <span class="badge red">Spot sale</span>
+                </div>
+                <span class="badge green">Completed</span>
+            </div>
+            <div class="cc-customer">Eskom Arnot · Thermal coal</div>
+            <div class="cc-progress">
+                <div class="progress"><i style="width:100%"></i></div>
+                <div class="cc-figures">
+                    <span><b>800 t</b> delivered</span>
+                    <span><b>0 t</b> remaining</span>
+                    <span>of <b>800 t</b></span>
+                </div>
+            </div>
+            <div class="cc-meta">
+                <div><small>Price / t</small><b>R1,400</b></div>
+                <div><small>Type</small><b>Spot</b></div>
+                <div><small>Ended</small><b>31 Jul 2026</b></div>
+                <div><small>Status</small><b class="pos">Complete</b></div>
+            </div>
+        </a>
+
+    </div>
 </section>

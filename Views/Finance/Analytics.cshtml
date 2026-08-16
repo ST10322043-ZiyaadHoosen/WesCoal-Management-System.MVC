@@ -28,7 +28,7 @@
         </article>
         <article>
             <small>Outstanding</small>
-            <strong>R687,000</strong>
+            <strong class="highlight">R687,000</strong>
             <span>2 unpaid invoices</span>
         </article>
         <article>
@@ -90,8 +90,8 @@
     <div class="content-grid">
         <article class="panel">
             <div class="panel-title">
-                <h2>Monthly revenue vs collections</h2>
-                <small class="field-note">Actual tonnage delivered vs contract target</small>
+                <h2>Deliveries vs contract target</h2>
+                <small class="field-note">Actual tonnage delivered vs monthly pace target</small>
             </div>
             <canvas id="monthlyDeliveries" height="220"></canvas>
         </article>
@@ -110,121 +110,116 @@
     <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.3/dist/chart.umd.min.js"></script>
     <script>
         (function () {
-            // Revenue by customer (R thousands)
-            new Chart(document.getElementById('revenueByCustomer'), {
-                type: 'bar',
-                data: {
-                    labels: ['Eskom Arnot', 'Msobo Coal', 'Seriti Resources'],
-                    datasets: [{
-                        label: 'Invoiced (R)',
-                        data: [1025, 262, 0],
-                        backgroundColor: ['#c8102e', '#1f3a5f', '#18794e'],
-                        borderRadius: 10
-                    }]
-                },
-                options: {
-                    responsive: true,
-                    plugins: { legend: { display: false } },
-                    scales: {
-                        y: {
-                            beginAtZero: true,
-                            ticks: {
-                                callback: function (value) {
-                                    return 'R' + value + 'k';
-                                }
-                            }
-                        }
-                    }
-                }
-            });
+        // Theme palette
+        const RED = '#e0231f', BLACK = '#1a1a1a', GREY = '#5b626c';
+        const GREEN = '#12824e', AMBER = '#e0a020', DARKRED = '#8a0f16';
 
-            // Invoice status donut
-            new Chart(document.getElementById('invoiceStatus'), {
-                type: 'doughnut',
-                data: {
-                    labels: ['Paid', 'Unpaid', 'Overdue'],
-                    datasets: [{
-                        data: [1, 1, 1],
-                        backgroundColor: ['#18794e', '#e9b949', '#c8102e'],
-                        borderWidth: 0
-                    }]
-                },
-                options: {
-                    responsive: true,
-                    plugins: { legend: { position: 'bottom' } }
-                }
-            });
+        // Revenue by customer (R thousands)
+        new Chart(document.getElementById('revenueByCustomer'), {
+        type: 'bar',
+        data: {
+        labels: ['Eskom Arnot', 'Msobo Coal', 'Seriti Resources'],
+        datasets: [{
+        label: 'Invoiced (R)',
+        data: [1025, 262, 0],
+        backgroundColor: [RED, BLACK, GREY],
+        borderRadius: 10
+        }]
+        },
+        options: {
+        responsive: true,
+        plugins: { legend: { display: false } },
+        scales: {
+        y: {
+        beginAtZero: true,
+        ticks: { callback: v => 'R' + v + 'k' }
+        }
+        }
+        }
+        });
 
-            // Monthly deliveries vs target
-            new Chart(document.getElementById('monthlyDeliveries'), {
-                type: 'bar',
-                data: {
-                    labels: ['May', 'June', 'July', 'Aug'],
-                    datasets: [
-                        {
-                            label: 'Delivered (t)',
-                            data: [420, 480, 340, 340],
-                            backgroundColor: '#1769aa',
-                            borderRadius: 6
-                        },
-                        {
-                            label: 'Contracted target (t)',
-                            data: [417, 417, 417, 417],
-                            type: 'line',
-                            borderColor: '#c8102e',
-                            borderDash: [5, 5],
-                            fill: false,
-                            pointBackgroundColor: '#c8102e'
-                        }
-                    ]
-                },
-                options: {
-                    responsive: true,
-                    plugins: { legend: { position: 'bottom' } },
-                    scales: { y: { beginAtZero: true, title: { display: true, text: 'Tonnes' } } }
-                }
-            });
+        // Invoice status donut
+        new Chart(document.getElementById('invoiceStatus'), {
+        type: 'doughnut',
+        data: {
+        labels: ['Paid', 'Unpaid', 'Overdue'],
+        datasets: [{
+        data: [1, 1, 1],
+        backgroundColor: [GREEN, AMBER, RED],
+        borderWidth: 0
+        }]
+        },
+        options: {
+        responsive: true,
+        plugins: { legend: { position: 'bottom' } }
+        }
+        });
 
-            // Outstanding invoice ageing
-            new Chart(document.getElementById('aging'), {
-                type: 'bar',
-                data: {
-                    labels: ['Current', '1-30 days', '31-60 days', '90+ days'],
-                    datasets: [{
-                        label: 'Outstanding amount (R)',
-                        data: [425000, 262000, 0, 0],
-                        backgroundColor: ['#18794e', '#e9b949', '#c8102e', '#7a1f2b'],
-                        borderRadius: 8
-                    }]
-                },
-                options: {
-                    responsive: true,
-                    plugins: { legend: { display: false } },
-                    scales: {
-                        y: {
-                            beginAtZero: true,
-                            ticks: {
-                                callback: function (value) {
-                                    return 'R' + (value / 1000).toFixed(0) + 'k';
-                                }
-                            }
-                        }
-                    }
-                }
-            });
+        // Deliveries vs contract target
+        new Chart(document.getElementById('monthlyDeliveries'), {
+        type: 'bar',
+        data: {
+        labels: ['May', 'June', 'July', 'Aug'],
+        datasets: [
+        {
+        label: 'Delivered (t)',
+        data: [420, 480, 340, 210],
+        backgroundColor: BLACK,
+        borderRadius: 6
+        },
+        {
+        label: 'Contracted target (t)',
+        data: [417, 417, 417, 417],
+        type: 'line',
+        borderColor: RED,
+        borderDash: [5, 5],
+        fill: false,
+        pointBackgroundColor: RED
+        }
+        ]
+        },
+        options: {
+        responsive: true,
+        plugins: { legend: { position: 'bottom' } },
+        scales: { y: { beginAtZero: true, title: { display: true, text: 'Tonnes' } } }
+        }
+        });
 
-            document.getElementById('applyFilters').addEventListener('click', function () {
-                const month = document.getElementById('monthFilter').value;
-                const customer = document.getElementById('customerFilter').value;
-                const status = document.getElementById('statusFilter').value;
+        // Outstanding invoice ageing
+        new Chart(document.getElementById('aging'), {
+        type: 'bar',
+        data: {
+        labels: ['Current', '1-30 days', '31-60 days', '90+ days'],
+        datasets: [{
+        label: 'Outstanding amount (R)',
+        data: [425000, 262000, 0, 0],
+        backgroundColor: [GREEN, AMBER, RED, DARKRED],
+        borderRadius: 8
+        }]
+        },
+        options: {
+        responsive: true,
+        plugins: { legend: { display: false } },
+        scales: {
+        y: {
+        beginAtZero: true,
+        ticks: { callback: v => 'R' + (v / 1000).toFixed(0) + 'k' }
+        }
+        }
+        }
+        });
 
-                const toast = document.querySelector('[data-toast-box]');
-                if (toast) {
-                    toast.textContent = `Filters applied: ${month}, ${customer}, ${status}`;
-                    toast.classList.add('show');
-                    setTimeout(() => toast.classList.remove('show'), 2500);
-                }
-            });
+        document.getElementById('applyFilters').addEventListener('click', function () {
+        const month = document.getElementById('monthFilter').value;
+        const customer = document.getElementById('customerFilter').value;
+        const status = document.getElementById('statusFilter').value;
+        const toast = document.querySelector('[data-toast-box]');
+        if (toast) {
+        toast.textContent = `Filters applied: ${month}, ${customer}, ${status}`;
+        toast.classList.add('show');
+        setTimeout(() => toast.classList.remove('show'), 2500);
+        }
+        });
         })();
     </script>
 }

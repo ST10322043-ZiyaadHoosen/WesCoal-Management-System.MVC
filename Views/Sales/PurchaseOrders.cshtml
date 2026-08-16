@@ -15,8 +15,34 @@
         </div>
         <button class="btn-gold" data-nav="order-create">+ New purchase order</button>
     </div>
-    <article class="panel">
-        <div class="toolbar">
+
+    <!-- Overview strip -->
+    <div class="stat-grid">
+        <article>
+            <small>Open orders</small>
+            <strong>6</strong>
+            <span>Active collections</span>
+        </article>
+        <article>
+            <small>Awaiting SAP</small>
+            <strong class="highlight">2</strong>
+            <span>Pending Finance</span>
+        </article>
+        <article>
+            <small>Delivered this month</small>
+            <strong>1,840 t</strong>
+            <span>Across active orders</span>
+        </article>
+        <article>
+            <small>Fulfilled</small>
+            <strong>3</strong>
+            <span>Completed orders</span>
+        </article>
+    </div>
+
+    <!-- Filter bar -->
+    <article class="panel" style="padding:1rem 1.1rem;margin-bottom:1.3rem;">
+        <div class="toolbar" style="margin-bottom:0;">
             <input type="search" placeholder="Search order, customer or SAP number…">
             <select>
                 <option>All statuses</option>
@@ -25,48 +51,85 @@
                 <option>Fulfilled</option>
             </select>
         </div>
-        <div class="table-wrap">
-            <table>
-                <thead>
-                    <tr>
-                        <th>Order</th>
-                        <th>Customer</th>
-                        <th>SAP number</th>
-                        <th>Ordered</th>
-                        <th>Delivered</th>
-                        <th>Remaining</th>
-                        <th>Status</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr data-nav="order-detail">
-                        <td>
-                            <b>PO-1042</b>
-                        </td>
-                        <td>Eskom Arnot</td>
-                        <td>45001234</td>
-                        <td>500 t</td>
-                        <td>340 t</td>
-                        <td>160 t</td>
-                        <td>
-                            <span class="badge blue">In progress</span>
-                        </td>
-                    </tr>
-                    <tr data-nav="order-detail">
-                        <td>
-                            <b>PO-1048</b>
-                        </td>
-                        <td>Msobo Coal</td>
-                        <td>—</td>
-                        <td>300 t</td>
-                        <td>0 t</td>
-                        <td>300 t</td>
-                        <td>
-                            <span class="badge amber">Awaiting SAP</span>
-                        </td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
     </article>
+
+    <!-- Order cards -->
+    <div class="contract-list">
+
+        <a class="contract-card" data-nav="order-detail">
+            <div class="cc-head">
+                <div class="cc-id">
+                    <b>PO-1042</b>
+                    <span class="badge red">SAP 45001234</span>
+                </div>
+                <span class="badge blue">In progress</span>
+            </div>
+            <div class="cc-customer">Eskom Arnot · Thermal coal · CSA-2026-001</div>
+            <div class="cc-progress">
+                <div class="progress"><i style="width:68%"></i></div>
+                <div class="cc-figures">
+                    <span><b>340 t</b> delivered</span>
+                    <span><b>160 t</b> remaining</span>
+                    <span>of <b>500 t</b> ordered</span>
+                </div>
+            </div>
+            <div class="cc-meta">
+                <div><small>Service</small><b>Coal sale</b></div>
+                <div><small>Collections</small><b>10 loads</b></div>
+                <div><small>Expected</small><b>15 Aug 2026</b></div>
+                <div><small>Status</small><b class="pos">On track</b></div>
+            </div>
+        </a>
+
+        <a class="contract-card" data-nav="order-detail">
+            <div class="cc-head">
+                <div class="cc-id">
+                    <b>PO-1048</b>
+                    <span class="badge amber">Awaiting SAP</span>
+                </div>
+                <span class="badge amber">Awaiting SAP</span>
+            </div>
+            <div class="cc-customer">Msobo Coal · Duff · ADH-2026-014</div>
+            <div class="cc-progress">
+                <div class="progress"><i style="width:0%"></i></div>
+                <div class="cc-figures">
+                    <span><b>0 t</b> delivered</span>
+                    <span><b>300 t</b> remaining</span>
+                    <span>of <b>300 t</b> ordered</span>
+                </div>
+            </div>
+            <div class="cc-meta">
+                <div><small>Service</small><b>Coal sale</b></div>
+                <div><small>Collections</small><b>0 loads</b></div>
+                <div><small>Expected</small><b>20 Aug 2026</b></div>
+                <div><small>Status</small><b>Pending Finance</b></div>
+            </div>
+        </a>
+
+        <a class="contract-card" data-nav="order-detail">
+            <div class="cc-head">
+                <div class="cc-id">
+                    <b>PO-1039</b>
+                    <span class="badge red">SAP 45001201</span>
+                </div>
+                <span class="badge green">Fulfilled</span>
+            </div>
+            <div class="cc-customer">Eskom Arnot · Thermal coal · CSA-2026-001</div>
+            <div class="cc-progress">
+                <div class="progress"><i style="width:100%"></i></div>
+                <div class="cc-figures">
+                    <span><b>400 t</b> delivered</span>
+                    <span><b>0 t</b> remaining</span>
+                    <span>of <b>400 t</b> ordered</span>
+                </div>
+            </div>
+            <div class="cc-meta">
+                <div><small>Service</small><b>Coal sale</b></div>
+                <div><small>Collections</small><b>12 loads</b></div>
+                <div><small>Completed</small><b>02 Aug 2026</b></div>
+                <div><small>Status</small><b class="pos">Complete</b></div>
+            </div>
+        </a>
+
+    </div>
 </section>

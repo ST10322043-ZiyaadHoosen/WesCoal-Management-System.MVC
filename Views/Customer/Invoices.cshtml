@@ -15,51 +15,69 @@
         </div>
     </div>
 
-    <article class="panel">
-        <div class="table-wrap">
-            <table>
-                <thead>
-                    <tr>
-                        <th>Invoice</th>
-                        <th>Order</th>
-                        <th>Date</th>
-                        <th>Amount</th>
-                        <th>Due date</th>
-                        <th>Status</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr onclick="location.href='@Url.Action("InvoiceDetails", "Customer")'" style="cursor:pointer;">
-                        <td>
-                            <b>INV-2026-084</b>
-                        </td>
-                        <td>PO-1042</td>
-                        <td>01 Aug 2026</td>
-                        <td>R425,000</td>
-                        <td>07 Sep 2026</td>
-                        <td>
-                            <span class="badge amber">Unpaid</span>
-                        </td>
-                    </tr>
-                    <tr onclick="location.href='@Url.Action("InvoiceDetails", "Customer")'" style="cursor:pointer;">
-                        <td>
-                            <b>INV-2026-071</b>
-                        </td>
-                        <td>PO-1039</td>
-                        <td>01 Jul 2026</td>
-                        <td>R600,000</td>
-                        <td>07 Aug 2026</td>
-                        <td>
-                            <span class="badge green">Paid</span>
-                        </td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
+    <div class="stat-grid">
+        <article>
+            <small>Outstanding</small>
+            <strong class="highlight">R425,000</strong>
+            <span>1 unpaid invoice</span>
+        </article>
+        <article>
+            <small>Next due</small>
+            <strong>07 Sep 2026</strong>
+            <span>INV-2026-084</span>
+        </article>
+        <article>
+            <small>Paid this year</small>
+            <strong>R600,000</strong>
+            <span>1 invoice</span>
+        </article>
+        <article>
+            <small>Account status</small>
+            <strong class="highlight">Active</strong>
+            <span>In good standing</span>
+        </article>
+    </div>
 
-        <p class="field-note">
-            Invoices are based on your actual weighbridge deliveries.
-            Payment is made outside the system — contact Wescoal Finance for queries.
-        </p>
-    </article>
+    <div class="contract-list">
+
+        <a class="contract-card" onclick="location.href='@Url.Action("InvoiceDetails", "Customer")'">
+            <div class="cc-head">
+                <div class="cc-id">
+                    <b>INV-2026-084</b>
+                    <span class="badge red">PO-1042</span>
+                </div>
+                <span class="badge amber">Unpaid</span>
+            </div>
+            <div class="cc-customer">July 2026 deliveries · Thermal coal</div>
+            <div class="cc-meta">
+                <div><small>Delivered</small><b>340 t</b></div>
+                <div><small>Amount</small><b>R425,000</b></div>
+                <div><small>Invoiced</small><b>07 Aug 2026</b></div>
+                <div><small>Due</small><b>07 Sep 2026</b></div>
+            </div>
+        </a>
+
+        <a class="contract-card" onclick="location.href='@Url.Action("InvoiceDetails", "Customer")'">
+            <div class="cc-head">
+                <div class="cc-id">
+                    <b>INV-2026-071</b>
+                    <span class="badge red">PO-1039</span>
+                </div>
+                <span class="badge green">Paid</span>
+            </div>
+            <div class="cc-customer">June 2026 deliveries · Thermal coal</div>
+            <div class="cc-meta">
+                <div><small>Delivered</small><b>480 t</b></div>
+                <div><small>Amount</small><b>R600,000</b></div>
+                <div><small>Invoiced</small><b>07 Jul 2026</b></div>
+                <div><small>Settled</small><b class="pos">Paid</b></div>
+            </div>
+        </a>
+
+    </div>
+
+    <p class="field-note" style="margin-top:1.3rem;">
+        Every invoice is calculated from the actual tonnage delivered to your trucks at the weighbridge.
+        You are billed for exactly what you collected. Open an invoice to see the delivery breakdown.
+    </p>
 </section>

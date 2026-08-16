@@ -11,13 +11,38 @@
         <div>
             <p class="eyebrow">AGREEMENTS</p>
             <h1>Contracts</h1>
-            <p>Track contracted, delivered and remaining tonnage.</p>
+            <p>Track contracted, delivered and remaining tonnage across all customers.</p>
         </div>
         <button class="btn-gold" data-nav="contract-create">+ New contract</button>
     </div>
 
-    <article class="panel">
-        <div class="toolbar">
+    <!-- Overview strip -->
+    <div class="stat-grid">
+        <article>
+            <small>Active contracts</small>
+            <strong>4</strong>
+            <span>Across 3 customers</span>
+        </article>
+        <article>
+            <small>Contracted tonnage</small>
+            <strong>12,000 t</strong>
+            <span>Total agreed volume</span>
+        </article>
+        <article>
+            <small>Delivered to date</small>
+            <strong>7,240 t</strong>
+            <span>60% of contracted</span>
+        </article>
+        <article>
+            <small>Contract value</small>
+            <strong class="highlight">R8.4m</strong>
+            <span>Active agreements</span>
+        </article>
+    </div>
+
+    <!-- Filter bar -->
+    <article class="panel" style="padding:1rem 1.1rem;margin-bottom:1.3rem;">
+        <div class="toolbar" style="margin-bottom:0;">
             <input type="search" placeholder="Search customer or contract ID…">
             <select>
                 <option>All statuses</option>
@@ -26,53 +51,92 @@
                 <option>Expired</option>
                 <option>Cancelled</option>
             </select>
-        </div>
-
-        <div class="table-wrap">
-            <table>
-                <thead>
-                    <tr>
-                        <th>Contract</th>
-                        <th>Customer</th>
-                        <th>Type</th>
-                        <th>Total</th>
-                        <th>Remaining</th>
-                        <th>Price/t</th>
-                        <th>End Date</th>
-                        <th>Status</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr data-nav="contract-detail">
-                        <td>
-                            <b>CSA-2026-001</b>
-                        </td>
-                        <td>Eskom Arnot</td>
-                        <td>Coal Supply Agreement</td>
-                        <td>5,000 t</td>
-                        <td>1,600 t</td>
-                        <td>R1,250</td>
-                        <td>31 Dec 2026</td>
-                        <td>
-                            <span class="badge green">Active</span>
-                        </td>
-                    </tr>
-                    <tr data-nav="contract-detail">
-                        <td>
-                            <b>ADH-2026-014</b>
-                        </td>
-                        <td>Msobo Coal</td>
-                        <td>Ad-hoc</td>
-                        <td>2,000 t</td>
-                        <td>1,160 t</td>
-                        <td>R1,310</td>
-                        <td>30 Sep 2026</td>
-                        <td>
-                            <span class="badge green">Active</span>
-                        </td>
-                    </tr>
-                </tbody>
-            </table>
+            <select>
+                <option>All types</option>
+                <option>Coal Supply Agreement</option>
+                <option>Ad-hoc</option>
+                <option>Spot sale</option>
+            </select>
         </div>
     </article>
+
+    <!-- Contract cards -->
+    <div class="contract-list">
+
+        <a class="contract-card" data-nav="contract-detail">
+            <div class="cc-head">
+                <div class="cc-id">
+                    <b>CSA-2026-001</b>
+                    <span class="badge red">Coal Supply Agreement</span>
+                </div>
+                <span class="badge green">Active</span>
+            </div>
+            <div class="cc-customer">Eskom Arnot · Thermal coal</div>
+            <div class="cc-progress">
+                <div class="progress"><i style="width:68%"></i></div>
+                <div class="cc-figures">
+                    <span><b>3,400 t</b> delivered</span>
+                    <span><b>1,600 t</b> remaining</span>
+                    <span>of <b>5,000 t</b></span>
+                </div>
+            </div>
+            <div class="cc-meta">
+                <div><small>Price / t</small><b>R1,250</b></div>
+                <div><small>This year</small><b>2026</b></div>
+                <div><small>Ends</small><b>31 Dec 2026</b></div>
+                <div><small>Monthly pace</small><b class="pos">On track</b></div>
+            </div>
+        </a>
+
+        <a class="contract-card" data-nav="contract-detail">
+            <div class="cc-head">
+                <div class="cc-id">
+                    <b>ADH-2026-014</b>
+                    <span class="badge red">Ad-hoc</span>
+                </div>
+                <span class="badge green">Active</span>
+            </div>
+            <div class="cc-customer">Msobo Coal · Duff</div>
+            <div class="cc-progress">
+                <div class="progress"><i style="width:42%"></i></div>
+                <div class="cc-figures">
+                    <span><b>840 t</b> delivered</span>
+                    <span><b>1,160 t</b> remaining</span>
+                    <span>of <b>2,000 t</b></span>
+                </div>
+            </div>
+            <div class="cc-meta">
+                <div><small>Price / t</small><b>R1,310</b></div>
+                <div><small>Service</small><b>Coal sale</b></div>
+                <div><small>Ends</small><b>30 Sep 2026</b></div>
+                <div><small>Monthly pace</small><b class="neg">Behind</b></div>
+            </div>
+        </a>
+
+        <a class="contract-card" data-nav="contract-detail">
+            <div class="cc-head">
+                <div class="cc-id">
+                    <b>SPOT-2026-005</b>
+                    <span class="badge red">Spot sale</span>
+                </div>
+                <span class="badge green">Active</span>
+            </div>
+            <div class="cc-customer">Seriti Resources · Washing service</div>
+            <div class="cc-progress">
+                <div class="progress"><i style="width:100%"></i></div>
+                <div class="cc-figures">
+                    <span><b>800 t</b> washed</span>
+                    <span><b>0 t</b> remaining</span>
+                    <span>of <b>800 t</b></span>
+                </div>
+            </div>
+            <div class="cc-meta">
+                <div><small>Price / t washed</small><b>R320</b></div>
+                <div><small>Service</small><b>Coal washing</b></div>
+                <div><small>Ends</small><b>15 Aug 2026</b></div>
+                <div><small>Status</small><b class="pos">Complete</b></div>
+            </div>
+        </a>
+
+    </div>
 </section>

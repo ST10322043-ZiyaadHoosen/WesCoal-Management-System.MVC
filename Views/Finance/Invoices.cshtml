@@ -11,13 +11,38 @@
         <div>
             <p class="eyebrow">BILLING</p>
             <h1>Invoices</h1>
-            <p>Generated from actual weighbridge deliveries. Issued on the 7th and due the following month.</p>
+            <p>Generated from actual weighbridge deliveries. Issued on the 7th, due the following month.</p>
         </div>
         <button class="btn-gold" data-toast="Invoice batch generated">Generate invoices</button>
     </div>
 
-    <article class="panel">
-        <div class="toolbar">
+    <!-- Overview strip -->
+    <div class="stat-grid">
+        <article>
+            <small>Invoiced this cycle</small>
+            <strong>R1.29m</strong>
+            <span>3 invoices</span>
+        </article>
+        <article>
+            <small>Collected</small>
+            <strong>R600,000</strong>
+            <span>1 paid</span>
+        </article>
+        <article>
+            <small>Outstanding</small>
+            <strong class="highlight">R687,000</strong>
+            <span>2 unpaid</span>
+        </article>
+        <article>
+            <small>Overdue</small>
+            <strong>R262,000</strong>
+            <span>1 past due</span>
+        </article>
+    </div>
+
+    <!-- Filter bar -->
+    <article class="panel" style="padding:1rem 1.1rem;margin-bottom:1.3rem;">
+        <div class="toolbar" style="margin-bottom:0;">
             <input type="search" placeholder="Search invoice or customer…">
             <select>
                 <option>All statuses</option>
@@ -26,75 +51,70 @@
                 <option>Overdue</option>
             </select>
         </div>
-
-        <div class="table-wrap">
-            <table>
-                <thead>
-                    <tr>
-                        <th>Invoice</th>
-                        <th>Customer</th>
-                        <th>Order</th>
-                        <th>Month</th>
-                        <th>Actual tonnage</th>
-                        <th>Price/t</th>
-                        <th>Amount</th>
-                        <th>Due</th>
-                        <th>Status</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr data-nav="invoice-detail">
-                        <td>
-                            <b>INV-2026-043</b>
-                        </td>
-                        <td>Msobo Coal</td>
-                        <td>PO-1038</td>
-                        <td>June 2026</td>
-                        <td>200 t</td>
-                        <td>R1,310</td>
-                        <td>R262,000</td>
-                        <td>07 Aug 2026</td>
-                        <td>
-                            <span class="badge amber">Overdue</span>
-                        </td>
-                    </tr>
-                    <tr data-nav="invoice-detail">
-                        <td>
-                            <b>INV-2026-071</b>
-                        </td>
-                        <td>Eskom Arnot</td>
-                        <td>PO-1039</td>
-                        <td>June 2026</td>
-                        <td>480 t</td>
-                        <td>R1,250</td>
-                        <td>R600,000</td>
-                        <td>07 Aug 2026</td>
-                        <td>
-                            <span class="badge green">Paid</span>
-                        </td>
-                    </tr>
-                    <tr data-nav="invoice-detail">
-                        <td>
-                            <b>INV-2026-084</b>
-                        </td>
-                        <td>Eskom Arnot</td>
-                        <td>PO-1042</td>
-                        <td>July 2026</td>
-                        <td>340 t</td>
-                        <td>R1,250</td>
-                        <td>R425,000</td>
-                        <td>07 Sep 2026</td>
-                        <td>
-                            <span class="badge amber">Unpaid</span>
-                        </td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
-
-        <p class="field-note">
-            Each invoice is backed by weighbridge delivery transactions.
-            Open an invoice to see the exact truckloads that sum to the billed tonnage.
-        </p>
     </article>
+
+    <!-- Invoice cards -->
+    <div class="contract-list">
+
+        <a class="contract-card" data-nav="invoice-detail">
+            <div class="cc-head">
+                <div class="cc-id">
+                    <b>INV-2026-043</b>
+                    <span class="badge red">Overdue</span>
+                </div>
+                <span class="badge red">Overdue</span>
+            </div>
+            <div class="cc-customer">Msobo Coal · PO-1038 · June 2026</div>
+            <div class="cc-meta">
+                <div><small>Actual tonnage</small><b>200 t</b></div>
+                <div><small>Price / t</small><b>R1,310</b></div>
+                <div><small>Amount</small><b>R262,000</b></div>
+                <div><small>Due</small><b class="neg">07 Aug 2026</b></div>
+            </div>
+            <div class="cc-hold">
+                <span class="badge red">Customer on hold</span>
+                <small>Collection frozen until this invoice is paid.</small>
+            </div>
+        </a>
+
+        <a class="contract-card" data-nav="invoice-detail">
+            <div class="cc-head">
+                <div class="cc-id">
+                    <b>INV-2026-084</b>
+                    <span class="badge amber">Unpaid</span>
+                </div>
+                <span class="badge amber">Unpaid</span>
+            </div>
+            <div class="cc-customer">Eskom Arnot · PO-1042 · July 2026</div>
+            <div class="cc-meta">
+                <div><small>Actual tonnage</small><b>340 t</b></div>
+                <div><small>Price / t (2026)</small><b>R1,250</b></div>
+                <div><small>Amount</small><b>R425,000</b></div>
+                <div><small>Due</small><b>07 Sep 2026</b></div>
+            </div>
+        </a>
+
+        <a class="contract-card" data-nav="invoice-detail">
+            <div class="cc-head">
+                <div class="cc-id">
+                    <b>INV-2026-071</b>
+                    <span class="badge green">Paid</span>
+                </div>
+                <span class="badge green">Paid</span>
+            </div>
+            <div class="cc-customer">Eskom Arnot · PO-1039 · June 2026</div>
+            <div class="cc-meta">
+                <div><small>Actual tonnage</small><b>480 t</b></div>
+                <div><small>Price / t (2026)</small><b>R1,250</b></div>
+                <div><small>Amount</small><b>R600,000</b></div>
+                <div><small>Settled</small><b class="pos">Paid</b></div>
+            </div>
+        </a>
+
+    </div>
+
+    <p class="field-note" style="margin-top:1.3rem;">
+        Each invoice is backed by weighbridge delivery transactions. Open an invoice to see the exact
+        truckloads that sum to the billed tonnage.
+    </p>
 </section>

@@ -1,5 +1,5 @@
 ﻿@{
-    ViewData["Title"] = "Add Driver";
+    ViewData["Title"] = "Driver Documents";
     ViewData["RoleName"] = "Customer User";
     ViewData["RoleSubtitle"] = "Customer Portal";
     ViewData["Initials"] = "CU";
@@ -11,67 +11,91 @@
 
     <div class="page-heading">
         <div>
-            <p class="eyebrow">FLEET DETAILS</p>
-            <h1>Add Driver</h1>
-            <p>Manually add one driver to this week’s authorised list.</p>
+            <p class="eyebrow">DRIVER RECORD</p>
+            <h1>Driver &amp; Documents</h1>
+            <p>Capture the driver's details and attach their three documents to this record.</p>
         </div>
+        <span class="badge red">Documents pending</span>
     </div>
 
-    <form class="panel form-card" data-demo-form data-success="Driver added to this week’s fleet list">
+    <form class="panel form-card" data-demo-form data-success="Driver documents attached — record complete">
+
+        <h2 class="form-section">Driver details</h2>
         <div class="form-grid">
             <label>
                 Driver name *
-                <input required placeholder="Full name">
+                <input required value="Sipho Mahlangu">
             </label>
-
             <label>
                 Transporter / Logistics company *
                 <select required>
-                    <option>Select transporter</option>
                     <option>Bulk Haul Logistics</option>
                     <option>Transvaal Transport</option>
-                    <option>Mpumalanga Carriers</option>
+                    <option selected>Mpumalanga Carriers</option>
                     <option>Other</option>
                 </select>
                 <small class="field-note">The transport company that employs this driver.</small>
             </label>
-
             <label>
                 ID number *
                 <input required placeholder="South African ID">
             </label>
-
             <label>
                 Licence number *
                 <input required>
             </label>
-
             <label>
-                Medical expiry *
+                Licence expiry date *
                 <input required type="date">
             </label>
-
             <label>
-                Driver licence upload
-                <input type="file" accept=".pdf,.jpg,.jpeg,.png">
-                <small class="field-note">Attach a valid driver’s licence for the named driver.</small>
-            </label>
-
-            <label>
-                Medical certificate upload
-                <input type="file" accept=".pdf,.jpg,.jpeg,.png">
-                <small class="field-note">Attach the medical fitness certificate for the named driver.</small>
+                Medical expiry date *
+                <input required type="date" value="2026-10-10">
+                <small class="field-note">The system flags drivers whose medical is expiring or expired.</small>
             </label>
         </div>
 
+        <hr>
+
+        <h2 class="form-section">Supporting documents</h2>
+        <p class="field-note" style="margin-bottom:1rem;">
+            Attach this driver's three documents. They are stored against this driver record — not in
+            the fleet spreadsheet. All three must be attached and current before the driver is cleared
+            for collection at the weighbridge.
+        </p>
+        <div class="form-grid">
+            <label>
+                Driver's licence *
+                <input required type="file" accept=".pdf,.jpg,.jpeg,.png">
+                <small class="field-note">Proof of the licence number and expiry above.</small>
+            </label>
+            <label>
+                ID document *
+                <input required type="file" accept=".pdf,.jpg,.jpeg,.png">
+                <small class="field-note">Proof of identity for the ID number above.</small>
+            </label>
+            <label class="full">
+                Medical certificate *
+                <input required type="file" accept=".pdf,.jpg,.jpeg,.png">
+                <small class="field-note">Must match the medical expiry date entered above.</small>
+            </label>
+        </div>
+
+        <div class="check-list" style="margin-top:.4rem;">
+            <span class="warn">! Licence — not yet attached</span>
+            <span class="warn">! ID document — not yet attached</span>
+            <span class="warn">! Medical certificate — not yet attached</span>
+        </div>
+
         <div class="info-box">
-            This driver is added to the weekly fleet list. They are not assigned to a specific truck.
-            Gate staff verify the driver against this list at weigh-in.
+            This driver is on the authorised driver list independently of any truck. Any authorised
+            driver may operate any authorised truck — the operator pairs them at the gate, and checks
+            these documents before clearing the collection.
         </div>
 
         <div class="form-actions">
             <a class="btn-outline" asp-controller="Customer" asp-action="Fleet">Cancel</a>
-            <button class="btn-gold">Submit driver</button>
+            <button class="btn-gold">Save &amp; attach documents</button>
         </div>
     </form>
 </section>

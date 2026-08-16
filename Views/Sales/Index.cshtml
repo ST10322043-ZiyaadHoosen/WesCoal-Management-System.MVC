@@ -11,14 +11,16 @@
         <div>
             <p class="eyebrow">SALES OVERVIEW</p>
             <h1>Sales Dashboard</h1>
-            <p>Contracts, orders and customer activity.</p>
+            <p>Contracts, orders and customer activity at a glance.</p>
         </div>
         <button class="btn-gold" data-nav="order-create">+ New purchase order</button>
     </div>
+
     <div class="alert-box">
         <strong>Account notice</strong>
-        <span>1 customer is on hold because of outstanding invoices.</span>
+        <span>Msobo Coal is on hold — an outstanding invoice must be settled before new orders can be logged.</span>
     </div>
+
     <div class="stat-grid">
         <article>
             <small>Active contracts</small>
@@ -33,45 +35,55 @@
         <article>
             <small>Delivered this month</small>
             <strong>1,840 t</strong>
-            <span>73% of allocation</span>
+            <span>Actual collected</span>
         </article>
         <article>
             <small>Contract value</small>
-            <strong>R8.4m</strong>
+            <strong class="highlight">R8.4m</strong>
             <span>Active agreements</span>
         </article>
     </div>
+
     <div class="content-grid">
+        <!-- Active contracts -->
         <article class="panel">
             <div class="panel-title">
                 <h2>Active contracts</h2>
                 <button data-nav="contracts">View all</button>
             </div>
+
             <div class="contract-row">
                 <div>
                     <strong>Eskom Arnot</strong>
                     <small>CSA-2026-001 · Thermal coal</small>
                 </div>
                 <span class="badge green">Active</span>
-                <div class="progress">
-                    <i style="width:68%">
-                    </i>
-                </div>
-                <small>3,400 t of 5,000 t delivered</small>
+                <div class="progress"><i style="width:68%"></i></div>
+                <small>3,400 t of 5,000 t delivered · 1,600 t remaining</small>
             </div>
+
             <div class="contract-row">
                 <div>
                     <strong>Msobo Coal</strong>
                     <small>ADH-2026-014 · Duff</small>
                 </div>
-                <span class="badge green">Active</span>
-                <div class="progress">
-                    <i style="width:42%">
-                    </i>
+                <span class="badge amber">On hold</span>
+                <div class="progress"><i style="width:42%"></i></div>
+                <small>840 t of 2,000 t delivered · 1,160 t remaining</small>
+            </div>
+
+            <div class="contract-row">
+                <div>
+                    <strong>Seriti Resources</strong>
+                    <small>SPOT-2026-005 · Washing service</small>
                 </div>
-                <small>840 t of 2,000 t delivered</small>
+                <span class="badge green">Active</span>
+                <div class="progress"><i style="width:100%"></i></div>
+                <small>800 t of 800 t washed · complete</small>
             </div>
         </article>
+
+        <!-- Recent orders -->
         <article class="panel">
             <div class="panel-title">
                 <h2>Recent orders</h2>
@@ -80,21 +92,45 @@
             <div class="mini-table">
                 <button data-nav="order-detail">
                     <b>PO-1042</b>
-                    <span>Eskom Arnot</span>
+                    <span>Eskom Arnot · 340 / 500 t</span>
                     <em class="badge blue">In progress</em>
                 </button>
                 <button data-nav="order-detail">
                     <b>PO-1048</b>
-                    <span>Msobo Coal</span>
+                    <span>Msobo Coal · 0 / 300 t</span>
                     <em class="badge amber">Awaiting SAP</em>
                 </button>
                 <button data-nav="order-detail">
                     <b>PO-1039</b>
-                    <span>Eskom Arnot</span>
+                    <span>Eskom Arnot · 400 / 400 t</span>
                     <em class="badge green">Fulfilled</em>
                 </button>
             </div>
         </article>
     </div>
-</section>
 
+    <!-- Attention strip -->
+    <article class="panel" style="margin-top:1.3rem;">
+        <div class="panel-title">
+            <h2>Needs attention</h2>
+            <button data-nav="orders">View orders</button>
+        </div>
+        <div class="mini-table">
+            <div>
+                <b>PO-1048</b>
+                <span>Awaiting SAP number from Finance before collection can begin</span>
+                <em class="badge amber">Awaiting SAP</em>
+            </div>
+            <div>
+                <b>Msobo Coal</b>
+                <span>On hold — outstanding invoice; no new orders until Finance records payment</span>
+                <em class="badge amber">On hold</em>
+            </div>
+            <div>
+                <b>ADH-2026-014</b>
+                <span>Behind monthly pace — customer collecting slower than expected</span>
+                <em class="badge blue">Behind pace</em>
+            </div>
+        </div>
+    </article>
+</section>

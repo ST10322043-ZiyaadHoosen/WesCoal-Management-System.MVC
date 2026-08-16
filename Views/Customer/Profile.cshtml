@@ -11,54 +11,74 @@
         <div>
             <p class="eyebrow">ACCOUNT</p>
             <h1>My Profile</h1>
-            <p>View and update your company contact information.</p>
+            <p>Company information and contact details.</p>
         </div>
-        <span class="badge green">Active</span>
+        <span class="badge green">Account active</span>
     </div>
 
-    <form class="panel form-card" data-demo-form data-success="Profile updated successfully">
-        <div class="form-grid">
-            <label>
-                Company name
-                <input value="Eskom Arnot" disabled>
-                <small class="field-note">Company name cannot be changed. Contact Wescoal Sales if this is incorrect.</small>
-            </label>
+    <div class="detail-grid">
+        <article class="panel">
+            <div class="panel-title">
+                <h2>Company details</h2>
+                <small class="field-note">Read-only</small>
+            </div>
 
-            <label>
-                Site / location
-                <input value="Arnot Power Station, Mpumalanga">
-            </label>
+            <dl>
+                <dt>Company name</dt>
+                <dd>Eskom Arnot</dd>
 
-            <label>
-                Contact person *
-                <input required value="Thabo Mokoena">
-            </label>
+                <dt>Site / location</dt>
+                <dd>Arnot Power Station, Mpumalanga</dd>
 
-            <label>
-                Email address *
-                <input required type="email" value="thabo.mokoena@eskom.co.za">
-            </label>
+                <dt>VAT number</dt>
+                <dd>4230187456</dd>
 
-            <label>
-                Phone number *
-                <input required value="+27 13 297 1000">
-            </label>
+                <dt>Account status</dt>
+                <dd><span class="badge green">Active</span></dd>
+            </dl>
 
-            <label>
-                VAT number
-                <input value="4230187456">
-                <small class="field-note">Used for invoice documents and statements.</small>
-            </label>
-        </div>
+            <p class="field-note">
+                Company name, VAT number, and account status are managed by Wescoal Sales or Finance.
+            </p>
+        </article>
 
-        <div class="info-box">
-            This information is used for invoices and account contact.
-            To change your company name or account status, contact Wescoal Sales or Finance.
-        </div>
+        <form class="panel form-card" data-demo-form data-success="Profile updated successfully">
+            <div class="panel-title">
+                <h2>Contact details</h2>
+                <small class="field-note">Editable by you</small>
+            </div>
 
-        <div class="form-actions">
-            <a class="btn-outline" asp-controller="Customer" asp-action="Index">Cancel</a>
-            <button class="btn-gold">Save changes</button>
-        </div>
-    </form>
+            <div class="form-grid">
+                <label>
+                    Contact person *
+                    <input required value="Thabo Mokoena">
+                </label>
+
+                <label>
+                    Email address *
+                    <input required type="email" value="thabo.mokoena@eskom.co.za">
+                </label>
+
+                <label>
+                    Phone number *
+                    <input required value="+27 13 297 1000">
+                </label>
+
+                <label>
+                    Alternative contact number
+                    <input placeholder="Optional">
+                </label>
+            </div>
+
+            <div class="info-box">
+                This contact information is used for order, invoice, and fleet notifications.
+                Keep it up to date so Wescoal can reach the right person.
+            </div>
+
+            <div class="form-actions">
+                <a class="btn-outline" asp-controller="Customer" asp-action="Index">Cancel</a>
+                <button class="btn-gold">Save changes</button>
+            </div>
+        </form>
+    </div>
 </section>

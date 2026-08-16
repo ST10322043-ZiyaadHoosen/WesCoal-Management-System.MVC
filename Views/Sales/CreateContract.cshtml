@@ -13,11 +13,14 @@
         <div>
             <p class="eyebrow">NEW AGREEMENT</p>
             <h1>Create Contract</h1>
-            <p>Record a customer supply or washing agreement.</p>
+            <p>Capture the agreement terms and attach the signed contract document.</p>
         </div>
     </div>
 
     <form class="panel form-card" data-demo-form data-success="Contract saved successfully">
+
+        <!-- SECTION 1 — Agreement -->
+        <h2 class="form-section">Agreement</h2>
         <div class="form-grid">
             <label>
                 Customer *
@@ -27,7 +30,18 @@
                     <option>Seriti Resources</option>
                 </select>
             </label>
-
+            <label>
+                Contract reference *
+                <input required value="CSA-2026-001">
+            </label>
+            <label>
+                Contract type *
+                <select id="contractType">
+                    <option>Coal Supply Agreement</option>
+                    <option>Ad-hoc</option>
+                    <option>Spot sale</option>
+                </select>
+            </label>
             <label>
                 Service type *
                 <select id="serviceType">
@@ -35,21 +49,6 @@
                     <option value="wash">Coal Washing</option>
                 </select>
             </label>
-
-            <label>
-                Contract type *
-                <select>
-                    <option>Coal Supply Agreement</option>
-                    <option>Ad-hoc</option>
-                    <option>Spot sale</option>
-                </select>
-            </label>
-
-            <label>
-                Contract reference *
-                <input required value="CSA-2026-001">
-            </label>
-
             <label id="coalProductField">
                 Coal product
                 <select>
@@ -60,43 +59,73 @@
                     <option>Sweepings</option>
                 </select>
             </label>
+        </div>
 
+        <hr>
+
+        <!-- SECTION 2 — Volume & term -->
+        <h2 class="form-section">Volume &amp; term</h2>
+        <div class="form-grid">
             <label>
                 Total tonnage *
-                <input required type="number" value="5000">
+                <input required type="number" id="totalTonnage" value="5000">
             </label>
+            <label>
+                Start date
+                <input type="date" id="startDate" value="2026-01-01">
+            </label>
+            <label>
+                End date
+                <input type="date" id="endDate" value="2028-12-31">
+            </label>
+        </div>
 
+        <hr>
+
+        <!-- SECTION 3 — Pricing -->
+        <h2 class="form-section">Pricing</h2>
+
+        <!-- Single price: Ad-hoc / Spot -->
+        <div id="singlePriceField" class="form-grid">
             <label>
                 <span id="priceLabel">Price per ton *</span>
                 <input required value="1250.00">
                 <small id="priceNote" class="field-note">Charged per ton of coal sold.</small>
             </label>
-
-            <label>
-                Start date
-                <input type="date" value="2026-01-01">
-            </label>
-
-            <label>
-                End date
-                <input type="date" value="2026-12-31">
-            </label>
-
-            <label class="full">
-                Signed contract document *
-                <input type="file" accept=".pdf,.doc,.docx">
-                <small class="field-note">
-                    Attach the signed agreement. The key terms above are captured from it
-                    so the system can track tonnage, prices and expiry.
-                </small>
-            </label>
         </div>
 
-        <div class="field-note full">
-            <strong>Monthly allocation</strong><br>
-            Monthly pace targets are calculated automatically from total tonnage ÷ contract term.
-            They never block collection — they only measure expected vs actual pace.
+        <!-- Per-year editable price table: Coal Supply Agreement -->
+        <div id="yearlyPriceField" style="display:none;">
+            <label style="margin-bottom:.2rem;">Price per ton — per year *</label>
+            <small class="field-note" style="margin-bottom:.7rem; display:block;">
+                A Coal Supply Agreement re-sets its price each year of the term. Set each year's rate below —
+                collections are invoiced at the price of the year in which the coal was collected.
+            </small>
+            <div class="table-wrap">
+                <table>
+                    <thead>
+                        <tr>
+                            <th style="width:120px;">Year</th>
+                            <th>Price per ton (R)</th>
+                        </tr>
+                    </thead>
+                    <tbody id="yearlyPriceRows"></tbody>
+                </table>
+            </div>
         </div>
+
+        <hr>
+
+        <!-- SECTION 4 — Signed contract -->
+        <h2 class="form-section">Signed contract</h2>
+        <label class="full">
+            Contract document *
+            <input type="file" accept=".pdf,.doc,.docx">
+            <small class="field-note">
+                Attach the signed agreement. The terms above (tonnage, price, dates) are captured
+                from it so the system can track and invoice against the contract.
+            </small>
+        </label>
 
         <div class="form-actions">
             <button type="button" class="btn-outline" data-nav="contracts">Cancel</button>
@@ -108,25 +137,70 @@
 @section Scripts {
     <script>
         (function () {
-            const service = document.getElementById('serviceType');
-            const coalField = document.getElementById('coalProductField');
+            const service    = document.getElementById('serviceType');
+            const coalField  = document.getElementById('coalProductField');
             const priceLabel = document.getElementById('priceLabel');
-            const priceNote = document.getElementById('priceNote');
+            const priceNote  = document.getElementById('priceNote');
+            const cType      = document.getElementById('contractType');
+            const single     = document.getElementById('singlePriceField');
+            const yearly     = document.getElementById('yearlyPriceField');
+            const yearlyRows = document.getElementById('yearlyPriceRows');
+            const startDate  = document.getElementById('startDate');
+            const endDate    = document.getElementById('endDate');
 
-            function updateForm() {
-                if (service.value === 'wash') {
-                    coalField.style.display = 'none';
-                    priceLabel.textContent = 'Price per ton washed *';
-                    priceNote.textContent = 'Charged per ton of coal washed (3rd-party coal brought in).';
-                } else {
-                    coalField.style.display = '';
-                    priceLabel.textContent = 'Price per ton *';
-                    priceNote.textContent = 'Charged per ton of coal sold.';
+            // Coal sale vs washing
+            function updateService(){
+                const wash = service.value === 'wash';
+                coalField.style.display = wash ? 'none' : '';
+                priceLabel.textContent  = wash ? 'Price per ton washed *' : 'Price per ton *';
+                priceNote.textContent   = wash
+                    ? 'Charged per ton of coal washed (3rd-party coal brought in).'
+                    : 'Charged per ton of coal sold.';
+            }
+
+            // Build one editable price row per year of the term (CSA)
+            function buildYearlyRows(){
+                const s = new Date(startDate.value), e = new Date(endDate.value);
+                if (isNaN(s) || isNaN(e) || e < s) { yearlyRows.innerHTML = ''; return; }
+
+                // preserve any prices already typed, keyed by year
+                const existing = {};
+                yearlyRows.querySelectorAll('tr').forEach(tr => {
+                    const y = tr.getAttribute('data-year');
+                    const inp = tr.querySelector('input');
+                    if (y && inp) existing[y] = inp.value;
+                });
+
+                yearlyRows.innerHTML = '';
+                for (let y = s.getFullYear(); y <= e.getFullYear(); y++){
+                    const val = existing[y] !== undefined ? existing[y] : '1250.00';
+                    yearlyRows.insertAdjacentHTML('beforeend',
+                        `<tr data-year="${y}">
+                            <td><b>${y}</b></td>
+                            <td><input type="number" step="0.01" min="0" value="${val}" style="max-width:180px;"></td>
+                         </tr>`);
                 }
             }
 
-            service.addEventListener('change', updateForm);
-            updateForm();
+            // Switch pricing mode by contract type
+            function updatePriceMode(){
+                if (cType.value === 'Coal Supply Agreement'){
+                    single.style.display = 'none';
+                    yearly.style.display = '';
+                    buildYearlyRows();
+                } else {
+                    single.style.display = '';
+                    yearly.style.display = 'none';
+                }
+            }
+
+            service.addEventListener('change', updateService);
+            cType.addEventListener('change', updatePriceMode);
+            startDate.addEventListener('change', function(){ if (cType.value === 'Coal Supply Agreement') buildYearlyRows(); });
+            endDate.addEventListener('change',   function(){ if (cType.value === 'Coal Supply Agreement') buildYearlyRows(); });
+
+            updateService();
+            updatePriceMode();
         })();
     </script>
 }

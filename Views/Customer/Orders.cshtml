@@ -15,51 +15,85 @@
         </div>
     </div>
 
-    <article class="panel">
-        <div class="table-wrap">
-            <table>
-                <thead>
-                    <tr>
-                        <th>Order</th>
-                        <th>Contract</th>
-                        <th>Ordered</th>
-                        <th>Delivered</th>
-                        <th>Remaining</th>
-                        <th>Status</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr onclick="location.href='@Url.Action("OrderDetails", "Customer")'" style="cursor:pointer;">
-                        <td>
-                            <b>PO-1042</b>
-                        </td>
-                        <td>CSA-2026-001</td>
-                        <td>500 t</td>
-                        <td>340 t</td>
-                        <td>160 t</td>
-                        <td>
-                            <span class="badge blue">In progress</span>
-                        </td>
-                    </tr>
-                    <tr onclick="location.href='@Url.Action("OrderDetails", "Customer")'" style="cursor:pointer;">
-                        <td>
-                            <b>PO-1039</b>
-                        </td>
-                        <td>CSA-2026-001</td>
-                        <td>480 t</td>
-                        <td>480 t</td>
-                        <td>0 t</td>
-                        <td>
-                            <span class="badge green">Fulfilled</span>
-                        </td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
+    <div class="stat-grid">
+        <article>
+            <small>Active orders</small>
+            <strong>1</strong>
+            <span>In progress</span>
+        </article>
+        <article>
+            <small>Delivered this month</small>
+            <strong>340 t</strong>
+            <span>Across active orders</span>
+        </article>
+        <article>
+            <small>Remaining to collect</small>
+            <strong>160 t</strong>
+            <span>On PO-1042</span>
+        </article>
+        <article>
+            <small>Fulfilled orders</small>
+            <strong>1</strong>
+            <span>PO-1039 complete</span>
+        </article>
+    </div>
 
-        <p class="field-note">
-            Only your own orders are shown. Collections are updated automatically
-            from weighbridge transactions as trucks complete their loads.
-        </p>
-    </article>
+    <div class="contract-list">
+
+        <a class="contract-card" onclick="location.href='@Url.Action("OrderDetails", "Customer")'">
+            <div class="cc-head">
+                <div class="cc-id">
+                    <b>PO-1042</b>
+                    <span class="badge red">CSA-2026-001</span>
+                </div>
+                <span class="badge blue">In progress</span>
+            </div>
+            <div class="cc-customer">Thermal coal</div>
+            <div class="cc-progress">
+                <div class="progress"><i style="width:68%"></i></div>
+                <div class="cc-figures">
+                    <span><b>340 t</b> delivered</span>
+                    <span><b>160 t</b> remaining</span>
+                    <span>of <b>500 t</b> ordered</span>
+                </div>
+            </div>
+            <div class="cc-meta">
+                <div><small>Ordered</small><b>500 t</b></div>
+                <div><small>Delivered</small><b>340 t</b></div>
+                <div><small>Truck visits</small><b>12</b></div>
+                <div><small>Status</small><b class="pos">In progress</b></div>
+            </div>
+        </a>
+
+        <a class="contract-card" onclick="location.href='@Url.Action("OrderDetails", "Customer")'">
+            <div class="cc-head">
+                <div class="cc-id">
+                    <b>PO-1039</b>
+                    <span class="badge red">CSA-2026-001</span>
+                </div>
+                <span class="badge green">Fulfilled</span>
+            </div>
+            <div class="cc-customer">Thermal coal</div>
+            <div class="cc-progress">
+                <div class="progress"><i style="width:100%"></i></div>
+                <div class="cc-figures">
+                    <span><b>480 t</b> delivered</span>
+                    <span><b>0 t</b> remaining</span>
+                    <span>of <b>480 t</b> ordered</span>
+                </div>
+            </div>
+            <div class="cc-meta">
+                <div><small>Ordered</small><b>480 t</b></div>
+                <div><small>Delivered</small><b>480 t</b></div>
+                <div><small>Truck visits</small><b>16</b></div>
+                <div><small>Status</small><b class="pos">Complete</b></div>
+            </div>
+        </a>
+
+    </div>
+
+    <p class="field-note" style="margin-top:1.3rem;">
+        Orders are arranged with Wescoal Sales. Each order is collected by your authorised trucks at the
+        weighbridge, and you are invoiced on the actual tonnage delivered.
+    </p>
 </section>

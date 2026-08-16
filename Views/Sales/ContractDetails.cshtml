@@ -48,32 +48,57 @@
         <div class="split-label">
             <span>Start: 01 Jan 2026</span>
             <b>68% delivered</b>
-            <span>End: 31 Dec 2026</span>
+            <span>End: 31 Dec 2028</span>
         </div>
 
         <hr>
 
-        <h2>Price per year</h2>
+        <!-- EDITABLE PER-YEAR PRICING -->
+        <div class="panel-title">
+            <h2>Price per year</h2>
+            <button type="button" id="editPricesBtn" class="btn-outline" style="padding:.5rem .9rem;">Edit prices</button>
+        </div>
         <div class="table-wrap">
             <table>
                 <thead>
                     <tr>
-                        <th>Year</th>
+                        <th style="width:120px;">Year</th>
                         <th>Price per ton</th>
+                        <th style="width:140px;">Status</th>
                     </tr>
                 </thead>
-                <tbody>
-                    <tr>
-                        <td>2026</td>
-                        <td>R1,250/t</td>
+                <tbody id="yearPriceBody">
+                    <tr data-year="2026">
+                        <td><b>2026</b></td>
+                        <td data-price><span class="price-view">R1,250.00</span></td>
+                        <td><span class="badge green">Set</span></td>
+                    </tr>
+                    <tr data-year="2027">
+                        <td><b>2027</b></td>
+                        <td data-price><span class="price-view">R1,340.00</span></td>
+                        <td><span class="badge green">Set</span></td>
+                    </tr>
+                    <tr data-year="2028">
+                        <td><b>2028</b></td>
+                        <td data-price><span class="price-view muted">Not yet agreed</span></td>
+                        <td><span class="badge amber">Pending</span></td>
                     </tr>
                 </tbody>
             </table>
         </div>
-        <p class="field-note">A Coal Supply Agreement re-sets its price each year of the term.</p>
+        <div id="priceActions" class="form-actions" style="display:none;">
+            <button type="button" id="cancelPrices" class="btn-outline">Cancel</button>
+            <button type="button" id="savePrices" class="btn-gold" data-toast="Yearly prices updated">Save prices</button>
+        </div>
+        <p class="field-note">
+            A Coal Supply Agreement is priced per year. Future years can be left as “Not yet agreed”
+            at signing and set later once the rate is confirmed. Collections are always invoiced at
+            the price of the year in which the coal was collected.
+        </p>
 
         <hr>
 
+        <!-- MONTHLY ALLOCATION -->
         <div class="panel-title">
             <h2>Monthly allocation</h2>
             <small class="field-note">Expected vs actual pace. Never blocks collection — it only tracks pace.</small>
@@ -115,9 +140,54 @@
             </table>
         </div>
         <p class="field-note">
-            Monthly targets are derived from total tonnage ÷ contract term.
-            The customer can collect ahead or behind pace; the cumulative figure
-            shows the year-to-date position against the contract total.
+            Monthly targets are derived from total tonnage ÷ contract term. The customer can collect
+            ahead or behind pace; the cumulative figure shows the year-to-date position against the contract total.
         </p>
     </article>
 </section>
+
+@section Scripts {
+    <script>
+        (function(){
+            const btn     = document.getElementById('editPricesBtn');
+            const actions = document.getElementById('priceActions');
+            const cancel  = document.getElementById('cancelPrices');
+            const save    = document.getElementById('savePrices');
+            const cells   = document.querySelectorAll('#yearPriceBody [data-price]');
+
+            function parseVal(text){
+                const t = text.replace(/[R,\s]/g,'').trim();
+                return isNaN(parseFloat(t)) ? '' : parseFloat(t);
+            }
+
+            function toEdit(){
+                cells.forEach(td=>{
+                    const cur = parseVal(td.querySelector('.price-view').textContent);
+                    td.innerHTML = `<input type="number" step="0.01" min="0" placeholder="Not yet agreed"
+                                           value="${cur === '' ? '' : cur}" style="max-width:170px;">`;
+                });
+                btn.style.display='none';
+                actions.style.display='flex';
+            }
+
+            function toView(){
+                cells.forEach(td=>{
+                    const input = td.querySelector('input');
+                    const raw = input ? input.value.trim() : '';
+                    if (raw === ''){
+                        td.innerHTML = `<span class="price-view muted">Not yet agreed</span>`;
+                    } else {
+                        const num = parseFloat(raw).toLocaleString('en-ZA',{minimumFractionDigits:2});
+                        td.innerHTML = `<span class="price-view">R${num}</span>`;
+                    }
+                });
+                btn.style.display='';
+                actions.style.display='none';
+            }
+
+            btn.addEventListener('click', toEdit);
+            cancel.addEventListener('click', toView);
+            save.addEventListener('click', toView);
+        })();
+    </script>
+}

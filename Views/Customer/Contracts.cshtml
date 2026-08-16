@@ -11,60 +11,100 @@
         <div>
             <p class="eyebrow">MY ACCOUNT</p>
             <h1>My Contracts</h1>
-            <p>View your active supply agreements.</p>
+            <p>Your supply agreements and their current delivery status.</p>
         </div>
     </div>
 
-    <article class="panel">
-        <div class="table-wrap">
-            <table>
-                <thead>
-                    <tr>
-                        <th>Contract</th>
-                        <th>Type</th>
-                        <th>Product</th>
-                        <th>Total</th>
-                        <th>Delivered</th>
-                        <th>Remaining</th>
-                        <th>Price/t</th>
-                        <th>Status</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr onclick="location.href='@Url.Action("ContractDetails", "Customer")'" style="cursor:pointer;">
-                        <td>
-                            <b>CSA-2026-001</b>
-                        </td>
-                        <td>Coal Supply Agreement</td>
-                        <td>Thermal coal</td>
-                        <td>5,000 t</td>
-                        <td>3,400 t</td>
-                        <td>1,600 t</td>
-                        <td>R1,250</td>
-                        <td>
-                            <span class="badge green">Active</span>
-                        </td>
-                    </tr>
-                    <tr onclick="location.href='@Url.Action("ContractDetails", "Customer")'" style="cursor:pointer;">
-                        <td>
-                            <b>SPOT-2026-005</b>
-                        </td>
-                        <td>Spot sale</td>
-                        <td>Thermal coal</td>
-                        <td>800 t</td>
-                        <td>800 t</td>
-                        <td>0 t</td>
-                        <td>R1,400</td>
-                        <td>
-                            <span class="badge green">Completed</span>
-                        </td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
+    <div class="contract-list">
+        <a class="contract-card" asp-controller="Customer" asp-action="ContractDetails">
+            <div class="cc-head">
+                <div class="cc-id">
+                    <b>CSA-2026-001</b>
+                    <span class="badge green">Active</span>
+                </div>
+                <span class="badge green">68% delivered</span>
+            </div>
+            <p class="cc-customer">Eskom Arnot · Coal Supply Agreement · Thermal coal</p>
 
-        <p class="field-note">
-            You can only see your own contracts and your own agreed price per ton.
-        </p>
-    </article>
+            <div class="cc-progress">
+                <div class="progress large">
+                    <i style="width:68%"></i>
+                </div>
+            </div>
+
+            <div class="cc-figures">
+                <span><b>5,000 t</b> total</span>
+                <span><b>3,400 t</b> delivered</span>
+                <span><b>1,600 t</b> remaining</span>
+                <span><b>R1,250/t</b> price</span>
+            </div>
+
+            <div class="cc-meta">
+                <div>
+                    <small>Type</small>
+                    <b>Coal Supply Agreement</b>
+                </div>
+                <div>
+                    <small>Product</small>
+                    <b>Thermal coal</b>
+                </div>
+                <div>
+                    <small>Status</small>
+                    <b class="pos">Active</b>
+                </div>
+                <div>
+                    <small>Price</small>
+                    <b>R1,250/t</b>
+                </div>
+            </div>
+        </a>
+
+        <a class="contract-card" asp-controller="Customer" asp-action="ContractDetails">
+            <div class="cc-head">
+                <div class="cc-id">
+                    <b>SPOT-2026-005</b>
+                    <span class="badge green">Completed</span>
+                </div>
+                <span class="badge green">100% delivered</span>
+            </div>
+            <p class="cc-customer">Eskom Arnot · Spot sale · Thermal coal</p>
+
+            <div class="cc-progress">
+                <div class="progress large">
+                    <i style="width:100%"></i>
+                </div>
+            </div>
+
+            <div class="cc-figures">
+                <span><b>800 t</b> total</span>
+                <span><b>800 t</b> delivered</span>
+                <span><b>0 t</b> remaining</span>
+                <span><b>R1,400/t</b> price</span>
+            </div>
+
+            <div class="cc-meta">
+                <div>
+                    <small>Type</small>
+                    <b>Spot sale</b>
+                </div>
+                <div>
+                    <small>Product</small>
+                    <b>Thermal coal</b>
+                </div>
+                <div>
+                    <small>Status</small>
+                    <b class="pos">Completed</b>
+                </div>
+                <div>
+                    <small>Price</small>
+                    <b>R1,400/t</b>
+                </div>
+            </div>
+        </a>
+    </div>
+
+    <p class="field-note">
+        You can only see your own contracts and your own agreed price per ton.
+        Contact Wescoal Sales for any contract changes.
+    </p>
 </section>
