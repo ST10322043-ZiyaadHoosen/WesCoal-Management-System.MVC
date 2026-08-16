@@ -9,7 +9,7 @@
 <section class="portal-screen active" data-screen="customers">
     <div class="page-heading">
         <div>
-            <p class="eyebrow">READ-ONLY</p>
+            <p class="eyebrow">COMPANY-WIDE VIEW</p>
             <h1>All Customers</h1>
             <p>Customer accounts, contacts and current account standing.</p>
         </div>
@@ -17,46 +17,109 @@
     </div>
 
     <article class="panel">
-        <div class="table-wrap">
-            <table>
-                <thead>
-                    <tr>
-                        <th>Customer</th>
-                        <th>Site</th>
-                        <th>Contact Person</th>
-                        <th>Email</th>
-                        <th>Active Contracts</th>
-                        <th>Account Status</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td><strong>Eskom Arnot</strong></td>
-                        <td>Arnot Power Station</td>
-                        <td>Thabo Mokoena</td>
-                        <td>procurement@eskom.co.za</td>
-                        <td>2</td>
-                        <td><span class="badge green">Active</span></td>
-                    </tr>
-                    <tr>
-                        <td><strong>Msobo Coal</strong></td>
-                        <td>Ermelo</td>
-                        <td>Naledi Maseko</td>
-                        <td>orders@msobocoal.co.za</td>
-                        <td>1</td>
-                        <td><span class="badge amber">On hold</span></td>
-                    </tr>
-                    <tr>
-                        <td><strong>Seriti Resources</strong></td>
-                        <td>Kriel</td>
-                        <td>Lerato Nkosi</td>
-                        <td>logistics@seriti.co.za</td>
-                        <td>1</td>
-                        <td><span class="badge green">Active</span></td>
-                    </tr>
-                </tbody>
-            </table>
+        <div class="toolbar">
+            <input type="search" placeholder="Search customer, site or contact…">
+            <select>
+                <option>All account statuses</option>
+                <option>Active</option>
+                <option>On hold</option>
+            </select>
         </div>
     </article>
-</section>
 
+    <div class="contract-list">
+        <a class="contract-card" asp-controller="Management" asp-action="CustomerDetails">
+            <div class="cc-head">
+                <div class="cc-id">
+                    <b>Eskom Arnot</b>
+                    <span class="badge green">Active</span>
+                </div>
+                <span class="badge green">1 active contract</span>
+            </div>
+            <p class="cc-customer">Arnot Power Station · Mpumalanga</p>
+
+            <div class="cc-meta">
+                <div>
+                    <small>Contact person</small>
+                    <b>Thabo Mokoena</b>
+                </div>
+                <div>
+                    <small>Email</small>
+                    <b>thabo.mokoena@eskom.co.za</b>
+                </div>
+                <div>
+                    <small>Phone</small>
+                    <b>+27 13 297 1000</b>
+                </div>
+                <div>
+                    <small>Account status</small>
+                    <b class="pos">Active</b>
+                </div>
+            </div>
+        </a>
+
+        <a class="contract-card" asp-controller="Management" asp-action="CustomerDetails">
+            <div class="cc-head">
+                <div class="cc-id">
+                    <b>Msobo Coal</b>
+                    <span class="badge amber">On hold</span>
+                </div>
+                <span class="badge amber">On hold</span>
+            </div>
+            <p class="cc-customer">Ermelo · Mpumalanga</p>
+
+            <div class="cc-meta">
+                <div>
+                    <small>Contact person</small>
+                    <b>Naledi Maseko</b>
+                </div>
+                <div>
+                    <small>Email</small>
+                    <b>naledi.maseko@msobo.co.za</b>
+                </div>
+                <div>
+                    <small>Phone</small>
+                    <b>+27 17 819 1122</b>
+                </div>
+                <div>
+                    <small>Account status</small>
+                    <b class="neg">On hold</b>
+                </div>
+            </div>
+        </a>
+
+        <a class="contract-card" asp-controller="Management" asp-action="CustomerDetails">
+            <div class="cc-head">
+                <div class="cc-id">
+                    <b>Seriti Resources</b>
+                    <span class="badge green">Active</span>
+                </div>
+                <span class="badge green">2 active contracts</span>
+            </div>
+            <p class="cc-customer">Kriel · Mpumalanga</p>
+
+            <div class="cc-meta">
+                <div>
+                    <small>Contact person</small>
+                    <b>Lerato Nkosi</b>
+                </div>
+                <div>
+                    <small>Email</small>
+                    <b>lerato.nkosi@seriti.co.za</b>
+                </div>
+                <div>
+                    <small>Phone</small>
+                    <b>+27 17 648 2000</b>
+                </div>
+                <div>
+                    <small>Account status</small>
+                    <b class="pos">Active</b>
+                </div>
+            </div>
+        </a>
+    </div>
+
+    <p class="field-note">
+        Senior Management sees all customer accounts and statuses. This view is read-only.
+    </p>
+</section>

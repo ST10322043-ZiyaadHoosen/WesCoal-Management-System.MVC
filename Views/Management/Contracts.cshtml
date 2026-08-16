@@ -9,54 +9,198 @@
 <section class="portal-screen active" data-screen="contracts">
     <div class="page-heading">
         <div>
-            <p class="eyebrow">READ-ONLY</p>
+            <p class="eyebrow">COMPANY-WIDE VIEW</p>
             <h1>All Contracts</h1>
-            <p>Company-wide contract visibility.</p>
+            <p>Every customer contract, balance, and expiry.</p>
         </div>
     </div>
+
+    <div class="stat-grid">
+        <article>
+            <small>Active contracts</small>
+            <strong>4</strong>
+            <span>Across 3 customers</span>
+        </article>
+        <article>
+            <small>Total contracted tonnage</small>
+            <strong>8,650 t</strong>
+            <span>All contracts shown</span>
+        </article>
+        <article>
+            <small>Remaining tonnage</small>
+            <strong>3,410 t</strong>
+            <span>Still to be collected</span>
+        </article>
+        <article>
+            <small>Total contract value</small>
+            <strong>R10.25m</strong>
+            <span>All agreements</span>
+        </article>
+    </div>
+
     <article class="panel">
-        <div class="table-wrap">
-            <table>
-                <thead>
-                    <tr>
-                        <th>Contract</th>
-                        <th>Customer</th>
-                        <th>Type</th>
-                        <th>Total</th>
-                        <th>Delivered</th>
-                        <th>Remaining</th>
-                        <th>Value</th>
-                        <th>Status</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>CSA-2026-001</td>
-                        <td>Eskom Arnot</td>
-                        <td>Coal supply</td>
-                        <td>5,000 t</td>
-                        <td>3,400 t</td>
-                        <td>1,600 t</td>
-                        <td>R6.25m</td>
-                        <td>
-                            <span class="badge green">Active</span>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>ADH-2026-014</td>
-                        <td>Msobo Coal</td>
-                        <td>Ad-hoc</td>
-                        <td>2,000 t</td>
-                        <td>840 t</td>
-                        <td>1,160 t</td>
-                        <td>R2.62m</td>
-                        <td>
-                            <span class="badge green">Active</span>
-                        </td>
-                    </tr>
-                </tbody>
-            </table>
+        <div class="toolbar">
+            <input type="search" placeholder="Search contract, customer or type…">
+            <select>
+                <option>All statuses</option>
+                <option>Active</option>
+                <option>Completed</option>
+                <option>Expired</option>
+                <option>Cancelled</option>
+            </select>
         </div>
     </article>
-</section>
 
+    <div class="contract-list">
+
+        <a class="contract-card" asp-controller="Management" asp-action="ContractDetails">
+            <div class="cc-head">
+                <div class="cc-id">
+                    <b>CSA-2026-001</b>
+                    <span class="badge green">Active</span>
+                </div>
+                <span class="badge green">68% delivered</span>
+            </div>
+            <p class="cc-customer">Eskom Arnot · Coal Supply Agreement · Thermal coal</p>
+
+            <div class="cc-progress">
+                <div class="progress large"><i style="width:68%"></i></div>
+            </div>
+
+            <div class="cc-figures">
+                <span><b>5,000 t</b> total</span>
+                <span><b>3,400 t</b> delivered</span>
+                <span><b>1,600 t</b> remaining</span>
+                <span><b>R6.25m</b> value</span>
+            </div>
+
+            <div class="cc-meta">
+                <div><small>Type</small><b>Coal Supply Agreement</b></div>
+                <div><small>Product</small><b>Thermal coal</b></div>
+                <div><small>End Date</small><b>31 Dec 2026</b></div>
+                <div><small>Status</small><b class="pos">Active</b></div>
+            </div>
+        </a>
+
+        <a class="contract-card" asp-controller="Management" asp-action="ContractDetails">
+            <div class="cc-head">
+                <div class="cc-id">
+                    <b>ADH-2026-014</b>
+                    <span class="badge green">Active</span>
+                </div>
+                <span class="badge green">42% delivered</span>
+            </div>
+            <p class="cc-customer">Msobo Coal · Ad-hoc · Duff</p>
+
+            <div class="cc-progress">
+                <div class="progress large"><i style="width:42%"></i></div>
+            </div>
+
+            <div class="cc-figures">
+                <span><b>2,000 t</b> total</span>
+                <span><b>840 t</b> delivered</span>
+                <span><b>1,160 t</b> remaining</span>
+                <span><b>R2.62m</b> value</span>
+            </div>
+
+            <div class="cc-meta">
+                <div><small>Type</small><b>Ad-hoc</b></div>
+                <div><small>Product</small><b>Duff</b></div>
+                <div><small>End Date</small><b>30 Sep 2026</b></div>
+                <div><small>Status</small><b class="pos">Active</b></div>
+            </div>
+        </a>
+
+        <a class="contract-card" asp-controller="Management" asp-action="ContractDetails">
+            <div class="cc-head">
+                <div class="cc-id">
+                    <b>SPOT-2026-009</b>
+                    <span class="badge green">Active</span>
+                </div>
+                <span class="badge green">0% delivered</span>
+            </div>
+            <p class="cc-customer">Seriti Resources · Spot sale · Nuts</p>
+
+            <div class="cc-progress">
+                <div class="progress large"><i style="width:0%"></i></div>
+            </div>
+
+            <div class="cc-figures">
+                <span><b>400 t</b> total</span>
+                <span><b>0 t</b> delivered</span>
+                <span><b>400 t</b> remaining</span>
+                <span><b>R560,000</b> value</span>
+            </div>
+
+            <div class="cc-meta">
+                <div><small>Type</small><b>Spot sale</b></div>
+                <div><small>Product</small><b>Nuts</b></div>
+                <div><small>End Date</small><b>31 Aug 2026</b></div>
+                <div><small>Status</small><b class="pos">Active</b></div>
+            </div>
+        </a>
+
+        <a class="contract-card" asp-controller="Management" asp-action="ContractDetails">
+            <div class="cc-head">
+                <div class="cc-id">
+                    <b>SPOT-2026-010</b>
+                    <span class="badge green">Active</span>
+                </div>
+                <span class="badge green">0% delivered</span>
+            </div>
+            <p class="cc-customer">Seriti Resources · Spot sale · Thermal coal</p>
+
+            <div class="cc-progress">
+                <div class="progress large"><i style="width:0%"></i></div>
+            </div>
+
+            <div class="cc-figures">
+                <span><b>250 t</b> total</span>
+                <span><b>0 t</b> delivered</span>
+                <span><b>250 t</b> remaining</span>
+                <span><b>R350,000</b> value</span>
+            </div>
+
+            <div class="cc-meta">
+                <div><small>Type</small><b>Spot sale</b></div>
+                <div><small>Product</small><b>Thermal coal</b></div>
+                <div><small>End Date</small><b>31 Aug 2026</b></div>
+                <div><small>Status</small><b class="pos">Active</b></div>
+            </div>
+        </a>
+
+        <a class="contract-card" asp-controller="Management" asp-action="ContractDetails">
+            <div class="cc-head">
+                <div class="cc-id">
+                    <b>SPOT-2026-005</b>
+                    <span class="badge green">Completed</span>
+                </div>
+                <span class="badge green">100% delivered</span>
+            </div>
+            <p class="cc-customer">Eskom Arnot · Spot sale · Thermal coal</p>
+
+            <div class="cc-progress">
+                <div class="progress large"><i style="width:100%"></i></div>
+            </div>
+
+            <div class="cc-figures">
+                <span><b>800 t</b> total</span>
+                <span><b>800 t</b> delivered</span>
+                <span><b>0 t</b> remaining</span>
+                <span><b>R1.12m</b> value</span>
+            </div>
+
+            <div class="cc-meta">
+                <div><small>Type</small><b>Spot sale</b></div>
+                <div><small>Product</small><b>Thermal coal</b></div>
+                <div><small>End Date</small><b>31 Jul 2026</b></div>
+                <div><small>Status</small><b class="pos">Completed</b></div>
+            </div>
+        </a>
+
+    </div>
+
+    <p class="field-note">
+        Senior Management sees all contracts and values. This view is read-only.
+    </p>
+</section>

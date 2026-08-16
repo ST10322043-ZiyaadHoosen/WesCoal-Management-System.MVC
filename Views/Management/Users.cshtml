@@ -15,7 +15,50 @@
         </div>
         <button class="btn-gold" data-toast="User invitation sent">Invite user</button>
     </div>
+
+    <div class="stat-grid">
+        <article>
+            <small>Total users</small>
+            <strong>6</strong>
+            <span>Across 6 roles</span>
+        </article>
+        <article>
+            <small>Active users</small>
+            <strong>5</strong>
+            <span>Currently enabled</span>
+        </article>
+        <article>
+            <small>Pending invites</small>
+            <strong class="highlight">1</strong>
+            <span>Awaiting activation</span>
+        </article>
+        <article>
+            <small>Internal roles</small>
+            <strong>5</strong>
+            <span>Excludes Customer</span>
+        </article>
+    </div>
+
     <article class="panel">
+        <div class="toolbar">
+            <input type="search" placeholder="Search name, email or role…">
+            <select>
+                <option>All roles</option>
+                <option>Sales</option>
+                <option>Finance</option>
+                <option>Logistics</option>
+                <option>Site Manager</option>
+                <option>Senior Management</option>
+                <option>Customer</option>
+            </select>
+            <select>
+                <option>All statuses</option>
+                <option>Active</option>
+                <option>Pending</option>
+                <option>Deactivated</option>
+            </select>
+        </div>
+
         <div class="table-wrap">
             <table>
                 <thead>
@@ -25,39 +68,65 @@
                         <th>Role</th>
                         <th>Last active</th>
                         <th>Status</th>
+                        <th></th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr>
-                        <td>Sales Manager</td>
-                        <td>ziyaad@wescoal.co.za</td>
+                        <td><b>Sales Manager</b></td>
+                        <td>sales.manager@wescoal.co.za</td>
                         <td>Sales</td>
                         <td>Today 10:42</td>
-                        <td>
-                            <span class="badge green">Active</span>
-                        </td>
+                        <td><span class="badge green">Active</span></td>
+                        <td><button class="btn-outline" data-toast="User deactivated">Deactivate</button></td>
                     </tr>
                     <tr>
-                        <td>Finance Officer</td>
-                        <td>kaveer@wescoal.co.za</td>
+                        <td><b>Finance Officer</b></td>
+                        <td>finance.officer@wescoal.co.za</td>
                         <td>Finance</td>
                         <td>Today 10:15</td>
-                        <td>
-                            <span class="badge green">Active</span>
-                        </td>
+                        <td><span class="badge green">Active</span></td>
+                        <td><button class="btn-outline" data-toast="User deactivated">Deactivate</button></td>
                     </tr>
                     <tr>
-                        <td>Weighbridge Operator</td>
-                        <td>imraan@wescoal.co.za</td>
+                        <td><b>Weighbridge Operator</b></td>
+                        <td>weighbridge.operator@wescoal.co.za</td>
                         <td>Logistics</td>
                         <td>Today 11:35</td>
-                        <td>
-                            <span class="badge green">Active</span>
-                        </td>
+                        <td><span class="badge green">Active</span></td>
+                        <td><button class="btn-outline" data-toast="User deactivated">Deactivate</button></td>
+                    </tr>
+                    <tr>
+                        <td><b>Site Manager</b></td>
+                        <td>site.manager@wescoal.co.za</td>
+                        <td>Site Manager</td>
+                        <td>Today 09:20</td>
+                        <td><span class="badge green">Active</span></td>
+                        <td><button class="btn-outline" data-toast="User deactivated">Deactivate</button></td>
+                    </tr>
+                    <tr>
+                        <td><b>Customer User</b></td>
+                        <td>customer.user@eskom.co.za</td>
+                        <td>Customer</td>
+                        <td>Yesterday 14:05</td>
+                        <td><span class="badge green">Active</span></td>
+                        <td><button class="btn-outline" data-toast="User deactivated">Deactivate</button></td>
+                    </tr>
+                    <tr>
+                        <td><b>New Finance Assistant</b></td>
+                        <td>finance.assistant@wescoal.co.za</td>
+                        <td>Finance</td>
+                        <td>—</td>
+                        <td><span class="badge amber">Pending invite</span></td>
+                        <td><button class="btn-outline" data-toast="Invite resent">Resend invite</button></td>
                     </tr>
                 </tbody>
             </table>
         </div>
+
+        <p class="field-note">
+            Accounts are invite-only. Senior Management creates every user and assigns their role.
+            A deactivated user cannot sign in until reactivated.
+        </p>
     </article>
 </section>
-

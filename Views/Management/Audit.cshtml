@@ -11,15 +11,40 @@
         <div>
             <p class="eyebrow">IMMUTABLE HISTORY</p>
             <h1>Audit Log</h1>
-            <p>Who performed each important system action.</p>
+            <p>Who performed each important system action, and when.</p>
         </div>
     </div>
+
     <article class="panel">
+        <div class="toolbar">
+            <input type="search" placeholder="Search user, action or record…">
+            <select>
+                <option>All roles</option>
+                <option>Sales</option>
+                <option>Finance</option>
+                <option>Logistics</option>
+                <option>Customer</option>
+                <option>Management</option>
+            </select>
+            <select>
+                <option>All actions</option>
+                <option>Created contract</option>
+                <option>Created purchase order</option>
+                <option>Attached SAP number</option>
+                <option>Weigh-in recorded</option>
+                <option>Weigh-out completed</option>
+                <option>Generated invoice</option>
+                <option>Marked invoice paid</option>
+                <option>Uploaded weekly fleet</option>
+                <option>Created user</option>
+            </select>
+        </div>
+
         <div class="table-wrap">
             <table>
                 <thead>
                     <tr>
-                        <th>Time</th>
+                        <th>Timestamp</th>
                         <th>User</th>
                         <th>Role</th>
                         <th>Action</th>
@@ -28,29 +53,76 @@
                 </thead>
                 <tbody>
                     <tr>
-                        <td>12 Aug 11:35</td>
+                        <td>12 Aug 2026 · 11:35</td>
                         <td>Weighbridge Operator</td>
                         <td>Logistics</td>
                         <td>Completed weigh-out</td>
-                        <td>WB-2409 / PO-1042</td>
+                        <td>WB-2409 · PO-1042</td>
                     </tr>
                     <tr>
-                        <td>12 Aug 10:15</td>
+                        <td>12 Aug 2026 · 10:15</td>
+                        <td>Finance Officer</td>
+                        <td>Finance</td>
+                        <td>Generated invoice</td>
+                        <td>INV-2026-084</td>
+                    </tr>
+                    <tr>
+                        <td>12 Aug 2026 · 09:02</td>
+                        <td>Weighbridge Operator</td>
+                        <td>Logistics</td>
+                        <td>Recorded weigh-in</td>
+                        <td>WB-2409 · PO-1042</td>
+                    </tr>
+                    <tr>
+                        <td>12 Aug 2026 · 08:47</td>
                         <td>Finance Officer</td>
                         <td>Finance</td>
                         <td>Marked invoice paid</td>
                         <td>INV-2026-071</td>
                     </tr>
                     <tr>
-                        <td>11 Aug 15:42</td>
+                        <td>11 Aug 2026 · 16:20</td>
+                        <td>Finance Officer</td>
+                        <td>Finance</td>
+                        <td>Attached SAP number</td>
+                        <td>PO-1042</td>
+                    </tr>
+                    <tr>
+                        <td>11 Aug 2026 · 15:42</td>
                         <td>Sales Manager</td>
                         <td>Sales</td>
                         <td>Created purchase order</td>
                         <td>PO-1048</td>
                     </tr>
+                    <tr>
+                        <td>11 Aug 2026 · 14:05</td>
+                        <td>Sales Manager</td>
+                        <td>Sales</td>
+                        <td>Created contract</td>
+                        <td>CSA-2026-001</td>
+                    </tr>
+                    <tr>
+                        <td>11 Aug 2026 · 11:30</td>
+                        <td>Customer User</td>
+                        <td>Customer</td>
+                        <td>Uploaded weekly fleet</td>
+                        <td>Eskom Arnot · Week 10 Aug</td>
+                    </tr>
+                    <tr>
+                        <td>11 Aug 2026 · 09:12</td>
+                        <td>Senior Manager</td>
+                        <td>Management</td>
+                        <td>Created user</td>
+                        <td>weighbridge.operator</td>
+                    </tr>
                 </tbody>
             </table>
         </div>
+
+        <p class="field-note">
+            This log is read-only and covers all significant actions across the system.
+            It provides Senior Management with a complete accountability trail from contract creation
+            through weighbridge collection to invoicing and payment.
+        </p>
     </article>
 </section>
-

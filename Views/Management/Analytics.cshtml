@@ -1,0 +1,283 @@
+﻿@{
+    ViewData["Title"] = "Analytics";
+    ViewData["RoleName"] = "Senior Manager";
+    ViewData["RoleSubtitle"] = "Senior Management";
+    ViewData["Initials"] = "SM";
+    Layout = "_PortalLayout";
+}
+
+<section class="portal-screen active" data-screen="analytics">
+    <div class="page-heading">
+        <div>
+            <p class="eyebrow">EXECUTIVE ANALYTICS</p>
+            <h1>Analytics</h1>
+            <p>Company-wide financial and operational performance.</p>
+        </div>
+        <span class="badge blue">Read only</span>
+    </div>
+
+    <div class="stat-grid">
+        <article>
+            <small>Total invoiced (YTD)</small>
+            <strong>R1.29m</strong>
+            <span>Across 2 customers</span>
+        </article>
+        <article>
+            <small>Collected (YTD)</small>
+            <strong>R600,000</strong>
+            <span>1 paid invoice</span>
+        </article>
+        <article>
+            <small>Outstanding</small>
+            <strong class="highlight">R687,000</strong>
+            <span>2 unpaid invoices</span>
+        </article>
+        <article>
+            <small>Delivered tonnage (YTD)</small>
+            <strong>1,020 t</strong>
+            <span>Across active orders</span>
+        </article>
+    </div>
+
+    <article class="panel">
+        <div class="toolbar">
+            <select id="monthFilter">
+                <option value="all">All months</option>
+                <option value="june">June 2026</option>
+                <option value="july" selected>July 2026</option>
+                <option value="aug">August 2026</option>
+            </select>
+
+            <select id="customerFilter">
+                <option value="all">All customers</option>
+                <option value="eskom">Eskom Arnot</option>
+                <option value="msobo">Msobo Coal</option>
+                <option value="seriti">Seriti Resources</option>
+            </select>
+
+            <select id="statusFilter">
+                <option value="all">All invoice statuses</option>
+                <option value="paid">Paid</option>
+                <option value="unpaid">Unpaid</option>
+                <option value="overdue">Overdue</option>
+            </select>
+
+            <button class="btn-outline" id="applyFilters">Apply filters</button>
+        </div>
+        <p class="field-note">
+            Use filters to focus on a specific month, customer, or invoice status.
+            Charts update based on the selected filters.
+        </p>
+    </article>
+
+    <div class="content-grid">
+        <article class="panel">
+            <div class="panel-title">
+                <h2>Revenue by customer</h2>
+                <small class="field-note">Total invoiced value per customer (YTD)</small>
+            </div>
+            <canvas id="revenueByCustomer" height="220"></canvas>
+        </article>
+
+        <article class="panel">
+            <div class="panel-title">
+                <h2>Invoice status</h2>
+                <small class="field-note">Paid vs unpaid vs overdue</small>
+            </div>
+            <canvas id="invoiceStatus" height="220"></canvas>
+        </article>
+    </div>
+
+    <div class="content-grid">
+        <article class="panel">
+            <div class="panel-title">
+                <h2>Deliveries vs contract target</h2>
+                <small class="field-note">Actual tonnage delivered vs monthly pace target</small>
+            </div>
+            <canvas id="monthlyDeliveries" height="220"></canvas>
+        </article>
+
+        <article class="panel">
+            <div class="panel-title">
+                <h2>Outstanding invoices ageing</h2>
+                <small class="field-note">By due date bucket</small>
+            </div>
+            <canvas id="aging" height="220"></canvas>
+        </article>
+    </div>
+
+    <div class="content-grid">
+        <article class="panel">
+            <div class="panel-title">
+                <h2>Order status distribution</h2>
+                <small class="field-note">All purchase orders by lifecycle stage</small>
+            </div>
+            <canvas id="orderStatus" height="220"></canvas>
+        </article>
+
+        <article class="panel">
+            <div class="panel-title">
+                <h2>Tonnage delivered by customer</h2>
+                <small class="field-note">Actual delivered tonnage per customer</small>
+            </div>
+            <canvas id="tonnageByCustomer" height="220"></canvas>
+        </article>
+    </div>
+</section>
+
+@section Scripts {
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.3/dist/chart.umd.min.js"></script>
+    <script>
+        (function () {
+        const RED = '#e0231f';
+        const BLACK = '#1a1a1a';
+        const GREY = '#5b626c';
+        const GREEN = '#12824e';
+        const AMBER = '#e0a020';
+        const DARKRED = '#8a0f16';
+
+        // Revenue by customer
+        new Chart(document.getElementById('revenueByCustomer'), {
+        type: 'bar',
+        data: {
+        labels: ['Eskom Arnot', 'Msobo Coal', 'Seriti Resources'],
+        datasets: [{
+        label: 'Invoiced (R)',
+        data: [1025, 262, 0],
+        backgroundColor: [RED, BLACK, GREY],
+        borderRadius: 10
+        }]
+        },
+        options: {
+        responsive: true,
+        plugins: { legend: { display: false } },
+        scales: {
+        y: {
+        beginAtZero: true,
+        ticks: { callback: v => 'R' + v + 'k' }
+        }
+        }
+        }
+        });
+
+        // Invoice status
+        new Chart(document.getElementById('invoiceStatus'), {
+        type: 'doughnut',
+        data: {
+        labels: ['Paid', 'Unpaid', 'Overdue'],
+        datasets: [{
+        data: [1, 1, 1],
+        backgroundColor: [GREEN, AMBER, RED],
+        borderWidth: 0
+        }]
+        },
+        options: {
+        responsive: true,
+        plugins: { legend: { position: 'bottom' } }
+        }
+        });
+
+        // Deliveries vs target
+        new Chart(document.getElementById('monthlyDeliveries'), {
+        type: 'bar',
+        data: {
+        labels: ['May', 'June', 'July', 'Aug'],
+        datasets: [
+        {
+        label: 'Delivered (t)',
+        data: [420, 480, 340, 210],
+        backgroundColor: BLACK,
+        borderRadius: 6
+        },
+        {
+        label: 'Contracted target (t)',
+        data: [417, 417, 417, 417],
+        type: 'line',
+        borderColor: RED,
+        borderDash: [5, 5],
+        fill: false,
+        pointBackgroundColor: RED
+        }
+        ]
+        },
+        options: {
+        responsive: true,
+        plugins: { legend: { position: 'bottom' } },
+        scales: { y: { beginAtZero: true, title: { display: true, text: 'Tonnes' } } }
+        }
+        });
+
+        // Outstanding ageing
+        new Chart(document.getElementById('aging'), {
+        type: 'bar',
+        data: {
+        labels: ['Current', '1-30 days', '31-60 days', '90+ days'],
+        datasets: [{
+        label: 'Outstanding amount (R)',
+        data: [425000, 262000, 0, 0],
+        backgroundColor: [GREEN, AMBER, RED, DARKRED],
+        borderRadius: 8
+        }]
+        },
+        options: {
+        responsive: true,
+        plugins: { legend: { display: false } },
+        scales: {
+        y: {
+        beginAtZero: true,
+        ticks: { callback: v => 'R' + (v / 1000).toFixed(0) + 'k' }
+        }
+        }
+        }
+        });
+
+        // Order status distribution
+        new Chart(document.getElementById('orderStatus'), {
+        type: 'doughnut',
+        data: {
+        labels: ['Awaiting SAP', 'Ready', 'In progress', 'Fulfilled'],
+        datasets: [{
+        data: [2, 1, 1, 1],
+        backgroundColor: [AMBER, GREEN, BLUE, BLACK],
+        borderWidth: 0
+        }]
+        },
+        options: {
+        responsive: true,
+        plugins: { legend: { position: 'bottom' } }
+        }
+        });
+
+        // Tonnage delivered by customer
+        new Chart(document.getElementById('tonnageByCustomer'), {
+        type: 'bar',
+        data: {
+        labels: ['Eskom Arnot', 'Msobo Coal', 'Seriti Resources'],
+        datasets: [{
+        label: 'Delivered (t)',
+        data: [820, 200, 0],
+        backgroundColor: [RED, BLACK, GREY],
+        borderRadius: 10
+        }]
+        },
+        options: {
+        responsive: true,
+        plugins: { legend: { display: false } },
+        scales: { y: { beginAtZero: true } }
+        }
+        });
+
+        document.getElementById('applyFilters').addEventListener('click', function () {
+        const month = document.getElementById('monthFilter').value;
+        const customer = document.getElementById('customerFilter').value;
+        const status = document.getElementById('statusFilter').value;
+        const toast = document.querySelector('[data-toast-box]');
+        if (toast) {
+        toast.textContent = `Filters applied: ${month}, ${customer}, ${status}`;
+        toast.classList.add('show');
+        setTimeout(() => toast.classList.remove('show'), 2500);
+        }
+        });
+        })();
+    </script>
+}

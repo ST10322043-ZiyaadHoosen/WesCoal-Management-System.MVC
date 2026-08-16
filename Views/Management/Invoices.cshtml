@@ -14,43 +14,100 @@
             <p>Read-only payment and billing visibility.</p>
         </div>
     </div>
+
+    <div class="stat-grid">
+        <article>
+            <small>Total invoiced (YTD)</small>
+            <strong>R1.29m</strong>
+            <span>3 invoices</span>
+        </article>
+        <article>
+            <small>Collected (YTD)</small>
+            <strong>R600,000</strong>
+            <span>1 paid invoice</span>
+        </article>
+        <article>
+            <small>Outstanding</small>
+            <strong class="highlight">R687,000</strong>
+            <span>2 invoices unpaid</span>
+        </article>
+        <article>
+            <small>Overdue</small>
+            <strong class="highlight">R262,000</strong>
+            <span>Msobo Coal on hold</span>
+        </article>
+    </div>
+
     <article class="panel">
-        <div class="table-wrap">
-            <table>
-                <thead>
-                    <tr>
-                        <th>Invoice</th>
-                        <th>Customer</th>
-                        <th>Order</th>
-                        <th>Amount</th>
-                        <th>Due</th>
-                        <th>Status</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>INV-2026-084</td>
-                        <td>Eskom Arnot</td>
-                        <td>PO-1042</td>
-                        <td>R625,000</td>
-                        <td>30 Aug</td>
-                        <td>
-                            <span class="badge amber">Unpaid</span>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>INV-2026-071</td>
-                        <td>Eskom Arnot</td>
-                        <td>PO-1039</td>
-                        <td>R625,000</td>
-                        <td>07 Aug</td>
-                        <td>
-                            <span class="badge green">Paid</span>
-                        </td>
-                    </tr>
-                </tbody>
-            </table>
+        <div class="toolbar">
+            <input type="search" placeholder="Search invoice, customer or order…">
+            <select>
+                <option>All statuses</option>
+                <option>Paid</option>
+                <option>Unpaid</option>
+                <option>Overdue</option>
+            </select>
         </div>
     </article>
-</section>
 
+    <div class="contract-list">
+        <a class="contract-card" asp-controller="Management" asp-action="InvoiceDetails">
+            <div class="cc-head">
+                <div class="cc-id">
+                    <b>INV-2026-084</b>
+                    <span class="badge red">PO-1042</span>
+                </div>
+                <span class="badge amber">Unpaid</span>
+            </div>
+            <p class="cc-customer">Eskom Arnot · July 2026 deliveries</p>
+
+            <div class="cc-meta">
+                <div><small>Actual tonnage</small><b>340 t</b></div>
+                <div><small>Amount</small><b>R425,000</b></div>
+                <div><small>Due</small><b>07 Sep 2026</b></div>
+                <div><small>Status</small><b class="neg">Unpaid</b></div>
+            </div>
+        </a>
+
+        <a class="contract-card" asp-controller="Management" asp-action="InvoiceDetails">
+            <div class="cc-head">
+                <div class="cc-id">
+                    <b>INV-2026-071</b>
+                    <span class="badge red">PO-1039</span>
+                </div>
+                <span class="badge green">Paid</span>
+            </div>
+            <p class="cc-customer">Eskom Arnot · June 2026 deliveries</p>
+
+            <div class="cc-meta">
+                <div><small>Actual tonnage</small><b>480 t</b></div>
+                <div><small>Amount</small><b>R600,000</b></div>
+                <div><small>Due</small><b>07 Aug 2026</b></div>
+                <div><small>Status</small><b class="pos">Paid</b></div>
+            </div>
+        </a>
+
+        <a class="contract-card" asp-controller="Management" asp-action="InvoiceDetails">
+            <div class="cc-head">
+                <div class="cc-id">
+                    <b>INV-2026-043</b>
+                    <span class="badge red">PO-1038</span>
+                </div>
+                <span class="badge amber">Overdue</span>
+            </div>
+            <p class="cc-customer">Msobo Coal · June 2026 deliveries</p>
+
+            <div class="cc-meta">
+                <div><small>Actual tonnage</small><b>200 t</b></div>
+                <div><small>Amount</small><b>R262,000</b></div>
+                <div><small>Due</small><b>07 Aug 2026</b></div>
+                <div><small>Status</small><b class="neg">Overdue</b></div>
+            </div>
+        </a>
+    </div>
+
+    <p class="field-note">
+        Senior Management sees all invoice amounts and payment statuses.
+        This view is read-only.
+    </p>
+</section>

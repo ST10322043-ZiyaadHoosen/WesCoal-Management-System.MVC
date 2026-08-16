@@ -1,0 +1,112 @@
+﻿@{
+    ViewData["Title"] = "Transaction Details";
+    ViewData["RoleName"] = "Senior Manager";
+    ViewData["RoleSubtitle"] = "Senior Management";
+    ViewData["Initials"] = "SM";
+    Layout = "_PortalLayout";
+}
+
+<section class="portal-screen active" data-screen="transaction-details">
+    <a class="back-link" asp-controller="Management" asp-action="Weighbridge">← Weighbridge activity</a>
+
+    <div class="page-heading">
+        <div>
+            <p class="eyebrow">TRANSACTION WB-2408</p>
+            <h1>Collection Detail</h1>
+            <p>Eskom Arnot · PO-1042 · Thermal coal</p>
+        </div>
+        <span class="badge green">Complete</span>
+    </div>
+
+    <div class="stat-grid">
+        <article>
+            <small>Weigh-in</small>
+            <strong>22.40 t</strong>
+        </article>
+        <article>
+            <small>Weigh-out</small>
+            <strong>51.00 t</strong>
+        </article>
+        <article>
+            <small>Net tonnage</small>
+            <strong>28.60 t</strong>
+        </article>
+        <article>
+            <small>Recorded by</small>
+            <strong>Weighbridge Operator</strong>
+        </article>
+    </div>
+
+    <article class="panel">
+        <div class="panel-title">
+            <h2>Transaction information</h2>
+            <small class="field-note">Read-only</small>
+        </div>
+
+        <dl>
+            <dt>Transaction</dt>
+            <dd>WB-2408</dd>
+
+            <dt>Order</dt>
+            <dd>PO-1042</dd>
+
+            <dt>Customer</dt>
+            <dd>Eskom Arnot</dd>
+
+            <dt>Truck</dt>
+            <dd>GP 12 TY LF</dd>
+
+            <dt>Driver</dt>
+            <dd>Solomon Dube</dd>
+
+            <dt>Transporter</dt>
+            <dd>Bulk Haul Logistics</dd>
+
+            <dt>Weigh-in time</dt>
+            <dd>06:12</dd>
+
+            <dt>Weigh-out time</dt>
+            <dd>06:54</dd>
+
+            <dt>Weigh-in slip reference</dt>
+            <dd>SLP-0891</dd>
+
+            <dt>Weigh-out slip reference</dt>
+            <dd>SLP-0891-OUT</dd>
+        </dl>
+    </article>
+
+    <article class="panel">
+        <div class="panel-title">
+            <h2>Uploaded weighbridge slips</h2>
+            <small class="field-note">Captured by the Weighbridge Operator</small>
+        </div>
+
+        <div class="content-grid">
+            <div class="panel" style="background:var(--bg); border-style:dashed;">
+                <p class="muted" style="text-align:center; margin:2rem 0;">
+                    📄 Weigh-in slip<br>
+                    <small>SLP-0891</small>
+                </p>
+                <div class="form-actions" style="border-top:0; margin-top:0; padding-top:0;">
+                    <a class="btn-outline" href="#" data-toast="Weigh-in slip downloaded">Download slip</a>
+                </div>
+            </div>
+
+            <div class="panel" style="background:var(--bg); border-style:dashed;">
+                <p class="muted" style="text-align:center; margin:2rem 0;">
+                    📄 Weigh-out slip<br>
+                    <small>SLP-0891-OUT</small>
+                </p>
+                <div class="form-actions" style="border-top:0; margin-top:0; padding-top:0;">
+                    <a class="btn-outline" href="#" data-toast="Weigh-out slip downloaded">Download slip</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="info-box">
+            Senior Management can view and download the weigh-in and weigh-out slips uploaded
+            by the Weighbridge Operator. This view is read-only and contains no payment actions.
+        </div>
+    </article>
+</section>

@@ -32,26 +32,19 @@
                 else if (controller == "Finance")
                 {
                     <a class="side-link @(action == "Index" ? "active" : "")" asp-controller="Finance" asp-action="Index">Dashboard</a>
-
                     <a class="side-link @(action == "OrdersQueue" ? "active" : "")" asp-controller="Finance" asp-action="OrdersQueue">Orders Queue</a>
-
                     <a class="side-link @(action is "Orders" or "OrderDetails" ? "active" : "")" asp-controller="Finance" asp-action="Orders">Orders</a>
-
                     <a class="side-link @(action is "Contracts" or "ContractDetails" ? "active" : "")" asp-controller="Finance" asp-action="Contracts">Contracts</a>
-
                     <a class="side-link @(action is "Invoices" or "InvoiceDetails" ? "active" : "")" asp-controller="Finance" asp-action="Invoices">Invoices</a>
-
                     <a class="side-link @(action == "Payments" ? "active" : "")" asp-controller="Finance" asp-action="Payments">Payments</a>
-
                     <a class="side-link @(action == "Analytics" ? "active" : "")" asp-controller="Finance" asp-action="Analytics">Analytics</a>
-
                     <a class="side-link @(action == "Reports" ? "active" : "")" asp-controller="Finance" asp-action="Reports">Reports</a>
                 }
                 else if (controller == "Logistics")
                 {
                     <a class="side-link @(action == "Index" ? "active" : "")" asp-controller="Logistics" asp-action="Index">Dashboard</a>
                     <a class="side-link @(action is "AvailableOrders" or "OrderDetails" or "CollectionType" or "SelectTruck" or "GateCheck" or "WeighIn" or "WeighOut" or "TransactionSummary" ? "active" : "")" asp-controller="Logistics" asp-action="AvailableOrders">Available Orders</a>
-                    <a class="side-link @(action == "Fleet" ? "active" : "")" asp-controller="Logistics" asp-action="Fleet">Customer Fleet</a>
+                    <a class="side-link @(action is "Fleet" or "TruckDetails" or "DriverDetails" ? "active" : "")" asp-controller="Logistics" asp-action="Fleet">Customer Fleet</a>
                     <a class="side-link @(action == "WeighbridgeLog" ? "active" : "")" asp-controller="Logistics" asp-action="WeighbridgeLog">Weighbridge Log</a>
                 }
                 else if (controller == "Customer")
@@ -66,22 +59,23 @@
                 else if (controller == "Management")
                 {
                     <a class="side-link @(action == "Index" ? "active" : "")" asp-controller="Management" asp-action="Index">Dashboard</a>
-                    <a class="side-link @(action == "Customers" ? "active" : "")" asp-controller="Management" asp-action="Customers">All Customers</a>
-                    <a class="side-link @(action == "Contracts" ? "active" : "")" asp-controller="Management" asp-action="Contracts">All Contracts</a>
-                    <a class="side-link @(action == "Orders" ? "active" : "")" asp-controller="Management" asp-action="Orders">All Orders</a>
-                    <a class="side-link @(action == "Weighbridge" ? "active" : "")" asp-controller="Management" asp-action="Weighbridge">Weighbridge Activity</a>
-                    <a class="side-link @(action == "Invoices" ? "active" : "")" asp-controller="Management" asp-action="Invoices">Invoices</a>
-                    <a class="side-link @(action == "Fleet" ? "active" : "")" asp-controller="Management" asp-action="Fleet">Fleet Compliance</a>
+                    <a class="side-link @(action is "Customers" or "CustomerDetails" ? "active" : "")" asp-controller="Management" asp-action="Customers">All Customers</a>
+                    <a class="side-link @(action is "Contracts" or "ContractDetails" ? "active" : "")" asp-controller="Management" asp-action="Contracts">All Contracts</a>
+                    <a class="side-link @(action is "Orders" or "OrderDetails" ? "active" : "")" asp-controller="Management" asp-action="Orders">All Orders</a>
+                    <a class="side-link @(action is "Weighbridge" or "TransactionDetails" ? "active" : "")" asp-controller="Management" asp-action="Weighbridge">Weighbridge Activity</a>
+                    <a class="side-link @(action is "Invoices" or "InvoiceDetails" ? "active" : "")" asp-controller="Management" asp-action="Invoices">Invoices</a>
+                    <a class="side-link @(action is "Fleet" or "TruckDetails" or "DriverDetails" ? "active" : "")" asp-controller="Management" asp-action="Fleet">Fleet Compliance</a>
                     <a class="side-link @(action == "Users" ? "active" : "")" asp-controller="Management" asp-action="Users">Users</a>
                     <a class="side-link @(action == "Audit" ? "active" : "")" asp-controller="Management" asp-action="Audit">Audit Log</a>
                     <a class="side-link @(action == "Reports" ? "active" : "")" asp-controller="Management" asp-action="Reports">Reports</a>
+                    <a class="side-link @(action == "Analytics" ? "active" : "")" asp-controller="Management" asp-action="Analytics">Analytics</a>
                 }
                 else if (controller == "SiteManager")
                 {
                     <a class="side-link @(action == "Index" ? "active" : "")" asp-controller="SiteManager" asp-action="Index">Dashboard</a>
                     <a class="side-link @(action is "Tracking" or "TrackingDetails" ? "active" : "")" asp-controller="SiteManager" asp-action="Tracking">Order Tracking</a>
-                    <a class="side-link @(action == "Weighbridge" ? "active" : "")" asp-controller="SiteManager" asp-action="Weighbridge">Weighbridge Activity</a>
-                    <a class="side-link @(action == "Fleet" ? "active" : "")" asp-controller="SiteManager" asp-action="Fleet">Fleet Compliance</a>
+                    <a class="side-link @(action is "Weighbridge" or "TransactionDetails" ? "active" : "")" asp-controller="SiteManager" asp-action="Weighbridge">Weighbridge Activity</a>
+                    <a class="side-link @(action is "Fleet" or "TruckDetails" or "DriverDetails" ? "active" : "")" asp-controller="SiteManager" asp-action="Fleet">Fleet Compliance</a>
                     <a class="side-link @(action == "Audit" ? "active" : "")" asp-controller="SiteManager" asp-action="Audit">Site Audit</a>
                 }
             </nav>

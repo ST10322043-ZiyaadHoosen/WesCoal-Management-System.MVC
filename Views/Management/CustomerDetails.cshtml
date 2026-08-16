@@ -1,0 +1,147 @@
+﻿@{
+    ViewData["Title"] = "Eskom Arnot";
+    ViewData["RoleName"] = "Senior Manager";
+    ViewData["RoleSubtitle"] = "Senior Management";
+    ViewData["Initials"] = "SM";
+    Layout = "_PortalLayout";
+}
+
+<section class="portal-screen active" data-screen="customer-details">
+    <a class="back-link" asp-controller="Management" asp-action="Customers">← All customers</a>
+
+    <div class="page-heading">
+        <div>
+            <p class="eyebrow">CUSTOMER CUST-001</p>
+            <h1>Eskom Arnot</h1>
+            <p>Arnot Power Station · Mpumalanga</p>
+        </div>
+        <span class="badge green">Active</span>
+    </div>
+
+    <div class="stat-grid">
+        <article>
+            <small>Active contracts</small>
+            <strong>1</strong>
+            <span>CSA-2026-001</span>
+        </article>
+        <article>
+            <small>Total contracted tonnage</small>
+            <strong>5,000 t</strong>
+            <span>Remaining 1,600 t</span>
+        </article>
+        <article>
+            <small>Delivered</small>
+            <strong>3,400 t</strong>
+            <span>68% delivered</span>
+        </article>
+        <article>
+            <small>Outstanding invoices</small>
+            <strong class="highlight">R425,000</strong>
+            <span>Due 07 Sep 2026</span>
+        </article>
+    </div>
+
+    <div class="detail-grid">
+        <article class="panel">
+            <div class="panel-title">
+                <h2>Contact details</h2>
+                <small class="field-note">Read-only</small>
+            </div>
+
+            <dl>
+                <dt>Contact person</dt>
+                <dd>Thabo Mokoena</dd>
+
+                <dt>Email</dt>
+                <dd>thabo.mokoena@eskom.co.za</dd>
+
+                <dt>Phone</dt>
+                <dd>+27 13 297 1000</dd>
+
+                <dt>VAT number</dt>
+                <dd>4230187456</dd>
+
+                <dt>Account status</dt>
+                <dd><span class="badge green">Active</span></dd>
+            </dl>
+        </article>
+
+        <article class="panel">
+            <div class="panel-title">
+                <h2>Contracts</h2>
+                <small class="field-note">All contracts for this customer</small>
+            </div>
+
+            <div class="contract-list">
+                <a class="contract-card" asp-controller="Management" asp-action="ContractDetails">
+                    <div class="cc-head">
+                        <div class="cc-id">
+                            <b>CSA-2026-001</b>
+                            <span class="badge green">Active</span>
+                        </div>
+                        <span class="badge green">68% delivered</span>
+                    </div>
+                    <p class="cc-customer">Coal Supply Agreement · Thermal coal</p>
+
+                    <div class="cc-progress">
+                        <div class="progress large"><i style="width:68%"></i></div>
+                    </div>
+
+                    <div class="cc-figures">
+                        <span><b>5,000 t</b> total</span>
+                        <span><b>3,400 t</b> delivered</span>
+                        <span><b>1,600 t</b> remaining</span>
+                        <span><b>R6.25m</b> value</span>
+                    </div>
+                </a>
+
+                <a class="contract-card" asp-controller="Management" asp-action="ContractDetails">
+                    <div class="cc-head">
+                        <div class="cc-id">
+                            <b>SPOT-2026-005</b>
+                            <span class="badge green">Completed</span>
+                        </div>
+                        <span class="badge green">100% delivered</span>
+                    </div>
+                    <p class="cc-customer">Spot sale · Thermal coal</p>
+
+                    <div class="cc-progress">
+                        <div class="progress large"><i style="width:100%"></i></div>
+                    </div>
+
+                    <div class="cc-figures">
+                        <span><b>800 t</b> total</span>
+                        <span><b>800 t</b> delivered</span>
+                        <span><b>0 t</b> remaining</span>
+                        <span><b>R1.12m</b> value</span>
+                    </div>
+                </a>
+            </div>
+        </article>
+    </div>
+
+    <article class="panel">
+        <div class="panel-title">
+            <h2>Recent orders</h2>
+            <a class="btn-outline" asp-controller="Management" asp-action="Orders">View all orders</a>
+        </div>
+
+        <div class="mini-table">
+            <a asp-controller="Management" asp-action="OrderDetails">
+                <b>PO-1042</b>
+                <span>Thermal coal · 340 t delivered</span>
+                <em class="badge blue">In progress</em>
+            </a>
+            <a asp-controller="Management" asp-action="OrderDetails">
+                <b>PO-1039</b>
+                <span>Thermal coal · 480 t delivered</span>
+                <em class="badge green">Fulfilled</em>
+            </a>
+        </div>
+    </article>
+
+    <p class="field-note">
+        Senior Management sees full customer information including account status and outstanding invoices.
+        This view is read-only.
+    </p>
+</section>

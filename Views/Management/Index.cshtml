@@ -15,63 +15,102 @@
         </div>
         <span class="badge blue">Read only</span>
     </div>
+
     <div class="stat-grid">
         <article>
             <small>Active contracts</small>
             <strong>4</strong>
-            <span>R8.4m value</span>
+            <span>R9.78m active value</span>
         </article>
         <article>
-            <small>Active orders</small>
-            <strong>6</strong>
-            <span>1,900 t ordered</span>
+            <small>Open orders</small>
+            <strong>4</strong>
+            <span>1,450 t ordered</span>
         </article>
         <article>
-            <small>Delivered this month</small>
-            <strong>1,840 t</strong>
-            <span>73% of target</span>
+            <small>Outstanding invoices</small>
+            <strong class="highlight">R687,000</strong>
+            <span>2 unpaid invoices</span>
         </article>
         <article>
-            <small>Unpaid invoices</small>
-            <strong>R1.2m</strong>
-            <span>3 invoices</span>
+            <small>Today's loads</small>
+            <strong>2</strong>
+            <span>57.9 t collected</span>
         </article>
     </div>
+
     <div class="content-grid">
         <article class="panel">
-            <h2>Operational performance</h2>
+            <div class="panel-title">
+                <h2>Operational performance</h2>
+                <a class="btn-outline" asp-controller="Management" asp-action="Reports">View reports</a>
+            </div>
+
             <div class="metric-bars">
                 <label>
-                    Monthly tonnage <span>73%</span>
-                    <div class="progress">
-                        <i style="width:73%">
-                        </i>
-                    </div>
+                    Order fulfilment
+                    <span>23%</span>
+                    <div class="progress"><i style="width:23%"></i></div>
                 </label>
                 <label>
-                    Fleet compliance <span>92%</span>
-                    <div class="progress">
-                        <i style="width:92%">
-                        </i>
-                    </div>
+                    Invoice collection rate
+                    <span>47%</span>
+                    <div class="progress"><i style="width:47%"></i></div>
                 </label>
                 <label>
-                    Invoices paid on time <span>81%</span>
-                    <div class="progress">
-                        <i style="width:81%">
-                        </i>
-                    </div>
+                    SAP activation progress
+                    <span>50%</span>
+                    <div class="progress"><i style="width:50%"></i></div>
                 </label>
             </div>
         </article>
+
         <article class="panel">
-            <h2>Items requiring attention</h2>
+            <div class="panel-title">
+                <h2>Items requiring attention</h2>
+                <a class="btn-outline" asp-controller="Management" asp-action="Audit">View audit</a>
+            </div>
+
             <div class="check-list">
                 <span class="warn">2 orders awaiting SAP activation</span>
                 <span class="warn">1 customer account on hold</span>
-                <span class="warn">1 medical certificate expires soon</span>
+                <span class="warn">0 weighbridge transactions flagged for review</span>
+            </div>
+        </article>
+    </div>
+
+    <div class="content-grid">
+        <article class="panel">
+            <div class="panel-title">
+                <h2>Recent weighbridge activity</h2>
+                <a class="btn-outline" asp-controller="Management" asp-action="Weighbridge">View all</a>
+            </div>
+
+            <div class="mini-table">
+                <a asp-controller="Management" asp-action="TransactionDetails">
+                    <b>WB-2408</b>
+                    <span>GP 12 TY LF · Solomon Dube · 28.60 t</span>
+                    <em class="badge green">Complete</em>
+                </a>
+                <a asp-controller="Management" asp-action="TransactionDetails">
+                    <b>WB-2407</b>
+                    <span>NW 44 XZ LP · Thabo Nkosi · 29.30 t</span>
+                    <em class="badge green">Complete</em>
+                </a>
+            </div>
+        </article>
+
+        <article class="panel">
+            <div class="panel-title">
+                <h2>Recent audit activity</h2>
+                <a class="btn-outline" asp-controller="Management" asp-action="Audit">View audit log</a>
+            </div>
+
+            <div class="check-list">
+                <span class="ok">✓ Finance attached SAP number · PO-1042</span>
+                <span class="ok">✓ Weighbridge Operator logged WB-2408</span>
+                <span class="ok">✓ Sales Manager created PO-1048</span>
             </div>
         </article>
     </div>
 </section>
-

@@ -1,0 +1,107 @@
+﻿@{
+    ViewData["Title"] = "Driver Details";
+    ViewData["RoleName"] = "Senior Manager";
+    ViewData["RoleSubtitle"] = "Senior Management";
+    ViewData["Initials"] = "SM";
+    Layout = "_PortalLayout";
+}
+
+<section class="portal-screen active" data-screen="driver-details">
+    <a class="back-link" asp-controller="Management" asp-action="Fleet">← Fleet &amp; compliance</a>
+
+    <div class="page-heading">
+        <div>
+            <p class="eyebrow">DRIVER RECORD</p>
+            <h1>Solomon Dube</h1>
+            <p>Eskom Arnot · Bulk Haul Logistics</p>
+        </div>
+        <span class="badge green">On weekly fleet list</span>
+    </div>
+
+    <div class="stat-grid">
+        <article>
+            <small>Driver</small>
+            <strong>Solomon Dube</strong>
+        </article>
+        <article>
+            <small>ID number</small>
+            <strong>830215...087</strong>
+        </article>
+        <article>
+            <small>Licence expiry</small>
+            <strong>12 May 2028</strong>
+        </article>
+        <article>
+            <small>Medical expiry</small>
+            <strong>30 Nov 2026</strong>
+        </article>
+    </div>
+
+    <article class="panel">
+        <div class="panel-title">
+            <h2>Driver details</h2>
+            <small class="field-note">Submitted by customer</small>
+        </div>
+
+        <dl>
+            <dt>Customer</dt>
+            <dd>Eskom Arnot</dd>
+
+            <dt>Driver name</dt>
+            <dd>Solomon Dube</dd>
+
+            <dt>Transporter / Logistics company</dt>
+            <dd>Bulk Haul Logistics</dd>
+
+            <dt>ID number</dt>
+            <dd>830215...087</dd>
+
+            <dt>Licence number</dt>
+            <dd>DUBE-SD-1983</dd>
+
+            <dt>Licence expiry</dt>
+            <dd>12 May 2028</dd>
+
+            <dt>Medical expiry</dt>
+            <dd>30 Nov 2026</dd>
+        </dl>
+    </article>
+
+    <article class="panel">
+        <div class="panel-title">
+            <h2>Compliance documents</h2>
+            <small class="field-note">Customer-uploaded proof</small>
+        </div>
+
+        <div class="content-grid">
+            <div class="panel">
+                <div class="panel-title">
+                    <h3>Driver's licence</h3>
+                </div>
+                <p class="muted">📄 Solomon-Dube-licence.pdf</p>
+                <a class="btn-outline" href="#" data-toast="Driver licence download simulated">Download document</a>
+            </div>
+
+            <div class="panel">
+                <div class="panel-title">
+                    <h3>ID document</h3>
+                </div>
+                <p class="muted">📄 Solomon-Dube-ID.pdf</p>
+                <a class="btn-outline" href="#" data-toast="ID document download simulated">Download document</a>
+            </div>
+
+            <div class="panel">
+                <div class="panel-title">
+                    <h3>Medical certificate</h3>
+                </div>
+                <p class="muted">📄 Solomon-Dube-medical.pdf</p>
+                <a class="btn-outline" href="#" data-toast="Medical certificate download simulated">Download document</a>
+            </div>
+        </div>
+
+        <div class="info-box">
+            This driver is on the customer’s weekly fleet list. Senior Management can view
+            the submitted documents but cannot edit or verify them.
+        </div>
+    </article>
+</section>

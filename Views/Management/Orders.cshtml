@@ -9,51 +9,189 @@
 <section class="portal-screen active" data-screen="orders">
     <div class="page-heading">
         <div>
-            <p class="eyebrow">READ-ONLY</p>
+            <p class="eyebrow">COMPANY-WIDE VIEW</p>
             <h1>All Purchase Orders</h1>
             <p>Track every order through its lifecycle.</p>
         </div>
+        <span class="badge blue">Read only</span>
     </div>
+
+    <div class="stat-grid">
+        <article>
+            <small>Open orders</small>
+            <strong>4</strong>
+            <span>Across all customers</span>
+        </article>
+        <article>
+            <small>Awaiting SAP</small>
+            <strong>2</strong>
+            <span>Finance action required</span>
+        </article>
+        <article>
+            <small>In progress</small>
+            <strong>1</strong>
+            <span>Collecting on site</span>
+        </article>
+        <article>
+            <small>Fulfilled</small>
+            <strong>1</strong>
+            <span>PO-1039 complete</span>
+        </article>
+    </div>
+
     <article class="panel">
-        <div class="table-wrap">
-            <table>
-                <thead>
-                    <tr>
-                        <th>Order</th>
-                        <th>Customer</th>
-                        <th>Created by</th>
-                        <th>SAP</th>
-                        <th>Ordered</th>
-                        <th>Delivered</th>
-                        <th>Status</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>PO-1042</td>
-                        <td>Eskom Arnot</td>
-                        <td>Sales Manager</td>
-                        <td>45001234</td>
-                        <td>500 t</td>
-                        <td>340 t</td>
-                        <td>
-                            <span class="badge blue">In progress</span>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>PO-1048</td>
-                        <td>Msobo Coal</td>
-                        <td>Sales Manager</td>
-                        <td>Pending</td>
-                        <td>300 t</td>
-                        <td>0 t</td>
-                        <td>
-                            <span class="badge amber">Awaiting SAP</span>
-                        </td>
-                    </tr>
-                </tbody>
-            </table>
+        <div class="toolbar">
+            <input type="search" placeholder="Search order, customer or SAP…">
+            <select>
+                <option>All statuses</option>
+                <option>Awaiting SAP</option>
+                <option>Ready</option>
+                <option>In progress</option>
+                <option>Fulfilled</option>
+            </select>
         </div>
     </article>
-</section>
 
+    <div class="contract-list">
+
+        <a class="contract-card" asp-controller="Management" asp-action="OrderDetails">
+            <div class="cc-head">
+                <div class="cc-id">
+                    <b>PO-1042</b>
+                    <span class="badge red">CSA-2026-001</span>
+                </div>
+                <span class="badge blue">In progress</span>
+            </div>
+            <p class="cc-customer">Eskom Arnot · Thermal coal</p>
+
+            <div class="cc-progress">
+                <div class="progress"><i style="width:68%"></i></div>
+                <div class="cc-figures">
+                    <span><b>340 t</b> delivered</span>
+                    <span><b>160 t</b> remaining</span>
+                    <span>of <b>500 t</b> ordered</span>
+                </div>
+            </div>
+
+            <div class="cc-meta">
+                <div><small>Created by</small><b>Sales Manager</b></div>
+                <div><small>SAP</small><b>45001234</b></div>
+                <div><small>Order value</small><b>R625,000</b></div>
+                <div><small>Status</small><b class="pos">In progress</b></div>
+            </div>
+        </a>
+
+        <a class="contract-card" asp-controller="Management" asp-action="OrderDetails">
+            <div class="cc-head">
+                <div class="cc-id">
+                    <b>PO-1045</b>
+                    <span class="badge red">SPOT-2026-009</span>
+                </div>
+                <span class="badge green">Ready</span>
+            </div>
+            <p class="cc-customer">Seriti Resources · Nuts</p>
+
+            <div class="cc-progress">
+                <div class="progress"><i style="width:0%"></i></div>
+                <div class="cc-figures">
+                    <span><b>0 t</b> delivered</span>
+                    <span><b>400 t</b> remaining</span>
+                    <span>of <b>400 t</b> ordered</span>
+                </div>
+            </div>
+
+            <div class="cc-meta">
+                <div><small>Created by</small><b>Sales Manager</b></div>
+                <div><small>SAP</small><b>45001229</b></div>
+                <div><small>Order value</small><b>R560,000</b></div>
+                <div><small>Status</small><b class="pos">Ready</b></div>
+            </div>
+        </a>
+
+        <a class="contract-card" asp-controller="Management" asp-action="OrderDetails">
+            <div class="cc-head">
+                <div class="cc-id">
+                    <b>PO-1048</b>
+                    <span class="badge red">ADH-2026-014</span>
+                </div>
+                <span class="badge amber">Awaiting SAP</span>
+            </div>
+            <p class="cc-customer">Msobo Coal · Duff</p>
+
+            <div class="cc-progress">
+                <div class="progress"><i style="width:0%"></i></div>
+                <div class="cc-figures">
+                    <span><b>0 t</b> delivered</span>
+                    <span><b>300 t</b> remaining</span>
+                    <span>of <b>300 t</b> ordered</span>
+                </div>
+            </div>
+
+            <div class="cc-meta">
+                <div><small>Created by</small><b>Sales Manager</b></div>
+                <div><small>SAP</small><b>—</b></div>
+                <div><small>Order value</small><b>R393,000</b></div>
+                <div><small>Status</small><b class="neg">Awaiting SAP</b></div>
+            </div>
+        </a>
+
+        <a class="contract-card" asp-controller="Management" asp-action="OrderDetails">
+            <div class="cc-head">
+                <div class="cc-id">
+                    <b>PO-1051</b>
+                    <span class="badge red">SPOT-2026-010</span>
+                </div>
+                <span class="badge amber">Awaiting SAP</span>
+            </div>
+            <p class="cc-customer">Seriti Resources · Thermal coal</p>
+
+            <div class="cc-progress">
+                <div class="progress"><i style="width:0%"></i></div>
+                <div class="cc-figures">
+                    <span><b>0 t</b> delivered</span>
+                    <span><b>250 t</b> remaining</span>
+                    <span>of <b>250 t</b> ordered</span>
+                </div>
+            </div>
+
+            <div class="cc-meta">
+                <div><small>Created by</small><b>Sales Manager</b></div>
+                <div><small>SAP</small><b>—</b></div>
+                <div><small>Order value</small><b>R350,000</b></div>
+                <div><small>Status</small><b class="neg">Awaiting SAP</b></div>
+            </div>
+        </a>
+
+        <a class="contract-card" asp-controller="Management" asp-action="OrderDetails">
+            <div class="cc-head">
+                <div class="cc-id">
+                    <b>PO-1039</b>
+                    <span class="badge red">CSA-2026-001</span>
+                </div>
+                <span class="badge green">Fulfilled</span>
+            </div>
+            <p class="cc-customer">Eskom Arnot · Thermal coal</p>
+
+            <div class="cc-progress">
+                <div class="progress"><i style="width:100%"></i></div>
+                <div class="cc-figures">
+                    <span><b>480 t</b> delivered</span>
+                    <span><b>0 t</b> remaining</span>
+                    <span>of <b>480 t</b> ordered</span>
+                </div>
+            </div>
+
+            <div class="cc-meta">
+                <div><small>Created by</small><b>Sales Manager</b></div>
+                <div><small>SAP</small><b>45001230</b></div>
+                <div><small>Order value</small><b>R600,000</b></div>
+                <div><small>Status</small><b class="pos">Fulfilled</b></div>
+            </div>
+        </a>
+
+    </div>
+
+    <p class="field-note">
+        Senior Management sees all purchase orders, SAP status, and order values. This view is read-only.
+    </p>
+</section>
